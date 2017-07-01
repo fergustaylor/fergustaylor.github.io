@@ -1,11 +1,14 @@
+
+
 # Fergus Taylor 
+
+![Picture](profile.jpeg)
+
 [github.com/fergustaylor](https://github.com/fergustaylor)
 
 [twitter.com/ferguswtaylor](https://twitter.com/ferguswtaylor)
 
-![Picture](profile.jpeg)
-
-**About Me** I'm a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner. 
+**About Me:** My twitter bio says I'm a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner. 
 
 I tend to use private repositories on Github when I'm working on something, but ideally I'd like to make them more public - especially when using public datasets. So I do at least try to post explanations of what I'm working on here.
 The projects below show some examples of work I'm interested in at the moment.
