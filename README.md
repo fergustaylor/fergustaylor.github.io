@@ -1,6 +1,7 @@
 # Fergus Taylor 
-## [github.com/fergustaylor](https://github.com/fergustaylor)
-## [twitter.com/ferguswtaylor](https://twitter.com/ferguswtaylor)
+[github.com/fergustaylor](https://github.com/fergustaylor)
+
+[twitter.com/ferguswtaylor](https://twitter.com/ferguswtaylor)
 
 I tend to use private repositories on Github when I'm working, ideally I'd like to make more public - especially when using public datasets, however I do at least try to post explanations of what I'm working on here.
 The projects below show some examples of work I'm interested in at the moment.
