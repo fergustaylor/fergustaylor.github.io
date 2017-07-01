@@ -6,6 +6,8 @@
 
 **About Me:** My twitter bio says I'm a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner. That's fairly concise.
 
+[Twitter](https://twitter.com/ferguswtaylor)
+
 I've an interest in academic medicine, and have worked on a few projects as a student.
 I'm interested now in learning how to do more data science using R. (Although I'm trying to learn Python, mostly for the Pi).
 
