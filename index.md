@@ -1,4 +1,4 @@
-![Picture](profile.jpeg)
+![Picture](image.jpg)
 
 **About Me:** My twitter bio says I'm a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner. That's fairly concise.
 
