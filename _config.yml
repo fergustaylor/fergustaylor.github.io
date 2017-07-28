@@ -1,11 +1,1 @@
 theme: jekyll-theme-minimal
-
-navbar:
-  title: "fergustaylor.github.io"
-  left:
-    - text: "Home"
-      href: index.html
-    - text: "Blog"
-      href: blog.html
-    - text: "Archive"
-      href: archive.html
