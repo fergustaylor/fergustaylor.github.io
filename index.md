@@ -7,5 +7,3 @@ I'm interested now in learning how to do more data science using R. (Although I'
 
 I tend to use private repositories on Github when I'm working on something, but ideally I'd like to make these more public - especially when using public datasets. So if there's something I can share, I do at least try to post explanations of what I'm working on here.
 The projects below show some examples of work I'm interested in at the moment. 
-
-[See more of my stuff on Twitter.](https://twitter.com/ferguswtaylor)
