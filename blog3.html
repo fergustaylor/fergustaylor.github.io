@@ -2,12 +2,15 @@
 <!doctype html>
 <html lang="en-US">
   <head>
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("b.html"); 
+    <script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = 'views/' + $(this).data('include') + '.html';
+      $(this).load(file);
     });
-    </script> 
+  });
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>fergustaylor.github.io by fergustaylor</title>
@@ -29,9 +32,10 @@
         <p class="view"><a href="https://twitter.com/ferguswtaylor">Twitter <small></small></a></p>
       </header>
       <section>
-<body>
-     <div id="includedContent"></div>
-</body>
+        <body>
+     <div data-include="header"></div>
+     <div data-include="footer"></div>
+        </body>
       </section>
       <footer>
         <p class="view"><a href="https://github.com/fergustaylor">View My GitHub Profile</a></p>
