@@ -4,9 +4,9 @@
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/map2.html">
+<iframe src="https://fergustaylor.github.io/Arran/map2.html">
 </iframe>
-[See the map.](https://fergustaylor.github.io/map2.html)
+[See the map.](https://fergustaylor.github.io/Arran/map2.html)
 
 Introduction
 ------------
@@ -33,7 +33,7 @@ I then read the coordinates into sf with st\_as\_sf(), and plotted over
 a shape file map of Arran; over the SIMD data zones, as well as the
 section of coordinates contained in one data zone/
 
-![Coordinate plots](https://fergustaylor.github.io/Rplot11.5.png)
+![Coordinate plots](https://fergustaylor.github.io/Arran/Rplot11.5.png)
 
 With the postcodes sorted, I then wanted to relate some other
 information about these areas. I used
@@ -43,13 +43,13 @@ onto the island. Then I coloured/labelled the individual data zones.
 Having worked that out, I wanted to show some health data about the
 zones. I overlayed 'percentile' data about the areas for 2016.
 
-![DZ Outlines2](https://fergustaylor.github.io/Rplot13.png)
+![DZ Outlines2](https://fergustaylor.github.io/Arran/Rplot13.png)
 
 Then after faffing about with individual shape files for every year,
 (The data zone labels changed after 2012), I did the same for all the
 SIMD data periods and used facet\_wrap to plot them all together.
 
-![Percentile Facet\_wrap](https://fergustaylor.github.io/Rplot10.png)
+![Percentile Facet\_wrap](https://fergustaylor.github.io/Arran/Rplot10.png)
 
 Combining the postcode and SIMD data, I've summarised each of the zones
 below.
@@ -60,9 +60,9 @@ below.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/Function10.html">
+<iframe src="https://fergustaylor.github.io/Arran/Function10.html">
 </iframe>
-[See these plots in a new window.](https://fergustaylor.github.io/Function10.html)
+[See these plots in a new window.](https://fergustaylor.github.io/Arran/Function10.html)
 
 As shown at the top, I've since overlaid this data onto interactive maps
 using leaflet.
@@ -75,9 +75,9 @@ using leaflet.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/map.html">
+<iframe src="https://fergustaylor.github.io/Arran/map.html">
 </iframe>
-[First Version.](https://fergustaylor.github.io/map.html)
+[First Version.](https://fergustaylor.github.io/Arran/map.html)
 
 <style>
     iframe {
@@ -85,9 +85,9 @@ using leaflet.
         height: 700px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/Map5view.html">
+<iframe src="https://fergustaylor.github.io/Arran/Map5view.html">
 </iframe>
-[See the map.](https://fergustaylor.github.io/Map5view.html)
+[See the map.](https://fergustaylor.github.io/Arran/Map5view.html)
 
 The overall aim of this project is to eventually create an easy template
 by which a user with no prior programming knowledge can create
@@ -116,10 +116,10 @@ continuous/ variable matched to a colour palate) assigned to that
 postcode. (Like the percentile data, but showing many smaller areas over
 Arran).
 
-[See the clinic plot example.](https://fergustaylor.github.io/Map_Code.html#example_markers)
+[See the clinic plot example.](https://fergustaylor.github.io/Arran/Map_Code.html#example_markers)
 
-[See the full project code.](https://fergustaylor.github.io/Code.html)
+[See the full project code.](https://fergustaylor.github.io/Arran/Code.html)
 
-[See the code specific to these graphics.](front_page_graphics.html)
+[See the code specific to these graphics.](https://fergustaylor.github.io/Arran/front_page_graphics.html)
 
 [Other projects I'm working on.](https://fergustaylor.github.io)
