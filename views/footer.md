@@ -1,15 +1,1 @@
-<html>
-<head>
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("b.html"); 
-    });
-    </script> 
-
-</head>
-<body>
-     <div id="includedContent"></div>
-
-</body>
-</html>
+xcvbnm,./.,mnbvbnm,.mnbvcbnm,mnbv vbnm,.mnbv

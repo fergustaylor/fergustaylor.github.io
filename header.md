@@ -1,15 +1,4 @@
-<html>
-<head>
-    <script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("b.html"); 
-    });
-    </script> 
+this is example code, fcgjhvbj,k.k/mnmsbfa,bnsjdfnvfbsdhjk
 
-</head>
-<body>
-     <div id="includedContent"></div>
-
-</body>
-</html>
+fvbhjklkl;m,n,klkn 
+hjbknlm;,.
