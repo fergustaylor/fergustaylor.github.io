@@ -1,4 +1,4 @@
-29/07/17 - Arran SIMD Data
+29/07/17 - Arran SIMD GIFs
 --------
 
 Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I'd been using just for Arran, to show all of Scotland.
