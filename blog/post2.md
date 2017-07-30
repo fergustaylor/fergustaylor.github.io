@@ -1,4 +1,4 @@
-29/07/17 - Arran SIMD GIFs
+## [**29/07/17 - Arran SIMD GIFs**](https://fergustaylor.github.io/blog/post2)
 --------
 
 ![Map GIF](https://fergustaylor.github.io/Arran/gif4.gif)
