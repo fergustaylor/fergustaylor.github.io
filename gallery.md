@@ -1,4 +1,4 @@
-![Picture](image.jpg)
+
 ![Map GIF](https://fergustaylor.github.io/Arran/gif4.gif)
 
 ![Map GIF](https://fergustaylor.github.io/Arran/output2.gif)
