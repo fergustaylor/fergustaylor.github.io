@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------------------
 
 I initially saw the notice of the August update via twitter
-\[@PHE\_uk\](<https://twitter.com/PHE_uk>), but I later found the full
+[@PHE_uk](https://twitter.com/PHE_uk), but I later found the full
 future publication timeline available at
 [gov.uk.](https://www.gov.uk/government/organisations/public-health-england/about/statistics)
 
@@ -20,22 +20,10 @@ the site - I found their fantastic package tool
 which allows me to import PH data from all profiles directly into the R
 environment through their API.
 
-    # install.packages("devtools")
+    #install.packages("devtools")
     #devtools::install_github("PublicHealthEngland/fingertipsR")
     library(fingertipsR)
     library(tidyverse)
-
-    ## Loading tidyverse: ggplot2
-    ## Loading tidyverse: tibble
-    ## Loading tidyverse: tidyr
-    ## Loading tidyverse: readr
-    ## Loading tidyverse: purrr
-    ## Loading tidyverse: dplyr
-
-    ## Conflicts with tidy packages ----------------------------------------------
-
-    ## filter(): dplyr, stats
-    ## lag():    dplyr, stats
 
 The package is explained here.
 
