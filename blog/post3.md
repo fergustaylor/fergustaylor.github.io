@@ -58,7 +58,7 @@ at birth'.
       theme(axis.title.x=element_blank()) +
       facet_grid(AreaName ~ .)
 
-![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot2.png)
+![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png)
 
 This was an interesting way to explore Public Health England Data
 through R. The next steps for me will be to explore new HTML widgets as
