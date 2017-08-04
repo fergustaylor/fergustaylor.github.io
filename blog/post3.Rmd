@@ -13,7 +13,7 @@ It summarises 33 different National Public Health Profiles, including the most r
 
 While I was prepared to download information I wanted directly through the site - I found their fantastic package tool ['fingertipsR'](https://github.com/PublicHealthEngland/fingertipsR) which allows me to import PH data from all profiles directly into the R environment through their API.
 
-```{r, message=FALSE}
+```{r, warning=FALSE}
 # install.packages("devtools")
 #devtools::install_github("PublicHealthEngland/fingertipsR")
 library(fingertipsR)

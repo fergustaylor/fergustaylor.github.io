@@ -1,4 +1,4 @@
-[**04/08/17 - Public Health Outcomes Framework**](https://fergustaylor.github.io/blog/post3)
+## [**04/08/17 - Public Health Outcomes Framework**](https://fergustaylor.github.io/blog/post3)
 --------------------------------------------------------------------------------------------
 
 I initially saw the notice of the August update via twitter
@@ -25,7 +25,17 @@ environment through their API.
     library(fingertipsR)
     library(tidyverse)
 
-    ## Warning: package 'dplyr' was built under R version 3.4.1
+    ## Loading tidyverse: ggplot2
+    ## Loading tidyverse: tibble
+    ## Loading tidyverse: tidyr
+    ## Loading tidyverse: readr
+    ## Loading tidyverse: purrr
+    ## Loading tidyverse: dplyr
+
+    ## Conflicts with tidy packages ----------------------------------------------
+
+    ## filter(): dplyr, stats
+    ## lag():    dplyr, stats
 
 The package is explained here.
 
