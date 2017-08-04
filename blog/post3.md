@@ -57,6 +57,7 @@ at birth'.
       facet_grid(AreaName ~ .)
 
 ![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png)
+
 This was an interesting way to explore Public Health England Data
 through R. The next steps for me will be to explore new HTML widgets as
 a way to convert R data into interactive plots.
