@@ -6,6 +6,8 @@ I initially saw the notice of the August update via twitter
 future publication timeline available at
 [gov.uk.](https://www.gov.uk/government/organisations/public-health-england/about/statistics)
 
+![Picture1](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/2.png)
+
 All their new statistics are summarised in their blog [Public Health
 Matters](publichealthmatters.blog.gov.uk), and the data is available
 online with interactive plots through their [Fingertips
@@ -56,7 +58,7 @@ at birth'.
       theme(axis.title.x=element_blank()) +
       facet_grid(AreaName ~ .)
 
-![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png)
+![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot2.png)
 
 This was an interesting way to explore Public Health England Data
 through R. The next steps for me will be to explore new HTML widgets as
