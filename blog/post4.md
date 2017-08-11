@@ -14,6 +14,24 @@ Load:
 
 `library(openprescribingR)`
 
+__These functions give details on drugs/organisations/list sizes.__
+
+ *  drug_details()
+
+ *  organisation_codes()
+ 
+ *  list_size()
+
+__These functions allow you to load data.__
+
+ *  spending_by_CCG()
+
+ *  spending_by_code()
+
+ *  spending_by_practice()
+
+CCG Boundraries are unavailable for now
+
 #Spending
 Retrieve total spending and items by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)
 
