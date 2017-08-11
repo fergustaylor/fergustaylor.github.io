@@ -1,3 +1,6 @@
+## [**11/09/17 - openprescribingR**](https://fergustaylor.github.io/blog/post4)
+I made a package for the first time, which lets me import data from the new openprescribing api directly into R.
+
 ## [**04/08/17 - Public Health Outcomes Framework**](https://fergustaylor.github.io/blog/post3)
 Looking at the most recent update to Public Health England, 'Public Health Outcomes' August publication using the Fingertips data tool package.
 
