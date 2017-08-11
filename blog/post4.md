@@ -32,10 +32,10 @@ __These functions allow you to load data.__
 
 CCG Boundraries are unavailable for now
 
-#Spending
+# Spending
 Retrieve total spending and items by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)
 
-##1. Spending by code
+## 1. Spending by code
 Queries from August 2010 to date and returns total spending and items by month
 
 | Output                    | Function      |
@@ -43,7 +43,7 @@ Queries from August 2010 to date and returns total spending and items by month
 | Total prescribing spending by month | spending_by_code() |
 | Total by BNF code by month |spending_by_code(BNF_code = "...")|
 
-##2. Spending by CCG
+## 2. Spending by CCG
 Queries from April 2013 to date and returns spending and items by CCG by month.
 
 | Output                    | Function      |
@@ -51,7 +51,7 @@ Queries from April 2013 to date and returns spending and items by CCG by month.
 | Spending by CCG on a chemical | spending_by_CCG(chemical_code = "...")|
 | Individual CCGs by code (+/- on a chemical) |spending_by_CCG(CCG_code = "...")|
 
-##3. Spending by practice
+## 3. Spending by practice
 Queries from August 2010 to date and returns total spending and items by practice by month.
 You must specify either an organisation, or a date.
 
@@ -65,10 +65,10 @@ You must specify either an organisation, or a date.
 
 Or a variation of the above (with at least 1 practice_code, date_code, or CCG_code).
 
-#Information
+# Information
 Methods to retrieve information about CCGs, practices, and BNF codes.
 
-##4. Drug Details
+## 4. Drug Details
 Search for the official name and code of BNF sections, chemicals and presentations.
 
 | Output                    | Function      |
@@ -82,7 +82,7 @@ Or a variation of the above (with at least 1 name, chemical_or_presentation_code
 N.B For now the use of multiple terms in one category requires "&q=", e.g 
 drug_details(name="lipid&q=drug")
 
-##5. Organisation Codes
+## 5. Organisation Codes
 Search for details about a CCG or practice by code or name.
 
 | Output                    | Function      |
@@ -96,7 +96,7 @@ Or a variation of the above (with at least 1 organisation_code_or_name, CCG_code
 N.B For now the use of multiple terms in one category requires "&q=", e.g 
 organisation_codes(organisation_code_or_name= "Beaumont&q=Gloucester")
 
-##6. List size and ASTRO_PUs by CCG or practice
+## 6. List size and ASTRO_PUs by CCG or practice
 Search for details about a CCG or practice by code or name. Returns values for all months available.
 
 | Output                    | Function      |
