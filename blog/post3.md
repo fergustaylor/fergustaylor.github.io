@@ -60,6 +60,8 @@ at birth'.
 
 ![RPlot](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png)
 
+![RPlot2](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/output2.gif)
+
 This was an interesting way to explore Public Health England Data
 through R. The next steps for me will be to explore new HTML widgets as
 a way to convert R data into interactive plots.
