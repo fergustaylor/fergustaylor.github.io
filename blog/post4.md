@@ -112,7 +112,7 @@ You could still download it onto your desktop directly from the API, but I think
 
 Further explanation on the terms used here - [https://openprescribing.net/api/](https://openprescribing.net/api/)
 
-Essential reading [https://openprescribing.net/api/](https://openprescribing.net/caution/)
+Essential reading [https://openprescribing.net/caution/](https://openprescribing.net/caution/)
 
 [https://openprescribing.net/](https://openprescribing.net/)
 
