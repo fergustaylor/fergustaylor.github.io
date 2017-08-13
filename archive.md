@@ -1,3 +1,6 @@
+## [**13/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post5)
+I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
+
 ## [**11/09/17 - openprescribingR**](https://fergustaylor.github.io/blog/post4)
 I made a package for the first time, which lets me import data from the new openprescribing api directly into R.
 
