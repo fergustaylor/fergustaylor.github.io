@@ -19,3 +19,27 @@ Search for the boundaries of a CCG, or location of a practice, by code. Returns 
 Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I'll leave that to you.
 
 Plots to come..
+
+__UPDATE 12:40:__ 
+
+Managed to import/plot using GeoJSON, but since I'm not particularly familiar with the format I used the api address..
+
+`st_read("https://openprescribing.net/api/1.0/org_location/?org_type=ccg") %>%
+st_as_sf()`
+
+To create a simple features collection, which made things much easier.
+
+<style>
+    iframe {
+        width: 500px;
+        height: 500px;
+    }
+</style>
+<iframe src="https://fergustaylor.github.io/Arran/post5map.html">
+</iframe>
+
+[See the map.](https://fergustaylor.github.io/post5map.html)
+
+![Plotting geom_sf](https://fergustaylor.github.io/Rplot2.png)
+
+![Area=priceperperson](https://fergustaylor.github.io/Arran/Rplot3.png)
