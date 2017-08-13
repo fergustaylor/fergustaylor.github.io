@@ -42,4 +42,4 @@ To create a simple features collection, which made things much easier.
 
 ![Plotting geom_sf](https://fergustaylor.github.io/Rplot2.png)
 
-![Area=priceperperson](https://fergustaylor.github.io/Arran/Rplot3.png)
+![Area=priceperperson](https://fergustaylor.github.io/Rplot3.png)
