@@ -35,7 +35,7 @@ To create a simple features collection, which made things much easier.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/Arran/post5map.html">
+<iframe src="https://fergustaylor.github.io/post5map.html">
 </iframe>
 
 [See the map.](https://fergustaylor.github.io/post5map.html)
