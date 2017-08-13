@@ -3,8 +3,9 @@
 
 I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the 'CCG boundaries' section of the api.
 
-New
-##7. CCG boundaries
+## New Function
+
+## 7. CCG boundaries
 Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
 
 | Output                    | Function      |
