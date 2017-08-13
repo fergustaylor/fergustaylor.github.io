@@ -31,6 +31,7 @@ __These functions allow you to load data.__
  *  spending_by_practice()
 
 CCG Boundraries are unavailable for now
+
 __UPDATE 13/08/17:__  CCG Boundaries/Practice locations have been added. Read here [post4.](https://fergustaylor.github.io/blog/post4)
 
 # Spending
@@ -110,6 +111,7 @@ Or a variation of the above.
 
 THe only thing I haven't sorted is the CCG Boundaries, "Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON."
 You could still download it onto your desktop directly from the API, but I think that doing this in-studio makes it much easier to update the information.
+
 __UPDATE 13/08/17:__  CCG Boundaries/Practice locations have been added. Read here [post4.](https://fergustaylor.github.io/blog/post4)
 
 Further explanation on the terms used here - [https://openprescribing.net/api/](https://openprescribing.net/api/)
