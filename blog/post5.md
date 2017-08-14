@@ -40,6 +40,4 @@ To create a simple features collection, which made things much easier.
 
 [See the map.](https://fergustaylor.github.io/post5map.html)
 
-![Plotting geom_sf](https://fergustaylor.github.io/Rplot2.png)
-
-![Area=priceperperson](https://fergustaylor.github.io/Rplot3.png)
+![Plotting geom_sf](https://fergustaylor.github.io/Rplot4.png)
