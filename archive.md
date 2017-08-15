@@ -1,3 +1,6 @@
+## [**15/09/17 - openprescribingR Plots**](https://fergustaylor.github.io/blog/post6)
+Maps and maps.
+
 ## [**13/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post5)
 I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
 
