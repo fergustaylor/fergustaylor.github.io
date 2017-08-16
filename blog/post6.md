@@ -1,14 +1,7 @@
-## [**13/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post5)
+## [**15/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post6)
 --------------------------------------------------------------------------------------------
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/post6map.html">
-</iframe>
+![Clinic Map](https://fergustaylor.github.io/Rplot5.png)
 
 [See the map.](https://fergustaylor.github.io/post6map.html)
 
