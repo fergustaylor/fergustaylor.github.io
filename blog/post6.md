@@ -5,6 +5,8 @@
 
 [See the map.](https://fergustaylor.github.io/post6map.html)
 
+[See the code.](https://fergustaylor.github.io/clinics.html)
+
 ![Plotting geom_sf](https://fergustaylor.github.io/Rplot4.png)
 
 ![Plotting geom_sf](https://fergustaylor.github.io/output.gif)
@@ -16,4 +18,4 @@ Currently having some issues using
     lat = map_dbl(geometry, ~st_centroid(.x)[[2]])
     )`
     
-Which I'd ordinarily use to centre labels over each element.
+Which I'd ordinarily use to centre annotations over each CCG.
