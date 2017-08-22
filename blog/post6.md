@@ -1,15 +1,15 @@
 ## [**15/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post6)
 --------------------------------------------------------------------------------------------
 
-![Clinic Map](https://fergustaylor.github.io/Rplot5.png)
+![Clinic Map](https://fergustaylor.github.io/blogimages/Rplot5.png)
 
-[See the map.](https://fergustaylor.github.io/post6map.html)
+[See the map.](https://fergustaylor.github.io/blogimages/post6map.html)
 
-[See the code.](https://fergustaylor.github.io/clinics.html)
+[See the code.](https://fergustaylor.github.io/openprescribingR/dev/clinics.html)
 
-![Plotting geom_sf](https://fergustaylor.github.io/Rplot4.png)
+![Plotting geom_sf](https://fergustaylor.github.io/blogimages/Rplot4.png)
 
-![Plotting geom_sf](https://fergustaylor.github.io/output.gif)
+![Plotting geom_sf](https://fergustaylor.github.io/blogimages/output.gif)
 
 Currently having some issues using 
 

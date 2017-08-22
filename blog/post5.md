@@ -35,9 +35,9 @@ To create a simple features collection, which made things much easier.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/post5map.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post5map.html">
 </iframe>
 
-[See the map.](https://fergustaylor.github.io/post5map.html)
+[See the map.](https://fergustaylor.github.io/blogimages/post5map.html)
 
-![Plotting geom_sf](https://fergustaylor.github.io/Rplot4.png)
+![Plotting geom_sf](https://fergustaylor.github.io/blogimages/Rplot4.png)
