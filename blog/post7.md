@@ -41,3 +41,5 @@ See below for plot2017perperson("7.4.5")
 </style>
 <iframe src="https://fergustaylor.github.io/post5map.html">
 </iframe>
+
+[See the map.](https://fergustaylor.github.io/post5map.html)
