@@ -1,4 +1,4 @@
-![Picture](image.jpg)
+![Picture](blogimages/image.jpg)
 
 **About Me:** I'm a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner. 
 
