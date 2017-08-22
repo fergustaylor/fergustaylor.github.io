@@ -25,8 +25,12 @@ marchdata <- read_csv("~/Downloads/T201703ADDR+BNFT.CSV",
 ccg <- sf::st_read("https://openprescribing.net/api/1.0/org_location/?org_type=ccg") %>%
   sf::st_as_sf()
 
-ukpostcodes <- read_csv("~/Dropbox/Arran/alldata/ukpostcodes.csv")
+#temp <- tempfile()
+#download.file("https://www.freemaptools.com/download/full-postcodes/ukpostcodes.zip",temp)
+#ukpostcodes <- read.csv(unz(temp, "ukpostcodes.csv"))
+#unlink(temp)
 
+ukpostcodes <- read_csv("~/Dropbox/Arran/alldata/ukpostcodes.csv")
 dataset <- left_join(marchdata, ukpostcodes, by="postcode")
 ```
 

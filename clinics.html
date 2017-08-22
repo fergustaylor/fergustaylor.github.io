@@ -236,8 +236,12 @@ marchdata &lt;- read_csv(&quot;~/Downloads/T201703ADDR+BNFT.CSV&quot;,
 ccg &lt;- sf::st_read(&quot;https://openprescribing.net/api/1.0/org_location/?org_type=ccg&quot;) %&gt;%
   sf::st_as_sf()
 
-ukpostcodes &lt;- read_csv(&quot;~/Dropbox/Arran/alldata/ukpostcodes.csv&quot;)
+#temp &lt;- tempfile()
+#download.file(&quot;https://www.freemaptools.com/download/full-postcodes/ukpostcodes.zip&quot;,temp)
+#ukpostcodes &lt;- read.csv(unz(temp, &quot;ukpostcodes.csv&quot;))
+#unlink(temp)
 
+ukpostcodes &lt;- read_csv(&quot;~/Dropbox/Arran/alldata/ukpostcodes.csv&quot;)
 dataset &lt;- left_join(marchdata, ukpostcodes, by=&quot;postcode&quot;)</code></pre>
 </div>
 <div id="create-the-map" class="section level1">
