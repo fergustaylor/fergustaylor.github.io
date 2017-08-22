@@ -1,5 +1,9 @@
+## [**22/09/17 - openprescribingRplots**](https://fergustaylor.github.io/blog/post7)
+Made a package to return a set of default plots based on my openprescribingR import tool.
+
 ## [**15/09/17 - openprescribingR Plots**](https://fergustaylor.github.io/blog/post6)
-Maps and maps.
+Made a map of every clinic in the UK to see if I could.
+Also overlays CCG boundaries.
 
 ## [**13/09/17 - openprescribingR UPDATE**](https://fergustaylor.github.io/blog/post5)
 I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
