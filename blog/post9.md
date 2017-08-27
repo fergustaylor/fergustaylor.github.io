@@ -8,9 +8,11 @@ Experimenting with timelapse drawing in 'Procreate' the ios app; made the follow
 
 See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
 
-![openpres](https://fergustaylor.github.io/openprescribingR/Rplot.png)
+![openpres](/blogimages/Rplot6.png)
+![openpres](/blogimages/Rplot7.png)
 
 And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
+
 Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic's spending = red).
 The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values. 
 
