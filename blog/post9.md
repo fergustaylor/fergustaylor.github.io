@@ -10,7 +10,6 @@ See the repository on [github.](https://github.com/fergustaylor/openprescribingR
 
 ![openpres](https://fergustaylor.github.io/openprescribingR/Rplot.png)
 ![openpres](https://fergustaylor.github.io/openprescribingR/Rplot01.png)
-![openpres](https://fergustaylor.github.io/openprescribingR/Rplot02.png)
 
 I've also been trying out [ggiraph](https://davidgohel.github.io/ggiraph/index.html) recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
 
