@@ -6,7 +6,7 @@ Experimenting with timelapse drawing in 'Procreate' the ios app; made the follow
 <iframe src="https://player.vimeo.com/video/231293393" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/231293393">openprescribingR</a> from <a href="https://vimeo.com/user44219931">Fergus Taylor</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-I've also been trying out (ggiraph)[https://davidgohel.github.io/ggiraph/index.html] recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
+I've also been trying out [ggiraph](https://davidgohel.github.io/ggiraph/index.html) recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
 
 ```{r, message=FALSE, warning=FALSE}
 #install.packages("ggiraph")
