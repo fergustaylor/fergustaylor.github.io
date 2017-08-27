@@ -1,4 +1,4 @@
-\#\# [**27/09/17 - More examples for openprescribingR**](https://fergustaylor.github.io/blog/post8)
+## [**27/09/17 - More examples for openprescribingR**](https://fergustaylor.github.io/blog/post8)
 ---------------------------------------------------------------------------------------------------
 
 This package works by interacting with the openprescribing.net api.
