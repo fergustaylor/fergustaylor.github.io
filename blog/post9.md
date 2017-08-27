@@ -8,15 +8,6 @@ Experimenting with timelapse drawing in 'Procreate' the ios app; made the follow
 
 I've also been trying out [ggiraph](https://davidgohel.github.io/ggiraph/index.html) recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
 
-```{r, message=FALSE, warning=FALSE}
-#install.packages("ggiraph")
-library(openprescribingR)
-library(tidyverse)
-library(ggiraph)
-library(sf)
-library(stringr)
-```
-
 ```{r}
 westkent <- location_function("99J", as_sf = TRUE)
 westkent <- westkent %>%
