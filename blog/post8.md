@@ -42,14 +42,6 @@ Boundaries of all CCGs
     CCG_boundaries_or_location(as_sf = TRUE) %>%
       head(3)
 
-    ## Reading layer `OGRGeoJSON' from data source `https://openprescribing.net/api/1.0/org_location/?org_type=ccg' using driver `GeoJSON'
-    ## Simple feature collection with 207 features and 3 fields (with 1 geometry empty)
-    ## geometry type:  MULTIPOLYGON
-    ## dimension:      XY
-    ## bbox:           xmin: -6.418591 ymin: 49.86467 xmax: 1.762979 ymax: 55.81111
-    ## epsg (SRID):    4326
-    ## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-
     ## Simple feature collection with 3 features and 3 fields
     ## geometry type:  MULTIPOLYGON
     ## dimension:      XY
@@ -69,14 +61,6 @@ Boundaries of an individual CCG
 
     CCG_boundaries_or_location(CCG_code = "99H", as_sf = TRUE)
 
-    ## Reading layer `OGRGeoJSON' from data source `https://openprescribing.net/api/1.0/org_location/?org_type=ccg&q=99H' using driver `GeoJSON'
-    ## Simple feature collection with 1 feature and 3 fields
-    ## geometry type:  POLYGON
-    ## dimension:      XY
-    ## bbox:           xmin: -0.4457094 ymin: 51.10515 xmax: -0.1543538 ymax: 51.41195
-    ## epsg (SRID):    4326
-    ## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-
     ## Simple feature collection with 1 feature and 3 fields
     ## geometry type:  POLYGON
     ## dimension:      XY
@@ -90,14 +74,6 @@ Location (approximate) of a practice, or practices in a CCG, by code
 
     CCG_boundaries_or_location(CCG_code = "99H", practice_code = "P87003", as_sf = TRUE) %>%
       head(3)
-
-    ## Reading layer `OGRGeoJSON' from data source `https://openprescribing.net/api/1.0/org_location/?q=99H,P87003' using driver `GeoJSON'
-    ## Simple feature collection with 1 feature and 2 fields
-    ## geometry type:  POINT
-    ## dimension:      XY
-    ## bbox:           xmin: -2.339619 ymin: 53.48488 xmax: -2.339619 ymax: 53.48488
-    ## epsg (SRID):    4326
-    ## proj4string:    +proj=longlat +datum=WGS84 +no_defs
 
     ## Simple feature collection with 1 feature and 2 fields
     ## geometry type:  POINT
