@@ -1,3 +1,9 @@
+## [**27/09/17 - openprescribingRplots**](https://fergustaylor.github.io/blog/post9)
+New openprescribingR plots and intro video.
+
+## [**27/09/17 - More examples for openprescribingR**](https://fergustaylor.github.io/blog/post8)
+New examples of openprescribingR use.
+
 ## [**22/09/17 - openprescribingRplots**](https://fergustaylor.github.io/blog/post7)
 Made a package to return a set of default plots based on my openprescribingR import tool.
 
