@@ -6,7 +6,7 @@ Experimenting with timelapse drawing in 'Procreate' the ios app; made the follow
 <iframe src="https://player.vimeo.com/video/231293393" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/231293393">openprescribingR</a> from <a href="https://vimeo.com/user44219931">Fergus Taylor</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-See the code used [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript)
+See the code used in this example [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript)
 
 See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
 
