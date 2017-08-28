@@ -1,4 +1,4 @@
-[**27/09/17 - openprescribingRplots**](https://fergustaylor.github.io/blog/post9)
+## [**27/09/17 - openprescribingRplots**](https://fergustaylor.github.io/blog/post9)
 --------------------------------------------------------------------------------------------
 
 Experimenting with timelapse drawing in 'Procreate' the ios app; made the following for openprescribingR.
