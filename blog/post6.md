@@ -10,12 +10,3 @@
 ![Plotting geom_sf](https://fergustaylor.github.io/blogimages/Rplot4.png)
 
 ![Plotting geom_sf](https://fergustaylor.github.io/blogimages/output.gif)
-
-Currently having some issues using 
-
-`mutate(
-    lon = map_dbl(geometry, ~st_centroid(.x)[[1]]),
-    lat = map_dbl(geometry, ~st_centroid(.x)[[2]])
-    )`
-    
-Which I'd ordinarily use to centre annotations over each CCG.
