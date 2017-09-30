@@ -59,61 +59,61 @@ paginate = 5
 		[[params.portfolio.gallery]]
 			image = "fulls/01.jpg"
 			thumb = "thumbs/01.jpg"
-			title = "28/07/17 - Arran"
+			title = "[28/07/17 - Arran](//https://fergustaylor.github.io/post/post1/)"
 			description = "An example exercise mapping SIMD health data onto Arran."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/02.jpg"
 			thumb = "thumbs/02.jpg"
-			title = "29/07/17 - Arran SIMD GIFs"
+			title = "[29/07/17 - Arran SIMD GIFs](//https://fergustaylor.github.io/post/post2/)"
 			description = "Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/03.jpg"
 			thumb = "thumbs/03.jpg"
-			title = "04/08/17 - Public Health Outcomes Framework"
+			title = "[04/08/17 - Public Health Outcomes Framework](//https://fergustaylor.github.io/post/post3/)"
 			description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/04.jpg"
 			thumb = "thumbs/04.jpg"
-			title = "11/09/17 - openprescribingR"
+			title = "[11/09/17 - openprescribingR](//https://fergustaylor.github.io/post/post4/)"
 			description = "I made a package for the first time, which lets me import data from the new openprescribing api directly into R."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/05.jpg"
 			thumb = "thumbs/05.jpg"
-			title = "13/09/17 - openprescribingR UPDATE"
+			title = "[13/09/17 - openprescribingR UPDATE](//https://fergustaylor.github.io/post/post5/)"
 			description = "I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/06.jpg"
 			thumb = "thumbs/06.jpg"
-			title = "15/09/17 - openprescribingR UPDATE 2"
+			title = "[15/09/17 - openprescribingR UPDATE 2](//https://fergustaylor.github.io/post/post6/)"
 			description = "Made a map of every clinic in the UK to see if I could. Also overlays CCG boundaries."
 
 [[params.portfolio.gallery]]
 			image = "fulls/07.jpg"
 			thumb = "thumbs/07.jpg"
-			title = "22/09/17 - openprescribingR plots"
+			title = "[22/09/17 - openprescribingR plots](//https://fergustaylor.github.io/post/post7/)"
 			description = "Made a package to return a set of default plots based on my openprescribingR import tool."
 
 [[params.portfolio.gallery]]
 			image = "fulls/08.jpg"
 			thumb = "thumbs/08.jpg"
-			title = "27/09/17 - More examples for openprescribingR"
+			title = "[27/09/17 - More examples for openprescribingR](//https://fergustaylor.github.io/post/post8/)"
 			description = "New examples of openprescribingR use."
 			
 [[params.portfolio.gallery]]
 			image = "fulls/09.jpg"
 			thumb = "thumbs/09.jpg"
-			title = "27/09/17 - openprescribingR Plots2"
+			title = "[27/09/17 - openprescribingR Plots2](//https://fergustaylor.github.io/post/post9/)"
 			description = "New openprescribingR plots and intro video."
 			
 [[params.portfolio.gallery]]
 			image = "fulls/10.jpg"
 			thumb = "thumbs/10.jpg"
-			title = "28/09/17 - openprescribingR Plots3"
+			title = "[28/09/17 - openprescribingR Plots3](//https://fergustaylor.github.io/post/post10/)"
 			description = "New interactive maps."
 
 	[params.recentposts]
@@ -161,18 +161,8 @@ paginate = 5
 	name = "Home"
 	url  = "/"
 	weight = 10
-
-[[menu.main]]
-	name = "About"
-	url  = "about/"
-	weight = 0
 	
 [[menu.main]]
-	name = "Blog"
+	name = "Archive"
 	url  = "post/"
-	weight = 0
-
-[[menu.main]]
-	name = "Gallery"
-	url  = "gallery/"
 	weight = 0

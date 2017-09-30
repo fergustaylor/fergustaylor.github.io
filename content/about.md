@@ -5,6 +5,7 @@ date = "2017-10-01T13:39:46+02:00"
 menu = ""
 tags = []
 title = "About Me:"
+draft = true
 +++
 
 I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
