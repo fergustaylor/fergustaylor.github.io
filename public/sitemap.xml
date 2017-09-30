@@ -58,6 +58,59 @@
   </url>
   
   <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/gigraph/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post10image/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post10image2/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post10image3/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post10image4/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post10image5/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post5map/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post6map/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/post7map/</loc>
+  </url>
+  
+  <url>
+    <loc>/gallery/</loc>
+  </url>
+  
+  <url>
+    <loc>/gallery/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogimages/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
