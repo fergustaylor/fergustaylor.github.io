@@ -4,12 +4,12 @@
   
   <url>
     <loc>/about/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-01T13:39:46+02:00</lastmod>
   </url>
   
   <url>
     <loc>/gallery/</loc>
-    <lastmod>2017-09-28T13:39:46+02:00</lastmod>
+    <lastmod>2017-10-01T13:39:46+02:00</lastmod>
   </url>
   
   <url>
@@ -63,10 +63,6 @@
   </url>
   
   <url>
-    <loc>/about/</loc>
-  </url>
-  
-  <url>
     <loc>/blogimages/gigraph/</loc>
   </url>
   
@@ -103,10 +99,6 @@
   </url>
   
   <url>
-    <loc>/gallery/</loc>
-  </url>
-  
-  <url>
     <loc>/blogimages/</loc>
     <priority>0</priority>
   </url>
@@ -118,13 +110,13 @@
   
   <url>
     <loc>/categories/fergus/</loc>
-    <lastmod>2017-09-28T13:39:46+02:00</lastmod>
+    <lastmod>2017-10-01T13:39:46+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-01T13:39:46+02:00</lastmod>
     <priority>0</priority>
   </url>
   

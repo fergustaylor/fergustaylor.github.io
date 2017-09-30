@@ -1,11 +1,13 @@
 +++
 banner = "banners/placeholder.png"
 categories = ["Fergus"]
-date = "2017-09-28T13:39:46+02:00"
+date = "2017-10-01T13:39:46+02:00"
 menu = ""
 tags = []
 title = "Gallery"
 +++
+
+More interesting graphics from my last few projects.
 
 ![Map GIF](https://fergustaylor.github.io/Arran/gif4.gif)
 
