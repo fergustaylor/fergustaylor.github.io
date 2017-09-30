@@ -15,7 +15,7 @@ future publication timeline available at
 ![Picture1](https://fergustaylor.github.io/Public-Health-Outcomes-Framework/2.png)
 
 All their new statistics are summarised in their blog [Public Health
-Matters](publichealthmatters.blog.gov.uk), and the data is available
+Matters](https://publichealthmatters.blog.gov.uk/), and the data is available
 online with interactive plots through their [Fingertips
 service.](https://fingertips.phe.org.uk/)
 

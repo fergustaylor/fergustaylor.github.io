@@ -1,3 +1,12 @@
++++
+banner = "banners/placeholder.png"
+categories = ["Fergus"]
+date = "2017-09-28T13:39:46+02:00"
+menu = ""
+tags = []
+title = "openprescribingRplots"
++++
+
 About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
 
 I’m interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).

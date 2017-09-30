@@ -13,6 +13,30 @@
     
     <item>
       <title>openprescribingRplots</title>
+      <link>/about/</link>
+      <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
+      
+      <guid>/about/</guid>
+      <description>About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
+I’m interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).
+Eventually I’ll try to become proficient in SQL.
+I tend to use private repositories on Github when I’m working, and make them public once I’ve cleaned up the code - especially when I’m using public datasets.</description>
+    </item>
+    
+    <item>
+      <title>openprescribingRplots</title>
+      <link>/gallery/</link>
+      <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
+      
+      <guid>/gallery/</guid>
+      <description>iframe { width: 500px; height: 500px; }  
+See these plots in a new window.
+ iframe { width: 500px; height: 700px; }  
+See the map.</description>
+    </item>
+    
+    <item>
+      <title>openprescribingRplots</title>
       <link>/post/post10/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
@@ -32,7 +56,7 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
       <guid>/post/post9/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
  openprescribingR from Fergus Taylor on Vimeo.
-See the code used in this example [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript) See the repository on [github.](https://github.com/fergustaylor/openprescribingR) ![openpres](/blogimages/Rplot6.png) ![openpres](/blogimages/Rplot7.png) And a couple I made afterwards after exploring geom_line/geom_ribbon properly. Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&#39;s spending = red). The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.</description>
+See the code used in this example [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript) See the repository on [github.](https://github.com/fergustaylor/openprescribingR) ![openpres](https://fergustaylor.github.io/blogimages/Rplot6.png) ![openpres](https://fergustaylor.github.io/blogimages/Rplot7.png) And a couple I made afterwards after exploring geom_line/geom_ribbon properly. Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&#39;s spending = red). The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.</description>
     </item>
     
     <item>
@@ -154,10 +178,9 @@ Follow the following steps:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
-I’m interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).
-Eventually I’ll try to become proficient in SQL.
-I tend to use private repositories on Github when I’m working, and make them public once I’ve cleaned up the code - especially when I’m using public datasets.</description>
+      <description>+++ banner = “banners/placeholder.png” categories = [“Fergus”] date = “2017-09-28T13:39:46+02:00” menu = “” tags = [] title = “openprescribingRplots” +++
+About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
+I’m interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).</description>
     </item>
     
     <item>
@@ -248,18 +271,6 @@ I tend to use private repositories on Github when I’m working, and make them p
       
       <guid>/gallery/</guid>
       <description>code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .table th:not([align]) { text-align: left; }    .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/gallery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/gallery/</guid>
-      <description>iframe { width: 500px; height: 500px; }  
-See these plots in a new window.
- iframe { width: 500px; height: 700px; }  
-See the map.</description>
     </item>
     
   </channel>

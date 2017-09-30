@@ -16,8 +16,8 @@ See the code used in this example [here.](https://fergustaylor.github.io/openpre
 
 See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
 
-![openpres](/blogimages/Rplot6.png)
-![openpres](/blogimages/Rplot7.png)
+![openpres](https://fergustaylor.github.io/blogimages/Rplot6.png)
+![openpres](https://fergustaylor.github.io/blogimages/Rplot7.png)
 
 And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
 
