@@ -4,7 +4,7 @@ categories = ["Fergus"]
 date = "2017-09-22T13:39:46+02:00"
 menu = ""
 tags = []
-title = "openprescribingRplots"
+title = "openprescribingR Plots"
 +++
 
 Made a new package to return a set of default plots based on my openprescribingR import tool.

@@ -4,7 +4,7 @@ categories = ["Fergus"]
 date = "2017-09-27T13:39:46+02:00"
 menu = ""
 tags = []
-title = "openprescribingRplots"
+title = "openprescribingR Plots2"
 +++
 
 Experimenting with timelapse drawing in 'Procreate' the ios app; made the following for openprescribingR.

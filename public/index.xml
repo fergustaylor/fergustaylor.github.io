@@ -6,15 +6,15 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 28 Sep 2017 13:39:46 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>openprescribingRplots</title>
+      <title>About</title>
       <link>/about/</link>
-      <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
       <description>About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
@@ -24,7 +24,7 @@ I tend to use private repositories on Github when I’m working, and make them p
     </item>
     
     <item>
-      <title>openprescribingRplots</title>
+      <title>Gallery</title>
       <link>/gallery/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
@@ -36,7 +36,7 @@ See the map.</description>
     </item>
     
     <item>
-      <title>openprescribingRplots</title>
+      <title>openprescribingR Plots3</title>
       <link>/post/post10/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
@@ -49,7 +49,7 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
     </item>
     
     <item>
-      <title>openprescribingRplots</title>
+      <title>openprescribingR Plots2</title>
       <link>/post/post9/</link>
       <pubDate>Wed, 27 Sep 2017 13:39:46 +0200</pubDate>
       
@@ -60,7 +60,7 @@ See the code used in this example [here.](https://fergustaylor.github.io/openpre
     </item>
     
     <item>
-      <title>openprescribingRplots</title>
+      <title>openprescribingR Plots</title>
       <link>/post/post7/</link>
       <pubDate>Fri, 22 Sep 2017 13:39:46 +0200</pubDate>
       
@@ -83,7 +83,7 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     </item>
     
     <item>
-      <title>openprescribingR UPDATE</title>
+      <title>openprescribingR UPDATE 2</title>
       <link>/post/post6/</link>
       <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
       

@@ -4,7 +4,7 @@ categories = ["Fergus"]
 date = "2017-09-28T13:39:46+02:00"
 menu = ""
 tags = []
-title = "openprescribingRplots"
+title = "Gallery"
 +++
 
 ![Map GIF](https://fergustaylor.github.io/Arran/gif4.gif)

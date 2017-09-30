@@ -4,7 +4,7 @@ categories = ["Fergus"]
 date = "2017-09-28T13:39:46+02:00"
 menu = ""
 tags = []
-title = "openprescribingRplots"
+title = "openprescribingR Plots3"
 +++
 
 OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).

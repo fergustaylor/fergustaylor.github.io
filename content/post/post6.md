@@ -4,7 +4,7 @@ categories = ["Fergus"]
 date = "2017-09-15T13:39:46+02:00"
 menu = ""
 tags = []
-title = "openprescribingR UPDATE"
+title = "openprescribingR UPDATE 2"
 +++
 
 ![Clinic Map](https://fergustaylor.github.io/blogimages/Rplot5.png)

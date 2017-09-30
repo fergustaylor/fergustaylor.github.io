@@ -1,11 +1,8 @@
-+++
-banner = "banners/placeholder.png"
-categories = ["Fergus"]
-date = "2017-09-28T13:39:46+02:00"
-menu = ""
-tags = []
-title = "openprescribingRplots"
-+++
+---
+title: About
+author: Fergus Taylor
+date: 2017-10-01
+---
 
 About Me: I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
 
