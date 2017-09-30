@@ -1,6 +1,0 @@
----
-output: md_document
-title: "Arran SIMD"
-date: July 28, 2017
----
-## 28/07/17

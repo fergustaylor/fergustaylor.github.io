@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>openprescribingRplots &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="openprescribingRplots">
+		<meta name="og:url" content="/post/post7/">
+		
+		<meta name="og:image" content="/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="/" class="image avatar"><img src="/images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//https://twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="/">Home</a></li>
+			
+				<li><a href="/about/">About</a></li>
+			
+				<li><a href="/post/">Blog</a></li>
+			
+				<li><a href="/gallery/">Gallery</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>openprescribingRplots</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-09-22 13:39:46 &#43;0200 &#43;0200">220-09-2017</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="/categories/fergus">Fergus</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    <p>Made a new package to return a set of default plots based on my openprescribingR import tool.</p>
+
+<p>Currently returns a leaflet map showing;</p>
+
+<ul>
+<li>spending per person</li>
+<li>total spending</li>
+<li>total no. of items</li>
+<li>total quantity of items</li>
+<li>quantity per item</li>
+<li>listsizes</li>
+</ul>
+
+<p>.. for each CCG, for each month this year.</p>
+
+<p>This can be for any BNF section, chemical, or presentation.</p>
+
+<p><a href="https://github.com/fergustaylor/openprescribingRplots">See the repository.</a></p>
+
+<pre><code class="language-r">library(devtools)
+devtools::install_github(&quot;fergustaylor/openprescribingRplots&quot;)
+library(openprescribingRplots)
+
+plot2017perperson(&quot;7.4.5&quot;)
+plot2017total(&quot;7.4.5&quot;)
+plot2017items(&quot;7.4.5&quot;)
+plot2017quantity(&quot;7.4.5&quot;)
+plot2017quantityperitems(&quot;7.4.5&quot;)
+plot2017listsize()
+</code></pre>
+
+<p>See below for plot2017perperson(&ldquo;7.4.5&rdquo;)</p>
+
+<p><style>
+    iframe {
+        width: 500px;
+        height: 500px;
+    }
+</style>
+<iframe src="https://fergustaylor.github.io/blogimages/post7map.html">
+</iframe></p>
+
+<p><a href="https://fergustaylor.github.io/blogimages/post7map.html">See the map.</a></p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Fergus Taylor</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+		<li>Photos my own.</li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.poptrox.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
