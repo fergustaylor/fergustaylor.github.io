@@ -117,7 +117,7 @@ paginate = 5
 			description = "New interactive maps."
 
 	[params.recentposts]
-		hide  = false
+		hide  = true
 		title = "Recent blog posts"
 
 	[params.contact]
@@ -161,8 +161,3 @@ paginate = 5
 	name = "Home"
 	url  = "/"
 	weight = 10
-	
-[[menu.main]]
-	name = "Archive"
-	url  = "post/"
-	weight = 0
