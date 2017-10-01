@@ -1,9 +1,12 @@
 baseurl = "https://fergustaylor.github.io/"
 languageCode = "en-uk"
+relativeurls = true
 title = "Fergus Taylor"
 theme = "hugo-strata-theme"
+publishDir = "../fergustaylor.github.io"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 # Enable Google Analytics by inserting your tracking code
-googleAnalytics = ""
+googleAnalytics = "UA-107299466-1"
 # Define how many posts should appear on a site
 paginate = 5
 
