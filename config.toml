@@ -2,7 +2,6 @@ baseurl = "https://fergustaylor.github.io/"
 languageCode = "en-uk"
 title = "Fergus Taylor"
 theme = "hugo-strata-theme"
-publishDir = "fergustaylor.github.io"
 # Enable Google Analytics by inserting your tracking code
 googleAnalytics = ""
 # Define how many posts should appear on a site
