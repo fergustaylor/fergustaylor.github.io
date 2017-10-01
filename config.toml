@@ -3,7 +3,6 @@ languageCode = "en-uk"
 relativeurls = true
 title = "Fergus Taylor"
 theme = "hugo-strata-theme"
-publishDir = "../fergustaylor.github.io"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 # Enable Google Analytics by inserting your tracking code
 googleAnalytics = "UA-107299466-1"
