@@ -18,7 +18,7 @@ Then added some for my last post as well.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image">
 </iframe>
 
 <style>
@@ -27,7 +27,7 @@ Then added some for my last post as well.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image2.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image2">
 </iframe>
 
 <style>
@@ -36,7 +36,7 @@ Then added some for my last post as well.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image3.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image3">
 </iframe>
 
 <style>
@@ -45,7 +45,7 @@ Then added some for my last post as well.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image4.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image4">
 </iframe>
 
 <style>
@@ -54,5 +54,5 @@ Then added some for my last post as well.
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image5.html">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image5">
 </iframe>

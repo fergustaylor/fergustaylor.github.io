@@ -15,6 +15,7 @@ title = "Arran"
 </style>
 <iframe src="https://fergustaylor.github.io/Arran/map2.html">
 </iframe>
+
 [See the map.](https://fergustaylor.github.io/Arran/map2.html)
 
 Introduction
@@ -72,6 +73,7 @@ below.
 </style>
 <iframe src="https://fergustaylor.github.io/Arran/Function10.html">
 </iframe>
+
 [See these plots in a new
 window.](https://fergustaylor.github.io/Arran/Function10.html)
 
@@ -88,6 +90,7 @@ using leaflet.
 </style>
 <iframe src="https://fergustaylor.github.io/Arran/map.html">
 </iframe>
+
 [First Version.](https://fergustaylor.github.io/Arran/map.html)
 
 <style>
@@ -98,6 +101,7 @@ using leaflet.
 </style>
 <iframe src="https://fergustaylor.github.io/Arran/Map5view.html">
 </iframe>
+
 [See the map.](https://fergustaylor.github.io/Arran/Map5view.html)
 
 The overall aim of this project is to eventually create an easy template

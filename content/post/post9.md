@@ -9,10 +9,9 @@ title = "openprescribingR Plots2"
 
 Experimenting with timelapse drawing in 'Procreate' the ios app; made the following for openprescribingR.
 
-<iframe src="https://player.vimeo.com/video/231293393" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/231293393">openprescribingR</a> from <a href="https://vimeo.com/user44219931">Fergus Taylor</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{{< vimeo id="231293393" class="my-vimeo-wrapper-class" >}}
 
-See the code used in this example [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript)
+See the code used in this example [here.](fergustaylor.github.io/openprescribingR/dev/examplescript)
 
 See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
 
@@ -51,5 +50,5 @@ ggiraph(code = {print(gg_point)})
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/gigraph.html">
+<iframe src="https://fergustaylor.github.io/blogimages/gigraph">
 </iframe>
