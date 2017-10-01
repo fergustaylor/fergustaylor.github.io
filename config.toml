@@ -1,7 +1,6 @@
 baseurl = "https://fergustaylor.github.io/"
 languageCode = "en-uk"
 title = "Fergus Taylor"
-publishDir: "../fergustaylor.github.io"
 theme = "hugo-strata-theme"
 # Enable Google Analytics by inserting your tracking code
 googleAnalytics = ""
