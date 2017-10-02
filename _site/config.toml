@@ -3,6 +3,7 @@ languageCode = "en-uk"
 relativeurls = true
 title = "Fergus Taylor"
 publishDir = ".../fergustaylor"
+footnoteReturnLinkContents = ""
 theme = "hugo-strata-theme"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 # Enable Google Analytics by inserting your tracking code
@@ -17,7 +18,7 @@ paginate = 5
 	description = "Project Data analysis"
 
 	# Format dates with Go's time formatting
-	date_format = "20-01-2006"
+	date_format = "2006-01-02"
 
 	# Add read time estimates in the format "X min read"
 	show_read_time = false
@@ -44,6 +45,7 @@ paginate = 5
 
 		copyright = [
 			"&copy; Fergus Taylor",
+			"Images my own.",
 			"Design: [HTML5 UP](//html5up.net)"
 		]
 
