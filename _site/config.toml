@@ -31,7 +31,7 @@ paginate = 5
 		# Replace the avatar with a picture of your own under static/images
 		avatar = "avatar.jpg"
 		# Use Markdown to format the string. This works nearly all over the theme
-		bio = "**I'm Fergus Taylor**, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use [#Rstats](//https://twitter.com/hashtag/Rstats?src=hash)."
+		bio = "**I'm Fergus Taylor**, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use [#Rstats](//twitter.com/hashtag/Rstats?src=hash)."
 		# The icons will be shown if you enter your username
 		twitter = "ferguswtaylor"
 		github = "fergustaylor"
