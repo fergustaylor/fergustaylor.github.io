@@ -1,0 +1,165 @@
+baseurl = "https://fergustaylor.github.io/"
+languageCode = "en-uk"
+relativeurls = true
+title = "Fergus Taylor"
+publishDir = ".../fergustaylor"
+theme = "hugo-strata-theme"
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+# Enable Google Analytics by inserting your tracking code
+googleAnalytics = "UA-107299466-1"
+# Define how many posts should appear on a site
+paginate = 5
+
+[params]
+	# To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+	name = "Fergus Taylor"
+	description = "Project Data analysis"
+
+	# Format dates with Go's time formatting
+	date_format = "20-01-2006"
+
+	# Add read time estimates in the format "X min read"
+	show_read_time = false
+
+	# Add custom assets with their paths relative to the static folder
+	custom_js   = []
+	custom_css  = []
+
+
+	[params.sidebar]
+		# Replace the avatar with a picture of your own under static/images
+		avatar = "avatar.jpg"
+		# Use Markdown to format the string. This works nearly all over the theme
+		bio = "**I'm Fergus Taylor**, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use [#Rstats](//https://twitter.com/hashtag/Rstats?src=hash)."
+		# The icons will be shown if you enter your username
+		twitter = "ferguswtaylor"
+		github = "fergustaylor"
+		gitlab = ""
+		dribbble = ""
+		facebook = ""
+		googleplus = ""
+		flickr = ""
+		linkedin = ""
+
+		copyright = [
+			"&copy; Fergus Taylor",
+			"Design: [HTML5 UP](//html5up.net)"
+		]
+
+	[params.about]
+		hide  = false
+		content = "**About Me:** I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.<br><br>I'm interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).<br><br>Eventually I’ll try to become proficient in SQL.<br><br>I tend to use private repositories on Github when I’m working, and make them public once I’ve cleaned up the code - especially when I’m using public datasets. So if there’s something I can share while I’m going along, I do at least try to post explanations of what I’m working on here.<br><br>All the code should be reproduceable from github and the data sources marked out in my scripts. These projects show some examples of work I’m interested in at the moment."
+
+
+	[params.portfolio]
+		hide  = false
+		title = "Gallery"
+
+		# The images and thumbnails are stored under static/images
+		# Create and change subfolders as you like
+		[[params.portfolio.gallery]]
+			image = "fulls/01.jpg"
+			thumb = "thumbs/01.jpg"
+			title = "[28/07/17 - Arran](//fergustaylor.github.io/post/post1/)"
+			description = "An example exercise mapping SIMD health data onto Arran."
+
+		[[params.portfolio.gallery]]
+			image = "fulls/02.jpg"
+			thumb = "thumbs/02.jpg"
+			title = "[29/07/17 - Arran SIMD GIFs](fergustaylor.github.io/post/post2/)"
+			description = "Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
+
+		[[params.portfolio.gallery]]
+			image = "fulls/03.jpg"
+			thumb = "thumbs/03.jpg"
+			title = "[04/08/17 - Public Health Outcomes Framework](fergustaylor.github.io/post/post3/)"
+			description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
+
+		[[params.portfolio.gallery]]
+			image = "fulls/04.jpg"
+			thumb = "thumbs/04.jpg"
+			title = "[11/09/17 - openprescribingR](fergustaylor.github.io/post/post4/)"
+			description = "I made a package for the first time, which lets me import data from the new openprescribing api directly into R."
+
+		[[params.portfolio.gallery]]
+			image = "fulls/05.jpg"
+			thumb = "thumbs/05.jpg"
+			title = "[13/09/17 - openprescribingR UPDATE](fergustaylor.github.io/post/post5/)"
+			description = "I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON."
+
+		[[params.portfolio.gallery]]
+			image = "fulls/06.jpg"
+			thumb = "thumbs/06.jpg"
+			title = "[15/09/17 - openprescribingR UPDATE 2](fergustaylor.github.io/post/post6/)"
+			description = "Made a map of every clinic in the UK to see if I could. Also overlays CCG boundaries."
+
+[[params.portfolio.gallery]]
+			image = "fulls/07.jpg"
+			thumb = "thumbs/07.jpg"
+			title = "[22/09/17 - openprescribingR plots](fergustaylor.github.io/post/post7/)"
+			description = "Made a package to return a set of default plots based on my openprescribingR import tool."
+
+[[params.portfolio.gallery]]
+			image = "fulls/08.jpg"
+			thumb = "thumbs/08.jpg"
+			title = "[27/09/17 - More examples for openprescribingR](fergustaylor.github.io/post/post8/)"
+			description = "New examples of openprescribingR use."
+			
+[[params.portfolio.gallery]]
+			image = "fulls/09.jpg"
+			thumb = "thumbs/09.jpg"
+			title = "[27/09/17 - openprescribingR Plots2](fergustaylor.github.io/post/post9/)"
+			description = "New openprescribingR plots and intro video."
+			
+[[params.portfolio.gallery]]
+			image = "fulls/10.jpg"
+			thumb = "thumbs/10.jpg"
+			title = "[28/09/17 - openprescribingR Plots3](fergustaylor.github.io/post/post10/)"
+			description = "New interactive maps."
+
+	[params.recentposts]
+		hide  = true
+		title = "Recent blog posts"
+
+	[params.contact]
+		hide  = true
+		title = "Get In Touch"
+		content = "Any questions, or having trouble replicating some of my projects yourself - get in touch."
+
+		# This can be exact coordinates or a searchable address in google maps
+		gmaps_address = "39.7889055,-120.5443524"
+		address = [
+			"1234 Somewhere Rd.",
+			"Nashville, TN 00000",
+			"United States"
+		]
+		phone = ""
+
+		# Since this template is static, the contact form uses www.formspree.io as a
+		# proxy. The form makes a POST request to their servers to send the actual
+		# email. Visitors can send up to a 1000 emails each month for free.
+	    #
+	    # What you need to do for the setup?
+	    #
+	    # - set your email address under 'email' below
+	    # - upload the generated site to your server
+	    # - send a dummy email yourself to confirm your account
+	    # - click the confirm link in the email from www.formspree.io
+	    # - you're done. Happy mailing!
+		email = ""
+
+		[params.contact.form]
+			# Set custom strings for the form if your native
+			# language isn't English
+			name = "Name"
+			email = "Email"
+			message = "Message"
+			submit = "Send"
+
+
+# Menu links that appear on the left sidebar
+[[menu.main]]
+	name = "Home"
+	url  = "/"
+	weight = 10

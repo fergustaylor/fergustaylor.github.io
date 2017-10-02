@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>openprescribingR UPDATE &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="openprescribingR UPDATE">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/post5/">
+		
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//https://twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>openprescribingR UPDATE</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-09-13 13:39:46 &#43;0200 &#43;0200">130-09-2017</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/fergus">Fergus</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    
+
+<p>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &lsquo;CCG boundaries&rsquo; section of the api.</p>
+
+<h2 id="new-function">New Function</h2>
+
+<h2 id="7-ccg-boundaries">7. CCG boundaries</h2>
+
+<p>Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.</p>
+
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th align="center">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Boundaries of all CCGs</td>
+<td align="center">CCG_boundaries_or_location()</td>
+</tr>
+
+<tr>
+<td>Boundaries of an individual CCG</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of practices in a CCG, by code</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of a practice in a CCG</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;, practice_code = &ldquo;P87003&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of a practice in a CCG</td>
+<td align="center">CCG_boundaries_or_location(practice_code = &ldquo;P87003&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&rsquo;ll leave that to you.</p>
+
+<p>Plots to come..</p>
+
+<p><strong>UPDATE 12:40:</strong></p>
+
+<p>Managed to import/plot using GeoJSON, but since I&rsquo;m not particularly familiar with the format I used the api address..</p>
+
+<p><code>st_read(&quot;https://openprescribing.net/api/1.0/org_location/?org_type=ccg&quot;) %&gt;%
+st_as_sf()</code></p>
+
+<p>To create a simple features collection, which made things much easier.</p>
+
+<p><style>
+    iframe {
+        width: 500px;
+        height: 500px;
+    }
+</style>
+<iframe src="https://fergustaylor.github.io/blogimages/post5map">
+</iframe></p>
+
+<p><a href="https://fergustaylor.github.io/blogimages/post5map.html">See the map.</a></p>
+
+<p><img src="https://fergustaylor.github.io/blogimages/Rplot4.png" alt="Plotting geom_sf" /></p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Fergus Taylor</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
+
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107299466-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+	</body>
+</html>
