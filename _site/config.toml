@@ -61,7 +61,7 @@ paginate = 5
 		[[params.portfolio.gallery]]
 			image = "fulls/01.jpg"
 			thumb = "thumbs/01.jpg"
-			title = "[28/07/17 - Arran](//fergustaylor.github.io/post/post1/)"
+			title = "[28/07/17 - Arran](//post/post1/)"
 			description = "An example exercise mapping SIMD health data onto Arran."
 
 		[[params.portfolio.gallery]]
