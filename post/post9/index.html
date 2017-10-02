@@ -88,33 +88,33 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<p>
 	    <p>Experimenting with timelapse drawing in &lsquo;Procreate&rsquo; the ios app; made the following for openprescribingR.</p>
 
-<iframe src="https://player.vimeo.com/video/231293393" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/231293393">openprescribingR</a> from <a href="https://vimeo.com/user44219931">Fergus Taylor</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<div class="my-vimeo-wrapper-class">
+  <iframe src="//player.vimeo.com/video/231293393" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
 
-See the code used in this example [here.](https://fergustaylor.github.io/openprescribingR/dev/examplescript)
+<p>See the code used in this example <a href="fergustaylor.github.io/openprescribingR/dev/examplescript">here.</a></p>
 
-See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
+<p>See the repository on <a href="https://github.com/fergustaylor/openprescribingR">github.</a></p>
 
-![openpres](https://fergustaylor.github.io/blogimages/Rplot6.png)
-![openpres](https://fergustaylor.github.io/blogimages/Rplot7.png)
+<p><img src="https://fergustaylor.github.io/blogimages/Rplot6.png" alt="openpres" />
+<img src="https://fergustaylor.github.io/blogimages/Rplot7.png" alt="openpres" /></p>
 
-And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
+<p>And a couple I made afterwards after exploring geom_line/geom_ribbon properly.</p>
 
-Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic's spending = red).
-The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values. 
+<p>Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&rsquo;s spending = red).
+The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.</p>
 
-![openpres](https://fergustaylor.github.io/openprescribingR/Rplot01.png)
+<p><img src="https://fergustaylor.github.io/openprescribingR/Rplot01.png" alt="openpres" /></p>
 
-I've also been trying out [ggiraph](https://davidgohel.github.io/ggiraph/index.html) recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
+<p>I&rsquo;ve also been trying out <a href="https://davidgohel.github.io/ggiraph/index.html">ggiraph</a> recently, which seems promising but I&rsquo;ll need to learn more javascript to take full advantage of it and create fully interactive graphs.</p>
 
-```{r}
-westkent <- location_function("99J", as_sf = TRUE)
-westkent <- westkent %>%
+<pre><code class="language-r">westkent &lt;- location_function(&quot;99J&quot;, as_sf = TRUE)
+westkent &lt;- westkent %&gt;%
   mutate(
     lon = map_dbl(geometry, ~st_centroid(.x)[[1]]),
     lat = map_dbl(geometry, ~st_centroid(.x)[[2]])
     )
-westkent$name <- str_replace_all(westkent$name, "'", " ")
+westkent$name &lt;- str_replace_all(westkent$name, &quot;'&quot;, &quot; &quot;)
 
 gg_point =  ggplot() +
   geom_sf(data = westkent[1,]) +
@@ -122,16 +122,16 @@ gg_point =  ggplot() +
                          aes(x = lon, y = lat, tooltip = name)) +
   coord_sf(crs= 4326, datum = sf::st_crs(4326))
 ggiraph(code = {print(gg_point)})
-```
+</code></pre>
 
-<style>
+<p><style>
     iframe {
         width: 500px;
         height: 500px;
     }
 </style>
-<iframe src="https://fergustaylor.github.io/blogimages/gigraph.html">
-</iframe>
+<iframe src="https://fergustaylor.github.io/blogimages/gigraph">
+</iframe></p>
 
 	</p>
 
@@ -165,8 +165,6 @@ ggiraph(code = {print(gg_point)})
 		<li>&copy; Fergus Taylor</li>
 		
 		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
-		
-		<li>Photos my own.</li>
 		
 	</ul>
 </footer>
