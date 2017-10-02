@@ -67,19 +67,19 @@ paginate = 5
 		[[params.portfolio.gallery]]
 			image = "fulls/02.jpg"
 			thumb = "thumbs/02.jpg"
-			title = "[29/07/17 - Arran SIMD GIFs](fergustaylor.github.io/post/post2/)"
+			title = "[29/07/17 - Arran SIMD GIFs](/post/post2/)"
 			description = "Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/03.jpg"
 			thumb = "thumbs/03.jpg"
-			title = "[04/08/17 - Public Health Outcomes Framework](fergustaylor.github.io/post/post3/)"
+			title = "[04/08/17 - Public Health Outcomes Framework](//fergustaylor.github.io/post/post3/)"
 			description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/04.jpg"
 			thumb = "thumbs/04.jpg"
-			title = "[11/09/17 - openprescribingR](fergustaylor.github.io/post/post4/)"
+			title = "[11/09/17 - openprescribingR](/fergustaylor.github.io/post/post4/)"
 			description = "I made a package for the first time, which lets me import data from the new openprescribing api directly into R."
 
 		[[params.portfolio.gallery]]
