@@ -2,7 +2,7 @@
 banner = "banners/placeholder.png"
 categories = [
   "Fergus",
-  "Arran"
+  "Openprescribing"
 ]
 date = "2017-09-15T13:39:46+02:00"
 menu = ""

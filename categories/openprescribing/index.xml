@@ -59,6 +59,17 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     </item>
     
     <item>
+      <title>openprescribingR UPDATE 2</title>
+      <link>https://fergustaylor.github.io/post/post6/</link>
+      <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/post6/</guid>
+      <description>  See the map.
+See the code.
+   </description>
+    </item>
+    
+    <item>
       <title>openprescribingR UPDATE</title>
       <link>https://fergustaylor.github.io/post/post5/</link>
       <pubDate>Wed, 13 Sep 2017 13:39:46 +0200</pubDate>
