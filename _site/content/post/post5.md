@@ -38,9 +38,9 @@ st_as_sf()`
 
 To create a simple features collection, which made things much easier.
 
-<iframe src="https://fergustaylor.github.io/blogimages/post5map" width="100%" height="600px">
+<iframe src="https://fergustaylor.github.io/blogimages/post5map/" width="100%" height="600px">
 </iframe>
 
-[See the map.](https://fergustaylor.github.io/blogimages/post5map.html)
+[See the map.](https://fergustaylor.github.io/blogimages/post5map)
 
 {{< img src="https://fergustaylor.github.io/blogimages/Rplot4.png" >}}
