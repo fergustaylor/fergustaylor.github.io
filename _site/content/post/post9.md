@@ -15,15 +15,16 @@ See the code used in this example [here.](fergustaylor.github.io/openprescribing
 
 See the repository on [github.](https://github.com/fergustaylor/openprescribingR)
 
-![openpres](https://fergustaylor.github.io/blogimages/Rplot6.png)
-![openpres](https://fergustaylor.github.io/blogimages/Rplot7.png)
+{{< img src="https://fergustaylor.github.io/blogimages/Rplot6.png" >}}
+
+{{< img src="https://fergustaylor.github.io/blogimages/Rplot7.png" >}}
 
 And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
 
 Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic's spending = red).
 The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values. 
 
-![openpres](https://fergustaylor.github.io/openprescribingR/Rplot01.png)
+{{< img src="https://fergustaylor.github.io/openprescribingR/Rplot01.png" >}}
 
 I've also been trying out [ggiraph](https://davidgohel.github.io/ggiraph/index.html) recently, which seems promising but I'll need to learn more javascript to take full advantage of it and create fully interactive graphs.
 
@@ -44,11 +45,5 @@ gg_point =  ggplot() +
 ggiraph(code = {print(gg_point)})
 ```
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/gigraph">
+<iframe src="https://fergustaylor.github.io/blogimages/gigraph" width="100%" height="600px">
 </iframe>

@@ -7,7 +7,7 @@ tags = []
 title = "Arran SIMD GIFs"
 +++
 
-![Map GIF](https://fergustaylor.github.io/Arran/gif4.gif)
+{{< img src="https://fergustaylor.github.io/Arran/gif4.gif" >}}
 
 Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I'd been using just for Arran, to show all of Scotland.
 As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.
@@ -22,11 +22,8 @@ I experimented with GGanimate, which worked well for making GIFs from ggplot obj
 
 I did do some practice with my SIMD Percentile plots though for Arran alone; first using GGPlot, then overlaying onto GGMaps.
 
+{{< img src="https://fergustaylor.github.io/Arran/output2.gif" >}}
 
-![Map GIF](https://fergustaylor.github.io/Arran/output2.gif)
-
-![Map GIF](https://fergustaylor.github.io/Arran/output3.gif)
+{{< img src="https://fergustaylor.github.io/Arran/output3.gif" >}}
 
 [See the code here.](https://fergustaylor.github.io/Arran/GGAnimate.html#creating_animated_maps)
-
-

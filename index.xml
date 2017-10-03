@@ -19,9 +19,7 @@
       <guid>https://fergustaylor.github.io/post/post10/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
- iframe { width: 500px; height: 500px; }  
- iframe { width: 500px; height: 500px; }  
- iframe { width: 500px; height: 500px; }</description>
+     </description>
     </item>
     
     <item>
@@ -33,7 +31,7 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
-And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
+  And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
 Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&amp;rsquo;s spending = red). The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.</description>
     </item>
     
@@ -66,8 +64,9 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
       <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
       
       <guid>https://fergustaylor.github.io/post/post6/</guid>
-      <description>See the map.
-See the code.</description>
+      <description>  See the map.
+See the code.
+   </description>
     </item>
     
     <item>
@@ -110,7 +109,7 @@ These functions give details on drugs/organisations/list sizes.
       
       <guid>https://fergustaylor.github.io/post/post3/</guid>
       <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
-All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
+ All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
 It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
 While I was prepared to download information I wanted directly through the site - I found their fantastic package tool &amp;lsquo;fingertipsR&amp;rsquo; which allows me to import PH data from all profiles directly into the R environment through their API.</description>
     </item>
@@ -121,8 +120,7 @@ While I was prepared to download information I wanted directly through the site 
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
       <guid>https://fergustaylor.github.io/post/post2/</guid>
-      <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.
-In the end it was 166 MB in the end, and I&amp;rsquo;ll never be able to host it on Github.</description>
+      <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
@@ -131,10 +129,10 @@ In the end it was 166 MB in the end, and I&amp;rsquo;ll never be able to host it
       <pubDate>Fri, 28 Jul 2017 13:39:46 +0200</pubDate>
       
       <guid>https://fergustaylor.github.io/post/post1/</guid>
-      <description>iframe { width: 500px; height: 500px; }  
-See the map.
+      <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
-I thought Arran would make nice maps.</description>
+I thought Arran would make nice maps.
+Early progress Initially I used map cordinates given by Ordinance Survey to find the centre of any KA27 postcode on a map.</description>
     </item>
     
     <item>

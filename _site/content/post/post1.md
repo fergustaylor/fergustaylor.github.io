@@ -7,13 +7,7 @@ tags = []
 title = "Arran"
 +++
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/Arran/map2.html">
+<iframe src="https://fergustaylor.github.io/Arran/map2.html" width="100%" height="600px">
 </iframe>
 
 [See the map.](https://fergustaylor.github.io/Arran/map2.html)
@@ -43,7 +37,7 @@ I then read the coordinates into sf with st\_as\_sf(), and plotted over
 a shape file map of Arran; over the SIMD data zones, as well as the
 section of coordinates contained in one data zone/
 
-![Coordinate plots](https://fergustaylor.github.io/Arran/Rplot11.5.png)
+{{< img src="https://fergustaylor.github.io/Arran/Rplot11.5.png" >}}
 
 With the postcodes sorted, I then wanted to relate some other
 information about these areas. I used
@@ -53,25 +47,18 @@ onto the island. Then I coloured/labelled the individual data zones.
 Having worked that out, I wanted to show some health data about the
 zones. I overlayed 'percentile' data about the areas for 2016.
 
-![DZ Outlines2](https://fergustaylor.github.io/Arran/Rplot13.png)
+{{< img src="https://fergustaylor.github.io/Arran/Rplot13.png" >}}
 
 Then after faffing about with individual shape files for every year,
 (The data zone labels changed after 2012), I did the same for all the
 SIMD data periods and used facet\_wrap to plot them all together.
 
-![Percentile
-Facet\_wrap](https://fergustaylor.github.io/Arran/Rplot10.png)
+{{< img src="https://fergustaylor.github.io/Arran/Rplot10.png" >}}
 
 Combining the postcode and SIMD data, I've summarised each of the zones
 below.
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/Arran/Function10.html">
+<iframe src="https://fergustaylor.github.io/Arran/Function10.html" width="100%" height="650px" >
 </iframe>
 
 [See these plots in a new
@@ -82,24 +69,12 @@ using leaflet.
 
 *SIMD Datazones and Example Markers*
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/Arran/map.html">
+<iframe src="https://fergustaylor.github.io/Arran/map.html" width="100%" height="600px">
 </iframe>
 
 [First Version.](https://fergustaylor.github.io/Arran/map.html)
 
-<style>
-    iframe {
-        width: 500px;
-        height: 700px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/Arran/Map5view.html">
+<iframe src="https://fergustaylor.github.io/Arran/Map5view.html" width="100%" height="700px">
 </iframe>
 
 [See the map.](https://fergustaylor.github.io/Arran/Map5view.html)

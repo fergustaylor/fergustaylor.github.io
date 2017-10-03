@@ -35,15 +35,9 @@ st_as_sf()`
 
 To create a simple features collection, which made things much easier.
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post5map">
+<iframe src="https://fergustaylor.github.io/blogimages/post5map" width="100%" height="600px">
 </iframe>
 
 [See the map.](https://fergustaylor.github.io/blogimages/post5map.html)
 
-![Plotting geom_sf](https://fergustaylor.github.io/blogimages/Rplot4.png)
+{{< img src="https://fergustaylor.github.io/blogimages/Rplot4.png" >}}

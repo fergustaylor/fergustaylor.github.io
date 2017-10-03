@@ -12,47 +12,17 @@ OpenprescribingR allows you to explore spending and list size data on over 200 d
 Updated the old [openprescribing graphics](https://fergustaylor.github.io/post/post6), with ggiraph.
 Then added some for my last post as well.
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image" width="100%" height="600px">
 </iframe>
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image2">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image2" width="100%" height="600px">
 </iframe>
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image3">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image3" width="100%" height="600px">
 </iframe>
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image4">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image4" width="100%" height="600px">
 </iframe>
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post10image5">
+<iframe src="https://fergustaylor.github.io/blogimages/post10image5" width="100%" height="600px">
 </iframe>

@@ -39,13 +39,7 @@ plot2017listsize()
 
 See below for plot2017perperson("7.4.5")
 
-<style>
-    iframe {
-        width: 500px;
-        height: 500px;
-    }
-</style>
-<iframe src="https://fergustaylor.github.io/blogimages/post7map">
+<iframe src="https://fergustaylor.github.io/blogimages/post7map" width="100%" height="500px" >
 </iframe>
 
 [See the map.](https://fergustaylor.github.io/blogimages/post7map)
