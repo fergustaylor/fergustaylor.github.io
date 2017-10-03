@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Thu, 28 Sep 2017 13:39:46 +0200</lastBuildDate>
     
-	<atom:link href="https://fergustaylor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>https://fergustaylor.github.io/post/post10/</link>
+      <link>/post/post10/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post10/</guid>
+      <guid>/post/post10/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
      </description>
@@ -24,10 +24,10 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>https://fergustaylor.github.io/post/post9/</link>
+      <link>/post/post9/</link>
       <pubDate>Wed, 27 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post9/</guid>
+      <guid>/post/post9/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
@@ -37,10 +37,10 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>https://fergustaylor.github.io/post/post7/</link>
+      <link>/post/post7/</link>
       <pubDate>Fri, 22 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post7/</guid>
+      <guid>/post/post7/</guid>
       <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
 Currently returns a leaflet map showing;
  spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
@@ -51,19 +51,30 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/post8/</link>
+      <link>/post/post8/</link>
       <pubDate>Sun, 17 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post8/</guid>
+      <guid>/post/post8/</guid>
       <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>https://fergustaylor.github.io/post/post6/</link>
+      <link>/post/post6/</link>
       <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post6/</guid>
+      <guid>/post/post6/</guid>
+      <description>  See the map.
+See the code.
+   </description>
+    </item>
+    
+    <item>
+      <title>openprescribingR UPDATE 2</title>
+      <link>/post/post6.utf8/</link>
+      <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
+      
+      <guid>/post/post6.utf8/</guid>
       <description>  See the map.
 See the code.
    </description>
@@ -71,10 +82,10 @@ See the code.
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>https://fergustaylor.github.io/post/post5/</link>
+      <link>/post/post5/</link>
       <pubDate>Wed, 13 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post5/</guid>
+      <guid>/post/post5/</guid>
       <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
 New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
    Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
@@ -82,10 +93,10 @@ New Function 7. CCG boundaries Search for the boundaries of a CCG, or location o
     
     <item>
       <title>openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/post4/</link>
+      <link>/post/post4/</link>
       <pubDate>Mon, 11 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post4/</guid>
+      <guid>/post/post4/</guid>
       <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
 Installation:
 library(devtools)
@@ -104,10 +115,10 @@ These functions give details on drugs/organisations/list sizes.
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>https://fergustaylor.github.io/post/post3/</link>
+      <link>/post/post3/</link>
       <pubDate>Fri, 04 Aug 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post3/</guid>
+      <guid>/post/post3/</guid>
       <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
  All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
 It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
@@ -116,19 +127,19 @@ While I was prepared to download information I wanted directly through the site 
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>https://fergustaylor.github.io/post/post2/</link>
+      <link>/post/post2/</link>
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post2/</guid>
+      <guid>/post/post2/</guid>
       <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
       <title>Arran</title>
-      <link>https://fergustaylor.github.io/post/post1/</link>
+      <link>/post/post1/</link>
       <pubDate>Fri, 28 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post1/</guid>
+      <guid>/post/post1/</guid>
       <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
 I thought Arran would make nice maps.

@@ -12,7 +12,7 @@ title = "openprescribingR UPDATE 2"
 
 {{< img src="https://fergustaylor.github.io/Arran/Rplot5.png" >}}
 
-[See the map.](https://fergustaylor.github.io/blogimages/post6map.html)
+[See the map.](https://fergustaylor.github.io/blogimages/post6map/)
 
 [See the code.](https://fergustaylor.github.io/openprescribingR/dev/clinics.html)
 
