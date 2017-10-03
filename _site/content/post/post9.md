@@ -9,7 +9,7 @@ title = "openprescribingR Plots2"
 
 Experimenting with timelapse drawing in 'Procreate' the ios app; made the following for openprescribingR.
 
-{{< vimeo id="231293393" class="my-vimeo-wrapper-class" >}}
+{{< vimeo 231293393 >}}
 
 See the code used in this example [here.](fergustaylor.github.io/openprescribingR/dev/examplescript)
 
