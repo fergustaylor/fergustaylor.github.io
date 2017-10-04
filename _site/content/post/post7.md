@@ -1,7 +1,6 @@
 +++
 banner = "banners/placeholder.png"
 categories = [
-  "Fergus",
   "Openprescribing"
 ]
 date = "2017-09-22T13:39:46+02:00"

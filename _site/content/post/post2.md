@@ -1,7 +1,6 @@
 +++
 banner = "banners/placeholder.png"
 categories = [
-  "Fergus",
   "Arran"
 ]
 date = "2017-07-29T13:39:46+02:00"
