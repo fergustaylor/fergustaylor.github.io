@@ -1,0 +1,19 @@
+{{ define "main" }}
+	<span>
+		<h1>{{ .Title }}</h1>
+
+		{{ partial "post-meta" . }}
+	</span>
+
+	<p>
+	    {{ .Content }}
+	</p>
+  {{ with .Next }}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}
+  <br>
+  {{ with .Prev }}
+  <a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ end }}
+	{{ template "_internal/disqus.html" . }}
+{{ end }}
