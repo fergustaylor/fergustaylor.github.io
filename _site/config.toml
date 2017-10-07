@@ -18,7 +18,7 @@ paginate = 5
 	description = "Project Data analysis"
 
 	# Format dates with Go's time formatting
-	date_format = "2006-01-02"
+	date_format = "Monday, January 2, 2006"
 
 	# Add read time estimates in the format "X min read"
 	show_read_time = false
@@ -56,7 +56,7 @@ paginate = 5
 
 	[params.portfolio]
 		hide  = false
-		title = "Gallery"
+		title = "Posts"
 
 		# The images and thumbnails are stored under static/images
 		# Create and change subfolders as you like
