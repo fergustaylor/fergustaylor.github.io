@@ -132,4 +132,4 @@ Essential reading [https://openprescribing.net/caution/](https://openprescribing
 
 [https://openprescribing.net/](https://openprescribing.net/)
 
-<iframe width="500" height="282" src="https://www.youtube.com/embed/U-hvuEfUUOM" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="550" src="https://www.youtube.com/embed/U-hvuEfUUOM" frameborder="0" allowfullscreen></iframe>
