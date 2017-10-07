@@ -49,8 +49,6 @@ zones. I overlayed 'percentile' data about the areas for 2016.
 
 {{< img src="https://fergustaylor.github.io/Arran/Rplot13.png" >}}
 
-![Plot](https://fergustaylor.github.io/Arran/Rplot13.png)
-
 Then after faffing about with individual shape files for every year,
 (The data zone labels changed after 2012), I did the same for all the
 SIMD data periods and used facet\_wrap to plot them all together.
