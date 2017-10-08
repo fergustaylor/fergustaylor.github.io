@@ -3,7 +3,7 @@ banner = "banners/placeholder.png"
 categories = [
   "Openprescribing"
 ]
-date = "2017-09-17T13:39:46+02:00"
+date = "2017-09-25T13:39:46+02:00"
 menu = ""
 tags = []
 title = "More examples for openprescribingR"

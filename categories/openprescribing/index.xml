@@ -36,6 +36,15 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     </item>
     
     <item>
+      <title>More examples for openprescribingR</title>
+      <link>https://fergustaylor.github.io/post/post8/</link>
+      <pubDate>Mon, 25 Sep 2017 13:39:46 +0200</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/post8/</guid>
+      <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
+    </item>
+    
+    <item>
       <title>openprescribingR Plots</title>
       <link>https://fergustaylor.github.io/post/post7/</link>
       <pubDate>Fri, 22 Sep 2017 13:39:46 +0200</pubDate>
@@ -47,15 +56,6 @@ Currently returns a leaflet map showing;
 This can be for any BNF section, chemical, or presentation.
 See the repository.
 library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribingRplots&amp;quot;) library(openprescribingRplots) plot2017perperson(&amp;quot;7.4.5&amp;quot;) plot2017total(&amp;quot;7.4.5&amp;quot;) plot2017items(&amp;quot;7.4.5&amp;quot;) plot2017quantity(&amp;quot;7.</description>
-    </item>
-    
-    <item>
-      <title>More examples for openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/post8/</link>
-      <pubDate>Sun, 17 Sep 2017 13:39:46 +0200</pubDate>
-      
-      <guid>https://fergustaylor.github.io/post/post8/</guid>
-      <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
