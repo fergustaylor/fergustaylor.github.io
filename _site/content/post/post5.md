@@ -7,6 +7,8 @@ date = "2017-09-13T13:39:46+02:00"
 menu = ""
 tags = []
 title = "openprescribingR UPDATE"
+header_image = "/images/thumbs/05.jpg"
+description = "I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON."
 +++
 
 I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the 'CCG boundaries' section of the api.

@@ -7,6 +7,8 @@ date = "2017-09-27T13:39:46+02:00"
 menu = ""
 tags = []
 title = "openprescribingR Plots2"
+header_image = "/images/thumbs/09.jpg"
+description = "New openprescribingR plots and intro video."
 +++
 
 Experimenting with timelapse drawing in 'Procreate' the ios app; made the following for openprescribingR.

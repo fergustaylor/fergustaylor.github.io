@@ -7,6 +7,8 @@ date = "2017-08-04T13:39:46+02:00"
 menu = ""
 tags = []
 title = "Public Health Outcomes Framework"
+header_image = "/images/thumbs/03.jpg"
+description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
 +++
 
 I initially saw the notice of the August update via twitter

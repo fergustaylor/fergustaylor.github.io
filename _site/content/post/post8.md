@@ -7,6 +7,8 @@ date = "2017-09-17T13:39:46+02:00"
 menu = ""
 tags = []
 title = "More examples for openprescribingR"
+header_image = "/images/thumbs/08.jpg"
+description = "New examples of openprescribingR use."
 +++
 
 This package works by interacting with the openprescribing.net api.

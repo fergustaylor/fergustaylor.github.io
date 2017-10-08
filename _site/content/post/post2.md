@@ -7,6 +7,8 @@ date = "2017-07-29T13:39:46+02:00"
 menu = ""
 tags = []
 title = "Arran SIMD GIFs"
+header_image = "/images/thumbs/02.jpg"
+description = "Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
 +++
 
 {{< img src="https://fergustaylor.github.io/Arran/gif4.gif" >}}

@@ -7,6 +7,8 @@ date = "2017-09-22T13:39:46+02:00"
 menu = ""
 tags = []
 title = "openprescribingR Plots"
+header_image = "/images/thumbs/07.jpg"
+description = "Made a package to return a set of default plots based on my openprescribingR import tool."
 +++
 
 Made a new package to return a set of default plots based on my openprescribingR import tool.
