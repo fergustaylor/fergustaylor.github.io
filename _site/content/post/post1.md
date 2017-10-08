@@ -5,6 +5,8 @@ date = "2017-07-28T13:39:46+02:00"
 menu = ""
 tags = []
 title = "Arran"
+header_image = "/Arran/Rplot11.5.png"
+description = "This is an early project based on SIMD data that I'm using to try and learn R. I've used the package 'ggplot2' as part of the Tidyverse to practice a set of skills I'm attempting to learn through a combination of DataCamp courses RStudio 'Cheat Sheets' and Twitter."
 +++
 
 <iframe src="https://fergustaylor.github.io/Arran/map2.html" width="100%" height="600px">
@@ -35,7 +37,7 @@ or 'postcode area' that denotes all Aran Island postcodes).
 
 I then read the coordinates into sf with st\_as\_sf(), and plotted over
 a shape file map of Arran; over the SIMD data zones, as well as the
-section of coordinates contained in one data zone/
+section of coordinates contained in one data zone.
 
 {{< img src="https://fergustaylor.github.io/Arran/Rplot11.5.png" >}}
 
