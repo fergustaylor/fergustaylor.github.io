@@ -4,9 +4,9 @@
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h1>
     
-    <img src="{{ $.Site.BaseURL }}{{.Params.header_image }}" alt="" style="width:100%;height:auto;">
-    
     {{ partial "post-meta" . }}
+    
+    <img src="{{ $.Site.BaseURL }}{{.Params.header_image }}" alt="" style="width:100%;height:auto;">
     
     {{ .Render "featured" }}
     
