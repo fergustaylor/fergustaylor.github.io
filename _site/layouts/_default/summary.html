@@ -6,7 +6,9 @@
     
     {{ partial "post-meta" . }}
     
+    <a href="{{ .Permalink }}">
     <img src="{{ $.Site.BaseURL }}{{.Params.header_image }}" alt="" style="width:100%;height:auto;">
+    </a>
     
     {{ .Render "featured" }}
     
