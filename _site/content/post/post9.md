@@ -49,5 +49,5 @@ gg_point =  ggplot() +
 ggiraph(code = {print(gg_point)})
 ```
 
-<iframe src="https://fergustaylor.github.io/blogimages/gigraph/" width="100%" height="700px">
+<iframe src="https://fergustaylor.github.io/blogimages/gigraph.html" width="100%" height="700px">
 </iframe>

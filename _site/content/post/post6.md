@@ -13,7 +13,7 @@ description = "Made a map of every clinic in the UK to see if I could. Also over
 
 {{< img src="https://fergustaylor.github.io/blogimages/Rplot5.png" >}}
 
-[See the map.](https://fergustaylor.github.io/blogimages/post6map/)
+[See the map.](https://fergustaylor.github.io/blogimages/post6map.html)
 
 [See the code.](https://fergustaylor.github.io/openprescribingR/dev/clinics.html)
 
