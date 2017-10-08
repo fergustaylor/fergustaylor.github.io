@@ -9,11 +9,11 @@
 	    {{ .Content }}
 	</p>
   {{ with .Next }}
-  <a href="{{ .Permalink }}">{{ .Title }}</a>
+  <a href="{{ .Permalink }}"><---   {{ .Title }}</a>
 {{ end }}
   <br>
   {{ with .Prev }}
-  <a href="{{ .Permalink }}">{{ .Title }}</a>
+  <a href="{{ .Permalink }}">--->   {{ .Title }}</a>
 {{ end }}
 	{{ template "_internal/disqus.html" . }}
 {{ end }}
