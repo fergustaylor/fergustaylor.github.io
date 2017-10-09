@@ -10,15 +10,13 @@
     <img src="{{ $.Site.BaseURL }}{{.Params.header_image }}" alt="" style="width:100%;height:auto;">
     </a>
     
-    {{ .Render "featured" }}
-    
 </span>
 
 <p>{{.Params.description }}</p>
 
 <footer>
         <ul class="actions">
-            <li><a href="{{ .Permalink }}" class="button big">Continue Reading</a></li>
+            <li><a href="{{ .Permalink }}" class="button small">Continue Reading</a></li>
         </ul>
 </footer>
 <hr>

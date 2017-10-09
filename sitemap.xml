@@ -53,6 +53,11 @@
   </url>
   
   <url>
+    <loc>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</loc>
+    <lastmod>2016-03-08T13:39:46+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fergustaylor.github.io/openprescribingr/</loc>
   </url>
   
@@ -110,6 +115,18 @@
   
   <url>
     <loc>https://fergustaylor.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fergustaylor.github.io/categories/writing/</loc>
+    <lastmod>2016-03-08T13:39:46+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fergustaylor.github.io/writing/</loc>
+    <lastmod>2016-03-08T13:39:46+02:00</lastmod>
     <priority>0</priority>
   </url>
   

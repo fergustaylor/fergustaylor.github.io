@@ -58,7 +58,7 @@ paginate = 5
 			image = "fulls/02.jpg"
 			thumb = "thumbs/02.jpg"
 			title = "[Arran](//fergustaylor.github.io/categories/arran/)"
-			description = "A project mapping SIMD health data onto Arran."
+			description = "A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/03.jpg"
@@ -71,6 +71,12 @@ paginate = 5
 			thumb = "thumbs/07.jpg"
 			title = "[OpenprescribingR](//fergustaylor.github.io/categories/openprescribing/)"
 			description = "A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters"
+			
+			[[params.portfolio.gallery]]
+			image = "fulls/bearhunt.png"
+			thumb = "thumbs/bearhunt.png"
+			title = "[Writing](//fergustaylor.github.io/categories/writing/)"
+			description = "A number of articles, (as opposed to code explanations). This a collection for writings, produced for varying publications. Fuelled by late-night coffee, and even more urgent deadlines - these pieces are for a number of the different groups I'm involved with. Most, however have a broad focus on healthcare issues, student societies, and effective charity governance."
 
 	[params.recentposts]
 		hide  = false
