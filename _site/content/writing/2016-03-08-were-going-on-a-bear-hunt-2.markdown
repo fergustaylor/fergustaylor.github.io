@@ -9,7 +9,7 @@ description = "This was a piece commissioned by the Glasgow Guardian, regarding 
 header_image = "header/bearhunt.png"
 +++
 
-{{< img src="https://fergustaylor.github.io/header/bearhunt.png" >}}
+{{< img src="/header/bearhunt.png" >}}
 
 This was a piece commissioned by the Glasgow Guardian, regarding current negotiations around the second Junior Doctors’ strike. It followed two opinion pieces by other writers earlier that week; putting their arguments both for and against industrial action.
 
