@@ -6,10 +6,19 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 28 Sep 2017 13:39:46 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 09 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Drug Interactions</title>
+      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
+      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
+      <description>I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities. And I realised then, how few of these interactions I&amp;rsquo;d learnt by-heart yet then. Rather, if I&amp;rsquo;d wanted to check, I would have looked the patient&amp;rsquo;s drugs up in the BNF individually. I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I&amp;rsquo;ll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).</description>
+    </item>
     
     <item>
       <title>openprescribingR Plots3</title>
