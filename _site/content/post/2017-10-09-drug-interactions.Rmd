@@ -23,7 +23,7 @@ As such, I can search for each instance of the phrase, and take the drug names f
 
 For example - Abacavir
 
-<img src="blogimages/abacavir.png" alt="" style="width:100%;height:auto;">
+<img src="/blogimages/abacavir.png" alt="" style="width:100%;height:auto;">
 
 ```{r eval=FALSE}
 library(rvest)
