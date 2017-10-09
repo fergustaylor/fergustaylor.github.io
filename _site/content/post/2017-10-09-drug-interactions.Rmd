@@ -17,9 +17,13 @@ I thought then that I should try to plot them, in the spirit of trying to unders
 
 As such - I've been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of [D3](https://d3js.org) to present it. Which is one of the larger current standards for web graphics, including many notable newspapers.
 
-Luckily all the drug interactions are listed [online](https://bnf.nice.org.uk/interaction/) through the BNF, so I needed to take this information.
-There are much better ways to do this, however, each drug interaction page follows the same format where the phrase "View all interactions for [drug]" appears underneath each interactant.
+Luckily all the drug interactions are listed [online](https://bnf.nice.org.uk/interaction/) through the BNF, so I can import and update all this information easily.
+There are much better ways to do this, however as a novice I noticed that each drug interaction page follows the same format wherein the phrase "View all interactions for [drug]" appears underneath each interactant.
 As such, I can search for each instance of the phrase, and take the drug names from each example.
+
+For example - Abacavir
+![](https://fergustaylor.github.io/blogimages/abacavir.png)
+
 
 ```{r eval=FALSE}
 library(rvest)
@@ -52,7 +56,40 @@ list_example <- read_html(examplehtml) %>%
 dataframe_example <- data.frame(drug=example_string2, interacts_with=list_example, row.names=NULL)
 ```
 
-Gives me a table of the example, abacavir, an antiviral.
+This gives me a table of the example abacavir, an antiviral.
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+library(rvest)
+library(magrittr)
+library(stringr)
+library(tidyverse)
+
+examplehtml <- "https://bnf.nice.org.uk/interaction/abacavir-2.html"
+
+example_string <- str_c("#", examplehtml) %>%
+  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
+  str_replace(".html", replacement= "")
+
+example_string2 <- examplehtml %>%
+  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
+  str_replace(".html", replacement= "") %>%
+  str_replace("-2", replacement= "") %>%
+  str_replace_all("-", replacement= " ") %>%
+  str_to_title()
+
+list_example <- read_html(examplehtml) %>%
+  html_nodes(example_string) %>%
+  html_text() %>%
+  strsplit(split = "\n") %>%
+  unlist() %>%
+  str_trim(side = "both") %>%
+  str_subset("View all interactions") %>%
+  str_replace_all(pattern = "View all interactions for ", replacement = "")
+
+dataframe_example <- data.frame(drug=example_string2, interacts_with=list_example, row.names=NULL)
+
+dataframe_example
+```
+
 So if I make it into a function.
 ```{r eval=FALSE}
 interactionstable <- function(url){

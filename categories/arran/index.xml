@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arran on Fergus Taylor</title>
-    <link>/categories/arran/</link>
+    <link>https://fergustaylor.github.io/categories/arran/</link>
     <description>Recent content in Arran on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 29 Jul 2017 13:39:46 +0200</lastBuildDate>
     
-	<atom:link href="/categories/arran/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/arran/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>/post/post2/</link>
+      <link>https://fergustaylor.github.io/post/post2/</link>
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post2/</guid>
+      <guid>https://fergustaylor.github.io/post/post2/</guid>
       <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
       <title>Arran</title>
-      <link>/post/post1/</link>
+      <link>https://fergustaylor.github.io/post/post1/</link>
       <pubDate>Fri, 28 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post1/</guid>
+      <guid>https://fergustaylor.github.io/post/post1/</guid>
       <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
 I thought Arran would make nice maps.

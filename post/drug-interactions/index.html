@@ -17,18 +17,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		<meta name="og:site_name" content="Fergus Taylor">
 		<meta name="og:title" content="Drug Interactions">
-		<meta name="og:url" content="/post/drug-interactions/">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/drug-interactions/">
 		
-		<meta name="og:image" content="/images/avatar.jpg">
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
 		
 
 		<meta name="generator" content="Hugo 0.29" />
 
-		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
 		
 		
@@ -38,7 +38,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Header -->
 <header id="header">
 	
-	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
 	
 	
 		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
@@ -48,9 +48,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<nav id="sidebar">
 			<ul>
 			
-				<li><a href="../../">Home</a></li>
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
 			
-				<li><a href="../../post">Archive</a></li>
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
 			
 			</ul>
 		</nav>
@@ -74,7 +74,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="../../categories/bnf">BNF</a>
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/bnf">BNF</a>
         
         
     
@@ -90,7 +90,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<p>
 	    <p>I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart yet then. Rather, if I’d wanted to check, I would have looked the patient’s drugs up in the BNF individually. I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I’ll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).</p>
 <p>As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of <a href="https://d3js.org">D3</a> to present it. Which is one of the larger current standards for web graphics, including many notable newspapers.</p>
-<p>Luckily all the drug interactions are listed <a href="https://bnf.nice.org.uk/interaction/">online</a> through the BNF, so I needed to take this information. There are much better ways to do this, however, each drug interaction page follows the same format where the phrase “View all interactions for [drug]” appears underneath each interactant. As such, I can search for each instance of the phrase, and take the drug names from each example.</p>
+<p>Luckily all the drug interactions are listed <a href="https://bnf.nice.org.uk/interaction/">online</a> through the BNF, so I can import and update all this information easily. There are much better ways to do this, however as a novice I noticed that each drug interaction page follows the same format wherein the phrase “View all interactions for [drug]” appears underneath each interactant. As such, I can search for each instance of the phrase, and take the drug names from each example.</p>
+<p>For example - Abacavir <img src="https://fergustaylor.github.io/blogimages/abacavir.png" /></p>
 <pre class="r"><code>library(rvest)
 library(magrittr)
 library(stringr)
@@ -119,7 +120,18 @@ list_example &lt;- read_html(examplehtml) %&gt;%
   str_replace_all(pattern = &quot;View all interactions for &quot;, replacement = &quot;&quot;)
 
 dataframe_example &lt;- data.frame(drug=example_string2, interacts_with=list_example, row.names=NULL)</code></pre>
-<p>Gives me a table of the example, abacavir, an antiviral. So if I make it into a function.</p>
+<p>This gives me a table of the example abacavir, an antiviral.</p>
+<pre><code>##       drug interacts_with
+## 1 Abacavir   Fosphenytoin
+## 2 Abacavir      Methadone
+## 3 Abacavir       Orlistat
+## 4 Abacavir  Phenobarbital
+## 5 Abacavir      Phenytoin
+## 6 Abacavir      Primidone
+## 7 Abacavir      Ribavirin
+## 8 Abacavir     Rifampicin
+## 9 Abacavir     Tipranavir</code></pre>
+<p>So if I make it into a function.</p>
 <pre class="r"><code>interactionstable &lt;- function(url){
 
 example_string &lt;- str_c(&quot;#&quot;, url) %&gt;%
@@ -185,7 +197,7 @@ dataset &lt;- bind_rows(first, second, third)</code></pre>
   
   <br>
   
-  <a href="../../post/post10/">Prev: 'openprescribingR Plots3'</a>
+  <a href="https://fergustaylor.github.io/post/post10/">Prev: 'openprescribingR Plots3'</a>
 
 	
 
@@ -208,7 +220,7 @@ dataset &lt;- bind_rows(first, second, third)</code></pre>
 		
 		
 		
-		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
@@ -224,12 +236,12 @@ dataset &lt;- bind_rows(first, second, third)</code></pre>
 </footer>
 
 <!-- Scripts -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery.poptrox.min.js"></script>
-<script src="../../js/skel.min.js"></script>
-<script src="../../js/util.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
 
-<script src="../../js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/main.js"></script>
 
 
 <script>
