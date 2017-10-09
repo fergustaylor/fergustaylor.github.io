@@ -78,7 +78,8 @@ paginate = 5
 
 	[params.contact]
 	hide  = true
-		
+	content = "Any questions, or having trouble replicating some of my projects yourself - get in touch."
+	
 	[params.contact.form]
 
 # Menu links that appear on the left sidebar
