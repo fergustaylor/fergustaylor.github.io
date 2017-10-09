@@ -22,6 +22,7 @@ There are much better ways to do this, however as a novice I noticed that each d
 As such, I can search for each instance of the phrase, and take the drug names from each example.
 
 For example - Abacavir
+
 {{< img src="blogimages/abacavir.png" >}}
 
 ```{r eval=FALSE}

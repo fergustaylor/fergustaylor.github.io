@@ -91,7 +91,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	    <p>I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart yet then. Rather, if I’d wanted to check, I would have looked the patient’s drugs up in the BNF individually. I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I’ll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).</p>
 <p>As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of <a href="https://d3js.org">D3</a> to present it. Which is one of the larger current standards for web graphics, including many notable newspapers.</p>
 <p>Luckily all the drug interactions are listed <a href="https://bnf.nice.org.uk/interaction/">online</a> through the BNF, so I can import and update all this information easily. There are much better ways to do this, however as a novice I noticed that each drug interaction page follows the same format wherein the phrase “View all interactions for [drug]” appears underneath each interactant. As such, I can search for each instance of the phrase, and take the drug names from each example.</p>
-<p>For example - Abacavir {{&lt; img src=“blogimages/abacavir.png” &gt;}}</p>
+<p>For example - Abacavir</p>
+<p>{{&lt; img src=“blogimages/abacavir.png” &gt;}}</p>
 <pre class="r"><code>library(rvest)
 library(magrittr)
 library(stringr)
