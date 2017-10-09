@@ -6,6 +6,9 @@ slug: drug-interactions
 categories:
   - BNF
 tags: []
+header_image: "/blogimages/sankeyexample.png"
+output:
+  blogdown::html_page
 ---
 
 I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities.
@@ -18,7 +21,7 @@ Luckily all the drug interactions are listed [online](https://bnf.nice.org.uk/in
 There are much better ways to do this, however, each drug interaction page follows the same format where the phrase "View all interactions for [drug]" appears underneath each interactant.
 As such, I can search for each instance of the phrase, and take the drug names from each example.
 
-```{r}
+```{r eval=FALSE}
 library(rvest)
 library(magrittr)
 library(stringr)
@@ -51,7 +54,7 @@ dataframe_example <- data.frame(drug=example_string2, interacts_with=list_exampl
 
 Gives me a table of the example, abacavir, an antiviral.
 So if I make it into a function.
-```{r}
+```{r eval=FALSE}
 interactionstable <- function(url){
 
 example_string <- str_c("#", url) %>%
@@ -100,7 +103,7 @@ return(dataframe_example)
 
 Then I create a list of each URL, (i.e each drug/general class listed in the index).
 
-```{r}
+```{r eval=FALSE}
 drugs_list <- paste(readLines("https://bnf.nice.org.uk/interaction/"), collapse="\n") %>%
   str_match_all("<a href=\"(.*?)\"") %>%
   unlist() %>%
@@ -114,7 +117,7 @@ drugs_list <- str_c("https://bnf.nice.org.uk/interaction/", drugs_list)
 I can apply my function to everything, and create a dataset.
 I've done this in thirds due to the size of data involved; any larger any it timed-out partway through.
 
-```{r}
+```{r eval=FALSE}
 first <- bind_rows(lapply(drugs_list[1:300], interactionstable))
 second <- bind_rows(lapply(drugs_list[301:600], interactionstable))
 third <- bind_rows(lapply(drugs_list[601:1173], interactionstable))
@@ -124,3 +127,4 @@ dataset <- bind_rows(first, second, third)
 
 I'll add classes next and try to apply this data to a D3 model,
 such as a Sankey diagram.
+ 

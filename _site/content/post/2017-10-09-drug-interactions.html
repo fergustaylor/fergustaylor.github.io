@@ -1,94 +1,19 @@
-<!DOCTYPE HTML>
-
-<!-- 
-Strata by HTML5 UP
-html5up.net | @n33co
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Drug Interactions &middot; Fergus Taylor</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="author" content="Fergus Taylor">
-		<meta name="description" content="Project Data analysis">
-		<meta http-equiv="content-language" content="en-uk" />
-
-		
-		<meta name="og:site_name" content="Fergus Taylor">
-		<meta name="og:title" content="Drug Interactions">
-		<meta name="og:url" content="/post/drug-interactions/">
-		
-		<meta name="og:image" content="/images/avatar.jpg">
-		
-		
-
-		<meta name="generator" content="Hugo 0.29" />
-
-		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
-
-		
-		
-	</head>
-
-	<body id="top">
-		<!-- Header -->
-<header id="header">
-	
-	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
-	
-	
-		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
-	
-
-	
-		<nav id="sidebar">
-			<ul>
-			
-				<li><a href="../../">Home</a></li>
-			
-				<li><a href="../../post">Archive</a></li>
-			
-			</ul>
-		</nav>
-	
-</header>
-
-
-		<!-- Main -->
-		<div id="main">
-			
-	<span>
-		<h1>Drug Interactions</h1>
-
-		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-10-09 00:00:00 &#43;0000 UTC">Monday, October 9, 2017</time>&nbsp;&nbsp;
+---
+title: Drug Interactions
+author: ~
+date: '2017-10-09'
+slug: drug-interactions
+categories:
+  - BNF
+tags: []
+header_image: "/blogimages/sankeyexample.png"
+output:
+  blogdown::html_page
+---
 
 
 
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="../../categories/bnf">BNF</a>
-        
-        
-    
-
-
-
-   
-   
-
-
-	</span>
-
-	<p>
-	    <p>I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart yet then. Rather, if I’d wanted to check, I would have looked the patient’s drugs up in the BNF individually. I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I’ll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).</p>
+<p>I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart yet then. Rather, if I’d wanted to check, I would have looked the patient’s drugs up in the BNF individually. I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I’ll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).</p>
 <p>As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of <a href="https://d3js.org">D3</a> to present it. Which is one of the larger current standards for web graphics, including many notable newspapers.</p>
 <p>Luckily all the drug interactions are listed <a href="https://bnf.nice.org.uk/interaction/">online</a> through the BNF, so I needed to take this information. There are much better ways to do this, however, each drug interaction page follows the same format where the phrase “View all interactions for [drug]” appears underneath each interactant. As such, I can search for each instance of the phrase, and take the drug names from each example.</p>
 <pre class="r"><code>library(rvest)
@@ -180,67 +105,3 @@ third &lt;- bind_rows(lapply(drugs_list[601:1173], interactionstable))
 
 dataset &lt;- bind_rows(first, second, third)</code></pre>
 <p>I’ll add classes next and try to apply this data to a D3 model, such as a Sankey diagram.</p>
-
-	</p>
-  
-  <br>
-  
-  <a href="../../post/post10/">Prev: 'openprescribingR Plots3'</a>
-
-	
-
-		</div>
-
-		<!-- Footer -->
-<footer id="footer">
-	<ul class="icons">
-		
-		
-		
-		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		
-		
-		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
-		
-		
-		
-		
-		
-		
-		
-		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
-		
-	</ul>
-
-	<ul class="copyright">
-		
-		<li>&copy; Fergus Taylor</li>
-		
-		<li>Images my own.</li>
-		
-		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
-		
-	</ul>
-</footer>
-
-<!-- Scripts -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery.poptrox.min.js"></script>
-<script src="../../js/skel.min.js"></script>
-<script src="../../js/util.js"></script>
-
-<script src="../../js/main.js"></script>
-
-
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-107299466-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
-
-
-
-	</body>
-</html>
