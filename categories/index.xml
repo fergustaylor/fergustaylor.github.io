@@ -2,58 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Fergus Taylor</title>
-    <link>/categories/</link>
+    <link>https://fergustaylor.github.io/categories/</link>
     <description>Recent content in Categories on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 29 Jul 2017 13:39:46 +0200</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/categories/arran/</link>
+      <link>https://fergustaylor.github.io/categories/arran/</link>
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>/categories/arran/</guid>
+      <guid>https://fergustaylor.github.io/categories/arran/</guid>
       <description>A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps.</description>
     </item>
     
     <item>
       <title></title>
-      <link>/categories/openprescribing/</link>
+      <link>https://fergustaylor.github.io/categories/openprescribing/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/categories/openprescribing/</guid>
+      <guid>https://fergustaylor.github.io/categories/openprescribing/</guid>
       <description>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.
 The Github repositories.. openprescribingR openprescribingRplots</description>
     </item>
     
     <item>
-      <title>Bnf</title>
-      <link>/categories/bnf/</link>
-      <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/bnf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Public Health</title>
-      <link>/categories/public-health/</link>
+      <link>https://fergustaylor.github.io/categories/public-health/</link>
       <pubDate>Fri, 04 Aug 2017 13:39:46 +0200</pubDate>
       
-      <guid>/categories/public-health/</guid>
+      <guid>https://fergustaylor.github.io/categories/public-health/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>/categories/writing/</link>
+      <link>https://fergustaylor.github.io/categories/writing/</link>
       <pubDate>Sun, 27 Nov 2016 13:39:46 +0200</pubDate>
       
-      <guid>/categories/writing/</guid>
+      <guid>https://fergustaylor.github.io/categories/writing/</guid>
       <description></description>
     </item>
     
