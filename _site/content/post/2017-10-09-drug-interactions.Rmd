@@ -132,7 +132,7 @@ E.g
 head(example_dataframe, 5)
 ```
 
-{{< img src="https://fergustaylor.github.io/blogimages/BNFdataframe.png" >}}
+<img src="/blogimages/BNFdataframe.png" alt="" style="width:100%;height:auto;">
 
 I'll add formal BNF classes next and try to apply this data to a D3 model,
 such as a circular Sankey diagram.
