@@ -7,162 +7,133 @@ categories:
   - BNF
 tags: []
 header_image: "/blogimages/sankeyexample.png"
-draft: true
+draft: false
 output:
   blogdown::html_page
 ---
 
-I was thinking about drug interactions the other day; as I listened to a conversation between 2 doctors on the relevant, and/or dangerous interactions that could have occured in a patient with multiple comorbidities.
-And I realised then, how few of these interactions I'd learnt by-heart yet then. Rather, if I'd wanted to check, I would have looked the patient's drugs up in the BNF individually.
-I thought then that I should try to plot them, in the spirit of trying to understand them all, (which I'll likely never do as new, obscure drugs come out, or as drug interactions are discovered over time).
+I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities.
+And I realised then, how few of these interactions I'd learnt by-heart. If I'd wanted to check, I would have looked up a patient's drugs up in the BNF individually.
 
-As such - I've been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of [D3](https://d3js.org) to present it. Which is one of the larger current standards for web graphics, including many notable newspapers.
+To try to learn them, I want to visualise them - although I'll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.
+
+As such - I've been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of [D3](https://d3js.org) to present it. 
+D3 being one of the standards for web graphics, including many notable newspapers.
 
 Luckily all the drug interactions are listed [online](https://bnf.nice.org.uk/interaction/) through the BNF, so I can import and update all this information easily.
-There are much better ways to do this, however as a novice I noticed that each drug interaction page follows the same format wherein the phrase "View all interactions for [drug]" appears underneath each interactant.
-As such, I can search for each instance of the phrase, and take the drug names from each example.
 
 For example - Abacavir
 
 <img src="/blogimages/abacavir.png" alt="" style="width:100%;height:auto;">
 
-```{r eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library(rvest)
 library(magrittr)
 library(stringr)
+library(stringi)
 library(tidyverse)
-
-examplehtml <- "https://bnf.nice.org.uk/interaction/abacavir-2.html"
-
-example_string <- str_c("#", examplehtml) %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "")
-
-example_string2 <- examplehtml %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "") %>%
-  str_replace("-2", replacement= "") %>%
-  str_replace_all("-", replacement= " ") %>%
-  str_to_title()
-
-list_example <- read_html(examplehtml) %>%
-  html_nodes(example_string) %>%
-  html_text() %>%
-  strsplit(split = "\n") %>%
-  unlist() %>%
-  str_trim(side = "both") %>%
-  str_subset("View all interactions") %>%
-  str_replace_all(pattern = "View all interactions for ", replacement = "")
-
-dataframe_example <- data.frame(drug=example_string2, interacts_with=list_example, row.names=NULL)
 ```
 
-This gives me a table of the example abacavir, an antiviral.
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-library(rvest)
-library(magrittr)
-library(stringr)
-library(tidyverse)
-
-examplehtml <- "https://bnf.nice.org.uk/interaction/abacavir-2.html"
-
-example_string <- str_c("#", examplehtml) %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "")
-
-example_string2 <- examplehtml %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "") %>%
-  str_replace("-2", replacement= "") %>%
-  str_replace_all("-", replacement= " ") %>%
-  str_to_title()
-
-list_example <- read_html(examplehtml) %>%
-  html_nodes(example_string) %>%
-  html_text() %>%
-  strsplit(split = "\n") %>%
+Creating the drugs look-up.
+```{r, cache=TRUE}
+#Get a list of links to test
+drugs_list <- readLines("https://bnf.nice.org.uk/interaction/") %>%
+  str_match_all("<a href=\"(.*?)\"><span>(.*?)</span>") %>%
   unlist() %>%
-  str_trim(side = "both") %>%
-  str_subset("View all interactions") %>%
-  str_replace_all(pattern = "View all interactions for ", replacement = "")
+  data.frame()
 
-dataframe_example <- data.frame(drug=example_string2, interacts_with=list_example, row.names=NULL)
+#Create a dataframe from it.
+drugs_list <-  drugs_list %>%
+  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %>%
+  data.frame(cbind(class = c("String", "Link", "Title"))) %>%
+  rename(value = '.') %>%
+  spread(key=class, value=value)
 
-dataframe_example
+#Remove non-drug links
+drugs_list <- drugs_list %>%
+  filter(stri_detect_fixed(drugs_list$Link, "title=") == FALSE)
+
+#Remove defunct columns
+drugs_list <- drugs_list %>%
+    select(-observation) %>%
+    select(-String)
+
+#Remove some leftover tags
+drugs_list$Title <- str_replace(drugs_list$Title, "<sub>", replacement = "")
+drugs_list$Title <- str_replace(drugs_list$Title, "</sub>", replacement = "")
+
+#Add a string column
+drugs_list <- cbind(drugs_list, 
+                    string = str_replace(drugs_list$Link, ".html", replacement = ""))
+
+#Add CSS tag and URL columns
+drugs_list <- cbind(drugs_list, 
+                    url = str_c("https://bnf.nice.org.uk/interaction/", 
+                                drugs_list$string, ".html"))
+drugs_list <- cbind(drugs_list, css_string = str_c("#", drugs_list$string, " .interactant span"))
+
+#Convert to character classes
+drugs_list[] <- lapply(drugs_list, as.character)
 ```
 
-So if I make it into a function.
-```{r eval=FALSE}
-interactionstable <- function(url){
-
-example_string <- str_c("#", url) %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "")
-
-example_string2 <- url %>%
-  str_replace("https://bnf.nice.org.uk/interaction/", replacement= "") %>%
-  str_replace(".html", replacement= "") %>%
-  str_replace("-2", replacement= "") %>%
-  str_replace("-", replacement= " ") %>%
-  str_to_title()
-
-list_example <- read_html(url) %>%
-  html_nodes(example_string) %>%
-  html_text() %>%
-  strsplit(split = "\n") %>%
-  unlist() %>%
-  str_trim(side = "both") %>%
-  str_subset("View all interactions") %>%
-  str_replace_all(pattern = "View all interactions for ", replacement = "")
-
-class_example <- read_html(url) %>%
-  html_nodes("h3") %>%
-  html_text() %>%
-  strsplit(split = "\n") %>%
-  unlist() %>%
-  str_trim(side = "both") %>%
-  str_subset("belongs to") %>%
-  str_replace_all(pattern = " and has the following interaction information", replacement = "") %>%
-  strsplit(".* belongs to ") %>%
-  unlist()
-
-if (identical(list_example, character(0))==FALSE){
-  dataframe_example <- data.frame(drug=example_string2, interacts_with=list_example, class=class_example[2], row.names=NULL)
-}
-else {dataframe_example <- data.frame(drug=example_string2, interacts_with=NA, class=class_example[2], row.names=NULL)
-}
-
-as.character(dataframe_example$drug)
-as.character(dataframe_example$interacts_with)
-
-return(dataframe_example)
-}
+```{r, echo=FALSE}
+head(drugs_list, 5)
 ```
 
-Then I create a list of each URL, (i.e each drug/general class listed in the index).
+Constructing the interactions database.
+```{r, cache=TRUE}
+#Data
+data <- sapply(drugs_list$url, function(x)
+               read_html(x) %>%
+               list())
 
-```{r eval=FALSE}
-drugs_list <- paste(readLines("https://bnf.nice.org.uk/interaction/"), collapse="\n") %>%
-  str_match_all("<a href=\"(.*?)\"") %>%
-  unlist() %>%
-  str_replace_all(pattern = "<a href=\"", replacement="") %>%
-  str_replace_all(pattern = "\"", replacement="") %>%
-  unique()
-drugs_list <- drugs_list[34:1206]
-drugs_list <- str_c("https://bnf.nice.org.uk/interaction/", drugs_list)
+#Title
+example_dataframe <- data.frame(Title = drugs_list$Title)
+
+#Class
+class <- lapply(data,
+                function(url){
+                    url %>%
+                    html_nodes(css = ".unstyled .interactant span") %>%
+                    html_text()
+                })
+example_dataframe <- cbind(example_dataframe, data_frame(class))
+
+#Dangerous Interactions
+dangerousi <- lapply(data,
+                function(url){
+                    url %>% 
+                    html_nodes(css = ".High .interactant span") %>%
+                    html_text()
+                })
+example_dataframe <- cbind(example_dataframe, data_frame(dangerousi))
+
+#Interactions
+interactions <- mapply(url = data, css = drugs_list$css_string, 
+                       function(url, css){
+                          url %>%
+                          html_nodes(css) %>%
+                          html_text()
+                        })
+example_dataframe <- cbind(example_dataframe, data_frame(interactions))
+
+#Rename columns
+example_dataframe <-  example_dataframe %>%
+  rename(Class = 'class',
+         'Dangerous Interactions' = 'dangerousi',
+         Interactions = 'interactions')
 ```
 
-I can apply my function to everything, and create a dataset.
-I've done this in thirds due to the size of data involved; any larger any it timed-out partway through.
+Currently zero (interactions/ dangerous interactions/ class) listing is represented by character(0).
+And individual drugs and general drug classes are listed together. The latter lists its drug within the 'Class' column.
 
-```{r eval=FALSE}
-first <- bind_rows(lapply(drugs_list[1:300], interactionstable))
-second <- bind_rows(lapply(drugs_list[301:600], interactionstable))
-third <- bind_rows(lapply(drugs_list[601:1173], interactionstable))
-
-dataset <- bind_rows(first, second, third)
+E.g 
+```{r, echo=FALSE}
+head(example_dataframe, 5)
 ```
 
-I'll add classes next and try to apply this data to a D3 model,
-such as a Sankey diagram.
+{{< img src="https://fergustaylor.github.io/blogimages/BNFdataframe.png" >}}
+
+I'll add formal BNF classes next and try to apply this data to a D3 model,
+such as a circular Sankey diagram.
  
