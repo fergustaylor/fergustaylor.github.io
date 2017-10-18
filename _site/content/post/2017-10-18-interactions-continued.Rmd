@@ -1,0 +1,71 @@
+---
+title: Interactions Continued
+author: Fergus Taylor
+date: '2017-10-18'
+slug: interactions-continued
+categories:
+  - BNF
+tags: []
+header_image: "/blogimages/sankeyexample.png"
+draft: false
+output:
+  blogdown::html_page
+---
+
+I made a few additions to my previous [post](https://fergustaylor.github.io/post/drug-interactions/), after realising I could use the [CSS selector](https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html) to list the interaction information.
+(I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
+
+I built this into the previous code. [(See the full code)](https://github.com/fergustaylor/d3).
+
+```{r, eval=FALSE}
+#Interactions
+interactions <- mapply(url = data, css = drugs_list$css_string, 
+                       function(url, css){
+                          url %>%
+                          html_nodes(css) %>%
+                          html_text()
+                        })
+example_dataframe <- cbind(example_dataframe, data_frame(interactions))
+
+#Rename columns
+example_dataframe <-  example_dataframe %>%
+  rename(Class = 'class',
+         'Dangerous Interactions' = 'dangerousi',
+         Interactions = 'interactions')
+```
+
+<img src="/blogimages/interactionsinfo.png" alt="" style="width:100%;height:auto;">
+
+Afterwards I then looked up [openprescribing.net](https://openprescribing.net/), which I've used [in previous posts.](https://fergustaylor.github.io/categories/openprescribing/). This turned out to be the easiest way to find an index of BNF chapters online which I scraped to create an index table.
+
+```{r, include = FALSE}
+library(rvest)
+library(magrittr)
+library(stringr)
+library(stringi)
+library(tidyverse)
+```
+
+```{r}
+BNFchapters <- readLines("https://openprescribing.net/bnf/") %>%
+  str_match_all("<a href=\"/bnf/(.*?)\">(.*?)</a>") %>%
+  unlist() %>%
+  data.frame() 
+
+BNFchapters <- BNFchapters %>%
+  data.frame(cbind(observation = rep(1:(nrow(BNFchapters)/3), each=3))) %>%
+  data.frame(cbind(class = c("String", "Link", "Title"))) %>%
+  rename(value = '.') %>%
+  spread(key=class, value=value)
+
+BNFchapters <- BNFchapters %>%
+  dplyr::select(-observation, -String)
+
+BNFchapters <- BNFchapters[2:518,]
+```
+
+```{r, echo=FALSE}
+head(BNFchapters, 5)
+```
+
+I'll continue this work using a chemical look-up file from data.gov to add specific BNF codes to each drug listed here, so I can group them by sections.

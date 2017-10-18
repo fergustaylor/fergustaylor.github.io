@@ -6,10 +6,21 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 09 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interactions Continued</title>
+      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
+      <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
+I built this into the previous code. (See the full code).
+#Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
+    </item>
     
     <item>
       <title>Drug Interactions</title>

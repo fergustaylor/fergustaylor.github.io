@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Interactions Continued &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="Interactions Continued">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/interactions-continued/">
+		
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
+			
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Interactions Continued</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-10-18 00:00:00 &#43;0000 UTC">Wednesday, October 18, 2017</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/bnf">BNF</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    <p>I made a few additions to my previous <a href="https://fergustaylor.github.io/post/drug-interactions/">post</a>, after realising I could use the <a href="https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html">CSS selector</a> to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)</p>
+<p>I built this into the previous code. <a href="https://github.com/fergustaylor/d3">(See the full code)</a>.</p>
+<pre class="r"><code>#Interactions
+interactions &lt;- mapply(url = data, css = drugs_list$css_string, 
+                       function(url, css){
+                          url %&gt;%
+                          html_nodes(css) %&gt;%
+                          html_text()
+                        })
+example_dataframe &lt;- cbind(example_dataframe, data_frame(interactions))
+
+#Rename columns
+example_dataframe &lt;-  example_dataframe %&gt;%
+  rename(Class = &#39;class&#39;,
+         &#39;Dangerous Interactions&#39; = &#39;dangerousi&#39;,
+         Interactions = &#39;interactions&#39;)</code></pre>
+<p><img src="../../blogimages/interactionsinfo.png" alt="" style="width:100%;height:auto;"></p>
+<p>Afterwards I then looked up <a href="https://openprescribing.net/">openprescribing.net</a>, which I’ve used <a href="https://fergustaylor.github.io/categories/openprescribing/">in previous posts.</a>. This turned out to be the easiest way to find an index of BNF chapters online which I scraped to create an index table.</p>
+<pre class="r"><code>BNFchapters &lt;- readLines(&quot;https://openprescribing.net/bnf/&quot;) %&gt;%
+  str_match_all(&quot;&lt;a href=\&quot;/bnf/(.*?)\&quot;&gt;(.*?)&lt;/a&gt;&quot;) %&gt;%
+  unlist() %&gt;%
+  data.frame() 
+
+BNFchapters &lt;- BNFchapters %&gt;%
+  data.frame(cbind(observation = rep(1:(nrow(BNFchapters)/3), each=3))) %&gt;%
+  data.frame(cbind(class = c(&quot;String&quot;, &quot;Link&quot;, &quot;Title&quot;))) %&gt;%
+  rename(value = &#39;.&#39;) %&gt;%
+  spread(key=class, value=value)
+
+BNFchapters &lt;- BNFchapters %&gt;%
+  dplyr::select(-observation, -String)
+
+BNFchapters &lt;- BNFchapters[2:518,]</code></pre>
+<pre><code>##      Link                                               Title
+## 2     01/                         1: Gastro-Intestinal System
+## 3   0101/   1.1: Dyspep&amp;amp;Gastro-Oesophageal Reflux Disease
+## 4 010101/                      1.1.1: Antacids and Simeticone
+## 5 010102/ 1.1.2: Compound Alginates&amp;amp;Prop Indigestion Prep
+## 6   0102/   1.2: Antispasmod.&amp;amp;Other Drgs Alt.Gut Motility</code></pre>
+<p>I’ll continue this work using a chemical look-up file from data.gov to add specific BNF codes to each drug listed here, so I can group them by sections.</p>
+
+	</p>
+  
+  <br>
+  
+  <a href="https://fergustaylor.github.io/post/drug-interactions/">Prev: 'Drug Interactions'</a>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>&copy; Fergus Taylor</li>
+		
+		<li>Images my own.</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
+
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107299466-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+	</body>
+</html>
