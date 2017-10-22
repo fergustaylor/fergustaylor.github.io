@@ -6,7 +6,7 @@ slug: interactions-visualised
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/d3-1.png"
+header_image: "/blogimages/d3-3.png"
 draft: false
 output:
   blogdown::html_page
