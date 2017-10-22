@@ -18,7 +18,8 @@ I'll write the methodology up in a seperate post once I can create something a b
 Photos of the BNF drug interactions with varying tension.
 
 <img src="/blogimages/d3-3.png" alt="" style="width:100%;height:auto;">
-
+[See the interactive version](/blogimages/d3-3.html)
 <img src="/blogimages/d3-2.png" alt="" style="width:100%;height:auto;">
-
+[See the interactive version](/blogimages/d3-2.html)
 <img src="/blogimages/d3-1.png" alt="" style="width:100%;height:auto;">
+[See the interactive version](/blogimages/d3-1.html)
