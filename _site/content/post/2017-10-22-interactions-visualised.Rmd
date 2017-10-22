@@ -1,0 +1,24 @@
+---
+title: Interactions Visualised
+author: Fergus Taylor
+date: '2017-10-22'
+slug: interactions-visualised
+categories:
+  - BNF
+tags: []
+header_image: "/blogimages/d3-1.png"
+draft: false
+output:
+  blogdown::html_page
+---
+
+I finally made some sankey diagrams using an R import for the D3 graph.
+I'll write the methodology up in a seperate post once I can create something a bit more visualy informative.
+
+Photos of the BNF drug interactions with varying tension.
+
+<img src="/blogimages/d3-3.png" alt="" style="width:100%;height:auto;">
+
+<img src="/blogimages/d3-2.png" alt="" style="width:100%;height:auto;">
+
+<img src="/blogimages/d3-1.png" alt="" style="width:100%;height:auto;">
