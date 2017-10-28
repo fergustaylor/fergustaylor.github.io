@@ -119,6 +119,11 @@
   </url>
   
   <url>
+    <loc>https://fergustaylor.github.io/categories/bnf/</loc>
+    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fergustaylor.github.io/categories/openprescribing/</loc>
     <lastmod>2017-09-28T13:39:46+02:00</lastmod>
   </url>
@@ -135,12 +140,6 @@
   <url>
     <loc>https://fergustaylor.github.io/writing/</loc>
     <lastmod>2016-11-27T13:39:46+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://fergustaylor.github.io/categories/bnf/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

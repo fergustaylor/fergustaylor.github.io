@@ -22,21 +22,22 @@
     
     <item>
       <title></title>
+      <link>https://fergustaylor.github.io/categories/bnf/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/categories/bnf/</guid>
+      <description>A project mapping drug interactions listed in the BNF. Working on hierachical edge bundling algorithms, and learning to use D3.js.
+The Github repository.. D3 And the site. fergustaylor.github.io/D3</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://fergustaylor.github.io/categories/openprescribing/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/openprescribing/</guid>
       <description>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.
 The Github repositories.. openprescribingR openprescribingRplots</description>
-    </item>
-    
-    <item>
-      <title>Bnf</title>
-      <link>https://fergustaylor.github.io/categories/bnf/</link>
-      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://fergustaylor.github.io/categories/bnf/</guid>
-      <description></description>
     </item>
     
     <item>
