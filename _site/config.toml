@@ -27,33 +27,19 @@ paginate = 5
 	custom_js   = []
 	custom_css  = []
 
-
 	[params.sidebar]
-		# Replace the avatar with a picture of your own under static/images
 		avatar = "avatar.jpg"
-		# Use Markdown to format the string. This works nearly all over the theme
 		bio = "**I'm Fergus Taylor**, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use [#Rstats](//twitter.com/hashtag/Rstats?src=hash)."
-		# The icons will be shown if you enter your username
 		twitter = "ferguswtaylor"
 		github = "fergustaylor"
-
-		copyright = [
-			"&copy; Fergus Taylor",
-			"Images my own.",
-			"Design: [HTML5 UP](//html5up.net)"
-		]
 
 	[params.about]
 		hide  = false
 		content = "**About Me:** I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.<br><br>I'm interested in academic medicine, and have worked on a few research projects as a student. I’m currently learning how to use more data science tools with R. (As well as a little Python and HTML, mostly for the Pi).<br><br>Eventually I’ll try to become proficient in SQL.<br><br>I tend to use private repositories on Github when I’m working, and make them public once I’ve cleaned up the code - especially when I’m using public datasets. So if there’s something I can share while I’m going along, I do at least try to post explanations of what I’m working on here.<br><br>All the code should be reproduceable from github and the data sources marked out in my scripts. These projects show some examples of work I’m interested in at the moment."
 
-
 	[params.portfolio]
 		hide  = false
 		title = "Spotlight"
-
-		# The images and thumbnails are stored under static/images
-		# Create and change subfolders as you like
 		
 		[[params.portfolio.gallery]]
 			image = "fulls/d3-3.png"
@@ -88,12 +74,6 @@ paginate = 5
 	[params.recentposts]
 		hide  = false
 		title = "Recent blog posts"
-
-	[params.contact]
-	hide  = true
-	content = "Any questions, or having trouble replicating some of my projects yourself - get in touch."
-	
-	[params.contact.form]
 
 # Menu links that appear on the left sidebar
 [[menu.main]]
