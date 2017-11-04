@@ -252,17 +252,6 @@ I’m interested in academic medicine, and have worked on a few research project
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/about2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fergustaylor.github.io/about2/</guid>
-      <description>About Me: Fergus Taylor     I&amp;rsquo;m Fergus Taylor, a Glasgow Uni Med Student. I use this site to display project data analysis
-as I learn to use #Rstats.  Home     About Me:    I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
-I’m interested in academic medicine, and have worked on a few research projects as a student.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://fergustaylor.github.io/arran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -299,6 +288,15 @@ as I learn to use #Rstats.  Home Archive     Gallery  More interesting graphics 
    See these plots in a new window.
  See the map.
 openprescribingR Plots3 About Me:  Twitter GitHub RSS  &amp;copy; Fergus Taylor Images my own.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fergustaylor.github.io/randomimage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/randomimage/</guid>
+      <description>body { background-image: url(&#34;../images/bg-0.jpg&#34;); background-color: #cccccc; background-repeat: no-repeat; background-repeat: no-repeat; background-size: auto; }     var totalCount = 8; var num = Math.ceil( Math.random() * totalCount ); document.body.style.backgroundImage = &#34;url(../images/bg-&#34;+num+&#34;.jpg)&#34;; // media query event handler if (matchMedia) { const mq = window.matchMedia(&#34;(max-width: 980px)&#34;); mq.addListener(WidthChange); WidthChange(mq); } // media query change function WidthChange(mq) { if (mq.matches) { // window width is less than 980px document.body.style.backgroundImage = &#34;</description>
     </item>
     
   </channel>
