@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/</link>
+    <link>https://fergustaylor.github.io/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 15 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BNF Sections Visualised</title>
-      <link>/post/bnf-sections-visualised/</link>
+      <link>https://fergustaylor.github.io/post/bnf-sections-visualised/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/bnf-sections-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
       <description>It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been Codepen.
 See the dendrograms below. Or interact with them all, here. By pressing left or right.</description>
     </item>
     
     <item>
       <title>The BNF Project</title>
-      <link>/post/the-bnf-project/</link>
+      <link>https://fergustaylor.github.io/post/the-bnf-project/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/the-bnf-project/</guid>
+      <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
       <description>I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock example of a tensionable hierachical edge bundling diagram.
 See the interactive version here.
 
@@ -37,10 +37,10 @@ See the interactive version here. Whilst the adjacency relationships (drug-drug 
     
     <item>
       <title>Interactions Visualised</title>
-      <link>/post/interactions-visualised/</link>
+      <link>https://fergustaylor.github.io/post/interactions-visualised/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
       <description>I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.
 Photos of the BNF drug interactions with varying tension.
 See the interactive version See the interactive version See the interactive version</description>
@@ -48,10 +48,10 @@ See the interactive version See the interactive version See the interactive vers
     
     <item>
       <title>Interactions Continued</title>
-      <link>/post/interactions-continued/</link>
+      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-continued/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
       <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
 I built this into the previous code. (See the full code).
 #Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
@@ -59,20 +59,20 @@ I built this into the previous code. (See the full code).
     
     <item>
       <title>Drug Interactions</title>
-      <link>/post/drug-interactions/</link>
+      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-interactions/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
       <description>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.
 To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>/post/post10/</link>
+      <link>https://fergustaylor.github.io/post/post10/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post10/</guid>
+      <guid>https://fergustaylor.github.io/post/post10/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
      </description>
@@ -80,10 +80,10 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>/post/post9/</link>
+      <link>https://fergustaylor.github.io/post/post9/</link>
       <pubDate>Wed, 27 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post9/</guid>
+      <guid>https://fergustaylor.github.io/post/post9/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
@@ -93,19 +93,19 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>/post/post8/</link>
+      <link>https://fergustaylor.github.io/post/post8/</link>
       <pubDate>Mon, 25 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post8/</guid>
+      <guid>https://fergustaylor.github.io/post/post8/</guid>
       <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>/post/post7/</link>
+      <link>https://fergustaylor.github.io/post/post7/</link>
       <pubDate>Fri, 22 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post7/</guid>
+      <guid>https://fergustaylor.github.io/post/post7/</guid>
       <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
 Currently returns a leaflet map showing;
  spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
@@ -116,10 +116,10 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>/post/post6/</link>
+      <link>https://fergustaylor.github.io/post/post6/</link>
       <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post6/</guid>
+      <guid>https://fergustaylor.github.io/post/post6/</guid>
       <description>  See the map.
 See the code.
    </description>
@@ -127,10 +127,10 @@ See the code.
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>/post/post5/</link>
+      <link>https://fergustaylor.github.io/post/post5/</link>
       <pubDate>Wed, 13 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post5/</guid>
+      <guid>https://fergustaylor.github.io/post/post5/</guid>
       <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
 New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
    Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
@@ -138,10 +138,10 @@ New Function 7. CCG boundaries Search for the boundaries of a CCG, or location o
     
     <item>
       <title>openprescribingR</title>
-      <link>/post/post4/</link>
+      <link>https://fergustaylor.github.io/post/post4/</link>
       <pubDate>Mon, 11 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post4/</guid>
+      <guid>https://fergustaylor.github.io/post/post4/</guid>
       <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
 Installation:
 library(devtools)
@@ -160,10 +160,10 @@ These functions give details on drugs/organisations/list sizes.
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>/post/post3/</link>
+      <link>https://fergustaylor.github.io/post/post3/</link>
       <pubDate>Fri, 04 Aug 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post3/</guid>
+      <guid>https://fergustaylor.github.io/post/post3/</guid>
       <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
  All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
 It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
@@ -172,19 +172,19 @@ While I was prepared to download information I wanted directly through the site 
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>/post/post2/</link>
+      <link>https://fergustaylor.github.io/post/post2/</link>
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post2/</guid>
+      <guid>https://fergustaylor.github.io/post/post2/</guid>
       <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
       <title>Arran</title>
-      <link>/post/post1/</link>
+      <link>https://fergustaylor.github.io/post/post1/</link>
       <pubDate>Fri, 28 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>/post/post1/</guid>
+      <guid>https://fergustaylor.github.io/post/post1/</guid>
       <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
 I thought Arran would make nice maps.
@@ -193,20 +193,20 @@ Early progress Initially I used map cordinates given by Ordinance Survey to find
     
     <item>
       <title>&#39;You alright?&#39;</title>
-      <link>/writing/2016-11-27-you-alright/</link>
+      <link>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</link>
       <pubDate>Sun, 27 Nov 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-11-27-you-alright/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</guid>
       <description>Back in my third year of University I was asked to get involved with the Student Union as an opportunity to improve welfare at the Medical School, in particular - Mental Health.
 I had some successes, including the introduction of a new peer support programme. But the issue of advertising the available services so that students were aware of their options when they needed them - has been poorly approached for some time.</description>
     </item>
     
     <item>
       <title>Glasgow ARM - Supporting Rwandan Healthcare Students</title>
-      <link>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
+      <link>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
       <pubDate>Fri, 01 Jul 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
       <description>Last year produced several milestones in the development of Glasgow ARM, and with financial charitable recognition came a huge push forward to increase donations.
 In order to both thank the Undergraduate Medical School, and highlight the opportunities for further engagement, I wrote the following piece for the 2016 Summer Newsletter.
 The article in context.</description>
@@ -214,20 +214,20 @@ The article in context.</description>
     
     <item>
       <title>A Call for Trustees</title>
-      <link>/writing/2016-04-26-a-call-for-trustees/</link>
+      <link>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</link>
       <pubDate>Tue, 26 Apr 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-04-26-a-call-for-trustees/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</guid>
       <description>Since my second year at medical school I&amp;rsquo;ve been involved in the formation and running of a charity. Having been preparing to step down in my role as Chair, it fell to me to reach out to new potential trustees within the University-wide newsletter.
 The writing in context.</description>
     </item>
     
     <item>
       <title>&#39;We&#39;re going on a bear hunt..&#39;</title>
-      <link>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
+      <link>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
       <pubDate>Tue, 08 Mar 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
       <description>This was a piece commissioned by the Glasgow Guardian, regarding current negotiations around the second Junior Doctors’ strike. It followed two opinion pieces by other writers earlier that week; putting their arguments both for and against industrial action.
 As a student representative (GUSRC), and medical student, I was invited to “consider [writing on the issue] in order to balance this important debate.”
 Given the breadth of coverage I felt this had recieved from the previous writers, as well as elsewhere – I pitched a slightly lesser-covered piece of news from earlier that week, that (with the permission of Michael Rosen), I felt helped frame the issue.</description>
@@ -235,20 +235,20 @@ Given the breadth of coverage I felt this had recieved from the previous writers
     
     <item>
       <title>Accident Incident Report: 18/06/14</title>
-      <link>/writing/2014-06-18-accident-incident-report-180614/</link>
+      <link>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</link>
       <pubDate>Wed, 18 Jun 2014 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2014-06-18-accident-incident-report-180614/</guid>
+      <guid>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</guid>
       <description>Previously made for the Glasgow University Canoe Club - the following satarical short piece was written for the Club journal, as a summary of a Summer trip we spent kayaking around Scotland. Unfortunately, mostly using in-jokes to its members.
 Details of incident: After a sunny day kayaking on the Garry - sleepy from an afternoon of BBQ and booty beverages - the kayaking group formally known as GUCC, swam, ferry-glided, or were towed across the river to inspect the rocks beside the final drop.</description>
     </item>
     
     <item>
       <title>Extreme Survival: A Doctor Explores the Limits of Human Endurance</title>
-      <link>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
+      <link>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
       <pubDate>Thu, 01 Mar 2012 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
+      <guid>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
       <description>By Dr Kenneth Kamler
 Recounting his experiences with AMS, surviving adrift at sea, as well as performing hand surgery in the not entirely aseptic depths of the Amazonian Rainforest. Dr Kenneth Kamler tells stories of his adventures and those of his friends, to create a gripping depiction of some of the most inhospitable environments in the world and the conditions that can occur in them.
 He details his reactions to the injuries and uses his skills as a storyteller to examine the actions doctors take in order to treat under pressure.</description>
@@ -256,19 +256,19 @@ He details his reactions to the injuries and uses his skills as a storyteller to
     
     <item>
       <title></title>
-      <link>/openprescribingr/</link>
+      <link>https://fergustaylor.github.io/openprescribingr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/openprescribingr/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>/about/</link>
+      <link>https://fergustaylor.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://fergustaylor.github.io/about/</guid>
       <description>About Me: Fergus Taylor     I&amp;rsquo;m Fergus Taylor, a Glasgow Uni Med Student. I use this site to display project data analysis
 as I learn to use #Rstats.  Home     About Me:    I’m a Glasgow medical student with interests in Global Surgery, C8H10N4O2, and skyscanner.
 I’m interested in academic medicine, and have worked on a few research projects as a student.</description>
@@ -276,37 +276,37 @@ I’m interested in academic medicine, and have worked on a few research project
     
     <item>
       <title></title>
-      <link>/arran/</link>
+      <link>https://fergustaylor.github.io/arran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/arran/</guid>
+      <guid>https://fergustaylor.github.io/arran/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>/blog/</link>
+      <link>https://fergustaylor.github.io/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/</guid>
+      <guid>https://fergustaylor.github.io/blog/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>/d3/</link>
+      <link>https://fergustaylor.github.io/d3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/d3/</guid>
+      <guid>https://fergustaylor.github.io/d3/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>/gallery/</link>
+      <link>https://fergustaylor.github.io/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/gallery/</guid>
+      <guid>https://fergustaylor.github.io/gallery/</guid>
       <description>Gallery &amp;middot; Fergus Taylor     I&amp;rsquo;m Fergus Taylor, a Glasgow Uni Med Student. I use this site to display project data analysis
 as I learn to use #Rstats.  Home Archive     Gallery  More interesting graphics from my last few projects.
    See these plots in a new window.
@@ -316,19 +316,19 @@ openprescribingR Plots3 About Me:  Twitter GitHub RSS  &amp;copy; Fergus Taylor 
     
     <item>
       <title></title>
-      <link>/post/2017-12-15-the-bnf-project/</link>
+      <link>https://fergustaylor.github.io/post/2017-12-15-the-bnf-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-12-15-the-bnf-project/</guid>
+      <guid>https://fergustaylor.github.io/post/2017-12-15-the-bnf-project/</guid>
       <description>The BNF Project       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .table th:not([align]) { text-align: left; }    .</description>
     </item>
     
     <item>
       <title></title>
-      <link>/randomimage/</link>
+      <link>https://fergustaylor.github.io/randomimage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/randomimage/</guid>
+      <guid>https://fergustaylor.github.io/randomimage/</guid>
       <description>body { background-image: url(&#34;../images/bg-0.jpg&#34;); background-color: #cccccc; background-repeat: no-repeat; background-repeat: no-repeat; background-size: auto; }     var totalCount = 8; var num = Math.ceil( Math.random() * totalCount ); document.body.style.backgroundImage = &#34;url(../images/bg-&#34;+num+&#34;.jpg)&#34;; // media query event handler if (matchMedia) { const mq = window.matchMedia(&#34;(max-width: 980px)&#34;); mq.addListener(WidthChange); WidthChange(mq); } // media query change function WidthChange(mq) { if (mq.matches) { // window width is less than 980px document.body.style.backgroundImage = &#34;</description>
     </item>
     

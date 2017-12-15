@@ -13,7 +13,7 @@ I eventually learnt how to convert the BNF interactions into a JSON format compa
 
 See the interactive version [here.](https://fergustaylor.github.io/D3/d3-1.html)
 
-<p><img src="/blogimages/tensionablegraph.png" alt="" style="width:100%;height:auto;"> <a href="/blogimages/tensionablegraph.png"></a></p>
+<p><img src="/blogimages/d3tension.png" alt="" style="width:100%;height:auto;"> <a href="/blogimages/d3tension.png"></a></p>
 
 First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from [an article](https://nursingnotes.co.uk/the-100-most-common-medications-in-uk-hospitals/)).
 
@@ -22,10 +22,28 @@ First every drug, then I reduced it to the 100 most common medications (arbritra
 See the interactive version [here.](https://fergustaylor.github.io/D3/d3-2.html)
 Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren't grouped by class yet and so increased bundling doesn't reveal anything useful.
 
-Next steps 
+In my steps to learn more CSS, I've created a [Search Bar.](https://fergustaylor.github.io/D3/searchbar/searchbar.html)
+
+And an example [sidebar](https://fergustaylor.github.io/D3/sidebar/simplesidebar), which I'll link to my JSON data.
+
+__Next steps__
+
 - grouping drugs (by class/BNF section)
+
 - adding a sidebar to list drug interaction information
+
 - adding a searchbar for searching within all drugs
+
 - modifying an existing diagram to add new drugs 
 
+I've been trying to think a bit more about how I'd idealise this problem, and I think I'd like to focus on this;
+
+A searchbar (or initial 100 most common drugs, diagram) wherein you can search for a particular drug to amend/build an interactions diagram from.
+
+You could then see all interactions for this drug in the sidebar, and you could choose to add all of a particular class of drugs to see which of these drugs your choice interacts with.
+(Or alternatively add the rest of your desired drug's class, to consider other alternatives.)
+
+For example, you're contemplating a patient with an antihpertensive and you'd like to now add some diabetes medicine. You could see both drug classes together and where the interactions lie between them. Or you could start with the antihypertensive you want, and then show yourself all the potential diabetes meds to choose from.
+
+I imagine this idea may change as I try to find the most useful version of this graph.
 

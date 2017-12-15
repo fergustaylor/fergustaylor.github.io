@@ -17,18 +17,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		<meta name="og:site_name" content="Fergus Taylor">
 		<meta name="og:title" content="The BNF Project">
-		<meta name="og:url" content="/post/the-bnf-project/">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/the-bnf-project/">
 		
-		<meta name="og:image" content="/images/avatar.jpg">
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
 		
 
 		<meta name="generator" content="Hugo 0.29" />
 
-		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
 		
 		
@@ -38,7 +38,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Header -->
 <header id="header">
 	
-	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
 	
 	
 		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
@@ -48,9 +48,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<nav id="sidebar">
 			<ul>
 			
-				<li><a href="../../">Home</a></li>
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
 			
-				<li><a href="../../post">Archive</a></li>
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
 			
 			</ul>
 		</nav>
@@ -74,7 +74,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="../../categories/bnf">BNF</a>
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/bnf">BNF</a>
         
         
     
@@ -92,7 +92,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <p>See the interactive version <a href="https://fergustaylor.github.io/D3/d3-1.html">here.</a></p>
 
-<p><img src="../../blogimages/tensionablegraph.png" alt="" style="width:100%;height:auto;"> <a href="../../blogimages/tensionablegraph.png"></a></p>
+<p><img src="../../blogimages/d3tension.png" alt="" style="width:100%;height:auto;"> <a href="../../blogimages/d3tension.png"></a></p>
 
 <p>First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from <a href="https://nursingnotes.co.uk/the-100-most-common-medications-in-uk-hospitals/">an article</a>).</p>
 
@@ -101,19 +101,40 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <p>See the interactive version <a href="https://fergustaylor.github.io/D3/d3-2.html">here.</a>
 Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&rsquo;t grouped by class yet and so increased bundling doesn&rsquo;t reveal anything useful.</p>
 
-<p>Next steps
-- grouping drugs (by class/BNF section)
-- adding a sidebar to list drug interaction information
-- adding a searchbar for searching within all drugs
-- modifying an existing diagram to add new drugs</p>
+<p>In my steps to learn more CSS, I&rsquo;ve created a <a href="https://fergustaylor.github.io/D3/searchbar/searchbar.html">Search Bar.</a></p>
+
+<p>And an example <a href="https://fergustaylor.github.io/D3/sidebar/simplesidebar">sidebar</a>, which I&rsquo;ll link to my JSON data.</p>
+
+<p><strong>Next steps</strong></p>
+
+<ul>
+<li><p>grouping drugs (by class/BNF section)</p></li>
+
+<li><p>adding a sidebar to list drug interaction information</p></li>
+
+<li><p>adding a searchbar for searching within all drugs</p></li>
+
+<li><p>modifying an existing diagram to add new drugs</p></li>
+</ul>
+
+<p>I&rsquo;ve been trying to think a bit more about how I&rsquo;d idealise this problem, and I think I&rsquo;d like to focus on this;</p>
+
+<p>A searchbar (or initial 100 most common drugs, diagram) wherein you can search for a particular drug to amend/build an interactions diagram from.</p>
+
+<p>You could then see all interactions for this drug in the sidebar, and you could choose to add all of a particular class of drugs to see which of these drugs your choice interacts with.
+(Or alternatively add the rest of your desired drug&rsquo;s class, to consider other alternatives.)</p>
+
+<p>For example, you&rsquo;re contemplating a patient with an antihpertensive and you&rsquo;d like to now add some diabetes medicine. You could see both drug classes together and where the interactions lie between them. Or you could start with the antihypertensive you want, and then show yourself all the potential diabetes meds to choose from.</p>
+
+<p>I imagine this idea may change as I try to find the most useful version of this graph.</p>
 
 	</p>
   
-  <a href="../../post/bnf-sections-visualised/">Next: 'BNF Sections Visualised'</a>
+  <a href="https://fergustaylor.github.io/post/bnf-sections-visualised/">Next: 'BNF Sections Visualised'</a>
 
   <br>
   
-  <a href="../../post/interactions-visualised/">Prev: 'Interactions Visualised'</a>
+  <a href="https://fergustaylor.github.io/post/interactions-visualised/">Prev: 'Interactions Visualised'</a>
 
 	
 
@@ -136,7 +157,7 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
 		
 		
 		
-		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
@@ -146,13 +167,13 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
 </footer>
 
 <!-- Scripts -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery.poptrox.min.js"></script>
-<script src="../../js/skel.min.js"></script>
-<script src="../../js/util.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
 
-<script src="../../js/main.js"></script>
-<script src="../../js/changeit.js"></script>
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/changeit.js"></script>
 
 
 <script>
