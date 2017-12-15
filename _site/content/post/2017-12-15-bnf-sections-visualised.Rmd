@@ -1,0 +1,31 @@
+---
+title: BNF Sections Visualised
+author: Fergus Taylor
+date: '2017-12-15'
+slug: bnf-sections-visualised
+categories:
+  - BNF
+tags: []
+header_image: "/blogimages/sankeyexample.png"
+draft: false
+output:
+  blogdown::html_page
+---
+
+It's been a while since my last post, and since then I've been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components.
+I've found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I've found has actually been [Codepen](https://codepen.io/).
+
+See the dendrograms below.
+Or interact with them, [here.](https://fergustaylor.github.io/D3/bnfsections/#1) By pressing left or right.
+
+{{< img src="https://fergustaylor.github.io/blogimages/bnfsection.png" >}}
+
+{{< img src="https://fergustaylor.github.io/blogimages/bnfsection2.png.png" >}}
+
+{{< img src="https://fergustaylor.github.io/blogimages/bnfsection3.png" >}}
+
+{{< img src="https://fergustaylor.github.io/blogimages/bnfsection4.png" >}}
+
+I then created a collapsible version of my initial dendrogram, [here.](https://fergustaylor.github.io/D3/collapsibletree)
+
+{{< img src="https://fergustaylor.github.io/blogimages/collapsibletree.png" >}}
