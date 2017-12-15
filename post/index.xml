@@ -2,31 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 15 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fergustaylor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BNF Sections Visualised</title>
-      <link>https://fergustaylor.github.io/post/bnf-sections-visualised/</link>
+      <link>/post/bnf-sections-visualised/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
+      <guid>/post/bnf-sections-visualised/</guid>
       <description>It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been Codepen.
-See the dendrograms below. Or interact with them, here. By pressing left or right.</description>
+See the dendrograms below. Or interact with them all, here. By pressing left or right.</description>
+    </item>
+    
+    <item>
+      <title>The BNF Project</title>
+      <link>/post/the-bnf-project/</link>
+      <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-bnf-project/</guid>
+      <description>I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock example of a tensionable hierachical edge bundling diagram.
+See the interactive version here.
+
+First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from an article).
+
+See the interactive version here. Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&amp;rsquo;t grouped by class yet and so increased bundling doesn&amp;rsquo;t reveal anything useful.</description>
     </item>
     
     <item>
       <title>Interactions Visualised</title>
-      <link>https://fergustaylor.github.io/post/interactions-visualised/</link>
+      <link>/post/interactions-visualised/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
+      <guid>/post/interactions-visualised/</guid>
       <description>I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.
 Photos of the BNF drug interactions with varying tension.
 See the interactive version See the interactive version See the interactive version</description>
@@ -34,10 +48,10 @@ See the interactive version See the interactive version See the interactive vers
     
     <item>
       <title>Interactions Continued</title>
-      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
+      <link>/post/interactions-continued/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
+      <guid>/post/interactions-continued/</guid>
       <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
 I built this into the previous code. (See the full code).
 #Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
@@ -45,20 +59,20 @@ I built this into the previous code. (See the full code).
     
     <item>
       <title>Drug Interactions</title>
-      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
+      <link>/post/drug-interactions/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
+      <guid>/post/drug-interactions/</guid>
       <description>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.
 To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>https://fergustaylor.github.io/post/post10/</link>
+      <link>/post/post10/</link>
       <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post10/</guid>
+      <guid>/post/post10/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
      </description>
@@ -66,10 +80,10 @@ Updated the old openprescribing graphics, with ggiraph. Then added some for my l
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>https://fergustaylor.github.io/post/post9/</link>
+      <link>/post/post9/</link>
       <pubDate>Wed, 27 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post9/</guid>
+      <guid>/post/post9/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
@@ -79,19 +93,19 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/post8/</link>
+      <link>/post/post8/</link>
       <pubDate>Mon, 25 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post8/</guid>
+      <guid>/post/post8/</guid>
       <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>https://fergustaylor.github.io/post/post7/</link>
+      <link>/post/post7/</link>
       <pubDate>Fri, 22 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post7/</guid>
+      <guid>/post/post7/</guid>
       <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
 Currently returns a leaflet map showing;
  spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
@@ -102,10 +116,10 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>https://fergustaylor.github.io/post/post6/</link>
+      <link>/post/post6/</link>
       <pubDate>Fri, 15 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post6/</guid>
+      <guid>/post/post6/</guid>
       <description>  See the map.
 See the code.
    </description>
@@ -113,10 +127,10 @@ See the code.
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>https://fergustaylor.github.io/post/post5/</link>
+      <link>/post/post5/</link>
       <pubDate>Wed, 13 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post5/</guid>
+      <guid>/post/post5/</guid>
       <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
 New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
    Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
@@ -124,10 +138,10 @@ New Function 7. CCG boundaries Search for the boundaries of a CCG, or location o
     
     <item>
       <title>openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/post4/</link>
+      <link>/post/post4/</link>
       <pubDate>Mon, 11 Sep 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post4/</guid>
+      <guid>/post/post4/</guid>
       <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
 Installation:
 library(devtools)
@@ -146,10 +160,10 @@ These functions give details on drugs/organisations/list sizes.
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>https://fergustaylor.github.io/post/post3/</link>
+      <link>/post/post3/</link>
       <pubDate>Fri, 04 Aug 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post3/</guid>
+      <guid>/post/post3/</guid>
       <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
  All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
 It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
@@ -158,23 +172,32 @@ While I was prepared to download information I wanted directly through the site 
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>https://fergustaylor.github.io/post/post2/</link>
+      <link>/post/post2/</link>
       <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post2/</guid>
+      <guid>/post/post2/</guid>
       <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
       <title>Arran</title>
-      <link>https://fergustaylor.github.io/post/post1/</link>
+      <link>/post/post1/</link>
       <pubDate>Fri, 28 Jul 2017 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/post1/</guid>
+      <guid>/post/post1/</guid>
       <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
 I thought Arran would make nice maps.
 Early progress Initially I used map cordinates given by Ordinance Survey to find the centre of any KA27 postcode on a map.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/2017-12-15-the-bnf-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-12-15-the-bnf-project/</guid>
+      <description>The BNF Project       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .table th:not([align]) { text-align: left; }    .</description>
     </item>
     
   </channel>
