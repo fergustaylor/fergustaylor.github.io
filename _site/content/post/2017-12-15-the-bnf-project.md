@@ -6,7 +6,7 @@ slug: the-bnf-project
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/bnfsection3.png"
+header_image: "/blogimages/tensionablegraph.png"
 ---
 
 I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock [example](https://mbostock.github.io/d3/talk/20111116/bundle.html) of a tensionable hierachical edge bundling diagram.
