@@ -13,11 +13,11 @@ I eventually learnt how to convert the BNF interactions into a JSON format compa
 
 See the interactive version [here.](https://fergustaylor.github.io/D3/d3-1.html)
 
-<p><img src="/blogimages/d3tension.png" alt="" style="width:100%;height:auto;"> <a href="/blogimages/d3tension.png"></a></p>
+<p><img src="https://fergustaylor.github.io/blogimages/d3tension.png" alt="" style="width:100%;height:auto;"> <a href="https://fergustaylor.github.io/blogimages/d3tension.png"></a></p>
 
 First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from [an article](https://nursingnotes.co.uk/the-100-most-common-medications-in-uk-hospitals/)).
 
-<p><img src="/blogimages/tensionablegraph.png" alt="" style="width:100%;height:auto;"> <a href="/blogimages/tensionablegraph.png"></a></p>
+<p><img src="https://fergustaylor.github.io/blogimages/tensionablegraph.png" alt="" style="width:100%;height:auto;"> <a href="https://fergustaylor.github.io/blogimages/tensionablegraph.png"></a></p>
 
 See the interactive version [here.](https://fergustaylor.github.io/D3/d3-2.html)
 Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren't grouped by class yet and so increased bundling doesn't reveal anything useful.
