@@ -29,3 +29,5 @@ And eventually, a properly-tensionable class hierachy.
 As I learn more, I'll to customise this around features that benefit the interpretation/learning of health professionals, in a way it's not yet currently.
 
 If you have any feedback on changes that would make this more helpful, please get in contact through (twitter.)[https://twitter.com/ferguswtaylor]
+
+<img src="/blogimages/newpost.png" alt="" style="width:100%;height:auto;">
