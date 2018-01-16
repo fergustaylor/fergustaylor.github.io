@@ -18,9 +18,9 @@
       
       <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
       <description>I made a few bits of progress.
-(Here.)[https://fergustaylor.github.io/D3/Interactions/]
+Here.
 I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.
-But in summary - I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from (bnf.nice.org.uk/interaction/.)[https://bnf.nice.org.uk/interaction/] This reflects the new data being listed by the BNF.
+But in summary - I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from bnf.nice.org.uk/interaction/. This reflects the new data being listed by the BNF.
 The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar. (As well as severity totals as a whole.)
 I&amp;rsquo;ve also made an on:hover comparison tool, for the drug selected and any other.</description>
     </item>
