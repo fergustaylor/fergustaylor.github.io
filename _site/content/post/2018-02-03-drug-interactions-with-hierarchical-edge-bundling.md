@@ -17,5 +17,5 @@ is to develop the project into a (common) example drugs graph, to which you can 
 
 [![](fergustaylor.github.io/blogimages/giphy.gif)](https://fergustaylor.github.io/D3/Interactions/ "https://fergustaylor.github.io/D3/Interactions/")
 
-For now tou can also search through the entire drugs list, and use the informational side-bar.
+For now you can also search through the entire drugs list, and use the informational side-bar.
 [![](fergustaylor.github.io/blogimages/giphy2.gif)](https://fergustaylor.github.io/D3/searchbar/ "https://fergustaylor.github.io/D3/searchbar/")
