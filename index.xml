@@ -6,10 +6,20 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 16 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Drug Interactions with Hierarchical Edge Bundling</title>
+      <link>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
+      <description>So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden). I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.
+For now I&amp;rsquo;m going to take a small break to learn some general D3 skills.</description>
+    </item>
     
     <item>
       <title>BNF Interactions</title>
@@ -278,6 +288,15 @@ Details of incident: After a sunny day kayaking on the Garry - sleepy from an af
       <description>By Dr Kenneth Kamler
 Recounting his experiences with AMS, surviving adrift at sea, as well as performing hand surgery in the not entirely aseptic depths of the Amazonian Rainforest. Dr Kenneth Kamler tells stories of his adventures and those of his friends, to create a gripping depiction of some of the most inhospitable environments in the world and the conditions that can occur in them.
 He details his reactions to the injuries and uses his skills as a storyteller to examine the actions doctors take in order to treat under pressure.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://fergustaylor.github.io/d3interactions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/d3interactions/</guid>
+      <description> </description>
     </item>
     
     <item>

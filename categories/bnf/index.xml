@@ -6,10 +6,20 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 16 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Drug Interactions with Hierarchical Edge Bundling</title>
+      <link>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</link>
+      <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
+      <description>So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden). I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.
+For now I&amp;rsquo;m going to take a small break to learn some general D3 skills.</description>
+    </item>
     
     <item>
       <title>BNF Interactions</title>
