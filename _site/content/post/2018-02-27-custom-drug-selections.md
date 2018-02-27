@@ -28,7 +28,9 @@ I've been experimenting with a seperate page based on a searchbar and checkboxes
 <a href="https://fergustaylor.github.io/D3/bnf-interactions/">
 <img src="https://fergustaylor.github.io/blogimages/bnf-interactions.png" alt="" style="width:100%;height:auto;">
 </a>
-    
+
+Lastly, I'm developing a version with a hierachy - however I'm still experimenting with how best to organise it. It's far from perfect at present.
+
 <a href="https://fergustaylor.github.io/D3/d3-dynamicclassed/">
 <img src="https://fergustaylor.github.io/blogimages/d3-dynamicclasses.png" alt="" style="width:100%;height:auto;">
 </a>
