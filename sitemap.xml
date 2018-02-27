@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fergustaylor.github.io/post/custom-drug-selections/</loc>
+    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</loc>
     <lastmod>2018-02-03T00:00:00+00:00</lastmod>
   </url>
@@ -149,7 +154,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/categories/bnf/</loc>
-    <lastmod>2018-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -175,7 +180,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/post/</loc>
-    <lastmod>2018-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -195,7 +200,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/</loc>
-    <lastmod>2018-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

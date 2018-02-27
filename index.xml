@@ -6,10 +6,21 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 03 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Custom Drug Selections</title>
+      <link>https://fergustaylor.github.io/post/custom-drug-selections/</link>
+      <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
+      <description>Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.
+I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.
+Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug.</description>
+    </item>
     
     <item>
       <title>Drug Interactions with Hierarchical Edge Bundling</title>
