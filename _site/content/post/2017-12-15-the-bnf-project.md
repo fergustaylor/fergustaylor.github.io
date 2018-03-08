@@ -22,10 +22,6 @@ First every drug, then I reduced it to the 100 most common medications (arbritra
 See the interactive version [here.](https://fergustaylor.github.io/D3/d3-2.html)
 Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren't grouped by class yet and so increased bundling doesn't reveal anything useful.
 
-In my steps to learn more CSS, I've created a [Search Bar.](https://fergustaylor.github.io/D3/searchbar/searchbar.html)
-
-And an example [sidebar](https://fergustaylor.github.io/D3/sidebar/simplesidebar), which I'll link to my JSON data.
-
 __Next steps__
 
 - grouping drugs (by class/BNF section)
