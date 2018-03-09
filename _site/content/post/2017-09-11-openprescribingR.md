@@ -2,7 +2,7 @@
 title: openprescribingR
 author: Fergus Taylor
 date: '2017-09-11'
-slug: openprescribingR
+slug: openprescribingr
 categories:
  - Openprescribing
 tags: []

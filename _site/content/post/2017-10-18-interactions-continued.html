@@ -7,9 +7,6 @@ categories:
   - BNF
 tags: []
 header_image: "/blogimages/sankeyexample.png"
-draft: false
-output:
-  blogdown::html_page
 ---
 
 
@@ -17,7 +14,7 @@ output:
 <p>I made a few additions to my previous <a href="https://fergustaylor.github.io/post/drug-interactions/">post</a>, after realising I could use the <a href="https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html">CSS selector</a> to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)</p>
 <p>I built this into the previous code. <a href="https://github.com/fergustaylor/d3">(See the full code)</a>.</p>
 <pre class="r"><code>#Interactions
-interactions &lt;- mapply(url = data, css = drugs_list$css_string, 
+interactions &lt;- mapply(url = data, css = drugs_list$css_string,
                        function(url, css){
                           url %&gt;%
                           html_nodes(css) %&gt;%
@@ -35,7 +32,7 @@ example_dataframe &lt;-  example_dataframe %&gt;%
 <pre class="r"><code>BNFchapters &lt;- readLines(&quot;https://openprescribing.net/bnf/&quot;) %&gt;%
   str_match_all(&quot;&lt;a href=\&quot;/bnf/(.*?)\&quot;&gt;(.*?)&lt;/a&gt;&quot;) %&gt;%
   unlist() %&gt;%
-  data.frame() 
+  data.frame()
 
 BNFchapters &lt;- BNFchapters %&gt;%
   data.frame(cbind(observation = rep(1:(nrow(BNFchapters)/3), each=3))) %&gt;%

@@ -127,12 +127,12 @@ drugs_list$Title &lt;- str_replace(drugs_list$Title, &quot;&lt;sub&gt;&quot;, re
 drugs_list$Title &lt;- str_replace(drugs_list$Title, &quot;&lt;/sub&gt;&quot;, replacement = &quot;&quot;)
 
 #Add a string column
-drugs_list &lt;- cbind(drugs_list, 
+drugs_list &lt;- cbind(drugs_list,
                     string = str_replace(drugs_list$Link, &quot;.html&quot;, replacement = &quot;&quot;))
 
 #Add CSS tag and URL columns
-drugs_list &lt;- cbind(drugs_list, 
-                    url = str_c(&quot;https://bnf.nice.org.uk/interaction/&quot;, 
+drugs_list &lt;- cbind(drugs_list,
+                    url = str_c(&quot;https://bnf.nice.org.uk/interaction/&quot;,
                                 drugs_list$string, &quot;.html&quot;))
 drugs_list &lt;- cbind(drugs_list, css_string = str_c(&quot;#&quot;, drugs_list$string, &quot; .interactant span&quot;))
 
@@ -177,14 +177,14 @@ example_dataframe &lt;- cbind(example_dataframe, data_frame(class))
 #Dangerous Interactions
 dangerousi &lt;- lapply(data,
                 function(url){
-                    url %&gt;% 
+                    url %&gt;%
                     html_nodes(css = &quot;.High .interactant span&quot;) %&gt;%
                     html_text()
                 })
 example_dataframe &lt;- cbind(example_dataframe, data_frame(dangerousi))
 
 #Interactions
-interactions &lt;- mapply(url = data, css = drugs_list$css_string, 
+interactions &lt;- mapply(url = data, css = drugs_list$css_string,
                        function(url, css){
                           url %&gt;%
                           html_nodes(css) %&gt;%
@@ -201,20 +201,20 @@ example_dataframe &lt;-  example_dataframe %&gt;%
 <p>E.g</p>
 <pre><code>##         Title               Class
 ## 1    Abacavir          Antivirals
-## 2   Abatacept                    
-## 3   Abciximab                    
+## 2   Abatacept
+## 3   Abciximab
 ## 4 Abiraterone Hormone Antagonists
 ## 5    Acarbose       Antidiabetics
 ##                                                                                    Dangerous Interactions
 ## 1                                                                         Orlistat, Ribavirin, Tipranavir
 ## 2                                         Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3                                                                                                        
+## 3
 ## 4 Carbamazepine, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, St John&#39;s Wort
-## 5                                                                                                        
+## 5
 ##                                                                                                                                Interactions
 ## 1                                 Fosphenytoin, Methadone, Orlistat, Phenobarbital, Phenytoin, Primidone, Ribavirin, Rifampicin, Tipranavir
 ## 2                                                               Adalimumab, Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3                                                                                                                                          
+## 3
 ## 4 Carbamazepine, Dextromethorphan, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, Spironolactone, St John&#39;s Wort
 ## 5                                                                                    Colestyramine, Digoxin, Neomycin, Orlistat, Pancreatin</code></pre>
 <p><img src="../../blogimages/BNFdataframe.png" alt="" style="width:100%;height:auto;"></p>
