@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 	<head>
-		<title> &middot; Fergus Taylor</title>
+		<title>openprescribingR UPDATE &middot; Fergus Taylor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Fergus Taylor">
@@ -16,8 +16,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		
 		<meta name="og:site_name" content="Fergus Taylor">
-		<meta name="og:title" content="">
-		<meta name="og:url" content="https://fergustaylor.github.io/categories/openprescribing/">
+		<meta name="og:title" content="openprescribingR UPDATE">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/openprescribingr-update/">
 		
 		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
@@ -30,9 +30,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
-		
-		<link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="alternate" type="application/rss+xml" title="Fergus Taylor" />
-		<link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="feed" type="application/rss+xml" title="Fergus Taylor" />
 		
 		
 	</head>
@@ -64,24 +61,10 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Main -->
 		<div id="main">
 			
-    <p>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.</p>
+	<span>
+		<h1>openprescribingR UPDATE</h1>
 
-<p>The Github repositories..
-<br>
-<a href="https://github.com/fergustaylor/openprescribingR">openprescribingR</a>
-<br>
-<a href="https://github.com/fergustaylor/openprescribingRplots">openprescribingRplots</a></p>
-
-
-    
-    
-        <span>
-  
-    <h1>
-        <a href="https://fergustaylor.github.io/post/openprescribingr-update/">openprescribingR UPDATE</a>
-    </h1>
-    
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
 <time datetime="2017-09-13 00:00:00 &#43;0000 UTC">Wednesday, September 13, 2017</time>&nbsp;&nbsp;
 
 
@@ -102,80 +85,91 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    
 
 
-    
-    <a href="https://fergustaylor.github.io/post/openprescribingr-update/">
-    <img src="https://fergustaylor.github.io//images/thumbs/05.jpg" alt="" style="width:100%;height:auto;">
-    </a>
-    
-</span>
+	</span>
 
-<p>I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.</p>
+	<p>
+	    
 
-<footer>
-        <ul class="actions">
-            <li><a href="https://fergustaylor.github.io/post/openprescribingr-update/" class="button small">Continue Reading</a></li>
-        </ul>
-</footer>
-<hr>
+<p>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &lsquo;CCG boundaries&rsquo; section of the api.</p>
 
+<h2 id="new-function">New Function</h2>
+
+<h2 id="7-ccg-boundaries">7. CCG boundaries</h2>
+
+<p>Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.</p>
+
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th align="center">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Boundaries of all CCGs</td>
+<td align="center">CCG_boundaries_or_location()</td>
+</tr>
+
+<tr>
+<td>Boundaries of an individual CCG</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of practices in a CCG, by code</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of a practice in a CCG</td>
+<td align="center">CCG_boundaries_or_location(CCG_code = &ldquo;99H&rdquo;, practice_code = &ldquo;P87003&rdquo;)</td>
+</tr>
+
+<tr>
+<td>Location (approximate) of a practice in a CCG</td>
+<td align="center">CCG_boundaries_or_location(practice_code = &ldquo;P87003&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&rsquo;ll leave that to you.</p>
+
+<p>Plots to come..</p>
+
+<p><strong>UPDATE 12:40:</strong></p>
+
+<p>Managed to import/plot using GeoJSON, but since I&rsquo;m not particularly familiar with the format I used the api address..</p>
+
+<p><code>st_read(&quot;https://openprescribing.net/api/1.0/org_location/?org_type=ccg&quot;) %&gt;%
+st_as_sf()</code></p>
+
+<p>To create a simple features collection, which made things much easier.</p>
+
+<iframe src="https://fergustaylor.github.io/blogimages/post5map.html" width="100%" height="600px">
+</iframe>
+
+<p><a href="https://fergustaylor.github.io/blogimages/post5map.html">See the map.</a></p>
+
+
+<figure >
     
-        <span>
+        <img src="https://fergustaylor.github.io/blogimages/Rplot4.png"          width="100%" height="100%" />
+    
+    
+</figure>
+
+
+	</p>
   
-    <h1>
-        <a href="https://fergustaylor.github.io/post/openprescribingr/">openprescribingR</a>
-    </h1>
-    
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-09-11 00:00:00 &#43;0000 UTC">Monday, September 11, 2017</time>&nbsp;&nbsp;
+  <a href="https://fergustaylor.github.io/post/openprescribingr-update-2/">Next: 'openprescribingR UPDATE 2'</a>
 
+  <br>
+  
+  <a href="https://fergustaylor.github.io/post/openprescribingr/">Prev: 'openprescribingR'</a>
 
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="https://fergustaylor.github.io/categories/openprescribing">Openprescribing</a>
-        
-        
-    
-
-
-
-   
-   
-
-
-    
-    <a href="https://fergustaylor.github.io/post/openprescribingr/">
-    <img src="https://fergustaylor.github.io//images/thumbs/04.jpg" alt="" style="width:100%;height:auto;">
-    </a>
-    
-</span>
-
-<p>I made a package for the first time, which lets me import data from the new openprescribing api directly into R.</p>
-
-<footer>
-        <ul class="actions">
-            <li><a href="https://fergustaylor.github.io/post/openprescribingr/" class="button small">Continue Reading</a></li>
-        </ul>
-</footer>
-<hr>
-
-    
-
-    
-    
-        <a class="button" rel="prev" href="https://fergustaylor.github.io//categories/openprescribing/">
-            « Newer
-        </a>
-    
-
-    
-
-    
-
-
+	
 
 		</div>
 
@@ -196,7 +190,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		
 		
-		<li><a href="https://fergustaylor.github.io/categories/openprescribing/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 

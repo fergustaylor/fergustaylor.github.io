@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 29 Jul 2017 13:39:46 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/categories/arran/</link>
-      <pubDate>Sat, 29 Jul 2017 13:39:46 +0200</pubDate>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/arran/</guid>
       <description>A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps.</description>
@@ -33,7 +33,7 @@ The Github repository.. D3 And the site. fergustaylor.github.io/D3</description>
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/categories/openprescribing/</link>
-      <pubDate>Thu, 28 Sep 2017 13:39:46 +0200</pubDate>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/openprescribing/</guid>
       <description>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.
@@ -43,7 +43,7 @@ The Github repositories.. openprescribingR openprescribingRplots</description>
     <item>
       <title>Public Health</title>
       <link>https://fergustaylor.github.io/categories/public-health/</link>
-      <pubDate>Fri, 04 Aug 2017 13:39:46 +0200</pubDate>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/public-health/</guid>
       <description></description>

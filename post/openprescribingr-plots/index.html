@@ -7,7 +7,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 -->
 <html>
 	<head>
-		<title> &middot; Fergus Taylor</title>
+		<title>openprescribingR Plots &middot; Fergus Taylor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="author" content="Fergus Taylor">
@@ -16,8 +16,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 		
 		<meta name="og:site_name" content="Fergus Taylor">
-		<meta name="og:title" content="">
-		<meta name="og:url" content="https://fergustaylor.github.io/categories/openprescribing/">
+		<meta name="og:title" content="openprescribingR Plots">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/openprescribingr-plots/">
 		
 		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
@@ -30,9 +30,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
-		
-		<link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="alternate" type="application/rss+xml" title="Fergus Taylor" />
-		<link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="feed" type="application/rss+xml" title="Fergus Taylor" />
 		
 		
 	</head>
@@ -64,25 +61,11 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Main -->
 		<div id="main">
 			
-    <p>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.</p>
+	<span>
+		<h1>openprescribingR Plots</h1>
 
-<p>The Github repositories..
-<br>
-<a href="https://github.com/fergustaylor/openprescribingR">openprescribingR</a>
-<br>
-<a href="https://github.com/fergustaylor/openprescribingRplots">openprescribingRplots</a></p>
-
-
-    
-    
-        <span>
-  
-    <h1>
-        <a href="https://fergustaylor.github.io/post/openprescribingr-update/">openprescribingR UPDATE</a>
-    </h1>
-    
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-09-13 00:00:00 &#43;0000 UTC">Wednesday, September 13, 2017</time>&nbsp;&nbsp;
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2017-09-22 00:00:00 &#43;0000 UTC">Friday, September 22, 2017</time>&nbsp;&nbsp;
 
 
 
@@ -102,80 +85,56 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    
 
 
-    
-    <a href="https://fergustaylor.github.io/post/openprescribingr-update/">
-    <img src="https://fergustaylor.github.io//images/thumbs/05.jpg" alt="" style="width:100%;height:auto;">
-    </a>
-    
-</span>
+	</span>
 
-<p>I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.</p>
+	<p>
+	    <p>Made a new package to return a set of default plots based on my openprescribingR import tool.</p>
 
-<footer>
-        <ul class="actions">
-            <li><a href="https://fergustaylor.github.io/post/openprescribingr-update/" class="button small">Continue Reading</a></li>
-        </ul>
-</footer>
-<hr>
+<p>Currently returns a leaflet map showing;</p>
 
-    
-        <span>
+<ul>
+<li>spending per person</li>
+<li>total spending</li>
+<li>total no. of items</li>
+<li>total quantity of items</li>
+<li>quantity per item</li>
+<li>listsizes</li>
+</ul>
+
+<p>.. for each CCG, for each month this year.</p>
+
+<p>This can be for any BNF section, chemical, or presentation.</p>
+
+<p><a href="https://github.com/fergustaylor/openprescribingRplots">See the repository.</a></p>
+
+<pre><code class="language-r">library(devtools)
+devtools::install_github(&quot;fergustaylor/openprescribingRplots&quot;)
+library(openprescribingRplots)
+
+plot2017perperson(&quot;7.4.5&quot;)
+plot2017total(&quot;7.4.5&quot;)
+plot2017items(&quot;7.4.5&quot;)
+plot2017quantity(&quot;7.4.5&quot;)
+plot2017quantityperitems(&quot;7.4.5&quot;)
+plot2017listsize()
+</code></pre>
+
+<p>See below for plot2017perperson(&ldquo;7.4.5&rdquo;)</p>
+
+<iframe src="https://fergustaylor.github.io/blogimages/post7map.html" width="100%" height="500px" >
+</iframe>
+
+<p><a href="https://fergustaylor.github.io/blogimages/post7map.html">See the map.</a></p>
+
+	</p>
   
-    <h1>
-        <a href="https://fergustaylor.github.io/post/openprescribingr/">openprescribingR</a>
-    </h1>
-    
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2017-09-11 00:00:00 &#43;0000 UTC">Monday, September 11, 2017</time>&nbsp;&nbsp;
+  <a href="https://fergustaylor.github.io/post/more-examples-for-openprescribingr/">Next: 'More examples for openprescribingR'</a>
 
+  <br>
+  
+  <a href="https://fergustaylor.github.io/post/openprescribingr-update-2/">Prev: 'openprescribingR UPDATE 2'</a>
 
-
-
-    
-    
-        <i class="fa fa-folder"></i>&nbsp;&nbsp;
-        
-        <a class="article-category-link" href="https://fergustaylor.github.io/categories/openprescribing">Openprescribing</a>
-        
-        
-    
-
-
-
-   
-   
-
-
-    
-    <a href="https://fergustaylor.github.io/post/openprescribingr/">
-    <img src="https://fergustaylor.github.io//images/thumbs/04.jpg" alt="" style="width:100%;height:auto;">
-    </a>
-    
-</span>
-
-<p>I made a package for the first time, which lets me import data from the new openprescribing api directly into R.</p>
-
-<footer>
-        <ul class="actions">
-            <li><a href="https://fergustaylor.github.io/post/openprescribingr/" class="button small">Continue Reading</a></li>
-        </ul>
-</footer>
-<hr>
-
-    
-
-    
-    
-        <a class="button" rel="prev" href="https://fergustaylor.github.io//categories/openprescribing/">
-            « Newer
-        </a>
-    
-
-    
-
-    
-
-
+	
 
 		</div>
 
@@ -196,7 +155,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		
 		
-		<li><a href="https://fergustaylor.github.io/categories/openprescribing/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
