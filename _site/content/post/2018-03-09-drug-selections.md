@@ -20,3 +20,8 @@ I may add more detail later, such as evidence/severity, and colour coding on sev
 You can see the dev version [here.](https://fergustaylor.github.io/D3/bnf-interactionsdev/)
 
 {{< img src="/blogimages/listview.png" >}}
+
+Update 10/03/18: Added severity/evidence as custom attributes to each <p> interaction info.
+Then added a checkbox to colour the severe interactions red.
+
+{{< img src="/blogimages/severeinteractionlist.png" >}}
