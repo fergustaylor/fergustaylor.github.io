@@ -12,7 +12,7 @@ description: "New interactive maps."
 
 OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 
-Updated the old [openprescribing graphics](https://fergustaylor.github.io/post/post6), with ggiraph.
+Updated the old [openprescribing graphics](https://fergustaylor.github.io/post/openprescribingr-plots2/), with ggiraph.
 Then added some for my last post as well.
 
 <iframe src="https://fergustaylor.github.io/blogimages/post10image.html" width="100%" height="600px">

@@ -43,7 +43,7 @@ CCG Boundraries are unavailable for now
 
 __UPDATE 13/08/17:__  
 
-CCG Boundaries/Practice locations have been added. Read here [post4.](https://fergustaylor.github.io/post/post4)
+CCG Boundaries/Practice locations have been added. Read [here.](https://fergustaylor.github.io/post/openprescribingr-update/)
 
 # Spending
 Retrieve total spending and items by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)
@@ -125,7 +125,7 @@ You could still download it onto your desktop directly from the API, but I think
 
 __UPDATE 13/08/17:__  
 CCG Boundaries/Practice locations have been added.
-Read here [post4.](https://fergustaylor.github.io/post/post4)
+Read [here.](https://fergustaylor.github.io/post/openprescribingr-update/)
 
 Further explanation on the terms used here - [https://openprescribing.net/api/](https://openprescribing.net/api/)
 
