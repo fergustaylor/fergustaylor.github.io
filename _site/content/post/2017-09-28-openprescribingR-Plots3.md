@@ -15,6 +15,8 @@ OpenprescribingR allows you to explore spending and list size data on over 200 d
 Updated the old [openprescribing graphics](https://fergustaylor.github.io/post/openprescribingr-plots2/), with ggiraph.
 Then added some for my last post as well.
 
+UPDATE 29/03/18: I've updated the graphics in [the following post.](https://fergustaylor.github.io/post/openprescribingr-plots-updated/)
+
 <iframe src="https://fergustaylor.github.io/blogimages/post10image.html" width="100%" height="600px">
 </iframe>
 

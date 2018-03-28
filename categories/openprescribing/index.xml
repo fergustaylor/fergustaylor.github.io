@@ -17,7 +17,7 @@
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
-      <description>18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
+      <description>function reload() { this.style.height=this.contentDocument.body.scrollHeight +&#39;px&#39;; }  18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
 CCGs plotted as geom_polygon_interactive with CCG names as tooltips
  CCGs with prescribing centres overlaid as points
  CCGs with fill colour scaled according to cost per person on &amp;lsquo;BNF Section 7.</description>
@@ -31,6 +31,7 @@ CCGs plotted as geom_polygon_interactive with CCG names as tooltips
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
+UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
      </description>
     </item>
     

@@ -88,16 +88,22 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	</span>
 
 	<p>
-	    <p>18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.</p>
+	    <script>
+function reload() {
+this.style.height=this.contentDocument.body.scrollHeight +'px';
+}
+</script>
+
+<p>18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.</p>
 
 <p>CCGs plotted as geom_polygon_interactive with CCG names as tooltips</p>
 
-<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot1.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot1.html" width="100%" onload="reload()" onresize="reload()">
 </iframe>
 
 <p>CCGs with prescribing centres overlaid as points</p>
 
-<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot2.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot2.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px'; onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"" >
 </iframe>
 
 <p>CCGs with fill colour scaled according to cost per person on &lsquo;BNF Section 7.4.5&rsquo; Drugs, May 2017</p>
@@ -121,8 +127,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 <iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot10.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >
 </iframe>
 
-<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot11.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >
-</iframe>
+<p>I did also make a voronoi plot using the centre of each CCG, just to see what it would look like. But It&rsquo;s probably not an appropriate way to visualise CCG data, bearing in mind the difficulties of using voronoi plots. For example, each of the CCGs around Hull. <a href="https://fergustaylor.github.io/openprescribingR/dev/plot11compared.html">See the map.</a></p>
 
 <iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot12.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >
 </iframe>
