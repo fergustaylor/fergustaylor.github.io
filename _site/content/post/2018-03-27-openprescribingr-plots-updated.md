@@ -10,6 +10,8 @@ description: 'Updated some older HTML Widgets using GGigraph and Deldir'
 header_image: /blogimages/example.png
 ---
 
+18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
+
 CCGs plotted as geom_polygon_interactive with CCG names as tooltips
 
 <iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot1.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';" >

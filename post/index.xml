@@ -17,11 +17,10 @@
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
-      <description>CCGs plotted as geom_polygon_interactive with CCG names as tooltips
+      <description>18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
+CCGs plotted as geom_polygon_interactive with CCG names as tooltips
  CCGs with prescribing centres overlaid as points
- CCGs with fill colour scaled according to cost per person on &amp;lsquo;BNF Section 7.4.5&amp;rsquo; Drugs, May 2017
- Prescribing centres plotted as points, used to generate voronoi polygons plotted as geom_polygon_interactive, with prescribing centre names as tooltips
- Prescribing centres in NHS West Kent CCG plotted as points, used to generate voronoi polygons within the CCG.</description>
+ CCGs with fill colour scaled according to cost per person on &amp;lsquo;BNF Section 7.</description>
     </item>
     
     <item>
