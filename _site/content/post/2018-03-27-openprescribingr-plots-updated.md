@@ -7,7 +7,7 @@ categories:
   - Openprescribing
 tags: []
 description: 'Updated some older HTML Widgets using GGigraph and Deldir'
-header_image: /blogimages/example.png
+header_image: /blogimages/BNFvoronoi.png
 ---
 
 18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
