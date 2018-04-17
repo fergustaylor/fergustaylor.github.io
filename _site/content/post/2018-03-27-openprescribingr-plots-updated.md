@@ -8,9 +8,21 @@ categories:
 tags: []
 description: 'Updated some older HTML Widgets using GGigraph and Deldir'
 header_image: /blogimages/BNFvoronoi.png
+draft: true
 ---
 
-18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
+I’ve been looking back at [HTML widgets](https://www.htmlwidgets.org/) again this week, having learnt a little more recently about the underline technologies, both D3 and R.
+
+One of these widgets, an R package called [‘ggiraph’](https://davidgohel.github.io/ggiraph/reference/index.html), was something I’d used in an [earlier post]( .... ) to add interactive features to static ggplots. (Based on [openprescribingR data](https://github.com/fergustaylor/openprescribingR)).
+
+I’d originally just ggiraph as a way to add tooltips, but coming back to it with a new set of experiences allowed me to understand more about how you can use it to apply CSS changes, trigger JS code, and even work server-side as part of a Shiny application.
+
+Unfortunately it doesn't quite support geom_sf, so my plots aren't exact copies. But it was helpful as a tool to experiment a little more with voronoi plots.
+I got a little creative with it, plotting geom_point_interactive with tooltips over the top of lines for example. Or voronoi polygons to create a catchment area around a point, an idea I got from this excellent [block](https://bl.ocks.org/mbostock/8033015). 
+
+A few difficulties/limitations I've noticed;
+- Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
+-Geom objects can't work together conventionally, i.e polygon with ID 7 can't trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.
 
 CCGs plotted as geom_polygon_interactive with CCG names as tooltips
 
@@ -53,3 +65,9 @@ I did also make a voronoi plot using the centre of each CCG, just to see what it
 
 <iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot12.5.5.html" width="100%" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"  onresize="this.style.height=this.contentDocument.body.scrollHeight +'px';">
 </iframe>
+
+Now that I’m happier working in D3, I'll consider creating my own widgets at some point.
+
+1. https://www.htmlwidgets.org/develop_intro.html
+1. https://cran.r-project.org/web/packages/ggiraph/index.html
+

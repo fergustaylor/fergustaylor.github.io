@@ -6,22 +6,10 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>OpenprescribingR Plots Updated</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
-      <description>18:30 : Was experimenting with in-line js to get the heights correct on the iframes below, and posted early because of a cross-domain issues. Will still be updating the text as I go, but keeping it as is for now.
-CCGs plotted as geom_polygon_interactive with CCG names as tooltips
- CCGs with prescribing centres overlaid as points
- CCGs with fill colour scaled according to cost per person on &amp;lsquo;BNF Section 7.</description>
-    </item>
     
     <item>
       <title>openprescribingR Plots3</title>
