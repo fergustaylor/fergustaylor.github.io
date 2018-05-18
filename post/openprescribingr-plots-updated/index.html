@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>OpenprescribingR Plots Updated &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="OpenprescribingR Plots Updated">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/openprescribingr-plots-updated/">
+		
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
+			
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>OpenprescribingR Plots Updated</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2018-03-27 00:00:00 &#43;0000 UTC">Tuesday, March 27, 2018</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/openprescribing">Openprescribing</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    <script>
+function myFunction() {
+var frames = document.getElementsByTagName("iframe");
+for (i = 0; i < frames.length; i++) {
+      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +'px';
+  }
+}
+window.addEventListener("load", myFunction);
+window.addEventListener("resize", myFunction);
+</script>
+
+<style>
+iframe {
+ width:100%;
+}
+</style>
+
+<p>I’ve been looking back at <a href="https://www.htmlwidgets.org/">HTML widgets</a> again this week, having learnt a little more recently about the underline technologies, both D3 and R.</p>
+
+<p>One of these widgets, an R package called <a href="https://davidgohel.github.io/ggiraph/reference/index.html">‘ggiraph’</a>, was something I’d used in an <a href="....">earlier post</a> to add interactive features to static ggplots. (Based on <a href="https://github.com/fergustaylor/openprescribingR">openprescribingR data</a>).</p>
+
+<p>I’d originally just ggiraph as a way to add tooltips, but coming back to it with a new set of experiences allowed me to understand more about how you can use it to apply CSS changes, trigger JS code, and even work server-side as part of a Shiny application.</p>
+
+<p>Unfortunately it doesn&rsquo;t quite support geom_sf, so my plots aren&rsquo;t exact copies. But it was helpful as a tool to experiment a little more with voronoi plots.
+I got a little creative with it, plotting geom_point_interactive with tooltips over the top of lines for example. Or voronoi polygons to create a catchment area around a point, an idea I got from this excellent <a href="https://bl.ocks.org/mbostock/8033015">block</a>.</p>
+
+<p>A few difficulties/limitations I&rsquo;ve noticed;
+- Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
+-Geom objects can&rsquo;t work together conventionally, i.e polygon with ID 7 can&rsquo;t trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.</p>
+
+<p>CCGs plotted as geom_polygon_interactive with CCG names as tooltips</p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot1.html">
+</iframe>
+
+<p>CCGs with prescribing centres overlaid as points</p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot2.html">
+</iframe>
+
+<p>CCGs with fill colour scaled according to cost per person on &lsquo;BNF Section 7.4.5&rsquo; Drugs, May 2017</p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot5.html">
+</iframe>
+
+<p>Prescribing centres plotted as points, used to generate voronoi polygons plotted as geom_polygon_interactive, with prescribing centre names as tooltips</p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot6.html">
+</iframe>
+
+<p>Prescribing centres in NHS West Kent CCG plotted as points, used to generate voronoi polygons within the CCG.</p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot7.5.html">
+</iframe>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot8.5.html">
+</iframe>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot10.html">
+</iframe>
+
+<p>I did also make a voronoi plot using the centre of each CCG, just to see what it would look like. But It&rsquo;s not an appropriate way to visualise CCG data, bearing in mind the difficulties of using voronoi plots. For example, each of the CCGs around Hull. <a href="https://fergustaylor.github.io/openprescribingR/dev/plot11compared.html">See the map.</a></p>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot12.html">
+</iframe>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot12.5.html">
+</iframe>
+
+<iframe src="https://fergustaylor.github.io/openprescribingR/dev/plot12.5.5.html">
+</iframe>
+
+<p>Now that I’m happier working in D3, I&rsquo;ll consider creating my own widgets at some point.</p>
+
+<ol>
+<li><a href="https://www.htmlwidgets.org/develop_intro.html">https://www.htmlwidgets.org/develop_intro.html</a></li>
+<li><a href="https://cran.r-project.org/web/packages/ggiraph/index.html">https://cran.r-project.org/web/packages/ggiraph/index.html</a></li>
+</ol>
+
+	</p>
+  
+  <br>
+  
+  <a href="https://fergustaylor.github.io/post/drug-selections/">Prev: 'Drug Selections'</a>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
+
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/changeit.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107299466-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+	</body>
+</html>

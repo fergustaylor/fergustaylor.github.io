@@ -6,10 +6,20 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenprescribingR Plots Updated</title>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  I’ve been looking back at HTML widgets again this week, having learnt a little more recently about the underline technologies, both D3 and R.
+One of these widgets, an R package called ‘ggiraph’, was something I’d used in an earlier post to add interactive features to static ggplots. (Based on openprescribingR data).</description>
+    </item>
     
     <item>
       <title>openprescribingR Plots3</title>
