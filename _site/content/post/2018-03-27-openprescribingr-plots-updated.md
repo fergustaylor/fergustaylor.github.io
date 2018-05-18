@@ -37,6 +37,7 @@ Unfortunately it doesn't quite support geom_sf, so my plots aren't exact copies.
 I got a little creative with it, plotting geom_point_interactive with tooltips over the top of lines for example. Or voronoi polygons to create a catchment area around a point, an idea I got from this excellent [block](https://bl.ocks.org/mbostock/8033015). 
 
 A few difficulties/limitations I've noticed;
+
 - Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
 -Geom objects can't work together conventionally, i.e polygon with ID 7 can't trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.
 

@@ -114,9 +114,12 @@ iframe {
 <p>Unfortunately it doesn&rsquo;t quite support geom_sf, so my plots aren&rsquo;t exact copies. But it was helpful as a tool to experiment a little more with voronoi plots.
 I got a little creative with it, plotting geom_point_interactive with tooltips over the top of lines for example. Or voronoi polygons to create a catchment area around a point, an idea I got from this excellent <a href="https://bl.ocks.org/mbostock/8033015">block</a>.</p>
 
-<p>A few difficulties/limitations I&rsquo;ve noticed;
-- Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
--Geom objects can&rsquo;t work together conventionally, i.e polygon with ID 7 can&rsquo;t trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.</p>
+<p>A few difficulties/limitations I&rsquo;ve noticed;</p>
+
+<ul>
+<li>Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
+-Geom objects can&rsquo;t work together conventionally, i.e polygon with ID 7 can&rsquo;t trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.</li>
+</ul>
 
 <p>CCGs plotted as geom_polygon_interactive with CCG names as tooltips</p>
 
