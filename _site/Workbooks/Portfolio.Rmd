@@ -1,0 +1,95 @@
+---
+title: "Portfolio"
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+twitter <-	c(
+	"997571624420478977",
+	"955589839423930368",
+	"977315121784676352",
+	"972117956862922753",
+	"966753895962816512",
+	"959866177735614465",
+	"957635884165337089",
+	"954055730574823424",
+	"896095060286095360",
+	"891351674513752064"
+)
+
+twitter %>%
+  jsonlite::toJSON() %>%
+  write(file="./twitter.json")
+
+twitter %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/twitter.json")
+```
+
+```{r}
+vimeo <-	c(
+	"231293393"
+)
+
+vimeo %>%
+  jsonlite::toJSON() %>%
+  write(file="./vimeo.json")
+
+vimeo %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/vimeo.json")
+```
+
+```{r}
+portfolio <- list.files(path = "../static/portfolio")
+portfoliourls <- str_c("https://fergustaylor.github.io/portfolio/", portfolio)
+
+portfolio %>%
+  jsonlite::toJSON() %>%
+  write(file="./portfolio.json")
+
+portfolio %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/portfolio.json")
+```
+
+```{r}
+thumb <- list.files(path = "../static/thumb")
+thumburls <- str_c("https://fergustaylor.github.io/thumb/", portfolio)
+
+thumb %>%
+  jsonlite::toJSON() %>%
+  write(file="./thumb.json")
+
+thumb %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/thumb.json")
+```
+
+```{r}
+images <- data.frame(thumb, portfolio)
+
+images %>%
+  jsonlite::toJSON() %>%
+  write(file="./images.json")
+
+images %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/images.json")
+```
+
+
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/list.files.html
+
+redo photo sizes
+
+write js script?
+
+str_c("https://fergustaylor.github.io/portfolio/", portfolio)
+
+/static/portfolio.html
+
+Do a json for thumbnail urls
