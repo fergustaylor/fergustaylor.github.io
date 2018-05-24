@@ -9,7 +9,7 @@ url3 = "../portfolio/"+classes[i].portfolio;
 url4 = classes[i].portfolio;
 
 example = document.createElement("article");
-example.className = "6u 12u$(xsmall) work-item";
+example.className = "work-item";
 
 example2 = document.createElement("a");
 example2.className = "image fit thumb";
@@ -28,7 +28,14 @@ example2.appendChild(example3);
 example.appendChild(example2);
 example.appendChild(example4);
 
-document.getElementById("two").appendChild(example);
+if(i % 2 == 0)
+{
+document.getElementById("twoeven").appendChild(example);
+}
+else
+{
+document.getElementById("twoodd").appendChild(example);
+}
 
 }
 });
