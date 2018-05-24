@@ -34,6 +34,6 @@ They (will eventually) link to the relevant articles, where context as well as i
 
 <p style="border-bottom:1px solid #e1e8ed;"></p>
 
-### Function Videos ###
+### Videos ###
 
 {{< vimeo 231293393 >}}
