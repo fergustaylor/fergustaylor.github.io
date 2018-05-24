@@ -16,26 +16,8 @@ They link to the relevant articles, where context as well as information on how 
 </div>
 
 <script src='https://d3js.org/d3.v4.min.js'></script>
-<script src='../portfolio2.js'></script>
+<script src='../portfolio.js'></script>
 
-<style>
-.work-item h3 {
-    display: none;
-}
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-.column {
-    flex: 50%;
-    max-width: 50%;
-}
-@media (max-width: 480px) {
-    .column {
-        flex: 100%;
-        max-width: 100%;
-    }
-}
-</style>
+<link rel="stylesheet" href="../portfolio.css" />
 
 {{< vimeo 231293393 >}}
