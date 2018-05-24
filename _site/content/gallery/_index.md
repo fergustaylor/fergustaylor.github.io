@@ -8,6 +8,8 @@ categories = []
 These are graphics taken from various blog posts I've written. 
 They link to the relevant articles, where context as well as information on how to reproduce them can be found.
 
+<a class="twitter-grid" data-limit="20" data-dnt="true" href="https://twitter.com/ferguswtaylor/timelines/999655703722815488?ref_src=twsrc%5Etfw">Gallery</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 <div class="row" id="two">
 </div>
 
@@ -19,25 +21,5 @@ They link to the relevant articles, where context as well as information on how 
     display: none;
 }
 </style>
-
-{{< tweet 997571624420478977 >}}
-
-{{< tweet 955589839423930368 >}}
-
-{{< tweet 977315121784676352 >}}
-
-{{< tweet 972117956862922753 >}}
-
-{{< tweet 966753895962816512 >}}
-
-{{< tweet 959866177735614465 >}}
-
-{{< tweet 957635884165337089 >}}
-
-{{< tweet 954055730574823424 >}}
-
-{{< tweet 896095060286095360 >}}
-
-{{< tweet 891351674513752064 >}}
 
 {{< vimeo 231293393 >}}
