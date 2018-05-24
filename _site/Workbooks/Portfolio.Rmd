@@ -93,3 +93,19 @@ str_c("https://fergustaylor.github.io/portfolio/", portfolio)
 /static/portfolio.html
 
 Do a json for thumbnail urls
+
+#put the rest in blogimages
+```{r}
+#iframesource <- list.files(path = "../static/blogimages", pattern = ".html")
+iframesource <- list.files(path = "../static/iframes", pattern = ".html")
+iframethumb <- list.files(path = "../static/iframethumb")
+iframe <- data.frame(iframethumb, iframesource)
+
+iframe %>%
+  jsonlite::toJSON() %>%
+  write(file="./iframe.json")
+
+iframe %>%
+  jsonlite::toJSON() %>%
+  write(file="../static/iframe.json")
+```

@@ -1,12 +1,12 @@
 
-d3.json("../images.json", function(classes) {
+d3.json("../iframe.json", function(classes) {
   
 for (i = 0; i < classes.length; i++) { 
-url1 = "../portfolio/"+classes[i].portfolio;
-url2 = "../thumb/"+classes[i].thumb;
+url1 = "../iframes/"+classes[i].iframesource;
+url2 = "../iframethumb/"+classes[i].iframethumb;
 
-url3 = "../portfolio/"+classes[i].portfolio;
-url4 = classes[i].portfolio;
+url3 = "../iframes/"+classes[i].iframesource;
+url4 = classes[i].iframesource;
 
 example = document.createElement("article");
 example.className = "work-item";
@@ -14,6 +14,8 @@ example.className = "work-item";
 example2 = document.createElement("a");
 example2.className = "image fit thumb";
 example2.setAttribute("href", url1);
+//example2.setAttribute("data-poptrox", "iframe,600x400");
+example2.setAttribute("data-poptrox", "iframe");
 
 example3 = document.createElement("img");
 example3.setAttribute("src", url2);
@@ -30,11 +32,11 @@ example.appendChild(example4);
 
 if(i % 2 == 0)
 {
-document.getElementById("twoeven").appendChild(example);
+document.getElementById("threeeven").appendChild(example);
 }
 else
 {
-document.getElementById("twoodd").appendChild(example);
+document.getElementById("threeodd").appendChild(example);
 }
 
 }
