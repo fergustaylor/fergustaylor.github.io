@@ -3,7 +3,7 @@ tags = []
 categories = []
 +++
 
-# Portfolio #
+# Gallery #
 
 These are graphics taken from various blog posts I've written. 
 They link to the relevant articles, where context as well as information on how to reproduce them can be found.
