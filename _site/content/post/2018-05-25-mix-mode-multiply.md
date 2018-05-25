@@ -12,9 +12,17 @@ header_image: /blogimages/multiply5.png
 
 I recently saw the following tweet from [Mike Bostock](https://twitter.com/mbostock), creator of D3.js.
 
+<style>
+twitterwidget#twitter-widget-0 {
+    margin-right: auto;
+    margin-left: auto;
+}
+</style>
+
 {{< tweet 999410594674442240 >}}
 
 And I thought I'd try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.
+
 So it starts off below, with the top 100 drugs and their interactions plotted as lines between points on the edge of the circle.
 
 <img src="/blogimages/multiply.png" alt="" style="width:100%;height:auto;">
@@ -41,11 +49,7 @@ Done.
 
 <img src="/blogimages/multiply5.png" alt="" style="width:100%;height:auto;">
 
-<style>
-iframe {
- width:100%;
-}
-</style>
-
 <iframe id = "frame" src="https://fergustaylor.github.io/D3/d3-2multiply/" style="width:100%; height:500px">
 </iframe>
+
+Try the interactive, full-sized version [here.](https://fergustaylor.github.io/D3/d3-2multiply/)
