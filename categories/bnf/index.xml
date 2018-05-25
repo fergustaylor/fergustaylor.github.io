@@ -6,10 +6,21 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 09 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mix-Mode-Multiply</title>
+      <link>https://fergustaylor.github.io/post/mix-mode-multiply/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
+      <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
+CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
+&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  And I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics. So it starts off below, with the top 100 drugs and their interactions plotted as lines between points on the edge of the circle.</description>
+    </item>
     
     <item>
       <title>Drug Selections</title>

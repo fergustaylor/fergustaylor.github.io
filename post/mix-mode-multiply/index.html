@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mix-Mode-Multiply &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="Mix-Mode-Multiply">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/mix-mode-multiply/">
+		
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
+			
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Mix-Mode-Multiply</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2018-05-25 00:00:00 &#43;0000 UTC">Friday, May 25, 2018</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+        <i class="fa fa-folder"></i>&nbsp;&nbsp;
+        
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/bnf">BNF</a>
+        
+        
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    <p>I recently saw the following tweet from <a href="https://twitter.com/mbostock">Mike Bostock</a>, creator of D3.js.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. <a href="https://t.co/V4J3vDToZc">pic.twitter.com/V4J3vDToZc</a></p>&mdash; Mike Bostock (@mbostock) <a href="https://twitter.com/mbostock/status/999410594674442240?ref_src=twsrc%5Etfw">May 23, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>And I thought I&rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.
+So it starts off below, with the top 100 drugs and their interactions plotted as lines between points on the edge of the circle.</p>
+
+<p><img src="../../blogimages/multiply.png" alt="" style="width:100%;height:auto;"></p>
+
+<p>I added one line of css which creates a colour change where lines overlap each other.</p>
+
+<p>path {
+  mix-blend-mode: multiply;
+}</p>
+
+<p>The lines darken.</p>
+
+<p><img src="../../blogimages/multiply1.png" alt="" style="width:100%;height:auto;"></p>
+
+<p>Does it distract a little from the severe interactions?</p>
+
+<p><img src="../../blogimages/multiply2.png" alt="" style="width:100%;height:auto;"></p>
+
+<p>Lets remove everything else.</p>
+
+<p><img src="../../blogimages/multiply3.png" alt="" style="width:100%;height:auto;"></p>
+
+<p>Done.</p>
+
+<p><img src="../../blogimages/multiply5.png" alt="" style="width:100%;height:auto;"></p>
+
+<script>
+function myFunction() {
+var frames = document.getElementById("frame");
+frames.style.height=frames.contentDocument.body.scrollHeight +'px';
+}
+window.addEventListener("load", myFunction);
+window.addEventListener("resize", myFunction);
+</script>
+
+<style>
+iframe {
+ width:100%;
+}
+</style>
+
+<iframe id = "frame" src="https://fergustaylor.github.io/D3/d3-2multiply/">
+</iframe>
+
+	</p>
+  
+  <br>
+  
+  <a href="https://fergustaylor.github.io/post/openprescribingr-plots-updated/">Prev: 'OpenprescribingR Plots Updated'</a>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
+
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/changeit.js"></script>
+<script src="https://fergustaylor.github.io/main2.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107299466-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+	</body>
+</html>
