@@ -41,20 +41,11 @@ Done.
 
 <img src="/blogimages/multiply5.png" alt="" style="width:100%;height:auto;">
 
-<script>
-function myFunction() {
-var frames = document.getElementById("frame");
-frames.style.height=frames.contentDocument.body.scrollHeight +'px';
-}
-window.addEventListener("load", myFunction);
-window.addEventListener("resize", myFunction);
-</script>
-
 <style>
 iframe {
  width:100%;
 }
 </style>
 
-<iframe id = "frame" src="https://fergustaylor.github.io/D3/d3-2multiply/">
+<iframe id = "frame" src="https://fergustaylor.github.io/D3/d3-2multiply/" style="width:100%; height:500px">
 </iframe>
