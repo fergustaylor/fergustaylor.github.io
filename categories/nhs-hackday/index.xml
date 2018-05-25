@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nhs Hackday on Fergus Taylor</title>
-    <link>/categories/nhs-hackday/</link>
+    <link>https://fergustaylor.github.io/categories/nhs-hackday/</link>
     <description>Recent content in Nhs Hackday on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/nhs-hackday/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/nhs-hackday/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NHS Hackday</title>
-      <link>/post/nhs-hackday/</link>
+      <link>https://fergustaylor.github.io/post/nhs-hackday/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/nhs-hackday/</guid>
-      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and joining onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
-I was interested in plotting the catchment areas for each type of</description>
+      <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
+I was interested in plotting the catchment areas for each type of clinic.</description>
     </item>
     
   </channel>

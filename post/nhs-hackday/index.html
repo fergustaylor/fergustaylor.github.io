@@ -17,18 +17,18 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		<meta name="og:site_name" content="Fergus Taylor">
 		<meta name="og:title" content="NHS Hackday">
-		<meta name="og:url" content="/post/nhs-hackday/">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/nhs-hackday/">
 		
-		<meta name="og:image" content="/images/avatar.jpg">
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
 		
 
 		<meta name="generator" content="Hugo 0.29" />
 
-		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
 		
 		
@@ -38,7 +38,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Header -->
 <header id="header">
 	
-	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
 	
 	
 		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
@@ -48,9 +48,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<nav id="sidebar">
 			<ul>
 			
-				<li><a href="../../">Home</a></li>
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
 			
-				<li><a href="../../post">Archive</a></li>
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
 			
 			</ul>
 		</nav>
@@ -74,7 +74,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         
-        <a class="article-category-link" href="../../categories/nhs-hackday">NHS Hackday</a>
+        <a class="article-category-link" href="https://fergustaylor.github.io/categories/nhs-hackday">NHS Hackday</a>
         
         
     
@@ -106,9 +106,44 @@ iframe {
 </style>
 
 <p>Back in February I attended the 19th NHS Hack Day in Cardiff.
-I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and joining onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.</p>
+I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.</p>
 
-<p>I was interested in plotting the catchment areas for each type of</p>
+<p>I was interested in plotting the catchment areas for each type of clinic.
+Assuming that a call to NHS 111 would require a referal to one type of clinic specialising it the necessary service, could you plot each of these clinics across the UK and demonstrate useful information by plotting the catchement areas around each of that type of clinic.</p>
+
+<p>It would be colour-coded to the status (green-amber-red) that clinic was currently reporting.
+Once a clinic reached capacity, it stops taking patients, and I wondered if removing it from the map, and looking at the impact on the newly expanded catchment areas around it would demonstrate any useful information over a time-lapse graphic.</p>
+
+<p>I was looking at voronoi plots initially, which can be useful in concentrated, urban areas.
+Although they have some clear limitations on a wider-scale.
+The plots below neglect local geography such as rivers, irregular coastline, etc. They ignore travel-times as a reflection of road distance/speeds, etc. And they assume a perfect travel as the bird flies.</p>
+
+<p>I&rsquo;ve plotted voronois for each subtype of clinic that NHS 111 already listed, although I&rsquo;d like to take this project further with a more sophisticated approach in future.
+I&rsquo;ve seen a lot of interesting projects on medical geography recently, in particular around access to services in rural areas around Scotland.</p>
+
+<p>I&rsquo;ll continue to research the subject.</p>
+
+<p>A more successful aspect of this project, an interesting snippet that I developed for the iframes in this post is also given below.</p>
+
+<pre><code>&lt;script&gt;
+function myFunction() {
+var frames = document.getElementsByTagName(&quot;iframe&quot;);
+for (i = 0; i &lt; frames.length; i++) {
+      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +'px';
+  }
+}
+window.addEventListener(&quot;load&quot;, myFunction);
+window.addEventListener(&quot;resize&quot;, myFunction);
+&lt;/script&gt;
+
+&lt;style&gt;
+iframe {
+ width:100%;
+}
+&lt;/style&gt;
+</code></pre>
+
+<p>The initial plots themselves.</p>
 
 <iframe src="https://fergustaylor.github.io/Dev/Hackday/voronoi/DEvoronoi.html">
 </iframe>
@@ -168,11 +203,11 @@ I had a great experience listening to the pitches, meeting new people involved i
 
 	</p>
   
-  <a href="../../post/mix-mode-multiply/">Next: 'Mix-Mode-Multiply'</a>
+  <a href="https://fergustaylor.github.io/post/mix-mode-multiply/">Next: 'Mix-Mode-Multiply'</a>
 
   <br>
   
-  <a href="../../post/openprescribingr-plots-updated/">Prev: 'OpenprescribingR Plots Updated'</a>
+  <a href="https://fergustaylor.github.io/post/openprescribingr-plots-updated/">Prev: 'OpenprescribingR Plots Updated'</a>
 
 	
 
@@ -195,7 +230,7 @@ I had a great experience listening to the pitches, meeting new people involved i
 		
 		
 		
-		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
@@ -205,14 +240,14 @@ I had a great experience listening to the pitches, meeting new people involved i
 </footer>
 
 <!-- Scripts -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery.poptrox.min.js"></script>
-<script src="../../js/skel.min.js"></script>
-<script src="../../js/util.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
 
-<script src="../../js/main.js"></script>
-<script src="../../js/changeit.js"></script>
-<script src="../../main2.js"></script>
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/changeit.js"></script>
+<script src="https://fergustaylor.github.io/main2.js"></script>
 
 
 <script>

@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Google Custom Search</title>
+      <link>https://fergustaylor.github.io/post/google-custom-search/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
+      <description>I&amp;rsquo;ve created a tool for searching medical resources, here.
+ A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work. I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.</description>
+    </item>
+    
+    <item>
       <title>Mix-Mode-Multiply</title>
       <link>https://fergustaylor.github.io/post/mix-mode-multiply/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
@@ -19,7 +29,18 @@
       <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
       <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
  twitterwidget#twitter-widget-0 { margin-right: auto; margin-left: auto; }  CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
-&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  And I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
+&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  
+I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
+    </item>
+    
+    <item>
+      <title>NHS Hackday</title>
+      <link>https://fergustaylor.github.io/post/nhs-hackday/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
+I was interested in plotting the catchment areas for each type of clinic.</description>
     </item>
     
     <item>

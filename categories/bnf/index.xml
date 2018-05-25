@@ -19,7 +19,8 @@
       <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
       <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
  twitterwidget#twitter-widget-0 { margin-right: auto; margin-left: auto; }  CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
-&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  And I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
+&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  
+I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
     </item>
     
     <item>
