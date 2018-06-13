@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gallery &middot; Fergus Taylor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Fergus Taylor">
+		<meta name="description" content="Project Data analysis">
+		<meta http-equiv="content-language" content="en-uk" />
+
+		
+		<meta name="og:site_name" content="Fergus Taylor">
+		<meta name="og:title" content="Gallery">
+		<meta name="og:url" content="/post/gallery/">
+		
+		<meta name="og:image" content="/images/avatar.jpg">
+		
+		
+
+		<meta name="generator" content="Hugo 0.29" />
+
+		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
+	
+	
+		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="../../">Home</a></li>
+			
+				<li><a href="../../post">Archive</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Gallery</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2018-06-10 00:00:00 &#43;0000 UTC">Sunday, June 10, 2018</time>&nbsp;&nbsp;
+
+
+
+
+    
+    
+
+
+
+   
+   
+
+
+	</span>
+
+	<p>
+	    <p>A while ago I was considering how to demonstrate a snapshot of all the graphics I&rsquo;ve produced while learning to code.</p>
+
+<p><a href="https://fergustaylor.github.io/gallery/">https://fergustaylor.github.io/gallery/</a></p>
+
+<p>Twitter</p>
+
+<p>Blog Graphics</p>
+
+<p>Blog Iframes</p>
+
+<p>Videos</p>
+
+<p>The problem I had was publishing a large number of graphics, then maintaining references to them over time.
+I didn&rsquo;t really want to indefinitely add huge numbers of links to an md file, or tags to a html page.</p>
+
+<p>So I wondered instead if there were a way to populate a page with graphics in a given folder.
+Most of the graphics I use anyway, I&rsquo;ve saved to a particular &lsquo;/blogimages/&rsquo; directory on the website repository.</p>
+
+<p>I started off with a notes file list of all the images/iframes/tweets/links I wanted to include.</p>
+
+<p>I then saved the images to a new folder, &lsquo;portfolio&rsquo;.
+And saved low-res versions to a new folder, &lsquo;thumb&rsquo;.</p>
+
+<p>I wrote a .Rmd file, &lsquo;Portfolio&rsquo; with R code that collects the names of each file in those folders, and writes a JSON file listing them (both high and low-res).
+That way, every time I run it - it updates a list of graphics to include in the website.</p>
+
+<pre><code>library(tidyverse)
+...
+</code></pre>
+
+<p>I made the gallery post itself as an md file (my website uses Blogdown). It includes some javascript, <a href="https://fergustaylor.github.io/portfolio.js">here</a> which reads the json file, and includes every image inside.</p>
+
+<pre><code>d3.json(&quot;../images.json&quot;, function(classes) {
+  
+for (i = 0; i &lt; classes.length; i++) { 
+url1 = &quot;../portfolio/&quot;+classes[i].portfolio;
+url2 = &quot;../thumb/&quot;+classes[i].thumb;
+
+url3 = &quot;../portfolio/&quot;+classes[i].portfolio;
+url4 = classes[i].portfolio;
+
+example = document.createElement(&quot;article&quot;);
+example.className = &quot;work-item&quot;;
+
+example2 = document.createElement(&quot;a&quot;);
+example2.className = &quot;image fit thumb&quot;;
+example2.setAttribute(&quot;href&quot;, url1);
+
+example3 = document.createElement(&quot;img&quot;);
+example3.setAttribute(&quot;src&quot;, url2);
+
+example4 = document.createElement(&quot;h3&quot;);
+example5 = document.createElement(&quot;a&quot;);
+example5.setAttribute(&quot;href&quot;, url3);
+example5.appendChild(document.createTextNode(url4));
+example4.appendChild(example5);
+
+example2.appendChild(example3);
+example.appendChild(example2);
+example.appendChild(example4);
+
+if(i % 2 == 0)
+{
+document.getElementById(&quot;twoeven&quot;).appendChild(example);
+}
+else
+{
+document.getElementById(&quot;twoodd&quot;).appendChild(example);
+}
+
+}
+});
+</code></pre>
+
+<p>I used the same principles with a few minor differences, <a href="https://fergustaylor.github.io/portfolio2.js">here</a> to include iframes.
+The iframe sources are html files, (graphics that are exported as .html), kept in a seperate &lsquo;iframes&rsquo; folder, which is listed in the same way as the images are. The thumbnails are kept seperately, made manually.</p>
+
+<p>The third group of content I wanted to include were tweets. I&rsquo;ve published a few graphics few twitter which are interesting in-context.
+Rather than individually embed them from a list, I thought it&rsquo;d be easier to look at Twitter options.
+Twitter allows you to curate lists using Tweetdeck (as well as their own API), and you can create an embedded grid of them to put in the gallery md file.
+All of that meant I could curate the tweets through tweetdeck, and everything else would load up automatically.</p>
+
+<pre><code>
+</code></pre>
+
+<p>Then last, something I do least frequently, videos were indivudally embedded using hugo shortcodes.</p>
+
+	</p>
+  
+  <br>
+  
+  <a href="../../post/google-custom-search/">Prev: 'Google Custom Search'</a>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/ferguswtaylor" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/fergustaylor" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		
+		
+		
+		
+		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/jquery.poptrox.min.js"></script>
+<script src="../../js/skel.min.js"></script>
+<script src="../../js/util.js"></script>
+
+<script src="../../js/main.js"></script>
+<script src="../../js/changeit.js"></script>
+<script src="../../main2.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-107299466-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+	</body>
+</html>

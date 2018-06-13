@@ -44,31 +44,31 @@ paginate = 5
 		[[params.portfolio.gallery]]
 			image = "fulls/d3-3.png"
 			thumb = "thumbs/d3-3.png"
-			title = "[BNF](//fergustaylor.github.io/categories/bnf/)"
+			title = "[BNF](./categories/bnf/)"
 			description = "A project mapping drug interactions listed in the BNF. Working on hierachical edge bundling algorithms, and learning to use D3.js."
 		
 		[[params.portfolio.gallery]]
 			image = "fulls/02.jpg"
 			thumb = "thumbs/02.jpg"
-			title = "[Arran](//fergustaylor.github.io/categories/arran/)"
+			title = "[Arran](./categories/arran/)"
 			description = "A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps."
 
 		[[params.portfolio.gallery]]
 			image = "fulls/03.jpg"
 			thumb = "thumbs/03.jpg"
-			title = "[04/08/17 - Public Health Outcomes Framework](//fergustaylor.github.io/post/post3/)"
+			title = "[04/08/17 - Public Health Outcomes Framework](./post/post3/)"
 			description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
 			
 			[[params.portfolio.gallery]]
 			image = "fulls/07.jpg"
 			thumb = "thumbs/07.jpg"
-			title = "[OpenprescribingR](//fergustaylor.github.io/categories/openprescribing/)"
+			title = "[OpenprescribingR](./categories/openprescribing/)"
 			description = "A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters"
 			
 			[[params.portfolio.gallery]]
 			image = "fulls/bearhunt.png"
 			thumb = "thumbs/bearhunt.png"
-			title = "[Writing](//fergustaylor.github.io/categories/writing/)"
+			title = "[Writing](./categories/writing/)"
 			description = "A number of articles, (as opposed to code explanations). This a collection for writings, produced for varying publications. Fuelled by late-night coffee, and even more urgent deadlines - these pieces are for a number of the different groups I'm involved with. Most, however have a broad focus on healthcare issues, student societies, and effective charity governance."
 
 	[params.recentposts]
