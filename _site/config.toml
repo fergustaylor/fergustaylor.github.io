@@ -27,12 +27,6 @@ paginate = 5
 	custom_js   = []
 	custom_css  = []
   
-  [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-
 	[params.sidebar]
 		avatar = "avatar.jpg"
 		bio = "**I'm Fergus Taylor**, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use [#Rstats](//twitter.com/hashtag/Rstats?src=hash)."
