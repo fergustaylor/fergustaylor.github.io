@@ -43,26 +43,25 @@ draft: true
 //What they teach
 //What I can do/ I'd like to go off and do
 
-{{< img src="/writing/chamonix-1.png" >}}
-*Not pictured: A fresh baguette with brie EVERY day. Or my crampons.
+{{< img-left src="/writing/chamonix-1.png" title="*Not pictured: A fresh baguette with brie EVERY day. Or my crampons." >}}
 
-{{< img src="/writing/chamonix-2.png" >}}
-*From the top of Montenvers Train, walking out to the Mer de Glace.
+{{< img-left src="/writing/chamonix-2.png" >}}
 
+{{< img-right src="/writing/chamonix-4.png" >}}
 
-{{< img src="/writing/chamonix-3.png" >}}
-{{< img src="/writing/chamonix-4.png" >}}
 {{< img src="/writing/chamonix-13.png" >}}
 
 //
 
-{{< img src="/writing/chamonix-12.png" >}}
-{{< img src="/writing/chamonix-5.png" >}}
-{{< img src="/writing/chamonix-6.png" >}}
-{{< img src="/writing/chamonix-7.png" >}}
-{{< img src="/writing/chamonix-8.png" >}}
-{{< img src="/writing/chamonix-10.png" >}}
-{{< img src="/writing/chamonix-11.png" >}}
+{{< img-left src="/writing/chamonix-12.png" >}}
+{{< img-right src="/writing/chamonix-5.png" >}}
+
+{{< img-left src="/writing/chamonix-6.png" >}}
+{{< img-right src="/writing/chamonix-7.png" >}}
+{{< img-left src="/writing/chamonix-8.png" >}}
+
+{{< img-left src="/writing/chamonix-10.png" >}}
+{{< img-right src="/writing/chamonix-11.png" >}}
 {{< img src="/writing/chamonix-14.png" >}}
 {{< img src="/writing/chamonix-15.png" >}}
 
