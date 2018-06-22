@@ -82,37 +82,46 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	</span>
 
 	<p>
-	    <p>A while ago I was considering how to demonstrate a snapshot of all the graphics I&rsquo;ve produced while learning to code.</p>
+	    
 
-<p><a href="https://fergustaylor.github.io/gallery/">https://fergustaylor.github.io/gallery/</a></p>
+<p>A while ago I was considering how best to demonstrate all the graphics I&rsquo;ve produced while learning to code.
+I thought a particular page could provide a useful snapshot of the work I&rsquo;d been interested in, the topics, the media; that I could build up into a portfolio.</p>
 
-<p>Twitter</p>
+<p>Rather than writing a one-off post however, or something that I&rsquo;d have to edit every 6 months, I wanted a system that I could add to relatively easily over time.
+  I didn&rsquo;t want to add huge numbers of links to an md file, or tags to a html page indefinitely. So I wondered instead if there would be a way to populate a page with graphics from a given folder. Most of the graphics in my posts, I&rsquo;ve saved to a particular <a href="https://fergustaylor.github.io/blogimages *or github page">&rsquo;/blogimages/&rsquo;</a> folder anyway.</p>
 
-<p>Blog Graphics</p>
+<p>I started off with a list of everything I already had, and roughly organised them into different groups that might require different ways to publish.</p>
 
-<p>Blog Iframes</p>
+<ol>
+<li><p>Blog Graphics
+I have a few images (.png) made for particular posts already, and if I could link to them then that might provide an interesting way to interact with the topics covered in my posts.
+Also part of this, I had a lot of Gifs.</p></li>
 
-<p>Videos</p>
+<li><p>Blog Iframes
+The same context as above, but including iframes of interesting graphics would require a different approach.</p></li>
 
-<p>The problem I had was publishing a large number of graphics, then maintaining references to them over time.
-I didn&rsquo;t really want to indefinitely add huge numbers of links to an md file, or tags to a html page.</p>
+<li><p>Twitter posts
+I have a few posts with interesting graphics, concise explanations of context, or cool interactions with people working in that field. One of the ways I currently find out about interesting projects, conferences, R packages is Twitter. So I was keen to incorporate it somehow.</p></li>
 
-<p>So I wondered instead if there were a way to populate a page with graphics in a given folder.
-Most of the graphics I use anyway, I&rsquo;ve saved to a particular &lsquo;/blogimages/&rsquo; directory on the website repository.</p>
+<li><p>Videos
+Something I do the least of, but good to show-off where I already have them.</p></li>
+</ol>
 
-<p>I started off with a notes file list of all the images/iframes/tweets/links I wanted to include.</p>
+<h2 id="blog-graphics">Blog Graphics</h2>
 
-<p>I then saved the images to a new folder, &lsquo;portfolio&rsquo;.
-And saved low-res versions to a new folder, &lsquo;thumb&rsquo;.</p>
+<p>I wrote an .Rmd file, [&lsquo;Portfolio&rsquo;]() with code that collects the names of each file in a folder, and writes a JSON file list of them.
+I ended up sorting the graphics into 2 folders, one of the full-size image, one a low-res version for thumbnails.
+That way, every time I run my code - it updates a JSON list of graphics to include in the website.</p>
 
-<p>I wrote a .Rmd file, &lsquo;Portfolio&rsquo; with R code that collects the names of each file in those folders, and writes a JSON file listing them (both high and low-res).
-That way, every time I run it - it updates a list of graphics to include in the website.</p>
+<p>// try to link to code directly?</p>
 
 <pre><code>library(tidyverse)
-...
+//rest of code
 </code></pre>
 
-<p>I made the gallery post itself as an md file (my website uses Blogdown). It includes some javascript, <a href="https://fergustaylor.github.io/portfolio.js">here</a> which reads the json file, and includes every image inside.</p>
+<p>I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included <a href="https://fergustaylor.github.io/portfolio.js">some javascript,</a> which reads the json file from earlier, and inserts every image inside.</p>
+
+<p>//link directly to code?</p>
 
 <pre><code>d3.json(&quot;../images.json&quot;, function(classes) {
   
@@ -156,21 +165,39 @@ document.getElementById(&quot;twoodd&quot;).appendChild(example);
 });
 </code></pre>
 
-<p>I used the same principles with a few minor differences, <a href="https://fergustaylor.github.io/portfolio2.js">here</a> to include iframes.
-The iframe sources are html files, (graphics that are exported as .html), kept in a seperate &lsquo;iframes&rsquo; folder, which is listed in the same way as the images are. The thumbnails are kept seperately, made manually.</p>
+<h2 id="blog-iframes">Blog Iframes</h2>
 
-<p>The third group of content I wanted to include were tweets. I&rsquo;ve published a few graphics few twitter which are interesting in-context.
-Rather than individually embed them from a list, I thought it&rsquo;d be easier to look at Twitter options.
-Twitter allows you to curate lists using Tweetdeck (as well as their own API), and you can create an embedded grid of them to put in the gallery md file.
-All of that meant I could curate the tweets through tweetdeck, and everything else would load up automatically.</p>
+<p>I then used the same principle as before with a few minor differences, <a href="https://fergustaylor.github.io/portfolio2.js">here</a> to include the list of iframes.
+Unfortunately, I have to still make the thumbnails manually.</p>
 
-<pre><code>
-</code></pre>
+<h2 id="twitter-posts">Twitter posts</h2>
 
-<p>Then last, something I do least frequently, videos were indivudally embedded using hugo shortcodes.</p>
+<p>The twitter posts were interesting. I started with a list of URLS, and since it&rsquo;s relatively easy to embed them individually I did use a fairly similar appraoch to start off with.
+However, each tweet took up a lot of unnecessary space, and soon created a long page which was arduous to scroll through.
+In addition, in order to include tweets I&rsquo;d then have to add to a long list of URLS. So rather than individually embed them, I thought it&rsquo;d be easier to look at Twitter options.</p>
+
+<p>Twitter allows you to curate lists using Tweetdeck (as well as their own API), which makes it relatively easy to scroll through my timeline.</p>
+
+<p>// screenshot</p>
+
+<p>This updates an embedded grid which I can link to in the gallery md file.
+So I can curate the tweets through tweetdeck, and everything else would load up automatically.</p>
+
+<h2 id="videos">Videos</h2>
+
+<p>Then lastly, since I do it so infrequently, videos were just indivudally embedded using [hugo shortcodes]().</p>
+
+<h2 id="last-thoughts">Last thoughts</h2>
+
+<p>I&rsquo;m pretty happy with how this turned out. Rather than sorting through all my work I can just add content to a few different folders, and re-run the .rmd.</p>
+
+<p>It still requires I make a low-res version for photos manually, or a screenshot for iframes. And I&rsquo;ll need to look at Tweetdeck every now and then.
+But compared to making a portfolio from scratch, I consider this a vast improvement, and something I can add to incrementally over time.</p>
 
 	</p>
   
+  <a href="../../post/example-post/">Next: 'Example Post'</a>
+
   <br>
   
   <a href="../../post/google-custom-search/">Prev: 'Google Custom Search'</a>

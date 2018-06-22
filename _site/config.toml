@@ -69,7 +69,7 @@ paginate = 5
 			image = "fulls/bearhunt.png"
 			thumb = "thumbs/bearhunt.png"
 			title = "[Writing](./categories/writing/)"
-			description = "A number of articles, (as opposed to code explanations). This a collection for writings, produced for varying publications. Fuelled by late-night coffee, and even more urgent deadlines - these pieces are for a number of the different groups I'm involved with. Most, however have a broad focus on healthcare issues, student societies, and effective charity governance."
+			description = "This a collection of writing, produced for varying publications. Fuelled by late-night coffee, and even more urgent deadlines - these pieces are for a number of the different groups I'm involved with. Most, however have a broad focus on healthcare issues, student societies, and effective charity governance."
 
 	[params.recentposts]
 		hide  = false

@@ -21,7 +21,10 @@ It doesn't give a sense of voter turnout vs population, but it does give a sense
 I did wonder if the sense of geographic detail from each plot point, (the location within a ward is randomly generated), was misleading though.
 For example, 100 plots below.
 
-(gif)
+<img src="https://fergustaylor.github.io/Dev/Local%20Elections/party.gif" alt="" style="width:100%;height:auto;">
 
-An interesting plot to try out. I've been enjoying the Guardian Visual and other election coverage recently, especially in the run-up to this years local elections, and it's given me a lot to think about.
+You can see the variation between each frame, however I was surprised I didn't notice more of a difference.
+Perhaps just due to the scale of the individual points to the electoral ward, I retained the same sense of voting proportions, as well as (although to a lesser-extent) geographic spread across parties.
+
+This was an interesting plot to try out. I've been enjoying 'Guardian Visual' and other election coverage recently, especially in the run-up to this year's local elections, and it's given me a lot to think about.
 A lot of my graphics lack polish, but getting the fundamentals right first is important too.
