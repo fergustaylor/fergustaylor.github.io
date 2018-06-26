@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</loc>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fergustaylor.github.io/post/google-custom-search/</loc>
     <lastmod>2018-05-25T00:00:00+00:00</lastmod>
   </url>
@@ -214,7 +219,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/writing/</loc>
-    <lastmod>2016-11-27T13:39:46+02:00</lastmod>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -231,7 +236,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/</loc>
-    <lastmod>2018-05-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -254,7 +259,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/categories/writing/</loc>
-    <lastmod>2016-11-27T13:39:46+02:00</lastmod>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,7 +7,6 @@ categories: ["Writing"]
 tags: []
 description: ''
 header_image: "writing/chamonix-9.png"
-draft: true
 ---
 
 <style>
