@@ -35,32 +35,32 @@ Back to the Friday before, where I'm desperately trying to sort out my equipment
 
 <img src="/writing/chamonix-1.png" class="image left" alt="*Not pictured: A fresh baguette with brie EVERY day. Or, less importantly, my crampons.">
 
-_Axe, crampons, harness, HELMET.. that seems important. 
+_*Axe, crampons, harness, HELMET.. that seems important. 
 Loads of socks, I’m walking after all. Jaffa cakes are vital._
 
 I’ve been on a crawl around the local mountaineering shops, and already spent a silly amount on extra karabiners and guidebooks.
 I think that means I'm ready to go. 
 
 I must pack everything I need to travel safely on ice and snow this week.
-I've been awarded a subsidised place on the [Jonathon Conville Alpine Mountaineering Course](https://www.pyb.co.uk/jonathan-conville-memorial-trust/) to learn how to plan alpine days. I want to know all the essential ropework to travel across glaciers safely, how to rescue someone from a crevasse, and to use axes, crampons as well as different belay systems for navigating treacherous terrain.
+I've been awarded a place on the [Jonathon Conville Alpine Mountaineering Course](https://www.pyb.co.uk/jonathan-conville-memorial-trust/) to learn how to plan alpine days. I want to know all the essential ropework to travel across glaciers safely, how to rescue someone from a crevasse, and to use axes, crampons as well as different belay systems for navigating treacherous terrain.
 So there's a lot of equipment I'd better bring with me if I'm going to be able to try it out.
 
 <img src="/writing/chamonix-2.png" class="image right">
 
-I'm in Geneva the next day, and after a brief minibus trip, I'm ready to relax in the campsite with a whole baguette and selection of cheese. 
+I'm in Geneva the next day, and after a brief minibus trip, I'm ready to relax in the campsite with a whole baguette and selection of cheeses. 
 It's carb-loading, probably.
 
 We meet with our guides the next morning. They're all established guides of Plas y Brenin, with a stunning collective history of mountaineering.
-They'd all be worth an article or two in themselves - they were full of stories of adventures over the years, making great company on the mountain, and they help the [Jonathon Conville Memorial Trust](http://www.jcmt.org.uk/) achieve its aims to encourage and assist young people to "pursue their love of the outdoors in the spirit of adventure".
+They were full of stories of adventures over the years, making great company on the mountain, and they help the [Jonathon Conville Memorial Trust](http://www.jcmt.org.uk/) achieve its aims to encourage and assist young people to "pursue their love of the outdoors in the spirit of adventure".
 
 <img src="/writing/chamonix-4.png" class="image left">
 
-_*My view up the slope to one of the other students, rescuing me._
+_*My view up the slope to one of the other students, 'rescuing' me._
 
 For our first day we headed into Chamonix to catch the Montenvers Train up to the Mer de Glace. This is the largest glacier in France, and one of 7 majors which make up the valley.
 This was the perfect place then for practicing how to rope up for travel, to rescue someone from a crevasse and to learn how to use crampons and axes together across different terrain.
 
-There were a lot of individual skills being applied here, but the good, clear explanations, together with the repetitive teaching style really drilled the fundamentals again and again throughout the day, and it helped me to learn skills I needed. A lot of what was being applied here is just as useful in Scottish Winter, and many of the places on the course are awarded for just that reason; to help clubs to improve their collective safety back in the UK. This was fantastic day out on the ice.
+There were a lot of individual skills being applied here, but the good, clear explanations, together with the repetitive teaching style really drilled the fundamentals again and again throughout the day, and it helped me to learn skills I needed. A lot of what was being applied here is just as useful in Scottish Winter, and many of the places on the course are awarded for just that reason; to help clubs to improve their collective safety back in the UK. This was a fantastic day out on the ice.
 
 <img src="/writing/chamonix-13.png" class="image fit">
 
@@ -95,6 +95,6 @@ A few tips for next time;
   - The ['Maison de la Montagne'](https://www.chamonix.com/office-de-haute-montagne,48-492959,en.html) is a treasure trove of information if you need to look at a guidebook, see a map, or ask any questions when planning a day out.
   - You can now get cheap, external batteries powerful enough to charge your phone for a week. Great for travelling.
   - The lifts, (and huts), open properly from mid-June. Worth looking up the dates when planning your trip, as not all of them will be open at the start of the season. Many of the routes will require a long walk-in otherwise.
-    - [Camping D'Argentiere](https://www.chamonix.com/camping-glacier-d-argentiere,117-209504,en.html) is the great place to stay if you're on the course, or even just climbing in the valley during the Summer. It's very social, and a great place to find climbing partners.
+  - [Camping D'Argentiere](https://www.chamonix.com/camping-glacier-d-argentiere,117-209504,en.html) is a great place to stay if you're on the course, or even just climbing in the valley during the Summer. It's very social, and a great place to find climbing partners.
 
-*This course was helped subsidise by my employer, Go Ape. I recieved funding through their staff [Adventure Fund.](https://goape.co.uk/blog)*
+*This course was part-funded by Go Ape. I recieved funding through their staff [Adventure Fund.](https://goape.co.uk/blog)*
