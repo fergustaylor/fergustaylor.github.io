@@ -1,0 +1,18 @@
+.more {
+    overflow: hidden !important;
+}
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    text-align: right;
+    display: block;
+    margin-top: -30px;
+    margin-right: 5px;
+}
+
+.morelink a {
+    font-size: 0.7rem;
+}

@@ -2,42 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/</link>
+    <link>/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Example Post</title>
+      <link>/post/example-post/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/example-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Chamonix and the Conville Course</title>
-      <link>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</link>
+      <link>/writing/chamonix-and-the-conville-course/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</guid>
+      <guid>/writing/chamonix-and-the-conville-course/</guid>
       <description>strong, b { font-weight: 800; } .image { border-radius: unset; } @media screen and (max-width: 480px) { .image.left, .image.right { display: block; width: 100%; max-width: unset; } }  I set off to the Alps for the Conville Mountaineering Course, and learned a few new skills to keep myself safe in the Mountains this year.
 *Another group out on Mont Blanc Massif
 Back to the Friday before, where I&amp;rsquo;m desperately trying to sort out my equipment before an early-morning flight to Geneva.</description>
     </item>
     
     <item>
+      <title>Gallery</title>
+      <link>/post/gallery/</link>
+      <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/gallery/</guid>
+      <description>A while ago I was considering how best to demonstrate the graphics I&amp;rsquo;ve been developing while learning to code. I thought a particular page could provide a useful snapshot of the work I&amp;rsquo;d been interested in, the topics, the media; that I could then build up into a portfolio.
+Rather than writing a one-off post however, or something that I&amp;rsquo;d have to edit every 6 months, I wanted a system that I could add to, relatively easily over time.</description>
+    </item>
+    
+    <item>
       <title>Google Custom Search</title>
-      <link>https://fergustaylor.github.io/post/google-custom-search/</link>
+      <link>/post/google-custom-search/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
+      <guid>/post/google-custom-search/</guid>
       <description>I&amp;rsquo;ve created a tool for searching medical resources, here.
  A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work. I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.</description>
     </item>
     
     <item>
       <title>Mix-Mode-Multiply</title>
-      <link>https://fergustaylor.github.io/post/mix-mode-multiply/</link>
+      <link>/post/mix-mode-multiply/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
+      <guid>/post/mix-mode-multiply/</guid>
       <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
  twitterwidget#twitter-widget-0 { margin-right: auto; margin-left: auto; }  CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
 &amp;mdash; Mike Bostock (@mbostock) May 23, 2018  
@@ -45,41 +64,51 @@ I thought I&amp;rsquo;d try it out with my BNF interactions project to see how i
     </item>
     
     <item>
+      <title>UK Local Elections 2017</title>
+      <link>/post/uk-local-elections-2017/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/uk-local-elections-2017/</guid>
+      <description>Following a very interesting post I&amp;rsquo;d found on twitter by Paul Campbell, I was curious to try to recreate the plots involved myself.
+Plotting a coloured point as a representation of 100 votes in each ward is interesting, it gives a surprising feel for the sense of party proportions in an area. It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does give a sense of scale to voting in areas.</description>
+    </item>
+    
+    <item>
       <title>NHS Hackday</title>
-      <link>https://fergustaylor.github.io/post/nhs-hackday/</link>
+      <link>/post/nhs-hackday/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
+      <guid>/post/nhs-hackday/</guid>
       <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
 I was interested in plotting the catchment areas for each type of clinic.</description>
     </item>
     
     <item>
       <title>OpenprescribingR Plots Updated</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
+      <link>/post/openprescribingr-plots-updated/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
+      <guid>/post/openprescribingr-plots-updated/</guid>
       <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  I’ve been looking back at HTML widgets again this week, having learnt a little more recently about the underline technologies, both D3 and R.
 One of these widgets, an R package called ‘ggiraph’, was something I’d used in an earlier post to add interactive features to static ggplots. (Based on openprescribingR data).</description>
     </item>
     
     <item>
       <title>Drug Selections</title>
-      <link>https://fergustaylor.github.io/post/drug-selections/</link>
+      <link>/post/drug-selections/</link>
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/drug-selections/</guid>
+      <guid>/post/drug-selections/</guid>
       <description>I decided it might be useful to see the interaction information as plain text. Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.
  I may add more detail later, such as evidence/severity, and colour coding on severe interactions. But for now it&amp;rsquo;s a list-view of all the interactions known.</description>
     </item>
     
     <item>
       <title>Custom Drug Selections</title>
-      <link>https://fergustaylor.github.io/post/custom-drug-selections/</link>
+      <link>/post/custom-drug-selections/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
+      <guid>/post/custom-drug-selections/</guid>
       <description>Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.
 I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.
 Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug.</description>
@@ -87,20 +116,20 @@ Ideally my intentions were to use hierachical edge bundling as a visual shortcut
     
     <item>
       <title>Drug Interactions with Hierarchical Edge Bundling</title>
-      <link>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</link>
+      <link>/post/drug-interactions-with-hierarchical-edge-bundling/</link>
       <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
+      <guid>/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
       <description>So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden). I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.
 For now I&amp;rsquo;m going to take a small break to learn some general D3 skills.</description>
     </item>
     
     <item>
       <title>BNF Interactions</title>
-      <link>https://fergustaylor.github.io/post/bnf-interactions/</link>
+      <link>/post/bnf-interactions/</link>
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
+      <guid>/post/bnf-interactions/</guid>
       <description>I made a few bits of progress.
 Here.
 I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.
@@ -111,10 +140,10 @@ I&amp;rsquo;ve also made an on:hover comparison tool, for the drug selected and 
     
     <item>
       <title>All The Medicine</title>
-      <link>https://fergustaylor.github.io/post/all-the-medicine/</link>
+      <link>/post/all-the-medicine/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/all-the-medicine/</guid>
+      <guid>/post/all-the-medicine/</guid>
       <description>I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by NHS digital. (As part of their CCG Spending data).
 These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.
 E.g Adenosine (Chemical Sub: 0203020C0), i.e BNF &amp;gt; 2. &amp;lsquo;Cardiovascular System&amp;rsquo; &amp;gt; 2.3 &amp;lsquo;Anti-Arrhythmic Drugs&amp;rsquo; &amp;gt; 2.3.2 &amp;lsquo;Drugs for Arrhythmias&amp;rsquo;
@@ -123,10 +152,10 @@ This 3-layer dendrogram is composed of every medicine (3292) listed on this look
     
     <item>
       <title>The BNF Project</title>
-      <link>https://fergustaylor.github.io/post/the-bnf-project/</link>
+      <link>/post/the-bnf-project/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
+      <guid>/post/the-bnf-project/</guid>
       <description>I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock example of a tensionable hierachical edge bundling diagram.
 See the interactive version here.
 
@@ -137,20 +166,20 @@ See the interactive version here. Whilst the adjacency relationships (drug-drug 
     
     <item>
       <title>BNF Sections Visualised</title>
-      <link>https://fergustaylor.github.io/post/bnf-sections-visualised/</link>
+      <link>/post/bnf-sections-visualised/</link>
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
+      <guid>/post/bnf-sections-visualised/</guid>
       <description>It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been Codepen.
 See the dendrograms below. Or interact with them all, here. By pressing left or right.</description>
     </item>
     
     <item>
       <title>Interactions Visualised</title>
-      <link>https://fergustaylor.github.io/post/interactions-visualised/</link>
+      <link>/post/interactions-visualised/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
+      <guid>/post/interactions-visualised/</guid>
       <description>I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.
 Photos of the BNF drug interactions with varying tension.
 See the interactive version See the interactive version See the interactive version</description>
@@ -158,10 +187,10 @@ See the interactive version See the interactive version See the interactive vers
     
     <item>
       <title>Interactions Continued</title>
-      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
+      <link>/post/interactions-continued/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
+      <guid>/post/interactions-continued/</guid>
       <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
 I built this into the previous code. (See the full code).
 #Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
@@ -169,20 +198,20 @@ I built this into the previous code. (See the full code).
     
     <item>
       <title>Drug Interactions</title>
-      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
+      <link>/post/drug-interactions/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
+      <guid>/post/drug-interactions/</guid>
       <description>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.
 To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-plots3/</link>
+      <link>/post/openprescribingr-plots3/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
+      <guid>/post/openprescribingr-plots3/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
 UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
@@ -191,10 +220,10 @@ UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-plots2/</link>
+      <link>/post/openprescribingr-plots2/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-plots2/</guid>
+      <guid>/post/openprescribingr-plots2/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
@@ -204,19 +233,19 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</link>
+      <link>/post/more-examples-for-openprescribingr/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</guid>
+      <guid>/post/more-examples-for-openprescribingr/</guid>
       <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-plots/</link>
+      <link>/post/openprescribingr-plots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-plots/</guid>
+      <guid>/post/openprescribingr-plots/</guid>
       <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
 Currently returns a leaflet map showing;
  spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
@@ -227,10 +256,10 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-update-2/</link>
+      <link>/post/openprescribingr-update-2/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-update-2/</guid>
+      <guid>/post/openprescribingr-update-2/</guid>
       <description>  See the map.
 See the code.
    </description>
@@ -238,10 +267,10 @@ See the code.
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr-update/</link>
+      <link>/post/openprescribingr-update/</link>
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr-update/</guid>
+      <guid>/post/openprescribingr-update/</guid>
       <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
 New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
    Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
@@ -249,10 +278,10 @@ New Function 7. CCG boundaries Search for the boundaries of a CCG, or location o
     
     <item>
       <title>openprescribingR</title>
-      <link>https://fergustaylor.github.io/post/openprescribingr/</link>
+      <link>/post/openprescribingr/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/openprescribingr/</guid>
+      <guid>/post/openprescribingr/</guid>
       <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
 Installation:
 library(devtools)
@@ -271,10 +300,10 @@ These functions give details on drugs/organisations/list sizes.
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>https://fergustaylor.github.io/post/public-health-outcomes-framework/</link>
+      <link>/post/public-health-outcomes-framework/</link>
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/public-health-outcomes-framework/</guid>
+      <guid>/post/public-health-outcomes-framework/</guid>
       <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
  All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
 It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
@@ -283,19 +312,19 @@ While I was prepared to download information I wanted directly through the site 
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>https://fergustaylor.github.io/post/arran-continued/</link>
+      <link>/post/arran-continued/</link>
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/arran-continued/</guid>
+      <guid>/post/arran-continued/</guid>
       <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
       <title>Arran</title>
-      <link>https://fergustaylor.github.io/post/arran/</link>
+      <link>/post/arran/</link>
       <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/arran/</guid>
+      <guid>/post/arran/</guid>
       <description>See the map.
 Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
 I thought Arran would make nice maps.
@@ -304,20 +333,20 @@ Early progress Initially I used map cordinates given by Ordinance Survey to find
     
     <item>
       <title>&#39;You alright?&#39;</title>
-      <link>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</link>
+      <link>/writing/2016-11-27-you-alright/</link>
       <pubDate>Sun, 27 Nov 2016 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</guid>
+      <guid>/writing/2016-11-27-you-alright/</guid>
       <description>Back in my third year of University I was asked to get involved with the Student Union as an opportunity to improve welfare at the Medical School, in particular - Mental Health.
 I had some successes, including the introduction of a new peer support programme. But the issue of advertising the available services so that students were aware of their options when they needed them - has been poorly approached for some time.</description>
     </item>
     
     <item>
       <title>Glasgow ARM - Supporting Rwandan Healthcare Students</title>
-      <link>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
+      <link>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
       <pubDate>Fri, 01 Jul 2016 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
+      <guid>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
       <description>Last year produced several milestones in the development of Glasgow ARM, and with financial charitable recognition came a huge push forward to increase donations.
 In order to both thank the Undergraduate Medical School, and highlight the opportunities for further engagement, I wrote the following piece for the 2016 Summer Newsletter.
 The article in context.</description>
@@ -325,20 +354,20 @@ The article in context.</description>
     
     <item>
       <title>A Call for Trustees</title>
-      <link>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</link>
+      <link>/writing/2016-04-26-a-call-for-trustees/</link>
       <pubDate>Tue, 26 Apr 2016 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</guid>
+      <guid>/writing/2016-04-26-a-call-for-trustees/</guid>
       <description>Since my second year at medical school I&amp;rsquo;ve been involved in the formation and running of a charity. Having been preparing to step down in my role as Chair, it fell to me to reach out to new potential trustees within the University-wide newsletter.
 The writing in context.</description>
     </item>
     
     <item>
       <title>&#39;We&#39;re going on a bear hunt..&#39;</title>
-      <link>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
+      <link>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
       <pubDate>Tue, 08 Mar 2016 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
+      <guid>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
       <description>This was a piece commissioned by the Glasgow Guardian, regarding current negotiations around the second Junior Doctors’ strike. It followed two opinion pieces by other writers earlier that week; putting their arguments both for and against industrial action.
 As a student representative (GUSRC), and medical student, I was invited to “consider [writing on the issue] in order to balance this important debate.”
 Given the breadth of coverage I felt this had recieved from the previous writers, as well as elsewhere – I pitched a slightly lesser-covered piece of news from earlier that week, that (with the permission of Michael Rosen), I felt helped frame the issue.</description>
@@ -346,20 +375,20 @@ Given the breadth of coverage I felt this had recieved from the previous writers
     
     <item>
       <title>Accident Incident Report: 18/06/14</title>
-      <link>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</link>
+      <link>/writing/2014-06-18-accident-incident-report-180614/</link>
       <pubDate>Wed, 18 Jun 2014 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</guid>
+      <guid>/writing/2014-06-18-accident-incident-report-180614/</guid>
       <description>Previously made for the Glasgow University Canoe Club - the following satarical short piece was written for the Club journal, as a summary of a Summer trip we spent kayaking around Scotland. Unfortunately, mostly using in-jokes to its members.
 Details of incident: After a sunny day kayaking on the Garry - sleepy from an afternoon of BBQ and booty beverages - the kayaking group formally known as GUCC, swam, ferry-glided, or were towed across the river to inspect the rocks beside the final drop.</description>
     </item>
     
     <item>
       <title>Extreme Survival: A Doctor Explores the Limits of Human Endurance</title>
-      <link>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
+      <link>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
       <pubDate>Thu, 01 Mar 2012 13:39:46 +0200</pubDate>
       
-      <guid>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
+      <guid>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
       <description>By Dr Kenneth Kamler
 Recounting his experiences with AMS, surviving adrift at sea, as well as performing hand surgery in the not entirely aseptic depths of the Amazonian Rainforest. Dr Kenneth Kamler tells stories of his adventures and those of his friends, to create a gripping depiction of some of the most inhospitable environments in the world and the conditions that can occur in them.
 He details his reactions to the injuries and uses his skills as a storyteller to examine the actions doctors take in order to treat under pressure.</description>
@@ -367,73 +396,73 @@ He details his reactions to the injuries and uses his skills as a storyteller to
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/d3interactions/</link>
+      <link>/d3interactions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/d3interactions/</guid>
+      <guid>/d3interactions/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/openprescribingr/</link>
+      <link>/openprescribingr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/openprescribingr/</guid>
+      <guid>/openprescribingr/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/arran/</link>
+      <link>/arran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/arran/</guid>
+      <guid>/arran/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/blog/</link>
+      <link>/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/blog/</guid>
+      <guid>/blog/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/categories/</link>
+      <link>/categories/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/</guid>
+      <guid>/categories/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/d3/</link>
+      <link>/d3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/d3/</guid>
+      <guid>/d3/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/dev/</link>
+      <link>/dev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/dev/</guid>
+      <guid>/dev/</guid>
       <description> </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/randomimage/</link>
+      <link>/randomimage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/randomimage/</guid>
+      <guid>/randomimage/</guid>
       <description>body { background-image: url(&#34;../images/bg-0.jpg&#34;); background-color: #cccccc; background-repeat: no-repeat; background-repeat: no-repeat; background-size: auto; }     var totalCount = 8; var num = Math.ceil( Math.random() * totalCount ); document.body.style.backgroundImage = &#34;url(../images/bg-&#34;+num+&#34;.jpg)&#34;; // media query event handler if (matchMedia) { const mq = window.matchMedia(&#34;(max-width: 980px)&#34;); mq.addListener(WidthChange); WidthChange(mq); } // media query change function WidthChange(mq) { if (mq.matches) { // window width is less than 980px document.body.style.backgroundImage = &#34;</description>
     </item>
     

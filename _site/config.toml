@@ -24,8 +24,8 @@ paginate = 5
 	show_read_time = false
 
 	# Add custom assets with their paths relative to the static folder
-	custom_js   = []
-	custom_css  = []
+	custom_js   = ["customjs/more.js"]
+	custom_css  = ["customcss/more-styles.css"]
   
 	[params.sidebar]
 		avatar = "avatar.jpg"

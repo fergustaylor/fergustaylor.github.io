@@ -17,20 +17,22 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		<meta name="og:site_name" content="Fergus Taylor">
 		<meta name="og:title" content="Gallery">
-		<meta name="og:url" content="/post/gallery/">
+		<meta name="og:url" content="https://fergustaylor.github.io/post/gallery/">
 		
-		<meta name="og:image" content="/images/avatar.jpg">
+		<meta name="og:image" content="https://fergustaylor.github.io/images/avatar.jpg">
 		
 		
 
 		<meta name="generator" content="Hugo 0.29" />
 
-		<!--[if lte IE 8]><script src='../../js/ie/html5shiv.js'></script><![endif]-->
+		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="//css/ie8.css"><![endif]-->
+		<link rel="stylesheet" href="https://fergustaylor.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://fergustaylor.github.io//css/ie8.css"><![endif]-->
 
 		
+		
+		<link rel="stylesheet" href="https://fergustaylor.github.io/customcss/more-styles.css">
 		
 	</head>
 
@@ -38,7 +40,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<!-- Header -->
 <header id="header">
 	
-	<a href="../../" class="image avatar"><img src="../../images/avatar.jpg" alt="" /></a>
+	<a href="https://fergustaylor.github.io/" class="image avatar"><img src="https://fergustaylor.github.io/images/avatar.jpg" alt="" /></a>
 	
 	
 		<h1><strong>I&rsquo;m Fergus Taylor</strong>, a Glasgow Uni Med Student. <br> I use this site to display project data analysis<br> as I learn to use <a href="//twitter.com/hashtag/Rstats?src=hash">#Rstats</a>.</h1>
@@ -48,9 +50,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<nav id="sidebar">
 			<ul>
 			
-				<li><a href="../../">Home</a></li>
+				<li><a href="https://fergustaylor.github.io/">Home</a></li>
 			
-				<li><a href="../../post">Archive</a></li>
+				<li><a href="https://fergustaylor.github.io/post">Archive</a></li>
 			
 			</ul>
 		</nav>
@@ -84,24 +86,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<p>
 	    
 
-<p>A while ago I was considering how best to demonstrate all the graphics I&rsquo;ve produced while learning to code.
-I thought a particular page could provide a useful snapshot of the work I&rsquo;d been interested in, the topics, the media; that I could build up into a portfolio.</p>
+<p>A while ago I was considering how best to demonstrate the graphics I&rsquo;ve been developing while learning to code.
+I thought a particular page could provide a useful snapshot of the work I&rsquo;d been interested in, the topics, the media; that I could then build up into a portfolio.</p>
 
-<p>Rather than writing a one-off post however, or something that I&rsquo;d have to edit every 6 months, I wanted a system that I could add to relatively easily over time.
-  I didn&rsquo;t want to add huge numbers of links to an md file, or tags to a html page indefinitely. So I wondered instead if there would be a way to populate a page with graphics from a given folder. Most of the graphics in my posts, I&rsquo;ve saved to a particular <a href="https://fergustaylor.github.io/blogimages *or github page">&rsquo;/blogimages/&rsquo;</a> folder anyway.</p>
+<p>Rather than writing a one-off post however, or something that I&rsquo;d have to edit every 6 months, I wanted a system that I could add to, relatively easily over time.
+  I didn&rsquo;t want to add huge numbers of links to an md file, or tags to a html page indefinitely. So I wondered instead if there would be a way to populate a page with any graphics in a given folder. Given that most of the graphics in my posts, I&rsquo;ve saved to a particular <a href="https://github.com/fergustaylor/fergustaylor.github.io/tree/master/blogimages">&rsquo;/blogimages/&rsquo;</a> folder anyway.</p>
 
-<p>I started off with a list of everything I already had, and roughly organised them into different groups that might require different ways to publish.</p>
+<p>I started off with a list of everything I already had, and roughly organised it into different groups that might require different techniques to publish.</p>
 
 <ol>
 <li><p>Blog Graphics
-I have a few images (.png) made for particular posts already, and if I could link to them then that might provide an interesting way to interact with the topics covered in my posts.
-Also part of this, I had a lot of Gifs.</p></li>
+I have a few images (.png) made for particular posts already, and if I could link them to posts, it might provide an interesting way to interact with the topics covered.
+Also, I had a lot of Gifs.</p></li>
 
 <li><p>Blog Iframes
-The same context as above, but including iframes of interesting graphics would require a different approach.</p></li>
+The same context as above, but iframes of interesting graphics would require a slightly different approach.</p></li>
 
 <li><p>Twitter posts
-I have a few posts with interesting graphics, concise explanations of context, or cool interactions with people working in that field. One of the ways I currently find out about interesting projects, conferences, R packages is Twitter. So I was keen to incorporate it somehow.</p></li>
+I have a few posts with interesting graphics, concise explanations of context, or cool interactions with people working in that field.
+One of the ways I currently find out about interesting projects, conferences, and R packages is Twitter. So I was keen to incorporate it somehow.</p></li>
 
 <li><p>Videos
 Something I do the least of, but good to show-off where I already have them.</p></li>
@@ -109,42 +112,160 @@ Something I do the least of, but good to show-off where I already have them.</p>
 
 <h2 id="blog-graphics">Blog Graphics</h2>
 
-<p>I wrote an .Rmd file, [&lsquo;Portfolio&rsquo;]() with code that collects the names of each file in a folder, and writes a JSON file list of them.
+<p>I wrote an .Rmd file, <a href="https://github.com/fergustaylor/fergustaylor.github.io/blob/master/_site/Workbooks/Portfolio.Rmd">&lsquo;Portfolio&rsquo;</a> with code that collects the names of each file in a folder, and writes a JSON file list of them.
 I ended up sorting the graphics into 2 folders, one of the full-size image, one a low-res version for thumbnails.
 That way, every time I run my code - it updates a JSON list of graphics to include in the website.</p>
 
-<p>// try to link to code directly?</p>
 
-<pre><code>library(tidyverse)
-//rest of code
+<div class="more" data-height="200">
+    <pre><code>
+---
+title: &#34;Portfolio&#34;
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+twitter &lt;-	c(
+	&#34;997571624420478977&#34;,
+	&#34;955589839423930368&#34;,
+	&#34;977315121784676352&#34;,
+	&#34;972117956862922753&#34;,
+	&#34;966753895962816512&#34;,
+	&#34;959866177735614465&#34;,
+	&#34;957635884165337089&#34;,
+	&#34;954055730574823424&#34;,
+	&#34;896095060286095360&#34;,
+	&#34;891351674513752064&#34;
+)
+
+twitter %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./twitter.json&#34;)
+
+twitter %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/twitter.json&#34;)
+```
+
+```{r}
+vimeo &lt;-	c(
+	&#34;231293393&#34;
+)
+
+vimeo %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./vimeo.json&#34;)
+
+vimeo %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/vimeo.json&#34;)
+```
+
+```{r}
+portfolio &lt;- list.files(path = &#34;../static/portfolio&#34;)
+portfoliourls &lt;- str_c(&#34;https://fergustaylor.github.io/portfolio/&#34;, portfolio)
+
+portfolio %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./portfolio.json&#34;)
+
+portfolio %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/portfolio.json&#34;)
+```
+
+```{r}
+thumb &lt;- list.files(path = &#34;../static/thumb&#34;)
+thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/thumb/&#34;, portfolio)
+
+thumb %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./thumb.json&#34;)
+
+thumb %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/thumb.json&#34;)
+```
+
+```{r}
+images &lt;- data.frame(thumb, portfolio)
+
+images %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./images.json&#34;)
+
+images %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/images.json&#34;)
+```
+
+
+https://stat.ethz.ch/R-manual/R-devel/library/base/html/list.files.html
+
+redo photo sizes
+
+write js script?
+
+str_c(&#34;https://fergustaylor.github.io/portfolio/&#34;, portfolio)
+
+/static/portfolio.html
+
+Do a json for thumbnail urls
+
+#put the rest in blogimages
+```{r}
+#iframesource &lt;- list.files(path = &#34;../static/blogimages&#34;, pattern = &#34;.html&#34;)
+iframesource &lt;- list.files(path = &#34;../static/iframes&#34;, pattern = &#34;.html&#34;)
+iframethumb &lt;- list.files(path = &#34;../static/iframethumb&#34;)
+iframe &lt;- data.frame(iframethumb, iframesource)
+
+iframe %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./iframe.json&#34;)
+
+iframe %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;../static/iframe.json&#34;)
+```
+
 </code></pre>
+
+</div>
+
+
+<p><br></p>
 
 <p>I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included <a href="https://fergustaylor.github.io/portfolio.js">some javascript,</a> which reads the json file from earlier, and inserts every image inside.</p>
 
-<p>//link directly to code?</p>
 
-<pre><code>d3.json(&quot;../images.json&quot;, function(classes) {
+<div class="more" data-height="200">
+    <pre><code>
+
+d3.json(&#34;../images.json&#34;, function(classes) {
   
-for (i = 0; i &lt; classes.length; i++) { 
-url1 = &quot;../portfolio/&quot;+classes[i].portfolio;
-url2 = &quot;../thumb/&quot;+classes[i].thumb;
+for (i = 0; i &lt; classes.length; i&#43;&#43;) { 
+url1 = &#34;../portfolio/&#34;&#43;classes[i].portfolio;
+url2 = &#34;../thumb/&#34;&#43;classes[i].thumb;
 
-url3 = &quot;../portfolio/&quot;+classes[i].portfolio;
+url3 = &#34;../portfolio/&#34;&#43;classes[i].portfolio;
 url4 = classes[i].portfolio;
 
-example = document.createElement(&quot;article&quot;);
-example.className = &quot;work-item&quot;;
+example = document.createElement(&#34;article&#34;);
+example.className = &#34;work-item&#34;;
 
-example2 = document.createElement(&quot;a&quot;);
-example2.className = &quot;image fit thumb&quot;;
-example2.setAttribute(&quot;href&quot;, url1);
+example2 = document.createElement(&#34;a&#34;);
+example2.className = &#34;image fit thumb&#34;;
+example2.setAttribute(&#34;href&#34;, url1);
 
-example3 = document.createElement(&quot;img&quot;);
-example3.setAttribute(&quot;src&quot;, url2);
+example3 = document.createElement(&#34;img&#34;);
+example3.setAttribute(&#34;src&#34;, url2);
 
-example4 = document.createElement(&quot;h3&quot;);
-example5 = document.createElement(&quot;a&quot;);
-example5.setAttribute(&quot;href&quot;, url3);
+example4 = document.createElement(&#34;h3&#34;);
+example5 = document.createElement(&#34;a&#34;);
+example5.setAttribute(&#34;href&#34;, url3);
 example5.appendChild(document.createTextNode(url4));
 example4.appendChild(example5);
 
@@ -154,16 +275,21 @@ example.appendChild(example4);
 
 if(i % 2 == 0)
 {
-document.getElementById(&quot;twoeven&quot;).appendChild(example);
+document.getElementById(&#34;twoeven&#34;).appendChild(example);
 }
 else
 {
-document.getElementById(&quot;twoodd&quot;).appendChild(example);
+document.getElementById(&#34;twoodd&#34;).appendChild(example);
 }
 
 }
 });
 </code></pre>
+
+</div>
+
+
+<p><br></p>
 
 <h2 id="blog-iframes">Blog Iframes</h2>
 
@@ -178,14 +304,14 @@ In addition, in order to include tweets I&rsquo;d then have to add to a long lis
 
 <p>Twitter allows you to curate lists using Tweetdeck (as well as their own API), which makes it relatively easy to scroll through my timeline.</p>
 
-<p>// screenshot</p>
+<p><img src="../../blogimages/tweetdeck.png" class="image fit"></p>
 
-<p>This updates an embedded grid which I can link to in the gallery md file.
-So I can curate the tweets through tweetdeck, and everything else would load up automatically.</p>
+<p>This updates an embedded grid which I linked in the gallery md file.
+This way I can curate the tweets through tweetdeck, and everything else loads up automatically.</p>
 
 <h2 id="videos">Videos</h2>
 
-<p>Then lastly, since I do it so infrequently, videos were just indivudally embedded using [hugo shortcodes]().</p>
+<p>Then lastly, since I do it so infrequently, videos were just indivudally embedded using <a href="https://gohugo.io/content-management/shortcodes/">hugo shortcodes</a>.</p>
 
 <h2 id="last-thoughts">Last thoughts</h2>
 
@@ -194,13 +320,16 @@ So I can curate the tweets through tweetdeck, and everything else would load up 
 <p>It still requires I make a low-res version for photos manually, or a screenshot for iframes. And I&rsquo;ll need to look at Tweetdeck every now and then.
 But compared to making a portfolio from scratch, I consider this a vast improvement, and something I can add to incrementally over time.</p>
 
+<p>The gallery page is available <a href="https://fergustaylor.github.io/gallery/">here.</a></p>
+
+<p><a href="https://fergustaylor.github.io/gallery/">
+<img src="../../blogimages/galleryscreenshot.png" class="image fit"></a></p>
+
 	</p>
   
-  <a href="../../post/example-post/">Next: 'Example Post'</a>
-
   <br>
   
-  <a href="../../post/google-custom-search/">Prev: 'Google Custom Search'</a>
+  <a href="https://fergustaylor.github.io/post/google-custom-search/">Prev: 'Google Custom Search'</a>
 
 	
 
@@ -223,7 +352,7 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
 		
 		
 		
-		<li><a href="../../index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		<li><a href="https://fergustaylor.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
 		
 	</ul>
 
@@ -233,14 +362,14 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
 </footer>
 
 <!-- Scripts -->
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/jquery.poptrox.min.js"></script>
-<script src="../../js/skel.min.js"></script>
-<script src="../../js/util.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.min.js"></script>
+<script src="https://fergustaylor.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://fergustaylor.github.io/js/skel.min.js"></script>
+<script src="https://fergustaylor.github.io/js/util.js"></script>
 
-<script src="../../js/main.js"></script>
-<script src="../../js/changeit.js"></script>
-<script src="../../main2.js"></script>
+<script src="https://fergustaylor.github.io/js/main.js"></script>
+<script src="https://fergustaylor.github.io/js/changeit.js"></script>
+<script src="https://fergustaylor.github.io/main2.js"></script>
 
 
 <script>
@@ -251,6 +380,8 @@ ga('send', 'pageview');
 <script async src='//www.google-analytics.com/analytics.js'></script>
 
 
+
+<script src="https://fergustaylor.github.io/customjs/more.js"></script>
 
 
 	</body>
