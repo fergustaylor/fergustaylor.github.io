@@ -12,9 +12,7 @@ header_image: /blogimages/cse.png
 
 I've created a tool for searching medical resources, [here.](https://fergustaylor.github.io/Dev/Search/)
 
-
-<div style="width:100%;height:0;padding-bottom:63%;position:relative;"><iframe src="https://giphy.com/embed/3kD264S0WiNXIZoIJ1" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-
+<div style="padding:62.5% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/276458805?loop=1&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work.
 I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.
