@@ -21,5 +21,15 @@
  A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work. I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.</description>
     </item>
     
+    <item>
+      <title>UK Local Elections 2017</title>
+      <link>https://fergustaylor.github.io/post/uk-local-elections-2017/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/uk-local-elections-2017/</guid>
+      <description>Following a very interesting post I&amp;rsquo;d found on twitter by Paul Campbell, I was curious to try to recreate the plots involved myself.
+Plotting a coloured point as a representation of 100 votes in each ward is interesting, it gives a surprising feel for the sense of party proportions in an area. It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does give a sense of scale to voting in areas.</description>
+    </item>
+    
   </channel>
 </rss>

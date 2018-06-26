@@ -31,7 +31,7 @@ Back in February I attended the 19th NHS Hack Day in Cardiff.
 I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
 
 I was interested in plotting the catchment areas for each type of clinic.
-Assuming that a call to NHS 111 would require a referal to one type of clinic specialising it the necessary service, could you plot each of these clinics across the UK and demonstrate useful information by plotting the catchement areas around each of that type of clinic.
+Assuming that a call to NHS 111 would require a referal to one type of clinic specialising it the necessary service, could you plot each of these clinics across the UK and demonstrate useful information by plotting the catchment areas around each of that type of clinic?
 
 It would be colour-coded to the status (green-amber-red) that clinic was currently reporting. 
 Once a clinic reached capacity, it stops taking patients, and I wondered if removing it from the map, and looking at the impact on the newly expanded catchment areas around it would demonstrate any useful information over a time-lapse graphic.
