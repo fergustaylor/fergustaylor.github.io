@@ -1,11 +1,11 @@
 
-d3.json("../iframe.json", function(classes) {
+d3.json("iframe.json", function(classes) {
   
 for (i = 0; i < classes.length; i++) { 
-url1 = "../iframes/"+classes[i].iframesource;
-url2 = "../iframethumb/"+classes[i].iframethumb;
+url1 = "../gallery/iframes/"+classes[i].iframesource;
+url2 = "../gallery/iframethumb/"+classes[i].iframethumb;
 
-url3 = "../iframes/"+classes[i].iframesource;
+url3 = "../gallery/iframes/"+classes[i].iframesource;
 url4 = classes[i].iframesource;
 
 example = document.createElement("article");

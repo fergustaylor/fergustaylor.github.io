@@ -1,11 +1,11 @@
 
-d3.json("../images.json", function(classes) {
+d3.json("images.json", function(classes) {
   
 for (i = 0; i < classes.length; i++) { 
-url1 = "../portfolio/"+classes[i].portfolio;
-url2 = "../thumb/"+classes[i].thumb;
+url1 = "../gallery/portfolio/"+classes[i].portfolio;
+url2 = "../gallery/thumb/"+classes[i].thumb;
 
-url3 = "../portfolio/"+classes[i].portfolio;
+url3 = "../gallery/portfolio/"+classes[i].portfolio;
 url4 = classes[i].portfolio;
 
 example = document.createElement("article");

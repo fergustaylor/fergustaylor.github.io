@@ -2,7 +2,7 @@
 tags = []
 categories = []
 custom_css = []
-custom_js = ["main2.js"]
+custom_js = ["customjs/main2.js"]
 +++
 
 # Gallery #
@@ -21,8 +21,8 @@ They (will eventually) link to the relevant articles, where context as well as i
 <div class="column" id="twoodd"></div>
 </div>
 <script src='https://d3js.org/d3.v4.min.js'></script>
-<script src='../portfolio.js'></script>
-<link rel="stylesheet" href="../portfolio.css" />
+<script src='../customjs/portfolio.js'></script>
+<link rel="stylesheet" href="../customcss/portfolio.css" />
 
 <p style="border-bottom:1px solid #e1e8ed;"></p>
 
@@ -32,7 +32,7 @@ They (will eventually) link to the relevant articles, where context as well as i
 <div class="column" id="threeeven"></div>
 <div class="column" id="threeodd"></div>
 </div>
-<script src='../portfolio2.js'></script>
+<script src='../customjs/portfolio2.js'></script>
 
 <p style="border-bottom:1px solid #e1e8ed;"></p>
 

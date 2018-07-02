@@ -1,0 +1,40 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+thumb <- list.files(path = "./thumb")
+thumburls <- str_c("https://fergustaylor.github.io/gallery/thumb/", portfolio)
+
+thumb %>%
+  jsonlite::toJSON() %>%
+  write(file="./thumb.json")
+```
+
+```{r}
+portfolio <- list.files(path = "./portfolio")
+portfoliourls <- str_c("https://fergustaylor.github.io/gallery/portfolio/", portfolio)
+
+portfolio %>%
+  jsonlite::toJSON() %>%
+  write(file="./portfolio.json")
+```
+
+```{r}
+images <- data.frame(thumb, portfolio)
+
+images %>%
+  jsonlite::toJSON() %>%
+  write(file="./images.json")
+```
+
+```{r}
+iframesource <- list.files(path = "./iframes", pattern = ".html")
+iframethumb <- list.files(path = "./iframethumb")
+iframe <- data.frame(iframethumb, iframesource)
+
+iframe %>%
+  jsonlite::toJSON() %>%
+  write(file="./iframe.json")
+```

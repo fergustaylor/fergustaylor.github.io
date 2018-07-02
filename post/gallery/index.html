@@ -114,82 +114,34 @@ Something I do the least of, but good to show-off where I already have them.</p>
 
 <h2 id="blog-graphics">Blog Graphics</h2>
 
-<p>I wrote an .Rmd file, <a href="https://github.com/fergustaylor/fergustaylor.github.io/blob/master/_site/Workbooks/Portfolio.Rmd">&lsquo;Portfolio&rsquo;</a> with code that collects the names of each file in a folder, and writes a JSON file list of them.
+<p>I wrote an .Rmd file, <a href="https://github.com/fergustaylor/fergustaylor.github.io/blob/master/_site/static/gallery/Portfolio.Rmd">&lsquo;Portfolio&rsquo;</a> with code that collects the names of each file in a folder, and writes a JSON file list of them.
 I ended up sorting the graphics into 2 folders, one of the full-size image, one a low-res version for thumbnails.
 That way, every time I run my code - it updates a JSON list of graphics to include in the website.</p>
 
 
 <div class="more" data-height="200">
     <pre><code>
----
-title: &#34;Portfolio&#34;
----
 
 ```{r}
 library(tidyverse)
 ```
 
 ```{r}
-twitter &lt;-	c(
-	&#34;997571624420478977&#34;,
-	&#34;955589839423930368&#34;,
-	&#34;977315121784676352&#34;,
-	&#34;972117956862922753&#34;,
-	&#34;966753895962816512&#34;,
-	&#34;959866177735614465&#34;,
-	&#34;957635884165337089&#34;,
-	&#34;954055730574823424&#34;,
-	&#34;896095060286095360&#34;,
-	&#34;891351674513752064&#34;
-)
-
-twitter %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./twitter.json&#34;)
-
-twitter %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/twitter.json&#34;)
-```
-
-```{r}
-vimeo &lt;-	c(
-	&#34;231293393&#34;
-)
-
-vimeo %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./vimeo.json&#34;)
-
-vimeo %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/vimeo.json&#34;)
-```
-
-```{r}
-portfolio &lt;- list.files(path = &#34;../static/portfolio&#34;)
-portfoliourls &lt;- str_c(&#34;https://fergustaylor.github.io/portfolio/&#34;, portfolio)
-
-portfolio %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./portfolio.json&#34;)
-
-portfolio %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/portfolio.json&#34;)
-```
-
-```{r}
-thumb &lt;- list.files(path = &#34;../static/thumb&#34;)
-thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/thumb/&#34;, portfolio)
+thumb &lt;- list.files(path = &#34;./thumb&#34;)
+thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/thumb/&#34;, portfolio)
 
 thumb %&gt;%
   jsonlite::toJSON() %&gt;%
   write(file=&#34;./thumb.json&#34;)
+```
 
-thumb %&gt;%
+```{r}
+portfolio &lt;- list.files(path = &#34;./portfolio&#34;)
+portfoliourls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/portfolio/&#34;, portfolio)
+
+portfolio %&gt;%
   jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/thumb.json&#34;)
+  write(file=&#34;./portfolio.json&#34;)
 ```
 
 ```{r}
@@ -198,39 +150,16 @@ images &lt;- data.frame(thumb, portfolio)
 images %&gt;%
   jsonlite::toJSON() %&gt;%
   write(file=&#34;./images.json&#34;)
-
-images %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/images.json&#34;)
 ```
 
-
-https://stat.ethz.ch/R-manual/R-devel/library/base/html/list.files.html
-
-redo photo sizes
-
-write js script?
-
-str_c(&#34;https://fergustaylor.github.io/portfolio/&#34;, portfolio)
-
-/static/portfolio.html
-
-Do a json for thumbnail urls
-
-#put the rest in blogimages
 ```{r}
-#iframesource &lt;- list.files(path = &#34;../static/blogimages&#34;, pattern = &#34;.html&#34;)
-iframesource &lt;- list.files(path = &#34;../static/iframes&#34;, pattern = &#34;.html&#34;)
-iframethumb &lt;- list.files(path = &#34;../static/iframethumb&#34;)
+iframesource &lt;- list.files(path = &#34;./iframes&#34;, pattern = &#34;.html&#34;)
+iframethumb &lt;- list.files(path = &#34;./iframethumb&#34;)
 iframe &lt;- data.frame(iframethumb, iframesource)
 
 iframe %&gt;%
   jsonlite::toJSON() %&gt;%
   write(file=&#34;./iframe.json&#34;)
-
-iframe %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;../static/iframe.json&#34;)
 ```
 
 </code></pre>
@@ -240,19 +169,19 @@ iframe %&gt;%
 
 <p><br></p>
 
-<p>I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included <a href="https://fergustaylor.github.io/portfolio.js">some javascript,</a> which reads the json file from earlier, and inserts every image inside.</p>
+<p>I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included <a href="https://fergustaylor.github.io/customjs/portfolio.js">some javascript,</a> which reads the json file from earlier, and inserts every image inside.</p>
 
 
 <div class="more" data-height="200">
     <pre><code>
 
-d3.json(&#34;../images.json&#34;, function(classes) {
+d3.json(&#34;images.json&#34;, function(classes) {
   
 for (i = 0; i &lt; classes.length; i&#43;&#43;) { 
-url1 = &#34;../portfolio/&#34;&#43;classes[i].portfolio;
-url2 = &#34;../thumb/&#34;&#43;classes[i].thumb;
+url1 = &#34;../gallery/portfolio/&#34;&#43;classes[i].portfolio;
+url2 = &#34;../gallery/thumb/&#34;&#43;classes[i].thumb;
 
-url3 = &#34;../portfolio/&#34;&#43;classes[i].portfolio;
+url3 = &#34;../gallery/portfolio/&#34;&#43;classes[i].portfolio;
 url4 = classes[i].portfolio;
 
 example = document.createElement(&#34;article&#34;);
@@ -295,7 +224,7 @@ document.getElementById(&#34;twoodd&#34;).appendChild(example);
 
 <h2 id="blog-iframes">Blog Iframes</h2>
 
-<p>I then used the same principle as before with a few minor differences, <a href="https://fergustaylor.github.io/portfolio2.js">here</a> to include the list of iframes.
+<p>I then used the same principle as before with a few minor differences, <a href="https://fergustaylor.github.io/customjs/portfolio2.js">here</a> to include the list of iframes.
 Unfortunately, I have to still make the thumbnails manually.</p>
 
 <h2 id="twitter-posts">Twitter posts</h2>
@@ -388,7 +317,7 @@ ga('send', 'pageview');
 
 <script src="https://fergustaylor.github.io/customjs/more.js"></script>
 
-<script src="https://fergustaylor.github.io/js/changeit.js"></script>
+<script src="https://fergustaylor.github.io/customjs/changeit.js"></script>
 
 
 
