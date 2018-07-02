@@ -88,6 +88,23 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 	<p>
 	    
 
+<script>
+function myFunction() {
+var frames = document.getElementsByTagName("iframe");
+for (i = 0; i < frames.length; i++) {
+      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +'px';
+  }
+}
+window.addEventListener("load", myFunction);
+window.addEventListener("resize", myFunction);
+</script>
+
+<style>
+iframe {
+ width:100%;
+}
+</style>
+
 <p>A while ago I was considering how best to demonstrate the graphics I&rsquo;ve been developing while learning to code.
 I thought a particular page could provide a useful snapshot of the work I&rsquo;d been interested in, the topics, the media; that I could then build up into a portfolio.</p>
 
@@ -118,56 +135,9 @@ Something I do the least of, but good to show-off where I already have them.</p>
 I ended up sorting the graphics into 2 folders, one of the full-size image, one a low-res version for thumbnails.
 That way, every time I run my code - it updates a JSON list of graphics to include in the website.</p>
 
-
-<div class="more" data-height="200">
-    <pre><code>
-
-```{r, warning=FALSE, message=FALSE}
-library(tidyverse)
-```
-
-```{r}
-portfolio &lt;- list.files(path = &#34;./portfolio&#34;)
-portfoliourls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/portfolio/&#34;, portfolio)
-
-portfolio %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./portfolio.json&#34;)
-```
-
-```{r}
-thumb &lt;- list.files(path = &#34;./thumb&#34;)
-thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/thumb/&#34;, portfolio)
-
-thumb %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./thumb.json&#34;)
-```
-
-```{r}
-images &lt;- data.frame(thumb, portfolio)
-
-images %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./images.json&#34;)
-```
-
-```{r}
-iframesource &lt;- list.files(path = &#34;./iframes&#34;, pattern = &#34;.html&#34;)
-iframethumb &lt;- list.files(path = &#34;./iframethumb&#34;)
-iframe &lt;- data.frame(iframethumb, iframesource)
-
-iframe %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./iframe.json&#34;)
-```
-
-</code></pre>
-
-</div>
-
-
-<p><br></p>
+<p><iframe src="../../../gallery/Portfolio.html">
+</iframe>
+<br></p>
 
 <p>I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included <a href="https://fergustaylor.github.io/customjs/portfolio.js">some javascript,</a> which reads the json file from earlier, and inserts every image inside.</p>
 
