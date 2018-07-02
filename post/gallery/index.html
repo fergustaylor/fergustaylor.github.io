@@ -122,17 +122,8 @@ That way, every time I run my code - it updates a JSON list of graphics to inclu
 <div class="more" data-height="200">
     <pre><code>
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
-```
-
-```{r}
-thumb &lt;- list.files(path = &#34;./thumb&#34;)
-thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/thumb/&#34;, portfolio)
-
-thumb %&gt;%
-  jsonlite::toJSON() %&gt;%
-  write(file=&#34;./thumb.json&#34;)
 ```
 
 ```{r}
@@ -142,6 +133,15 @@ portfoliourls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/portfolio/
 portfolio %&gt;%
   jsonlite::toJSON() %&gt;%
   write(file=&#34;./portfolio.json&#34;)
+```
+
+```{r}
+thumb &lt;- list.files(path = &#34;./thumb&#34;)
+thumburls &lt;- str_c(&#34;https://fergustaylor.github.io/gallery/thumb/&#34;, portfolio)
+
+thumb %&gt;%
+  jsonlite::toJSON() %&gt;%
+  write(file=&#34;./thumb.json&#34;)
 ```
 
 ```{r}
@@ -259,7 +259,7 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
 	</p>
 	
   <b>Last Modified: 
-  <time datetime="2018-06-26 20:53:35 &#43;0100 BST">Tuesday, June 26, 2018</time></b>
+  <time datetime="2018-07-02 18:44:34 &#43;0100 BST">Monday, July 2, 2018</time></b>
   <br>
 
   
