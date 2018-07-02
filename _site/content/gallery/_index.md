@@ -1,6 +1,8 @@
 +++
 tags = []
 categories = []
+custom_css = []
+custom_js = ["main2.js"]
 +++
 
 # Gallery #

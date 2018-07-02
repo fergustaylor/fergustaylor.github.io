@@ -8,6 +8,7 @@
 	<p>
 	    {{ .Content }}
 	</p>
+	
   {{ with .NextInSection }}
   <a href="{{ .Permalink }}">Next: '{{ .Title }}'</a>
 {{ end }}

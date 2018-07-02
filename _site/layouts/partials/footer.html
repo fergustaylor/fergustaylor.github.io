@@ -47,11 +47,13 @@
 <script src="{{ .Site.BaseURL }}js/util.js"></script>
 <!--[if lte IE 8]><script src="{{ .Site.BaseURL }}js/ie/respond.min.js"></script><![endif]-->
 <script src="{{ .Site.BaseURL }}js/main.js"></script>
-<script src="{{ .Site.BaseURL }}js/changeit.js"></script>
-<script src="{{ .Site.BaseURL }}main2.js"></script>
 
 {{ template "_internal/google_analytics_async.html" . }}
 
 {{ range .Site.Params.custom_js }}
+<script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+{{ end }}
+
+{{ range .Params.custom_js }}
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}

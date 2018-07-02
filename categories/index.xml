@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 17:26:05 +0100</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/categories/arran/</link>
-      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Oct 2017 17:26:05 +0100</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/arran/</guid>
       <description>A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps.</description>
@@ -23,7 +23,7 @@
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/categories/bnf/</link>
-      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Oct 2017 16:22:03 +0100</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/bnf/</guid>
       <description>A project mapping drug interactions listed in the BNF. Working on hierachical edge bundling algorithms, and learning to use D3.js.
@@ -33,7 +33,7 @@ The Github repository.. D3 And the site. fergustaylor.github.io/D3</description>
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/categories/openprescribing/</link>
-      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Oct 2017 17:26:05 +0100</pubDate>
       
       <guid>https://fergustaylor.github.io/categories/openprescribing/</guid>
       <description>A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.
