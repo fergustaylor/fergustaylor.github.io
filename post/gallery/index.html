@@ -68,7 +68,6 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			
 	<span>
 		<h1>Gallery</h1>
-
 		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
 <time datetime="2018-06-10 00:00:00 &#43;0000 UTC">Sunday, June 10, 2018</time>&nbsp;&nbsp;
 
@@ -84,6 +83,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
    
 
 	</span>
+
+    
+
 
 	<p>
 	    
@@ -114,18 +116,18 @@ I thought a particular page could provide a useful snapshot of the work I&rsquo;
 <p>I started off with a list of everything I already had, and roughly organised it into different groups that might require different techniques to publish.</p>
 
 <ol>
-<li><p>Blog Graphics
+<li><p>Blog Graphics:
 I have a few images (.png) made for particular posts already, and if I could link them to posts, it might provide an interesting way to interact with the topics covered.
 Also, I had a lot of Gifs.</p></li>
 
-<li><p>Blog Iframes
+<li><p>Blog Iframes:
 The same context as above, but iframes of interesting graphics would require a slightly different approach.</p></li>
 
-<li><p>Twitter posts
+<li><p>Twitter posts:
 I have a few posts with interesting graphics, concise explanations of context, or cool interactions with people working in that field.
 One of the ways I currently find out about interesting projects, conferences, and R packages is Twitter. So I was keen to incorporate it somehow.</p></li>
 
-<li><p>Videos
+<li><p>Videos:
 Something I do the least of, but good to show-off where I already have them.</p></li>
 </ol>
 
@@ -143,49 +145,8 @@ That way, every time I run my code - it updates a JSON list of graphics to inclu
 
 
 <div class="more" data-height="200">
-    <pre><code>
-
-d3.json(&#34;images.json&#34;, function(classes) {
-  
-for (i = 0; i &lt; classes.length; i&#43;&#43;) { 
-url1 = &#34;../gallery/portfolio/&#34;&#43;classes[i].portfolio;
-url2 = &#34;../gallery/thumb/&#34;&#43;classes[i].thumb;
-
-url3 = &#34;../gallery/portfolio/&#34;&#43;classes[i].portfolio;
-url4 = classes[i].portfolio;
-
-example = document.createElement(&#34;article&#34;);
-example.className = &#34;work-item&#34;;
-
-example2 = document.createElement(&#34;a&#34;);
-example2.className = &#34;image fit thumb&#34;;
-example2.setAttribute(&#34;href&#34;, url1);
-
-example3 = document.createElement(&#34;img&#34;);
-example3.setAttribute(&#34;src&#34;, url2);
-
-example4 = document.createElement(&#34;h3&#34;);
-example5 = document.createElement(&#34;a&#34;);
-example5.setAttribute(&#34;href&#34;, url3);
-example5.appendChild(document.createTextNode(url4));
-example4.appendChild(example5);
-
-example2.appendChild(example3);
-example.appendChild(example2);
-example.appendChild(example4);
-
-if(i % 2 == 0)
-{
-document.getElementById(&#34;twoeven&#34;).appendChild(example);
-}
-else
-{
-document.getElementById(&#34;twoodd&#34;).appendChild(example);
-}
-
-}
-});
-</code></pre>
+    <iframe src="../../../gallery/js.html">
+</iframe>
 
 </div>
 
@@ -229,7 +190,7 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
 	</p>
 	
   <b>Last Modified: 
-  <time datetime="2018-07-02 18:44:34 &#43;0100 BST">Monday, July 2, 2018</time></b>
+  <time datetime="2018-07-02 20:25:11 &#43;0100 BST">Monday, July 2, 2018</time></b>
   <br>
 
   
