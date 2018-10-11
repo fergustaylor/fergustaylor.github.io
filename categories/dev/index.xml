@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev on Fergus Taylor</title>
+    <title>Fergus Taylor</title>
     <link>https://fergustaylor.github.io/categories/dev/</link>
-    <description>Recent content in Dev on Fergus Taylor</description>
+    <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 25 May 2018 00:00:00 +0000</lastBuildDate>
