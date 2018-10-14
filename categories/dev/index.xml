@@ -6,10 +6,21 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 11 Oct 2018 16:20:33 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://fergustaylor.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Rstudio Preview - Radix</title>
+      <link>https://fergustaylor.github.io/post/rstudio-preview-radix/</link>
+      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
+      <description>I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of Rstudio Preview.
+The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package Radix.
+I&amp;rsquo;ve been experimenting with it over the weekend to try to store the acedemic projects I&amp;rsquo;ve worked on as a student, (as well as the eventual DOIs, PMID, journal details that come from them), and move away from the osx notes file I&amp;rsquo;ve been keeping so far.</description>
+    </item>
     
     <item>
       <title>Google Custom Search</title>
