@@ -248,8 +248,13 @@
   </url>
   
   <url>
+    <loc>https://fergustaylor.github.io/tags/r/</loc>
+    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://fergustaylor.github.io/writing/</loc>
-    <lastmod>2017-10-12T17:26:05+01:00</lastmod>
+    <lastmod>2018-06-26T15:28:34+01:00</lastmod>
   </url>
   
   <url>
@@ -279,12 +284,6 @@
   <url>
     <loc>https://fergustaylor.github.io/categories/public-health/</loc>
     <lastmod>2018-10-20T17:29:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://fergustaylor.github.io/tags/r/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
     <priority>0</priority>
   </url>
   

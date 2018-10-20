@@ -1,8 +1,3 @@
-+++
-tags = []
-categories = []
-+++
-
 This is 'Dev', a Github repository for all the smaller projects I'm working on.
 Searchable clinical knowledge summaries, visualising local election results or the Humanitarian Data Exchange.. Even just interesting plots.
 Not all of it is complete, but it's a good place to keep everything else.

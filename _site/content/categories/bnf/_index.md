@@ -1,8 +1,3 @@
-+++
-tags = []
-categories = []
-+++
-
 A project mapping drug interactions listed in the BNF. Working on hierachical edge bundling algorithms, and learning to use D3.js.
 
 The Github repository..
