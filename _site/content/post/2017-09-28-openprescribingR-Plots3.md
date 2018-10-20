@@ -5,7 +5,8 @@ date: '2017-09-28'
 slug: openprescribingR-Plots3
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/10.jpg"
 description: "New interactive maps."
 ---

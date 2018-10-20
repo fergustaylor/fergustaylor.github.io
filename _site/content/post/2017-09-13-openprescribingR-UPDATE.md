@@ -5,7 +5,8 @@ date: '2017-09-13'
 slug: openprescribingR-UPDATE
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/05.jpg"
 description: "I created a new function for my package openprescribingR, which lets you search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON."
 ---

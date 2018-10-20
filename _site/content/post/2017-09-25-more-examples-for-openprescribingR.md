@@ -5,7 +5,8 @@ date: '2017-09-25'
 slug: more-examples-for-openprescribingR
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/08.jpg"
 description: "New examples of openprescribingR use."
 ---

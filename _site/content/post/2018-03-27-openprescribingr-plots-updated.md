@@ -5,7 +5,8 @@ date: '2018-03-27'
 slug: openprescribingr-plots-updated
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 description: 'Updated some older HTML Widgets using GGigraph and Deldir'
 header_image: /blogimages/BNFvoronoi.png
 ---

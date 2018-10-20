@@ -5,7 +5,8 @@ date: '2017-09-15'
 slug: openprescribingR-UPDATE-2
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/06.jpg"
 description: "Made a map of every clinic in the UK to see if I could. Also overlays CCG boundaries."
 ---

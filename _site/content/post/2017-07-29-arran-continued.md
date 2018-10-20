@@ -5,7 +5,8 @@ date: '2017-07-29'
 slug: arran-continued
 categories:
  - Arran
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/02.jpg"
 description: Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
 ---

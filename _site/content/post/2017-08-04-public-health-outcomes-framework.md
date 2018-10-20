@@ -5,7 +5,8 @@ date: '2017-08-04'
 slug: public-health-outcomes-framework
 categories:
  - Public Health
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/03.jpg"
 description: "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
 ---

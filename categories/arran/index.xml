@@ -6,9 +6,9 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 29 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 17:26:05 +0100</lastBuildDate>
     
-	<atom:link href="https://fergustaylor.github.io/categories/arran/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/arran/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,51 @@
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/arran-continued/</guid>
-      <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
+      <description>
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/gif4.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+&lt;p&gt;Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland.
+As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.&lt;/p&gt;
+
+&lt;p&gt;In the end it was 166 MB in the end, and I&amp;rsquo;ll never be able to host it on Github.&lt;/p&gt;
+
+&lt;p&gt;But it was very pretty, so I made a GIF of Scotland through the years.&lt;/p&gt;
+
+&lt;p&gt;I experimented with GGanimate, which worked well for making GIFs from ggplot objects, however it was easier to make it using screenshots from the rendered html map in the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map_Code.html#map4_arran_vs_scotland&#34;&gt;See the code here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I did do some practice with my SIMD Percentile plots though for Arran alone; first using GGPlot, then overlaying onto GGMaps.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/output2.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/output3.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/GGAnimate.html#creating_animated_maps&#34;&gt;See the code here.&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -26,10 +70,141 @@
       <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/arran/</guid>
-      <description>See the map.
-Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
-I thought Arran would make nice maps.
-Early progress Initially I used map cordinates given by Ordinance Survey to find the centre of any KA27 postcode on a map.</description>
+      <description>
+
+&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/map2.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/map2.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This is an early project based on SIMD data that I&amp;rsquo;m using to try and
+learn R. I&amp;rsquo;ve used the package
+&lt;a href=&#34;http://ggplot2.tidyverse.org/reference/ggsf.html&#34;&gt;&amp;lsquo;ggplot2&amp;rsquo;&lt;/a&gt; as part of
+the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn
+through a combination of &lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r&#34;&gt;DataCamp
+courses&lt;/a&gt;,
+&lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;RStudio &amp;lsquo;Cheat Sheets&amp;rsquo;&lt;/a&gt;
+and &lt;a href=&#34;https://twitter.com/hashtag/Rstats?src=hash&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I thought Arran would make nice maps.&lt;/p&gt;
+
+&lt;h3 id=&#34;early-progress&#34;&gt;Early progress&lt;/h3&gt;
+
+&lt;p&gt;Initially I used map cordinates given by &lt;a href=&#34;https://www.ordnancesurvey.co.uk/opendatadownload/products.html&#34;&gt;Ordinance
+Survey&lt;/a&gt;
+to find the centre of any KA27 postcode on a map. (KA27 being the prefix
+or &amp;lsquo;postcode area&amp;rsquo; that denotes all Aran Island postcodes).&lt;/p&gt;
+
+&lt;p&gt;I then read the coordinates into sf with st_as_sf(), and plotted over
+a shape file map of Arran; over the SIMD data zones, as well as the
+section of coordinates contained in one data zone.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot11.5.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+&lt;p&gt;With the postcodes sorted, I then wanted to relate some other
+information about these areas. I used
+&lt;a href=&#34;www.gov.scot/Topics/Statistics/SIMD&#34;&gt;SIMD&lt;/a&gt; &amp;lsquo;DataZone boundraries&amp;rsquo; and
+plotted their ERSI Shapefiles using &amp;lsquo;geom_sf.&amp;rsquo; First the data zones
+onto the island. Then I coloured/labelled the individual data zones.
+Having worked that out, I wanted to show some health data about the
+zones. I overlayed &amp;lsquo;percentile&amp;rsquo; data about the areas for 2016.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot13.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+&lt;p&gt;Then after faffing about with individual shape files for every year,
+(The data zone labels changed after 2012), I did the same for all the
+SIMD data periods and used facet_wrap to plot them all together.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot10.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+
+&lt;p&gt;Combining the postcode and SIMD data, I&amp;rsquo;ve summarised each of the zones
+below.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/Function10.html&#34; width=&#34;100%&#34; height=&#34;650px&#34; &gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Function10.html&#34;&gt;See these plots in a new
+window.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As shown at the top, I&amp;rsquo;ve since overlaid this data onto interactive maps
+using leaflet.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;SIMD Datazones and Example Markers&lt;/em&gt;&lt;/p&gt;
+
+&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/map.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/map.html&#34;&gt;First Version.&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/Map5view.html&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map5view.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The overall aim of this project is to eventually create an easy template
+by which a user with no prior programming knowledge can create
+interactive graphs or static maps by overlaying some form of data
+assigned to a postcode alone.&lt;/p&gt;
+
+&lt;p&gt;The reason I&amp;rsquo;ve chosen postcode is that it&amp;rsquo;s a prevalent measurement
+that can be integrated easily. Since I&amp;rsquo;ve already imported a list of
+Arran Postcodes with coordinates, I can create markers for any given
+address using one. For example, I had a list of each GP clinic on Arran.
+If I put this information onto an excel chart, I can subsect the
+original full postcode list by the clinic list, giving me a new list
+with coordinates I can then plot as markers on a map with labels. This
+means I can plot anything I&amp;rsquo;d like to see the geographical spread of and
+using this method is the same amount of effort plotting the data for 10
+markers as it would be for 100.&lt;/p&gt;
+
+&lt;p&gt;I can then overlay onto the map+markers any information I want. In my
+first 2 maps I&amp;rsquo;ve shown SIMD DataZones (the units Scotland is subdivided
+into for measurement purposes), but I could create overlays dividing up
+the map by closest clinic for example (in 10/15/20 mile increments), or
+distance to the ferry for hospital transport.&lt;/p&gt;
+
+&lt;p&gt;If I used OS postcode tiles I could even overlay some information (a
+continuous/ variable matched to a colour palate) assigned to that
+postcode. (Like the percentile data, but showing many smaller areas over
+Arran).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map_Code.html#example_markers&#34;&gt;See the clinic plot
+example.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Code.html&#34;&gt;See the full project
+code.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/front_page_graphics.html&#34;&gt;See the code specific to these
+graphics.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io&#34;&gt;Other projects I&amp;rsquo;m working on.&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

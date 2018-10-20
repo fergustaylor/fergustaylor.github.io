@@ -5,7 +5,8 @@ date: '2017-09-27'
 slug: openprescribingR-Plots2
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/09.jpg"
 description: "New openprescribingR plots and intro video."
 ---

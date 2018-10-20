@@ -5,7 +5,8 @@ date: '2017-09-11'
 slug: openprescribingr
 categories:
  - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/04.jpg"
 description: "I made a package for the first time, which lets me import data from the new openprescribing api directly into R."
 ---

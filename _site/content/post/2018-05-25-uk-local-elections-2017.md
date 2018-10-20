@@ -5,7 +5,8 @@ date: '2018-05-25'
 slug: uk-local-elections-2017
 categories:
   - Dev
-tags: []
+tags:
+  - R
 description: ''
 header_image: /blogimages/party_points.png
 ---

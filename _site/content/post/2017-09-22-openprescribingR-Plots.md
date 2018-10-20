@@ -5,7 +5,8 @@ date: '2017-09-22'
 slug: openprescribingR-Plots
 categories:
   - Openprescribing
-tags: []
+tags:
+  - R
 header_image: "/images/thumbs/07.jpg"
 description: "Made a package to return a set of default plots based on my openprescribingR import tool."
 ---
