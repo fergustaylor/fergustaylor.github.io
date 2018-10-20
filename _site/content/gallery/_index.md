@@ -1,6 +1,4 @@
 +++
-tags = []
-categories = []
 custom_css = []
 custom_js = ["customjs/main2.js"]
 +++
