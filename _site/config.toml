@@ -63,7 +63,7 @@ enableGitInfo = true
 			image = "fulls/07.jpg"
 			thumb = "thumbs/07.jpg"
 			title = "[OpenprescribingR](./categories/openprescribing/)"
-			description = "A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters"
+			description = "A project importing OpenPrescribing.net data directly into RStudio. Another separate package returning default plots on given BNF parameters"
 			
 		[[params.portfolio.gallery]]
 			image = "fulls/bearhunt.png"
