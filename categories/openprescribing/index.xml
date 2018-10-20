@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/categories/openprescribing/</link>
+    <link>https://fergustaylor.github.io/categories/openprescribing/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Thu, 12 Oct 2017 17:26:05 +0100</lastBuildDate>
     
-        <atom:link href="/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenprescribingR Plots Updated</title>
-      <link>/post/openprescribingr-plots-updated/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots-updated/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
       <description>&lt;script&gt;
 function myFunction() {
 var frames = document.getElementsByTagName(&#34;iframe&#34;);
@@ -103,10 +103,10 @@ I got a little creative with it, plotting geom_point_interactive with tooltips o
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>/post/openprescribingr-plots3/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots3/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots3/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
       <description>&lt;p&gt;OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).&lt;/p&gt;
 
 &lt;p&gt;Updated the old &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-plots2/&#34;&gt;openprescribing graphics&lt;/a&gt;, with ggiraph.
@@ -133,10 +133,10 @@ Then added some for my last post as well.&lt;/p&gt;
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>/post/openprescribingr-plots2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots2/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots2/</guid>
       <description>&lt;p&gt;Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.&lt;/p&gt;
 
 
@@ -209,10 +209,10 @@ ggiraph(code = {print(gg_point)})
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>/post/more-examples-for-openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/more-examples-for-openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</guid>
       <description>
 
 &lt;p&gt;This package works by interacting with the openprescribing.net api.
@@ -659,10 +659,10 @@ lipid-regulating drugs, &amp;ldquo;0212000AA&amp;rdquo; is Rosuvastatin Calcium,
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>/post/openprescribingr-plots/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots/</guid>
       <description>&lt;p&gt;Made a new package to return a set of default plots based on my openprescribingR import tool.&lt;/p&gt;
 
 &lt;p&gt;Currently returns a leaflet map showing;&lt;/p&gt;
@@ -705,10 +705,10 @@ plot2017listsize()
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>/post/openprescribingr-update-2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update-2/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update-2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update-2/</guid>
       <description>
 &lt;figure &gt;
     
@@ -747,10 +747,10 @@ plot2017listsize()
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>/post/openprescribingr-update/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update/</link>
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update/</guid>
       <description>
 
 &lt;p&gt;I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.&lt;/p&gt;
@@ -829,10 +829,10 @@ st_as_sf()&lt;/code&gt;&lt;/p&gt;
     
     <item>
       <title>openprescribingR</title>
-      <link>/post/openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr/</guid>
       <description>
 
 &lt;p&gt;Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio.

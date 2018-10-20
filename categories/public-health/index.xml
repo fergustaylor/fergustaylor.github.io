@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Public Health on Fergus Taylor</title>
-    <link>/categories/public-health/</link>
+    <link>https://fergustaylor.github.io/categories/public-health/</link>
     <description>Recent content in Public Health on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Fri, 04 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/categories/public-health/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/public-health/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>/post/public-health-outcomes-framework/</link>
+      <link>https://fergustaylor.github.io/post/public-health-outcomes-framework/</link>
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/public-health-outcomes-framework/</guid>
+      <guid>https://fergustaylor.github.io/post/public-health-outcomes-framework/</guid>
       <description>&lt;p&gt;I initially saw the notice of the August update via twitter
 &lt;a href=&#34;https://twitter.com/PHE_uk&#34;&gt;@PHE_uk&lt;/a&gt;, but I later found the full
 future publication timeline available at

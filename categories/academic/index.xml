@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Academic on Fergus Taylor</title>
-    <link>/categories/academic/</link>
+    <link>https://fergustaylor.github.io/categories/academic/</link>
     <description>Recent content in Academic on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/categories/academic/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/academic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rstudio Preview - Radix</title>
-      <link>/post/rstudio-preview-radix/</link>
+      <link>https://fergustaylor.github.io/post/rstudio-preview-radix/</link>
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/rstudio-preview-radix/</guid>
+      <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;

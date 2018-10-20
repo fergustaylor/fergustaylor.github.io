@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/categories/bnf/</link>
+    <link>https://fergustaylor.github.io/categories/bnf/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 28 Oct 2017 16:22:03 +0100</lastBuildDate>
     
-        <atom:link href="/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mix-Mode-Multiply</title>
-      <link>/post/mix-mode-multiply/</link>
+      <link>https://fergustaylor.github.io/post/mix-mode-multiply/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/mix-mode-multiply/</guid>
+      <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
       <description>&lt;p&gt;I recently saw the following tweet from &lt;a href=&#34;https://twitter.com/mbostock&#34;&gt;Mike Bostock&lt;/a&gt;, creator of D3.js.&lt;/p&gt;
 
 &lt;style&gt;
@@ -74,10 +74,10 @@ In my mind there is still some of that feeling of quantity given by the visual a
     
     <item>
       <title>Drug Selections</title>
-      <link>/post/drug-selections/</link>
+      <link>https://fergustaylor.github.io/post/drug-selections/</link>
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-selections/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-selections/</guid>
       <description>&lt;p&gt;I decided it might be useful to see the interaction information as plain text.
 Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.&lt;/p&gt;
 
@@ -114,10 +114,10 @@ Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
     
     <item>
       <title>Custom Drug Selections</title>
-      <link>/post/custom-drug-selections/</link>
+      <link>https://fergustaylor.github.io/post/custom-drug-selections/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/custom-drug-selections/</guid>
+      <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
       <description>&lt;p&gt;Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.&lt;/p&gt;
@@ -148,10 +148,10 @@ By moving the tension bar back and forth you could see how the interactions grou
     
     <item>
       <title>Drug Interactions with Hierarchical Edge Bundling</title>
-      <link>/post/drug-interactions-with-hierarchical-edge-bundling/</link>
+      <link>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</link>
       <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
       <description>&lt;p&gt;So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden).
 I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.&lt;/p&gt;
 
@@ -172,10 +172,10 @@ is to develop the project into a (common) example drugs graph, to which you can 
     
     <item>
       <title>BNF Interactions</title>
-      <link>/post/bnf-interactions/</link>
+      <link>https://fergustaylor.github.io/post/bnf-interactions/</link>
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/bnf-interactions/</guid>
+      <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
       <description>&lt;p&gt;I made a few bits of progress.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;Here.&lt;/a&gt;&lt;/p&gt;
@@ -203,10 +203,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
     
     <item>
       <title>All The Medicine</title>
-      <link>/post/all-the-medicine/</link>
+      <link>https://fergustaylor.github.io/post/all-the-medicine/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/all-the-medicine/</guid>
+      <guid>https://fergustaylor.github.io/post/all-the-medicine/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by &lt;a href=&#34;https://digital.nhs.uk/prescribing&#34;&gt;NHS digital.&lt;/a&gt; (As part of their CCG Spending data).&lt;/p&gt;
 
 &lt;p&gt;These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.&lt;/p&gt;
@@ -223,10 +223,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
     
     <item>
       <title>The BNF Project</title>
-      <link>/post/the-bnf-project/</link>
+      <link>https://fergustaylor.github.io/post/the-bnf-project/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/the-bnf-project/</guid>
+      <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
       <description>&lt;p&gt;I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock &lt;a href=&#34;https://mbostock.github.io/d3/talk/20111116/bundle.html&#34;&gt;example&lt;/a&gt; of a tensionable hierachical edge bundling diagram.&lt;/p&gt;
 
 &lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-1.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
@@ -267,10 +267,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>BNF Sections Visualised</title>
-      <link>/post/bnf-sections-visualised/</link>
+      <link>https://fergustaylor.github.io/post/bnf-sections-visualised/</link>
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/bnf-sections-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
       <description>&lt;p&gt;It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been &lt;a href=&#34;https://codepen.io/&#34;&gt;Codepen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;See the dendrograms below. Or interact with them all, &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;here.&lt;/a&gt; By pressing left or right.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../blogimages/bnfsection.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/bnfsection.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -284,10 +284,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>Interactions Visualised</title>
-      <link>/post/interactions-visualised/</link>
+      <link>https://fergustaylor.github.io/post/interactions-visualised/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
       <description>&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
 &lt;p&gt;Photos of the BNF drug interactions with varying tension.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;../../blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-3.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../../blogimages/d3-2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-2.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../../blogimages/d3-1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-1.html&#34;&gt;See the interactive version&lt;/a&gt;&lt;/p&gt;
@@ -296,10 +296,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>Interactions Continued</title>
-      <link>/post/interactions-continued/</link>
+      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-continued/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
       <description>&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
 &lt;p&gt;I built this into the previous code. &lt;a href=&#34;https://github.com/fergustaylor/d3&#34;&gt;(See the full code)&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interactions
@@ -345,10 +345,10 @@ BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Drug Interactions</title>
-      <link>/post/drug-interactions/</link>
+      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-interactions/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
       <description>&lt;p&gt;I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.&lt;/p&gt;
 &lt;p&gt;To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.&lt;/p&gt;
 &lt;p&gt;As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of &lt;a href=&#34;https://d3js.org&#34;&gt;D3&lt;/a&gt; to present it. D3 being one of the standards for web graphics, including many notable newspapers.&lt;/p&gt;

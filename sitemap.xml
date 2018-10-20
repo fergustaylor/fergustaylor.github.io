@@ -3,314 +3,299 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/rstudio-preview-radix/</loc>
+    <loc>https://fergustaylor.github.io/post/rstudio-preview-radix/</loc>
     <lastmod>2018-10-14T13:47:18+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/50-drugs/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/audit/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/new-plots/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/writing/chamonix-and-the-conville-course/</loc>
+    <loc>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</loc>
     <lastmod>2018-06-26T15:28:34+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/gallery/</loc>
+    <loc>https://fergustaylor.github.io/post/gallery/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/google-custom-search/</loc>
+    <loc>https://fergustaylor.github.io/post/google-custom-search/</loc>
     <lastmod>2018-06-26T21:34:47+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/mix-mode-multiply/</loc>
+    <loc>https://fergustaylor.github.io/post/mix-mode-multiply/</loc>
     <lastmod>2018-05-25T18:21:23+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/uk-local-elections-2017/</loc>
+    <loc>https://fergustaylor.github.io/post/uk-local-elections-2017/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/nhs-hackday/</loc>
+    <loc>https://fergustaylor.github.io/post/nhs-hackday/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-plots-updated/</loc>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/drug-selections/</loc>
-    <lastmod>2018-03-10T00:24:05+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/drug-selections/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/custom-drug-selections/</loc>
-    <lastmod>2018-02-27T23:20:57+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/custom-drug-selections/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/drug-interactions-with-hierarchical-edge-bundling/</loc>
-    <lastmod>2018-02-03T23:31:56+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/bnf-interactions/</loc>
-    <lastmod>2018-01-16T21:35:28+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/bnf-interactions/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/all-the-medicine/</loc>
-    <lastmod>2017-12-17T18:34:05+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/all-the-medicine/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/the-bnf-project/</loc>
-    <lastmod>2018-03-08T22:00:14+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/the-bnf-project/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/bnf-sections-visualised/</loc>
+    <loc>https://fergustaylor.github.io/post/bnf-sections-visualised/</loc>
     <lastmod>2018-03-09T13:35:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/interactions-visualised/</loc>
+    <loc>https://fergustaylor.github.io/post/interactions-visualised/</loc>
     <lastmod>2018-03-09T13:35:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/interactions-continued/</loc>
+    <loc>https://fergustaylor.github.io/post/interactions-continued/</loc>
     <lastmod>2018-03-09T13:35:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/drug-interactions/</loc>
+    <loc>https://fergustaylor.github.io/post/drug-interactions/</loc>
     <lastmod>2018-03-09T13:35:30+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-plots3/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-plots3/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-plots2/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-plots2/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/more-examples-for-openprescribingr/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-plots/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-plots/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-update-2/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-update-2/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr-update/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr-update/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/openprescribingr/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/openprescribingr/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/public-health-outcomes-framework/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/public-health-outcomes-framework/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/arran-continued/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/arran-continued/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/arran/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/post/arran/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2016-11-27-you-alright/</loc>
+    <loc>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</loc>
+    <loc>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2016-04-26-a-call-for-trustees/</loc>
+    <loc>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</loc>
+    <loc>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2014-06-18-accident-incident-report-180614/</loc>
+    <loc>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</loc>
+    <loc>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</loc>
     <lastmod>2017-10-09T20:26:29+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/d3interactions/</loc>
+    <loc>https://fergustaylor.github.io/d3interactions/</loc>
     <lastmod>2018-02-03T23:23:47+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/openprescribingr/</loc>
+    <loc>https://fergustaylor.github.io/openprescribingr/</loc>
     <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://fergustaylor.github.io/about/</loc>
     <lastmod>2018-07-02T14:56:41+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/arran/</loc>
+    <loc>https://fergustaylor.github.io/arran/</loc>
     <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/</loc>
+    <loc>https://fergustaylor.github.io/blog/</loc>
     <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://fergustaylor.github.io/categories/</loc>
     <lastmod>2018-03-08T22:00:14+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/arran/</loc>
+    <loc>https://fergustaylor.github.io/categories/arran/</loc>
     <lastmod>2017-10-12T17:26:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/bnf/</loc>
+    <loc>https://fergustaylor.github.io/categories/bnf/</loc>
     <lastmod>2017-10-28T16:22:03+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/dev/</loc>
+    <loc>https://fergustaylor.github.io/categories/dev/</loc>
     <lastmod>2018-10-11T16:20:33+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/openprescribing/</loc>
+    <loc>https://fergustaylor.github.io/categories/openprescribing/</loc>
     <lastmod>2017-10-12T17:26:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/d3/</loc>
+    <loc>https://fergustaylor.github.io/d3/</loc>
     <lastmod>2017-10-31T23:51:32+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/dev/</loc>
+    <loc>https://fergustaylor.github.io/dev/</loc>
     <lastmod>2018-06-22T16:38:56+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/gallery/</loc>
+    <loc>https://fergustaylor.github.io/gallery/</loc>
     <lastmod>2018-07-02T18:44:34+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://fergustaylor.github.io/post/</loc>
     <lastmod>2017-10-12T17:26:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/randomimage/</loc>
+    <loc>https://fergustaylor.github.io/randomimage/</loc>
     <lastmod>2017-11-04T00:20:37+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/writing/</loc>
+    <loc>https://fergustaylor.github.io/writing/</loc>
     <lastmod>2017-10-12T17:26:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/academic/</loc>
+    <loc>https://fergustaylor.github.io/categories/academic/</loc>
     <lastmod>2018-10-14T13:47:18+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://fergustaylor.github.io/categories/</loc>
     <lastmod>2017-10-12T17:26:05+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://fergustaylor.github.io/</loc>
     <lastmod>2018-10-14T13:47:18+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/nhs-hackday/</loc>
+    <loc>https://fergustaylor.github.io/categories/nhs-hackday/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/public-health/</loc>
+    <loc>https://fergustaylor.github.io/categories/public-health/</loc>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fergustaylor.github.io/tags/r/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
+    <loc>https://fergustaylor.github.io/tags/</loc>
     <lastmod>2018-10-20T16:55:54+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/writing/</loc>
+    <loc>https://fergustaylor.github.io/categories/writing/</loc>
     <lastmod>2018-06-26T15:28:34+01:00</lastmod>
     <priority>0</priority>
   </url>

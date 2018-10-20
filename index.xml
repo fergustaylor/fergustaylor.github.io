@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/</link>
+    <link>https://fergustaylor.github.io/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rstudio Preview - Radix</title>
-      <link>/post/rstudio-preview-radix/</link>
+      <link>https://fergustaylor.github.io/post/rstudio-preview-radix/</link>
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/rstudio-preview-radix/</guid>
+      <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;
@@ -32,77 +32,11 @@ My hope would be that this would become something I could refer to and use in an
     </item>
     
     <item>
-      <title>50 Drugs</title>
-      <link>/post/50-drugs/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/50-drugs/</guid>
-      <description>&lt;p&gt;Earlier this September I started my final year of Medicine at the University of Glasgow. Not wanting to be too out-of-date before returing to the wards, I looked back over a course resource summarising the 50 most commmonly used drugs on the ward.&lt;/p&gt;
-
-&lt;p&gt;This is an interesting project created by SSC students at my University. &amp;hellip;, with &amp;hellip;. Unfortunately, the resource itself isn&amp;rsquo;t prepared in an ideal way to revise from.&lt;/p&gt;
-
-&lt;p&gt;I wondered instead if there might be a better way to create an interface for it, similar to how I had presented the &lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactions/&#34;&gt;BNF project.&lt;/a&gt;
-This is an active project with ongoing work, &lt;a href=&#34;https://fergustaylor.github.io/categories/bnf/&#34;&gt;described here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This presented me with an interesting project and a series of main problems.&lt;/p&gt;
-
-&lt;p&gt;First of all;
-1. getting the data
-The data itself is a course resource, kept in our course materials/lecture repository Moodle.
-This requires me to log-in to see, making it a more complicated webscrape session.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;formatting it
-The data then has to be processed in an R session to produce something I can use online.
-(I.e a JSON format).&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;creating a useful interface for presenting the data
-Then the part I wanted to revise from. I wanted a simple user interface that could present multiple drugs at a time.
-I wanted something searchable that I could create custom selections with - at least to the level of organisation already applied to that dataset, (general drug classes).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I decided to use the Rscraping tool Rvest, modified to download through the log-in.&lt;/p&gt;
-
-&lt;p&gt;///
-As you can see, the original interface is quite messy. There&amp;rsquo;s a lot of unnecessary information listed.
-You can&amp;rsquo;t tell from photos, but switching between tabs causes the entire page to reload, and you have to scroll through all the unnecessary information to get back to the important bits.
-Not a huge problem, but all of it adds unnecessary delays which makes the whole experience unwieldy.&lt;/p&gt;
-
-&lt;p&gt;You can see my work, &lt;a href=&#34;https://fergustaylor.github.io/Dev/50%20Drugs/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Audit</title>
-      <link>/post/audit/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/audit/</guid>
-      <description>&lt;p&gt;In my medical degree I was recently on placement at the Queen Elizabeth University Hospital, Accident and Emergency department.
-While there, I assisted with an audit into early pregnancy presentations to the department over a monthly period.&lt;/p&gt;
-
-&lt;p&gt;The point of this was to consider the presentation of patients to the department, and whether or not discharge criteria could be considered at triage in the form of a pro-forma, as is already the case in other Glasgow A and E departments.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>New Plots</title>
-      <link>/post/new-plots/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/new-plots/</guid>
-      <description>&lt;p&gt;Over the last couple of months I&amp;rsquo;ve been working a lot on a couple of different projects that have used interesting combinations of ggplot.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll write some of these up properly when I get the chance, but for now, some interesting examples.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Chamonix and the Conville Course</title>
-      <link>/writing/chamonix-and-the-conville-course/</link>
+      <link>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/writing/chamonix-and-the-conville-course/</guid>
+      <guid>https://fergustaylor.github.io/writing/chamonix-and-the-conville-course/</guid>
       <description>&lt;style&gt;
 strong, b {
     font-weight: 800;
@@ -199,10 +133,10 @@ I&amp;rsquo;d recommend the course to anyone looking to live life more adventuro
     
     <item>
       <title>Gallery</title>
-      <link>/post/gallery/</link>
+      <link>https://fergustaylor.github.io/post/gallery/</link>
       <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/gallery/</guid>
+      <guid>https://fergustaylor.github.io/post/gallery/</guid>
       <description>
 
 &lt;p&gt;A while ago I was considering how best to demonstrate the graphics I&amp;rsquo;ve been developing while learning to code.
@@ -289,10 +223,10 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
     
     <item>
       <title>Google Custom Search</title>
-      <link>/post/google-custom-search/</link>
+      <link>https://fergustaylor.github.io/post/google-custom-search/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/google-custom-search/</guid>
+      <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve created a tool for searching medical resources, &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;padding:62.5% 0 0 0;position:relative;&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/276458805?loop=1&amp;byline=0&amp;portrait=0&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script src=&#34;https://player.vimeo.com/api/player.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -323,10 +257,10 @@ I may end up changing the sites it uses over time, but I think for a particular 
     
     <item>
       <title>Mix-Mode-Multiply</title>
-      <link>/post/mix-mode-multiply/</link>
+      <link>https://fergustaylor.github.io/post/mix-mode-multiply/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/mix-mode-multiply/</guid>
+      <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
       <description>&lt;p&gt;I recently saw the following tweet from &lt;a href=&#34;https://twitter.com/mbostock&#34;&gt;Mike Bostock&lt;/a&gt;, creator of D3.js.&lt;/p&gt;
 
 &lt;style&gt;
@@ -384,10 +318,10 @@ In my mind there is still some of that feeling of quantity given by the visual a
     
     <item>
       <title>UK Local Elections 2017</title>
-      <link>/post/uk-local-elections-2017/</link>
+      <link>https://fergustaylor.github.io/post/uk-local-elections-2017/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/uk-local-elections-2017/</guid>
+      <guid>https://fergustaylor.github.io/post/uk-local-elections-2017/</guid>
       <description>&lt;p&gt;Following a very interesting post I&amp;rsquo;d found on twitter by &lt;a href=&#34;https://www.cultureofinsight.com/blog/2018/05/02/2018-04-08-multivariate-dot-density-maps-in-r-with-sf-ggplot2/&#34;&gt;Paul Campbell,&lt;/a&gt; I was curious to try to recreate the plots involved myself.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;./blogimages/party_points.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
@@ -409,10 +343,10 @@ Perhaps just due to the scale of the individual points to the electoral ward it 
     
     <item>
       <title>NHS Hackday</title>
-      <link>/post/nhs-hackday/</link>
+      <link>https://fergustaylor.github.io/post/nhs-hackday/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/nhs-hackday/</guid>
+      <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
       <description>&lt;script&gt;
 function myFunction() {
 var frames = document.getElementsByTagName(&#34;iframe&#34;);
@@ -530,10 +464,10 @@ iframe {
     
     <item>
       <title>OpenprescribingR Plots Updated</title>
-      <link>/post/openprescribingr-plots-updated/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots-updated/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
       <description>&lt;script&gt;
 function myFunction() {
 var frames = document.getElementsByTagName(&#34;iframe&#34;);
@@ -620,10 +554,10 @@ I got a little creative with it, plotting geom_point_interactive with tooltips o
     
     <item>
       <title>Drug Selections</title>
-      <link>/post/drug-selections/</link>
+      <link>https://fergustaylor.github.io/post/drug-selections/</link>
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-selections/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-selections/</guid>
       <description>&lt;p&gt;I decided it might be useful to see the interaction information as plain text.
 Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.&lt;/p&gt;
 
@@ -660,10 +594,10 @@ Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
     
     <item>
       <title>Custom Drug Selections</title>
-      <link>/post/custom-drug-selections/</link>
+      <link>https://fergustaylor.github.io/post/custom-drug-selections/</link>
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/custom-drug-selections/</guid>
+      <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
       <description>&lt;p&gt;Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.&lt;/p&gt;
@@ -694,10 +628,10 @@ By moving the tension bar back and forth you could see how the interactions grou
     
     <item>
       <title>Drug Interactions with Hierarchical Edge Bundling</title>
-      <link>/post/drug-interactions-with-hierarchical-edge-bundling/</link>
+      <link>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</link>
       <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
       <description>&lt;p&gt;So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden).
 I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.&lt;/p&gt;
 
@@ -718,10 +652,10 @@ is to develop the project into a (common) example drugs graph, to which you can 
     
     <item>
       <title>BNF Interactions</title>
-      <link>/post/bnf-interactions/</link>
+      <link>https://fergustaylor.github.io/post/bnf-interactions/</link>
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/bnf-interactions/</guid>
+      <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
       <description>&lt;p&gt;I made a few bits of progress.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;Here.&lt;/a&gt;&lt;/p&gt;
@@ -749,10 +683,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
     
     <item>
       <title>All The Medicine</title>
-      <link>/post/all-the-medicine/</link>
+      <link>https://fergustaylor.github.io/post/all-the-medicine/</link>
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/all-the-medicine/</guid>
+      <guid>https://fergustaylor.github.io/post/all-the-medicine/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by &lt;a href=&#34;https://digital.nhs.uk/prescribing&#34;&gt;NHS digital.&lt;/a&gt; (As part of their CCG Spending data).&lt;/p&gt;
 
 &lt;p&gt;These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.&lt;/p&gt;
@@ -769,10 +703,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
     
     <item>
       <title>The BNF Project</title>
-      <link>/post/the-bnf-project/</link>
+      <link>https://fergustaylor.github.io/post/the-bnf-project/</link>
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/the-bnf-project/</guid>
+      <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
       <description>&lt;p&gt;I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock &lt;a href=&#34;https://mbostock.github.io/d3/talk/20111116/bundle.html&#34;&gt;example&lt;/a&gt; of a tensionable hierachical edge bundling diagram.&lt;/p&gt;
 
 &lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-1.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
@@ -813,10 +747,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>BNF Sections Visualised</title>
-      <link>/post/bnf-sections-visualised/</link>
+      <link>https://fergustaylor.github.io/post/bnf-sections-visualised/</link>
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/bnf-sections-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
       <description>&lt;p&gt;It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been &lt;a href=&#34;https://codepen.io/&#34;&gt;Codepen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;See the dendrograms below. Or interact with them all, &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;here.&lt;/a&gt; By pressing left or right.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./blogimages/bnfsection.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/bnfsection.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -830,10 +764,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>Interactions Visualised</title>
-      <link>/post/interactions-visualised/</link>
+      <link>https://fergustaylor.github.io/post/interactions-visualised/</link>
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-visualised/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
       <description>&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
 &lt;p&gt;Photos of the BNF drug interactions with varying tension.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-3.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;./blogimages/d3-2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-2.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;./blogimages/d3-1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-1.html&#34;&gt;See the interactive version&lt;/a&gt;&lt;/p&gt;
@@ -842,10 +776,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
     
     <item>
       <title>Interactions Continued</title>
-      <link>/post/interactions-continued/</link>
+      <link>https://fergustaylor.github.io/post/interactions-continued/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/interactions-continued/</guid>
+      <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
       <description>&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
 &lt;p&gt;I built this into the previous code. &lt;a href=&#34;https://github.com/fergustaylor/d3&#34;&gt;(See the full code)&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interactions
@@ -891,10 +825,10 @@ BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Drug Interactions</title>
-      <link>/post/drug-interactions/</link>
+      <link>https://fergustaylor.github.io/post/drug-interactions/</link>
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/drug-interactions/</guid>
+      <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
       <description>&lt;p&gt;I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.&lt;/p&gt;
 &lt;p&gt;To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.&lt;/p&gt;
 &lt;p&gt;As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of &lt;a href=&#34;https://d3js.org&#34;&gt;D3&lt;/a&gt; to present it. D3 being one of the standards for web graphics, including many notable newspapers.&lt;/p&gt;
@@ -1031,10 +965,10 @@ example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>/post/openprescribingr-plots3/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots3/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots3/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
       <description>&lt;p&gt;OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).&lt;/p&gt;
 
 &lt;p&gt;Updated the old &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-plots2/&#34;&gt;openprescribing graphics&lt;/a&gt;, with ggiraph.
@@ -1061,10 +995,10 @@ Then added some for my last post as well.&lt;/p&gt;
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>/post/openprescribingr-plots2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots2/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots2/</guid>
       <description>&lt;p&gt;Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.&lt;/p&gt;
 
 
@@ -1137,10 +1071,10 @@ ggiraph(code = {print(gg_point)})
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>/post/more-examples-for-openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/more-examples-for-openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</guid>
       <description>
 
 &lt;p&gt;This package works by interacting with the openprescribing.net api.
@@ -1587,10 +1521,10 @@ lipid-regulating drugs, &amp;ldquo;0212000AA&amp;rdquo; is Rosuvastatin Calcium,
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>/post/openprescribingr-plots/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots/</guid>
       <description>&lt;p&gt;Made a new package to return a set of default plots based on my openprescribingR import tool.&lt;/p&gt;
 
 &lt;p&gt;Currently returns a leaflet map showing;&lt;/p&gt;
@@ -1633,10 +1567,10 @@ plot2017listsize()
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>/post/openprescribingr-update-2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update-2/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update-2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update-2/</guid>
       <description>
 &lt;figure &gt;
     
@@ -1675,10 +1609,10 @@ plot2017listsize()
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>/post/openprescribingr-update/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update/</link>
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update/</guid>
       <description>
 
 &lt;p&gt;I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.&lt;/p&gt;
@@ -1757,10 +1691,10 @@ st_as_sf()&lt;/code&gt;&lt;/p&gt;
     
     <item>
       <title>openprescribingR</title>
-      <link>/post/openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr/</guid>
       <description>
 
 &lt;p&gt;Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio.
@@ -2032,10 +1966,10 @@ Read &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-update
     
     <item>
       <title>Public Health Outcomes Framework</title>
-      <link>/post/public-health-outcomes-framework/</link>
+      <link>https://fergustaylor.github.io/post/public-health-outcomes-framework/</link>
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/public-health-outcomes-framework/</guid>
+      <guid>https://fergustaylor.github.io/post/public-health-outcomes-framework/</guid>
       <description>&lt;p&gt;I initially saw the notice of the August update via twitter
 &lt;a href=&#34;https://twitter.com/PHE_uk&#34;&gt;@PHE_uk&lt;/a&gt;, but I later found the full
 future publication timeline available at
@@ -2134,10 +2068,10 @@ a way to convert R data into interactive plots.&lt;/p&gt;
     
     <item>
       <title>Arran SIMD GIFs</title>
-      <link>/post/arran-continued/</link>
+      <link>https://fergustaylor.github.io/post/arran-continued/</link>
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/arran-continued/</guid>
+      <guid>https://fergustaylor.github.io/post/arran-continued/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2187,10 +2121,10 @@ As it turned out I managed to write the code in 15 minutes. It then crashed imme
     
     <item>
       <title>Arran</title>
-      <link>/post/arran/</link>
+      <link>https://fergustaylor.github.io/post/arran/</link>
       <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/arran/</guid>
+      <guid>https://fergustaylor.github.io/post/arran/</guid>
       <description>
 
 &lt;iframe src=&#34;https://fergustaylor.github.io/Arran/map2.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
@@ -2330,10 +2264,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>&#39;You alright?&#39;</title>
-      <link>/writing/2016-11-27-you-alright/</link>
+      <link>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</link>
       <pubDate>Sun, 27 Nov 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-11-27-you-alright/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-11-27-you-alright/</guid>
       <description>&lt;p&gt;Back in my third year of University I was asked to get involved with the Student Union as an opportunity to improve welfare at the Medical School, in particular - Mental Health.&lt;/p&gt;
 
 &lt;p&gt;I had some successes, including the introduction of a new &lt;a href=&#34;http://www.facebook.com/glasmedpeersupport/&#34;&gt;peer support programme&lt;/a&gt;. But the issue of advertising the available services so that students were aware of their options when they needed them - has been poorly approached for some time.&lt;/p&gt;
@@ -2366,10 +2300,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>Glasgow ARM - Supporting Rwandan Healthcare Students</title>
-      <link>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
+      <link>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</link>
       <pubDate>Fri, 01 Jul 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-07-01-glasgow-arm-supporting-rwandan-healthcare-students/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2390,10 +2324,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>A Call for Trustees</title>
-      <link>/writing/2016-04-26-a-call-for-trustees/</link>
+      <link>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</link>
       <pubDate>Tue, 26 Apr 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-04-26-a-call-for-trustees/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-04-26-a-call-for-trustees/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2412,10 +2346,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>&#39;We&#39;re going on a bear hunt..&#39;</title>
-      <link>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
+      <link>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</link>
       <pubDate>Tue, 08 Mar 2016 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
+      <guid>https://fergustaylor.github.io/writing/2016-03-08-were-going-on-a-bear-hunt-2/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2438,10 +2372,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>Accident Incident Report: 18/06/14</title>
-      <link>/writing/2014-06-18-accident-incident-report-180614/</link>
+      <link>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</link>
       <pubDate>Wed, 18 Jun 2014 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2014-06-18-accident-incident-report-180614/</guid>
+      <guid>https://fergustaylor.github.io/writing/2014-06-18-accident-incident-report-180614/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2474,10 +2408,10 @@ graphics.&lt;/a&gt;&lt;/p&gt;
     
     <item>
       <title>Extreme Survival: A Doctor Explores the Limits of Human Endurance</title>
-      <link>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
+      <link>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</link>
       <pubDate>Thu, 01 Mar 2012 13:39:46 +0200</pubDate>
       
-      <guid>/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
+      <guid>https://fergustaylor.github.io/writing/2012-03-01-extreme-survival-a-doctor-explores-the-limits-of-human-endurance/</guid>
       <description>
 &lt;figure &gt;
     
@@ -2505,10 +2439,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/d3interactions/</link>
+      <link>https://fergustaylor.github.io/d3interactions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/d3interactions/</guid>
+      <guid>https://fergustaylor.github.io/d3interactions/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/D3/Interactions&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2517,10 +2451,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/openprescribingr/</link>
+      <link>https://fergustaylor.github.io/openprescribingr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/openprescribingr/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/openprescribingR&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2529,10 +2463,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/arran/</link>
+      <link>https://fergustaylor.github.io/arran/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/arran/</guid>
+      <guid>https://fergustaylor.github.io/arran/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/Arran&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2541,10 +2475,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/blog/</link>
+      <link>https://fergustaylor.github.io/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/blog/</guid>
+      <guid>https://fergustaylor.github.io/blog/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/post&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2553,10 +2487,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/categories/</link>
+      <link>https://fergustaylor.github.io/categories/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/categories/</guid>
+      <guid>https://fergustaylor.github.io/categories/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2565,10 +2499,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/d3/</link>
+      <link>https://fergustaylor.github.io/d3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/d3/</guid>
+      <guid>https://fergustaylor.github.io/d3/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/D3&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2577,10 +2511,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/dev/</link>
+      <link>https://fergustaylor.github.io/dev/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/dev/</guid>
+      <guid>https://fergustaylor.github.io/dev/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/Dev&#39;&#34; /&gt;
 &lt;/html&gt;
@@ -2589,10 +2523,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>/randomimage/</link>
+      <link>https://fergustaylor.github.io/randomimage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/randomimage/</guid>
+      <guid>https://fergustaylor.github.io/randomimage/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;html&gt;
 	&lt;head&gt;

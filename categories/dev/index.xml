@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/categories/dev/</link>
+    <link>https://fergustaylor.github.io/categories/dev/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Thu, 11 Oct 2018 16:20:33 +0100</lastBuildDate>
     
-        <atom:link href="/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://fergustaylor.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rstudio Preview - Radix</title>
-      <link>/post/rstudio-preview-radix/</link>
+      <link>https://fergustaylor.github.io/post/rstudio-preview-radix/</link>
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/rstudio-preview-radix/</guid>
+      <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;
@@ -32,77 +32,11 @@ My hope would be that this would become something I could refer to and use in an
     </item>
     
     <item>
-      <title>50 Drugs</title>
-      <link>/post/50-drugs/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/50-drugs/</guid>
-      <description>&lt;p&gt;Earlier this September I started my final year of Medicine at the University of Glasgow. Not wanting to be too out-of-date before returing to the wards, I looked back over a course resource summarising the 50 most commmonly used drugs on the ward.&lt;/p&gt;
-
-&lt;p&gt;This is an interesting project created by SSC students at my University. &amp;hellip;, with &amp;hellip;. Unfortunately, the resource itself isn&amp;rsquo;t prepared in an ideal way to revise from.&lt;/p&gt;
-
-&lt;p&gt;I wondered instead if there might be a better way to create an interface for it, similar to how I had presented the &lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactions/&#34;&gt;BNF project.&lt;/a&gt;
-This is an active project with ongoing work, &lt;a href=&#34;https://fergustaylor.github.io/categories/bnf/&#34;&gt;described here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This presented me with an interesting project and a series of main problems.&lt;/p&gt;
-
-&lt;p&gt;First of all;
-1. getting the data
-The data itself is a course resource, kept in our course materials/lecture repository Moodle.
-This requires me to log-in to see, making it a more complicated webscrape session.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;formatting it
-The data then has to be processed in an R session to produce something I can use online.
-(I.e a JSON format).&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;creating a useful interface for presenting the data
-Then the part I wanted to revise from. I wanted a simple user interface that could present multiple drugs at a time.
-I wanted something searchable that I could create custom selections with - at least to the level of organisation already applied to that dataset, (general drug classes).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I decided to use the Rscraping tool Rvest, modified to download through the log-in.&lt;/p&gt;
-
-&lt;p&gt;///
-As you can see, the original interface is quite messy. There&amp;rsquo;s a lot of unnecessary information listed.
-You can&amp;rsquo;t tell from photos, but switching between tabs causes the entire page to reload, and you have to scroll through all the unnecessary information to get back to the important bits.
-Not a huge problem, but all of it adds unnecessary delays which makes the whole experience unwieldy.&lt;/p&gt;
-
-&lt;p&gt;You can see my work, &lt;a href=&#34;https://fergustaylor.github.io/Dev/50%20Drugs/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Audit</title>
-      <link>/post/audit/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/audit/</guid>
-      <description>&lt;p&gt;In my medical degree I was recently on placement at the Queen Elizabeth University Hospital, Accident and Emergency department.
-While there, I assisted with an audit into early pregnancy presentations to the department over a monthly period.&lt;/p&gt;
-
-&lt;p&gt;The point of this was to consider the presentation of patients to the department, and whether or not discharge criteria could be considered at triage in the form of a pro-forma, as is already the case in other Glasgow A and E departments.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>New Plots</title>
-      <link>/post/new-plots/</link>
-      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/new-plots/</guid>
-      <description>&lt;p&gt;Over the last couple of months I&amp;rsquo;ve been working a lot on a couple of different projects that have used interesting combinations of ggplot.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll write some of these up properly when I get the chance, but for now, some interesting examples.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Google Custom Search</title>
-      <link>/post/google-custom-search/</link>
+      <link>https://fergustaylor.github.io/post/google-custom-search/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/google-custom-search/</guid>
+      <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve created a tool for searching medical resources, &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;padding:62.5% 0 0 0;position:relative;&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/276458805?loop=1&amp;byline=0&amp;portrait=0&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script src=&#34;https://player.vimeo.com/api/player.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
@@ -133,10 +67,10 @@ I may end up changing the sites it uses over time, but I think for a particular 
     
     <item>
       <title>UK Local Elections 2017</title>
-      <link>/post/uk-local-elections-2017/</link>
+      <link>https://fergustaylor.github.io/post/uk-local-elections-2017/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/uk-local-elections-2017/</guid>
+      <guid>https://fergustaylor.github.io/post/uk-local-elections-2017/</guid>
       <description>&lt;p&gt;Following a very interesting post I&amp;rsquo;d found on twitter by &lt;a href=&#34;https://www.cultureofinsight.com/blog/2018/05/02/2018-04-08-multivariate-dot-density-maps-in-r-with-sf-ggplot2/&#34;&gt;Paul Campbell,&lt;/a&gt; I was curious to try to recreate the plots involved myself.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;../../blogimages/party_points.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
