@@ -1,4 +1,4 @@
-baseurl = "https://fergustaylor.github.io/"
+baseurl = "https://fergustaylor.github.io"
 languageCode = "en-uk"
 relativeurls = true
 title = "Fergus Taylor"
