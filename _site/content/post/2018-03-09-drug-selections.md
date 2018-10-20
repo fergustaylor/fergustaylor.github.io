@@ -7,7 +7,7 @@ categories:
   - BNF
 tags: []
 description: "Updated BNF Interactions to include a list version of the interaction information"
-header_image: "/blogimages/listview.png"
+header_image: /blogimages/listview.png
 ---
 
 I decided it might be useful to see the interaction information as plain text. 

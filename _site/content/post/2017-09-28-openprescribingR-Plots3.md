@@ -7,7 +7,7 @@ categories:
   - Openprescribing
 tags:
   - R
-header_image: "/images/thumbs/10.jpg"
+header_image: /images/thumbs/10.jpg
 description: "New interactive maps."
 ---
 

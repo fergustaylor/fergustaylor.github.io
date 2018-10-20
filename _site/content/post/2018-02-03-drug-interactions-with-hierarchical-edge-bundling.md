@@ -6,7 +6,7 @@ slug: drug-interactions-with-hierarchical-edge-bundling
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/giphy.gif"
+header_image: /blogimages/giphy.gif
 ---
 
 So I've finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I'd previously hidden).

@@ -6,7 +6,7 @@ slug: bnf-interactions
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/newpost.png"
+header_image: /blogimages/newpost.png
 ---
 
 I made a few bits of progress.

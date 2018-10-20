@@ -7,7 +7,7 @@ categories:
   - Openprescribing
 tags:
   - R
-header_image: "/images/thumbs/08.jpg"
+header_image: /images/thumbs/08.jpg
 description: "New examples of openprescribingR use."
 ---
 

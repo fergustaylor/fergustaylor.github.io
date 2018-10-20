@@ -6,7 +6,7 @@ slug: all-the-medicine
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/bnfsection.png"
+header_image: /blogimages/bnfsection.png
 ---
 
 I've made a dendrogram based off the chemical lists provided by [NHS digital.](https://digital.nhs.uk/prescribing) (As part of their CCG Spending data).

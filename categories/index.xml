@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Thu, 12 Oct 2017 17:26:05 +0100</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/categories/arran/</link>
+      <link>/categories/arran/</link>
       <pubDate>Thu, 12 Oct 2017 17:26:05 +0100</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/arran/</guid>
+      <guid>/categories/arran/</guid>
       <description>&lt;p&gt;A project mapping SIMD health data onto Arran. Later combined with postcode data, gifs and interactive maps.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/categories/bnf/</link>
+      <link>/categories/bnf/</link>
       <pubDate>Sat, 28 Oct 2017 16:22:03 +0100</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/bnf/</guid>
+      <guid>/categories/bnf/</guid>
       <description>&lt;p&gt;A project mapping drug interactions listed in the BNF. Working on hierachical edge bundling algorithms, and learning to use D3.js.&lt;/p&gt;
 
 &lt;p&gt;The Github repository..
@@ -41,10 +41,10 @@ And the site.
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/categories/dev/</link>
+      <link>/categories/dev/</link>
       <pubDate>Thu, 11 Oct 2018 16:20:33 +0100</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/dev/</guid>
+      <guid>/categories/dev/</guid>
       <description>&lt;p&gt;This is &amp;lsquo;Dev&amp;rsquo;, a Github repository for all the smaller projects I&amp;rsquo;m working on.
 Searchable clinical knowledge summaries, visualising local election results or the Humanitarian Data Exchange.. Even just interesting plots.
 Not all of it is complete, but it&amp;rsquo;s a good place to keep everything else.&lt;/p&gt;
@@ -61,10 +61,10 @@ And the site.
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/categories/openprescribing/</link>
+      <link>/categories/openprescribing/</link>
       <pubDate>Thu, 12 Oct 2017 17:26:05 +0100</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/openprescribing/</guid>
+      <guid>/categories/openprescribing/</guid>
       <description>&lt;p&gt;A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters.&lt;/p&gt;
 
 &lt;p&gt;The Github repositories..
@@ -77,37 +77,37 @@ And the site.
     
     <item>
       <title>Academic</title>
-      <link>https://fergustaylor.github.io/categories/academic/</link>
+      <link>/categories/academic/</link>
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/academic/</guid>
+      <guid>/categories/academic/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nhs Hackday</title>
-      <link>https://fergustaylor.github.io/categories/nhs-hackday/</link>
+      <link>/categories/nhs-hackday/</link>
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/nhs-hackday/</guid>
+      <guid>/categories/nhs-hackday/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Public Health</title>
-      <link>https://fergustaylor.github.io/categories/public-health/</link>
+      <link>/categories/public-health/</link>
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/public-health/</guid>
+      <guid>/categories/public-health/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>https://fergustaylor.github.io/categories/writing/</link>
+      <link>/categories/writing/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/categories/writing/</guid>
+      <guid>/categories/writing/</guid>
       <description></description>
     </item>
     

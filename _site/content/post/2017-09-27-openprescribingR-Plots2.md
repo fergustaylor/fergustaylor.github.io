@@ -7,7 +7,7 @@ categories:
   - Openprescribing
 tags:
   - R
-header_image: "/images/thumbs/09.jpg"
+header_image: /images/thumbs/09.jpg
 description: "New openprescribingR plots and intro video."
 ---
 

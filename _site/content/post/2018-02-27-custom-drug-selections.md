@@ -6,7 +6,7 @@ slug: custom-drug-selections
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/bnf-interactions.png"
+header_image: /blogimages/bnf-interactions.png
 ---
 
 Since my last post I've updated my original "top 100" graph, introducing a checkbox for recoloring the paths in red which represent 'severe' interactions.

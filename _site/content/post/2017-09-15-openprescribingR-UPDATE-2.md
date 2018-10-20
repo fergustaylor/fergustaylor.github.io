@@ -7,7 +7,7 @@ categories:
   - Openprescribing
 tags:
   - R
-header_image: "/images/thumbs/06.jpg"
+header_image: /images/thumbs/06.jpg
 description: "Made a map of every clinic in the UK to see if I could. Also overlays CCG boundaries."
 ---
 

@@ -7,7 +7,7 @@ categories:
  - Arran
 tags:
   - R
-header_image: "/images/thumbs/02.jpg"
+header_image: /images/thumbs/02.jpg
 description: Practice with GGanimate and GGmaps, as well as an animation of leaflet maps."
 ---
 
