@@ -56,28 +56,28 @@ enableGitInfo = true
 		[[params.portfolio.gallery]]
 			image = "fulls/03.jpg"
 			thumb = "thumbs/03.jpg"
-			title = "[04/08/17 - Public Health Outcomes Framework](./post/post3/)"
+			title = "[04/08/17 - Public Health Outcomes Framework](./post/public-health-outcomes-framework/)"
 			description = "Looking at the most recent update to Public Health England, ‘Public Health Outcomes’ August publication using the Fingertips data tool package."
-			
-			[[params.portfolio.gallery]]
+
+		[[params.portfolio.gallery]]
 			image = "fulls/07.jpg"
 			thumb = "thumbs/07.jpg"
 			title = "[OpenprescribingR](./categories/openprescribing/)"
 			description = "A project importing OpenPrescribing.net data directly into RStudio. As well as another package returning default plots on given BNF parameters"
 			
-			[[params.portfolio.gallery]]
+		[[params.portfolio.gallery]]
 			image = "fulls/bearhunt.png"
 			thumb = "thumbs/bearhunt.png"
 			title = "[Writing](./categories/writing/)"
 			description = "This a collection of writing, produced for varying publications. Fuelled by late-night coffee, and even more urgent deadlines - these pieces are for a number of the different groups I'm involved with. Most, however have a broad focus on healthcare issues, student societies, and effective charity governance."
 			
-			[[params.portfolio.gallery]]
+		[[params.portfolio.gallery]]
 			image = "fulls/cse.png"
 			thumb = "thumbs/cse.png"
 			title = "[Dev](./categories/dev/)"
 			description = "Some of the other odds and ends. Visualising election results, searchable clinical knowledge summaries, working with the Humanitarian Data Exchange."
 
-			[[params.portfolio.gallery]]
+		[[params.portfolio.gallery]]
 			image = "fulls/academic.png"
 			thumb = "thumbs/academic.png"
 			title = "[Academic](./academic)"

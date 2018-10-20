@@ -1,9 +1,4 @@
-+++
-tags = []
-categories = []
-+++
-
-As I learn to use R, I've made a series of posts on the projects I've been working.
+As I learn to use R, I've made a series of posts on the projects I've been working on.
 
 The eventual aim is to use these skills to interpret patient data in-hospital. <br>
 In the meanwhile, I've been practicing on public health data.
