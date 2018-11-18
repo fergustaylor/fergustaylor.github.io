@@ -6,17 +6,15 @@ slug: bnf-interactions
 categories:
   - BNF
 tags: []
-header_image: /blogimages/newpost.png
+header_image: /blogimages/multiply.png
 ---
 
 I made a few bits of progress.
-
-[Here.](https://fergustaylor.github.io/D3/Interactions/)
-
 I'm a bit lazy to make a 'how-to' tonight.
 
-But in summary - I've linked my graph to the interaction messages, severities, evidence gradings taken from [bnf.nice.org.uk/interaction/.](https://bnf.nice.org.uk/interaction/)
+I've linked my graph to the interaction messages, severities, evidence gradings taken from [bnf.nice.org.uk/interaction/.](https://bnf.nice.org.uk/interaction/)
 This reflects the new data being listed by the BNF.
+It's not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.
 
 The 'severe' interactions are highlighted on my sidebar.
 (As well as severity totals as a whole.)
@@ -30,4 +28,4 @@ As I learn more, I'll to customise this around features that benefit the interpr
 
 If you have any feedback on changes that would make this more helpful, please get in contact through [twitter.](https://twitter.com/ferguswtaylor)
 
-<img src="/blogimages/newpost.png" alt="" style="width:100%;height:auto;">
+<a href="https://fergustaylor.github.io/D3/Interactions/"><img src="/blogimages/multiply.png" alt="" style="width:100%;height:auto;"></a>

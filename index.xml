@@ -656,14 +656,12 @@ is to develop the project into a (common) example drugs graph, to which you can 
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
-      <description>&lt;p&gt;I made a few bits of progress.&lt;/p&gt;
+      <description>&lt;p&gt;I made a few bits of progress.
+I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;Here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.&lt;/p&gt;
-
-&lt;p&gt;But in summary - I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;bnf.nice.org.uk/interaction/.&lt;/a&gt;
-This reflects the new data being listed by the BNF.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;bnf.nice.org.uk/interaction/.&lt;/a&gt;
+This reflects the new data being listed by the BNF.
+It&amp;rsquo;s not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.&lt;/p&gt;
 
 &lt;p&gt;The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar.
 (As well as severity totals as a whole.)&lt;/p&gt;
@@ -677,7 +675,7 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
 
 &lt;p&gt;If you have any feedback on changes that would make this more helpful, please get in contact through &lt;a href=&#34;https://twitter.com/ferguswtaylor&#34;&gt;twitter.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;./blogimages/newpost.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;&lt;img src=&#34;./blogimages/multiply.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -752,13 +750,20 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       
       <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
       <description>&lt;p&gt;It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been &lt;a href=&#34;https://codepen.io/&#34;&gt;Codepen&lt;/a&gt;.&lt;/p&gt;
+
 &lt;p&gt;See the dendrograms below. Or interact with them all, &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;here.&lt;/a&gt; By pressing left or right.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./blogimages/bnfsection.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/bnfsection.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./blogimages/bnfsection2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/bnfsection2.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./blogimages/bnfsection3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/bnfsection3.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./blogimages/bnfsection4.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/bnfsection4.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;&lt;img src=&#34;./blogimages/bnfsection1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#2&#34;&gt;&lt;img src=&#34;./blogimages/bnfsection2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#3&#34;&gt;&lt;img src=&#34;./blogimages/bnfsection3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#4&#34;&gt;&lt;img src=&#34;./blogimages/bnfsection4.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;I then created a collapsible version of my initial dendrogram, &lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./blogimages/collapsibletree.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/collapsibletree.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;&lt;img src=&#34;./blogimages/collapsibletree.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

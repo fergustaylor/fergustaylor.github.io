@@ -6,10 +6,8 @@ slug: drug-interactions
 categories:
   - BNF
 tags: []
-header_image: "/blogimages/sankeyexample.png"
+header_image: "/blogimages/abacavir.png"
 ---
-
-
 
 <p>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.</p>
 <p>To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</p>
