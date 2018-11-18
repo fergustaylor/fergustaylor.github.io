@@ -407,6 +407,17 @@ master %&amp;gt;%
 rm(jsonName, label)
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;There we have it. You now have a database of drug interactions to work with.&lt;/p&gt;
+
+&lt;p&gt;I hope this is of interest to you, and if you do create something with it please let me know, I&amp;rsquo;d be very interested to see it.&lt;/p&gt;
+
+&lt;p&gt;Some final notes - given that we are using NICE content, you should also have a look at the NICE content license before downloading.
+They do ask that you inform them as to your use of data, which is a very simple process.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.nice.org.uk/re-using-our-content/uk-open-content-licence&#34;&gt;
+&lt;img src = &#34;https://fergustaylor.github.io/blogimages/bnfdata.png&#34; style=&#34;width:100%;&gt;
+&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;I&amp;rsquo;ll  create a seperate post for visualising the data, but for now..
 The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
