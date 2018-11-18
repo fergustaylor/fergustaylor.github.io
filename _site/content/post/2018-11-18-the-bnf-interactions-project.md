@@ -407,8 +407,8 @@ The 'top 100' interactive version is given below, you can try the full-sized ver
 <iframe id = "frame" src="https://fergustaylor.github.io/bnf-interactions/top100/" style="width:100%; height:500px">
 </iframe>
 
-The customisable drug selection interactive version is given below, you can try the full-sized version [here.](https://fergustaylor.github.io/bnf-interactions/)
+The customisable drug selection version is picuted below, you can try the full-sized version [here.](https://fergustaylor.github.io/bnf-interactions/)
 
-<iframe id = "frame" src="https://fergustaylor.github.io/bnf-interactions/" style="width:100%; height:500px">
-</iframe>
-
+<a href="https://fergustaylor.github.io/bnf-interactions/">
+<img src = "https://fergustaylor.github.io/blogimages/bnfinteractionscustom.png" style="width:100%;>
+</a>
