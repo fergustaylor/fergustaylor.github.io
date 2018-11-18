@@ -17,8 +17,8 @@
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-interactions-project/</guid>
-      <description>&lt;p&gt;I recently rewrote the code for this project after moving it to it&amp;rsquo;s own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.
-This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it has its merits as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
+      <description>&lt;p&gt;I recently rewrote the code for this project after moving it to its own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.
+This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
 
 &lt;p&gt;Moving it made it easier to review the code I was using, and update any variations (e.g &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;&amp;lsquo;top 100&amp;rsquo;&lt;/a&gt;, that I&amp;rsquo;ve made).&lt;/p&gt;
 

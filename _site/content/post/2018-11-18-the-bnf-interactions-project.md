@@ -12,8 +12,8 @@ header_image: /blogimages/bnfinteractions.png
 iframe: no
 ---
 
-I recently rewrote the code for this project after moving it to it's own [github repository](https://github.com/fergustaylor/bnf-interactions).
-This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it has its merits as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.
+I recently rewrote the code for this project after moving it to its own [github repository](https://github.com/fergustaylor/bnf-interactions).
+This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it's useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.
 
 Moving it made it easier to review the code I was using, and update any variations (e.g ['top 100'](https://fergustaylor.github.io/bnf-interactions/top100/), that I've made).
 
