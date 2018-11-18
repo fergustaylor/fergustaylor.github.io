@@ -13,11 +13,14 @@ iframe: no
 ---
 
 I recently rewrote the code for this project after moving it to its own [github repository](https://github.com/fergustaylor/bnf-interactions).
+
 This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it's useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.
 
 Moving it made it easier to review the code I was using, and update any variations (e.g ['top 100'](https://fergustaylor.github.io/bnf-interactions/top100/), that I've made).
 
-The code to download the data is below, and listed as an .Rmd [here](https://github.com/fergustaylor/bnf-interactions)
+The code to download the data is below, and listed as an .Rmd [here.](https://github.com/fergustaylor/bnf-interactions)
+
+If you just want to look at the data itself, you can skip all of the below and just find the latest version in my github repository (either as an .Rda, or .JSON), [here.](https://github.com/fergustaylor/bnf-interactions/tree/master/archive)
 
 ```{r, warning=FALSE, message=FALSE}
 library(rvest)
