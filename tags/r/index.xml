@@ -17,7 +17,9 @@
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-interactions-project/</guid>
-      <description>&lt;p&gt;I recently rewrote the code for this project after moving it to its own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.
+      <description>
+
+&lt;p&gt;I recently rewrote the code for this project after moving it to its own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.
 This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
 
 &lt;p&gt;Moving it made it easier to review the code I was using, and update any variations (e.g &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;&amp;lsquo;top 100&amp;rsquo;&lt;/a&gt;, that I&amp;rsquo;ve made).&lt;/p&gt;
@@ -31,7 +33,7 @@ library(stringi)
 library(tidyverse)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Create the drugs look-up - &amp;lsquo;drugs_list&amp;rsquo;&lt;/p&gt;
+&lt;h1 id=&#34;create-the-drugs-look-up-drugs-list&#34;&gt;Create the drugs look-up - &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Get a list of links to test
 drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
@@ -79,8 +81,9 @@ drugs_list[] &amp;lt;- lapply(drugs_list, as.character)
 drugs_listDatestamp &amp;lt;- Sys.Date()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Compare to the last &amp;lsquo;drugs_list&amp;rsquo;
-This requires an original drugs_list for the first attempt.
+&lt;h1 id=&#34;compare-to-the-last-drugs-list&#34;&gt;Compare to the last &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
+
+&lt;p&gt;This requires an original drugs_list for the first attempt.
 To get around this you could take a drugs_list from a fork/clone of this repository.
 Or you could save the drugs list you&amp;rsquo;ve just created.
 i.e.&lt;/p&gt;
@@ -100,7 +103,7 @@ rm(example)
 &lt;p&gt;You also need an &amp;lsquo;archive&amp;rsquo; folder in the cd, as well as a &amp;lsquo;data&amp;rsquo;.
 Otherwise you&amp;rsquo;ll get an error message when you run write_csv.&lt;/p&gt;
 
-&lt;p&gt;#Export the &amp;lsquo;drugs_list&amp;rsquo; differences&lt;/p&gt;
+&lt;h1 id=&#34;export-the-drugs-list-differences&#34;&gt;Export the &amp;lsquo;drugs_list&amp;rsquo; differences&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#create folder for archive date
 dir.create(str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp))
@@ -135,7 +138,7 @@ write_csv(drugs_list, &amp;quot;archive/drugs_list.csv&amp;quot;)
 rm(label)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Scrape the data&lt;/p&gt;
+&lt;h1 id=&#34;scrape-the-data&#34;&gt;Scrape the data&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- sapply(drugs_list$url, function(x)
                read_html(x) %&amp;gt;%
@@ -148,7 +151,7 @@ Datestamp &amp;lt;- Sys.Date()
 #could export data here if I needed
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Construct an interactions database from &amp;lsquo;data&amp;rsquo;&lt;/p&gt;
+&lt;h1 id=&#34;construct-an-interactions-database-from-data&#34;&gt;Construct an interactions database from &amp;lsquo;data&amp;rsquo;&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##Title
 dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
@@ -266,7 +269,7 @@ rm(evidencei)
 rm(infoi)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Check data completion&lt;/p&gt;
+&lt;h1 id=&#34;check-data-completion&#34;&gt;Check data completion&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dataframe$&#39;Complete Data&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
                     if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &amp;amp;
@@ -377,7 +380,7 @@ master$bnflink &amp;lt;- drugs_list$url
 rm(index, i)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;#Save in /archive, and /data&lt;/p&gt;
+&lt;h1 id=&#34;save-in-archive-and-data&#34;&gt;Save in /archive, and /data&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#latest one in the archive, overwrites previous
 master %&amp;gt;%

@@ -27,7 +27,7 @@ library(stringi)
 library(tidyverse)
 ```
 
-#Create the drugs look-up - 'drugs_list'
+# Create the drugs look-up - 'drugs_list'
 ```{r}
 #Get a list of links to test
 drugs_list <- readLines("https://bnf.nice.org.uk/interaction/") %>%
@@ -75,7 +75,7 @@ drugs_list[] <- lapply(drugs_list, as.character)
 drugs_listDatestamp <- Sys.Date()
 ```
 
-#Compare to the last 'drugs_list'
+# Compare to the last 'drugs_list'
 This requires an original drugs_list for the first attempt.
 To get around this you could take a drugs_list from a fork/clone of this repository.
 Or you could save the drugs list you've just created.
@@ -97,7 +97,7 @@ rm(example)
 You also need an 'archive' folder in the cd, as well as a 'data'.
 Otherwise you'll get an error message when you run write_csv.
 
-#Export the 'drugs_list' differences
+# Export the 'drugs_list' differences
 ```{r}
 #create folder for archive date
 dir.create(str_c("archive/", drugs_listDatestamp))
@@ -132,7 +132,7 @@ write_csv(drugs_list, "archive/drugs_list.csv")
 rm(label)
 ```
 
-#Scrape the data
+# Scrape the data
 ```{r}
 data <- sapply(drugs_list$url, function(x)
                read_html(x) %>%
@@ -145,7 +145,7 @@ Datestamp <- Sys.Date()
 #could export data here if I needed
 ```
 
-#Construct an interactions database from 'data'
+# Construct an interactions database from 'data'
 ```{r}
 ##Title
 dataframe <- data.frame(Title = drugs_list$Title)
@@ -263,7 +263,7 @@ rm(evidencei)
 rm(infoi)
 ```
 
-#Check data completion
+# Check data completion
 ```{r}
 dataframe$'Complete Data' <- lapply(1:nrow(dataframe), function(x){
                     if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &
@@ -374,7 +374,7 @@ master$bnflink <- drugs_list$url
 rm(index, i)
 ```
 
-#Save in /archive, and /data
+# Save in /archive, and /data
 ```{r}
 #latest one in the archive, overwrites previous
 master %>%

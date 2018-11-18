@@ -100,7 +100,9 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 
 	<p>
-	    <p>I recently rewrote the code for this project after moving it to its own <a href="https://github.com/fergustaylor/bnf-interactions">github repository</a>.
+	    
+
+<p>I recently rewrote the code for this project after moving it to its own <a href="https://github.com/fergustaylor/bnf-interactions">github repository</a>.
 This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.</p>
 
 <p>Moving it made it easier to review the code I was using, and update any variations (e.g <a href="https://fergustaylor.github.io/bnf-interactions/top100/">&lsquo;top 100&rsquo;</a>, that I&rsquo;ve made).</p>
@@ -114,7 +116,7 @@ library(stringi)
 library(tidyverse)
 </code></pre>
 
-<p>#Create the drugs look-up - &lsquo;drugs_list&rsquo;</p>
+<h1 id="create-the-drugs-look-up-drugs-list">Create the drugs look-up - &lsquo;drugs_list&rsquo;</h1>
 
 <pre><code class="language-r">#Get a list of links to test
 drugs_list &lt;- readLines(&quot;https://bnf.nice.org.uk/interaction/&quot;) %&gt;%
@@ -162,8 +164,9 @@ drugs_list[] &lt;- lapply(drugs_list, as.character)
 drugs_listDatestamp &lt;- Sys.Date()
 </code></pre>
 
-<p>#Compare to the last &lsquo;drugs_list&rsquo;
-This requires an original drugs_list for the first attempt.
+<h1 id="compare-to-the-last-drugs-list">Compare to the last &lsquo;drugs_list&rsquo;</h1>
+
+<p>This requires an original drugs_list for the first attempt.
 To get around this you could take a drugs_list from a fork/clone of this repository.
 Or you could save the drugs list you&rsquo;ve just created.
 i.e.</p>
@@ -183,7 +186,7 @@ rm(example)
 <p>You also need an &lsquo;archive&rsquo; folder in the cd, as well as a &lsquo;data&rsquo;.
 Otherwise you&rsquo;ll get an error message when you run write_csv.</p>
 
-<p>#Export the &lsquo;drugs_list&rsquo; differences</p>
+<h1 id="export-the-drugs-list-differences">Export the &lsquo;drugs_list&rsquo; differences</h1>
 
 <pre><code class="language-r">#create folder for archive date
 dir.create(str_c(&quot;archive/&quot;, drugs_listDatestamp))
@@ -218,7 +221,7 @@ write_csv(drugs_list, &quot;archive/drugs_list.csv&quot;)
 rm(label)
 </code></pre>
 
-<p>#Scrape the data</p>
+<h1 id="scrape-the-data">Scrape the data</h1>
 
 <pre><code class="language-r">data &lt;- sapply(drugs_list$url, function(x)
                read_html(x) %&gt;%
@@ -231,7 +234,7 @@ Datestamp &lt;- Sys.Date()
 #could export data here if I needed
 </code></pre>
 
-<p>#Construct an interactions database from &lsquo;data&rsquo;</p>
+<h1 id="construct-an-interactions-database-from-data">Construct an interactions database from &lsquo;data&rsquo;</h1>
 
 <pre><code class="language-r">##Title
 dataframe &lt;- data.frame(Title = drugs_list$Title)
@@ -349,7 +352,7 @@ rm(evidencei)
 rm(infoi)
 </code></pre>
 
-<p>#Check data completion</p>
+<h1 id="check-data-completion">Check data completion</h1>
 
 <pre><code class="language-r">dataframe$'Complete Data' &lt;- lapply(1:nrow(dataframe), function(x){
                     if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &amp;
@@ -460,7 +463,7 @@ master$bnflink &lt;- drugs_list$url
 rm(index, i)
 </code></pre>
 
-<p>#Save in /archive, and /data</p>
+<h1 id="save-in-archive-and-data">Save in /archive, and /data</h1>
 
 <pre><code class="language-r">#latest one in the archive, overwrites previous
 master %&gt;%
@@ -502,7 +505,7 @@ The &lsquo;top 100&rsquo; interactive version is given below, you can try the fu
 	</p>
 	
   <b>Last Modified: 
-  <time datetime="2018-11-18 13:39:41 &#43;0000 GMT">Sunday, November 18, 2018</time></b>
+  <time datetime="2018-11-18 13:43:10 &#43;0000 GMT">Sunday, November 18, 2018</time></b>
   <br>
 
   
