@@ -6,10 +6,416 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://fergustaylor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The BNF Interactions Project</title>
+      <link>https://fergustaylor.github.io/post/the-bnf-interactions-project/</link>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fergustaylor.github.io/post/the-bnf-interactions-project/</guid>
+      <description>&lt;p&gt;I recently rewrote the code for this project after moving it to it&amp;rsquo;s own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.
+This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it has its merits as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
+
+&lt;p&gt;Moving it made it easier to review the code I was using, and update any variations (e.g &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;&amp;lsquo;top 100&amp;rsquo;&lt;/a&gt;, that I&amp;rsquo;ve made).&lt;/p&gt;
+
+&lt;p&gt;The code to download the data is below, and listed as an .Rmd &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r, warning=FALSE, message=FALSE&#34;&gt;library(rvest)
+library(magrittr)
+library(stringr)
+library(stringi)
+library(tidyverse)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Create the drugs look-up - &amp;lsquo;drugs_list&amp;rsquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Get a list of links to test
+drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
+  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;(.*?)\&amp;quot;&amp;gt;&amp;lt;span&amp;gt;(.*?)&amp;lt;/span&amp;gt;&amp;quot;) %&amp;gt;%
+  unlist() %&amp;gt;%
+  data.frame()
+
+#Replace odd characters
+drugs_list$. &amp;lt;- str_replace(drugs_list$., &amp;quot;&amp;amp;#233;&amp;quot;, replacement = &amp;quot;é&amp;quot;)
+
+#Create a dataframe from it.
+drugs_list &amp;lt;-  drugs_list %&amp;gt;%
+  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %&amp;gt;%
+  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
+  rename(value = &#39;.&#39;) %&amp;gt;%
+  spread(key=class, value=value)
+
+#Remove non-drug links
+drugs_list &amp;lt;- drugs_list %&amp;gt;%
+  filter(stri_detect_fixed(drugs_list$Link, &amp;quot;title=&amp;quot;) == FALSE)
+
+#Remove defunct columns
+drugs_list &amp;lt;- drugs_list %&amp;gt;%
+    select(-observation) %&amp;gt;%
+    select(-String)
+
+#Remove some leftover tags
+drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
+drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;/sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
+
+#Add a string column
+drugs_list &amp;lt;- cbind(drugs_list, 
+                    string = str_replace(drugs_list$Link, &amp;quot;.html&amp;quot;, replacement = &amp;quot;&amp;quot;))
+
+#Add CSS tag and URL columns
+drugs_list &amp;lt;- cbind(drugs_list, 
+                    url = str_c(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;, 
+                                drugs_list$string, &amp;quot;.html&amp;quot;))
+drugs_list &amp;lt;- cbind(drugs_list, css_string = str_c(&amp;quot;#&amp;quot;, drugs_list$string, &amp;quot; .interactant span&amp;quot;))
+
+#Convert to character classes
+drugs_list[] &amp;lt;- lapply(drugs_list, as.character)
+
+#Set a timestamp for the data collection
+drugs_listDatestamp &amp;lt;- Sys.Date()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Compare to the last &amp;lsquo;drugs_list&amp;rsquo;
+This requires an original drugs_list for the first attempt.
+To get around this you could take a drugs_list from a fork/clone of this repository.
+Or you could save the drugs list you&amp;rsquo;ve just created.
+i.e.&lt;/p&gt;
+
+&lt;p&gt;example &amp;lt;- drugs_list
+then run &amp;ldquo;kept &amp;lt;- ..&amp;rdquo; onwards&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r, message=FALSE, warning=FALSE&#34;&gt;example &amp;lt;- read_csv(&amp;quot;archive/drugs_list.csv&amp;quot;)
+
+kept &amp;lt;- intersect(drugs_list$Link, example$Link)
+newdrugs &amp;lt;- setdiff(drugs_list$Link, example$Link)
+removed &amp;lt;- setdiff(example$Link, drugs_list$Link)
+
+rm(example)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You also need an &amp;lsquo;archive&amp;rsquo; folder in the cd, as well as a &amp;lsquo;data&amp;rsquo;.
+Otherwise you&amp;rsquo;ll get an error message when you run write_csv.&lt;/p&gt;
+
+&lt;p&gt;#Export the &amp;lsquo;drugs_list&amp;rsquo; differences&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#create folder for archive date
+dir.create(str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp))
+
+#if there are new drugs, save in a date-labelled folder newdrugs.csv
+if (length(newdrugs) &amp;gt; 0) {
+  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+  str_c(&amp;quot;newdrugs.csv&amp;quot;)
+write_csv(data_frame(newdrugs), path = label)
+#could save .Rda too
+}
+#if there are removed drugs, save in a date-labelled folder removeddrugs.csv
+if (length(removed) &amp;gt; 0) {
+  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+  str_c(&amp;quot;removeddrugs.csv&amp;quot;)
+write_csv(data_frame(removed), label)
+#could save .Rda too
+}
+
+#export drugs_list
+label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+  str_c(&amp;quot;drugs_list.csv&amp;quot;)
+write_csv(drugs_list, label)
+
+label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+  str_c(&amp;quot;drugs_list.Rda&amp;quot;)
+save(drugs_list, file=label)
+
+#Overwrite as the most recent drugs_list 
+write_csv(drugs_list, &amp;quot;archive/drugs_list.csv&amp;quot;)
+#could keep one in /data as well, but I only use it here, so I don&#39;t see why bother
+rm(label)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Scrape the data&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- sapply(drugs_list$url, function(x)
+               read_html(x) %&amp;gt;%
+               list())
+
+#Set a timestamp for the data collection
+Timestamp &amp;lt;- Sys.time()
+Datestamp &amp;lt;- Sys.Date()
+
+#could export data here if I needed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Construct an interactions database from &amp;lsquo;data&amp;rsquo;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##Title
+dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
+
+##Interactions
+alli &amp;lt;- lapply(data,
+                function(url){
+                    url %&amp;gt;% 
+                    html_nodes(css = &amp;quot;.interactant span&amp;quot;) %&amp;gt;%
+                    html_text()
+                })
+
+#Set ordinal factor for severity
+severity &amp;lt;- c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;)
+severity &amp;lt;- factor(severity, levels=c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;), ordered=TRUE)
+
+#All Severity
+severityi &amp;lt;- lapply(1:length(data), function(x) {
+sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
+lapply(1:length(sections), function(x1, x){
+#Returns Max value in multiples.
+if (length(sections[[x1]]) &amp;gt; 1) {
+  sections[[x1]] %&amp;gt;% 
+    html_children() %&amp;gt;% 
+    html_attr(&amp;quot;class&amp;quot;) %&amp;gt;% 
+    str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;) %&amp;gt;% 
+    max()
+  } else {
+  sections[[x1]] %&amp;gt;% 
+     html_children() %&amp;gt;% 
+     html_attr(&amp;quot;class&amp;quot;) %&amp;gt;%
+     str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;)
+  }
+  }
+) %&amp;gt;%
+unlist()
+})
+
+#All Evidence
+evidencei &amp;lt;- lapply(1:length(data), function(x) {
+sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
+
+lapply(1:length(sections), function(x1, x){
+#Returns Max value in multiples.
+if (length(sections[[x1]] %&amp;gt;% 
+    html_nodes(&amp;quot;dd~ dd&amp;quot;)) &amp;gt; 0) {
+  sections[[x1]] %&amp;gt;% 
+    html_nodes(&amp;quot;dd~ dd&amp;quot;) %&amp;gt;%
+    html_text() %&amp;gt;%
+    min()
+  } else {
+  as.character(&amp;quot;NotSet&amp;quot;)
+  }
+  }
+) %&amp;gt;%
+unlist()
+})
+
+#Combine multiple divs under one interaction
+infoi &amp;lt;- lapply(1:length(data), function(x) {
+sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
+
+lapply(1:length(sections), function(x1, x){
+#Returns Max value in multiples.
+if (length(sections[[x1]]) &amp;gt; 1) {
+  sections[[x1]] %&amp;gt;% 
+    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
+    html_text() %&amp;gt;% 
+    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
+    str_trim() %&amp;gt;% 
+    paste(sep=&amp;quot;&amp;quot;, collapse=&amp;quot;&amp;quot;)
+  } else {
+  sections[[x1]] %&amp;gt;% 
+    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
+    html_text() %&amp;gt;% 
+    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
+    str_trim()
+  }
+  }
+) %&amp;gt;%
+unlist()
+})
+
+#Bind columns
+dataframe &amp;lt;- cbind(dataframe, 
+                           data_frame(alli), 
+                           data_frame(severityi),
+                           data_frame(evidencei),
+                           data_frame(infoi))
+
+#Rename columns
+dataframe &amp;lt;-  dataframe %&amp;gt;%
+  rename(Interactions = &#39;alli&#39;,
+         Severity = &#39;severityi&#39;, 
+         Evidence = &#39;evidencei&#39;,
+         &#39;Interactions Info&#39; = &#39;infoi&#39;)
+
+##Totals
+dataframe$&#39;Interaction Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
+                    unlist(length(alli[[x]]))
+                })
+dataframe$&#39;Severity Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
+                    unlist(length(dataframe$Severity[[x]]))
+                })
+dataframe$&#39;Evidence Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
+                    unlist(length(dataframe$Evidence[[x]]))
+                })
+dataframe$&#39;Interactions Info Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
+                    unlist(length(dataframe$&#39;Interactions Info&#39;[[x]]))
+                })
+#not sure yet if I still require the totals - used later in data completion
+rm(alli)
+rm(severityi)
+rm(evidencei)
+rm(infoi)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Check data completion&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dataframe$&#39;Complete Data&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
+                    if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &amp;amp;
+                        dataframe$`Interaction Total`[[x]] == dataframe$`Interactions Info Total`[[x]]  &amp;amp;
+                        dataframe$`Interaction Total`[[x]] == dataframe$`Evidence Total`[[x]])
+                    {TRUE} else {FALSE}
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Everything there?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(unlist(dataframe$&#39;Complete Data&#39;)) == nrow(dataframe)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Export dataframe&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r, eval=FALSE&#34;&gt;#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
+#Datestamp == drugs_listDatestamp
+dataframeName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+  str_c(&amp;quot;dataframe.Rda&amp;quot;)
+
+#label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
+#  str_c(&amp;quot;dataframe.csv&amp;quot;)
+#write_csv(dataframe, label)
+#doesn&#39;t quite like the lists.
+
+save(dataframe, file=dataframeName)
+rm(label, dataframeName)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make a databse for JSON Format&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Create a new database
+master &amp;lt;- dataframe %&amp;gt;%
+  select(&#39;Title&#39;, &#39;Interactions&#39;, &#39;Severity&#39;, &#39;Evidence&#39;, &#39;Interactions Info&#39;) %&amp;gt;%
+  rename(name = &#39;Title&#39;,
+         imports = &#39;Interactions&#39;)
+master$title &amp;lt;- master$name
+
+#Added an unlabled column
+master$importstitle &amp;lt;- master$imports
+
+#master
+master$name &amp;lt;- as.character(master$name)
+master$name &amp;lt;- trimws(master$name, &amp;quot;both&amp;quot;)
+
+master$title &amp;lt;- as.character(master$title)
+master$title &amp;lt;- trimws(master$title, &amp;quot;both&amp;quot;)
+
+##remove odd characters in $name
+faultycharacters &amp;lt;- str_detect(master$name, &amp;quot;\\(&amp;quot;) | str_detect(master$name, string=&amp;quot;\\)&amp;quot;) | grepl(pattern = &amp;quot;/&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;&#39;&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;,&amp;quot;, x = master$name)
+faultyvalues &amp;lt;- master$name[faultycharacters]
+faultyvaluesindex &amp;lt;- which(faultycharacters)
+
+##remove odd characters in $name
+for (i in faultyvaluesindex){
+ master$name[i] &amp;lt;- master$name[i] %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
+  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
+}
+
+for (i in 1:length(master$imports)){
+example &amp;lt;- list()
+example[[1]] &amp;lt;- master$imports[i] %&amp;gt;%
+  unlist() %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
+  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
+  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
+master$imports[i] &amp;lt;- example
+}
+
+#Relabel &#39;name&#39;
+master$name &amp;lt;- str_c(&amp;quot;BNF.&amp;quot;, master$name, &amp;quot;.&amp;quot;, master$name) %&amp;gt;%
+  str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
+
+#Relabel &#39;interactions&#39;
+node.parent.child &amp;lt;- function(x) {
+  example &amp;lt;- master[x,] %&amp;gt;%
+    select(&#39;imports&#39;) %&amp;gt;%
+    unlist() %&amp;gt;%
+    as.character() 
+  
+  example &amp;lt;- str_c(&amp;quot;.&amp;quot;, example) %&amp;gt;%
+    str_dup(times=2)
+  
+  example &amp;lt;- str_c(&amp;quot;BNF&amp;quot;, example) %&amp;gt;%
+    str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
+  return(as.vector(example))
+}
+master$imports &amp;lt;- lapply(1:nrow(master), node.parent.child)
+
+#add timestamp
+master$Stamp &amp;lt;- Timestamp
+
+##Need to add new? true/false column
+#master$new &amp;lt;- drugs_list$url
+index &amp;lt;- match(newdrugs, drugs_list$Link)
+master$new &amp;lt;- 1:nrow(master) %in% index
+
+##bnflink url column
+master$bnflink &amp;lt;- drugs_list$url
+
+rm(index, i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#Save in /archive, and /data&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#latest one in the archive, overwrites previous
+master %&amp;gt;%
+  jsonlite::toJSON() %&amp;gt;%
+  write(file=&amp;quot;archive/master.json&amp;quot;)
+
+#latest one, date-labelled in archive
+jsonName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.json&amp;quot;)
+master %&amp;gt;%
+  jsonlite::toJSON() %&amp;gt;%
+  write(file = jsonName)
+
+label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.Rda&amp;quot;)
+save(master, file=label)
+
+#latest one in archive, overwrites previous
+save(master, file=&amp;quot;archive/master.Rda&amp;quot;)
+
+#latest one in data, overwrites previous
+master %&amp;gt;%
+  jsonlite::toJSON() %&amp;gt;%
+  write(file=&amp;quot;data/master.json&amp;quot;)
+
+rm(jsonName, label)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;ll  create a seperate post for visualising the data, but for now..
+The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34; style=&#34;width:100%; height:500px&#34;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;The customisable drug selection interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/bnf-interactions/&#34; style=&#34;width:100%; height:500px&#34;&gt;
+&lt;/iframe&gt;
+</description>
+    </item>
     
     <item>
       <title>Rstudio Preview - Radix</title>
