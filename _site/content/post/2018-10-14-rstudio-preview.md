@@ -12,6 +12,8 @@ header_image: /blogimages/plastics.jpg
 iframe: no
 ---
 
+*Edit 21/06/2019: Radix has since been renamed [Distill](https://rstudio.github.io/distill/) and I've rewritten [academic](https://fergustaylor.github.io/academic/) to use the new package.*
+
 I've recently read a number of different articles using features from the most recent version of [Rstudio Preview.](https://www.rstudio.com/products/rstudio/download/preview/)
 
 The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I'm interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package [Radix.](https://rstudio.github.io/radix/)

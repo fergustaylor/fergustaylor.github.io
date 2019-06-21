@@ -441,7 +441,9 @@ The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can tr
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;Edit 21/06/2019: Radix has since been renamed &lt;a href=&#34;https://rstudio.github.io/distill/&#34;&gt;Distill&lt;/a&gt; and I&amp;rsquo;ve rewritten &lt;a href=&#34;https://fergustaylor.github.io/academic/&#34;&gt;academic&lt;/a&gt; to use the new package.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;
 
