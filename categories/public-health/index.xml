@@ -8,7 +8,7 @@
     <language>en-uk</language>
     <lastBuildDate>Fri, 04 Aug 2017 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/categories/public-health/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/public-health/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,100 +17,10 @@
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/public-health-outcomes-framework/</guid>
-      <description>&lt;p&gt;I initially saw the notice of the August update via twitter
-&lt;a href=&#34;https://twitter.com/PHE_uk&#34;&gt;@PHE_uk&lt;/a&gt;, but I later found the full
-future publication timeline available at
-&lt;a href=&#34;https://www.gov.uk/government/organisations/public-health-england/about/statistics&#34;&gt;gov.uk.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/2.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;All their new statistics are summarised in their blog &lt;a href=&#34;https://publichealthmatters.blog.gov.uk/&#34;&gt;Public Health
-Matters&lt;/a&gt;, and the data is available
-online with interactive plots through their &lt;a href=&#34;https://fingertips.phe.org.uk/&#34;&gt;Fingertips
-service.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It summarises 33 different National Public Health Profiles, including
-the most recent version of the Public Health Outcomes Framework.&lt;/p&gt;
-
-&lt;p&gt;While I was prepared to download information I wanted directly through
-the site - I found their fantastic package tool
-&lt;a href=&#34;https://github.com/PublicHealthEngland/fingertipsR&#34;&gt;&amp;lsquo;fingertipsR&amp;rsquo;&lt;/a&gt;
-which allows me to import PH data from all profiles directly into the R
-environment through their API.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#install.packages(&amp;quot;devtools&amp;quot;)
-#devtools::install_github(&amp;quot;PublicHealthEngland/fingertipsR&amp;quot;)
-library(fingertipsR)
-library(tidyverse)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The package is explained here.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;help(&amp;quot;fingertipsR&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I chose to download the most recent PH Outcomes Framework, and then
-inspect the data for Kent (filtering in England and the Subnational
-Parent).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PHOF &amp;lt;- fingertipsR::fingertips_data(ProfileID = 19)
-
-Kent &amp;lt;- PHOF %&amp;gt;%
-  filter(AreaName==&#39;Kent&#39;|AreaName==&#39;England&#39;|AreaName==&#39;South East region&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Inspecting it, I can see there are 169 seperate Indicator Names.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;unique(Kent$IndicatorName)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve chosen to demonstrate the data for &amp;lsquo;0.1i - Healthy life expectancy
-at birth&amp;rsquo;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Kent %&amp;gt;%
-  filter(IndicatorID==&#39;90362&#39;) %&amp;gt;%
-  ggplot(aes(x=Timeperiod)) +
-  geom_col(aes(y=Value, fill=Sex), position = &amp;quot;dodge&amp;quot;) +
-  geom_errorbar(aes(ymin = LowerCIlimit, ymax = UpperCIlimit, fill=Sex), width = 0.5, position = position_dodge(width = 0.9)) +
-  geom_text(aes(label = signif(Value,3), y=Value, fill=Sex), vjust=5, position = position_dodge(width = 0.9), colour=&amp;quot;white&amp;quot;) +
-  labs(y = &amp;quot;Healthy life expectancy at birth&amp;quot;) +
-  theme(legend.title=element_blank()) +
-  theme(axis.title.x=element_blank()) +
-  facet_grid(AreaName ~ .)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/output2.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;This was an interesting way to explore Public Health England Data
-through R. The next steps for me will be to explore new HTML widgets as
-a way to convert R data into interactive plots.&lt;/p&gt;
-</description>
+      <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
+ All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
+It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
+While I was prepared to download information I wanted directly through the site - I found their fantastic package tool &amp;lsquo;fingertipsR&amp;rsquo; which allows me to import PH data from all profiles directly into the R environment through their API.</description>
     </item>
     
   </channel>

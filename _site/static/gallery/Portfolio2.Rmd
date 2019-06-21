@@ -38,3 +38,5 @@ iframe %>%
   jsonlite::toJSON() %>%
   write(file="./iframe.json")
 ```
+
+//This is rewritten into addin::gallery() function. Run that instead.

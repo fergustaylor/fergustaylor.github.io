@@ -6,9 +6,9 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 18 Nov 2018 00:55:16 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/bnf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,422 +17,9 @@
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-interactions-project/</guid>
-      <description>
-
-&lt;p&gt;I recently rewrote the code for this project after moving it to its own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
-
-&lt;p&gt;Moving it made it easier to review the code I was using, and update any variations (e.g &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;&amp;lsquo;top 100&amp;rsquo;&lt;/a&gt;, that I&amp;rsquo;ve made).&lt;/p&gt;
-
-&lt;p&gt;The code to download the data is below, and listed as an .Rmd &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If you just want to look at the data itself, you can skip all of the below and just find the latest version in my github repository (either as an .Rda, or .JSON), &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions/tree/master/archive&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, warning=FALSE, message=FALSE&#34;&gt;library(rvest)
-library(magrittr)
-library(stringr)
-library(stringi)
-library(tidyverse)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;create-the-drugs-look-up-drugs-list&#34;&gt;Create the drugs look-up - &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Get a list of links to test
-drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;(.*?)\&amp;quot;&amp;gt;&amp;lt;span&amp;gt;(.*?)&amp;lt;/span&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-#Replace odd characters
-drugs_list$. &amp;lt;- str_replace(drugs_list$., &amp;quot;&amp;amp;#233;&amp;quot;, replacement = &amp;quot;é&amp;quot;)
-
-#Create a dataframe from it.
-drugs_list &amp;lt;-  drugs_list %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &#39;.&#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-#Remove non-drug links
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-  filter(stri_detect_fixed(drugs_list$Link, &amp;quot;title=&amp;quot;) == FALSE)
-
-#Remove defunct columns
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-    select(-observation) %&amp;gt;%
-    select(-String)
-
-#Remove some leftover tags
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;/sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-
-#Add a string column
-drugs_list &amp;lt;- cbind(drugs_list, 
-                    string = str_replace(drugs_list$Link, &amp;quot;.html&amp;quot;, replacement = &amp;quot;&amp;quot;))
-
-#Add CSS tag and URL columns
-drugs_list &amp;lt;- cbind(drugs_list, 
-                    url = str_c(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;, 
-                                drugs_list$string, &amp;quot;.html&amp;quot;))
-drugs_list &amp;lt;- cbind(drugs_list, css_string = str_c(&amp;quot;#&amp;quot;, drugs_list$string, &amp;quot; .interactant span&amp;quot;))
-
-#Convert to character classes
-drugs_list[] &amp;lt;- lapply(drugs_list, as.character)
-
-#Set a timestamp for the data collection
-drugs_listDatestamp &amp;lt;- Sys.Date()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;compare-to-the-last-drugs-list&#34;&gt;Compare to the last &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
-
-&lt;p&gt;This requires an original drugs_list for the first attempt.
-To get around this you could take a drugs_list from a fork/clone of this repository.
-Or you could save the drugs list you&amp;rsquo;ve just created.
-i.e.&lt;/p&gt;
-
-&lt;p&gt;example &amp;lt;- drugs_list
-then run &amp;ldquo;kept &amp;lt;- ..&amp;rdquo; onwards&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, message=FALSE, warning=FALSE&#34;&gt;example &amp;lt;- read_csv(&amp;quot;archive/drugs_list.csv&amp;quot;)
-
-kept &amp;lt;- intersect(drugs_list$Link, example$Link)
-newdrugs &amp;lt;- setdiff(drugs_list$Link, example$Link)
-removed &amp;lt;- setdiff(example$Link, drugs_list$Link)
-
-rm(example)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You also need an &amp;lsquo;archive&amp;rsquo; folder in the cd, as well as a &amp;lsquo;data&amp;rsquo;.
-Otherwise you&amp;rsquo;ll get an error message when you run write_csv.&lt;/p&gt;
-
-&lt;h1 id=&#34;export-the-drugs-list-differences&#34;&gt;Export the &amp;lsquo;drugs_list&amp;rsquo; differences&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#create folder for archive date
-dir.create(str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp))
-
-#if there are new drugs, save in a date-labelled folder newdrugs.csv
-if (length(newdrugs) &amp;gt; 0) {
-  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;newdrugs.csv&amp;quot;)
-write_csv(data_frame(newdrugs), path = label)
-#could save .Rda too
-}
-#if there are removed drugs, save in a date-labelled folder removeddrugs.csv
-if (length(removed) &amp;gt; 0) {
-  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;removeddrugs.csv&amp;quot;)
-write_csv(data_frame(removed), label)
-#could save .Rda too
-}
-
-#export drugs_list
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;drugs_list.csv&amp;quot;)
-write_csv(drugs_list, label)
-
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;drugs_list.Rda&amp;quot;)
-save(drugs_list, file=label)
-
-#Overwrite as the most recent drugs_list 
-write_csv(drugs_list, &amp;quot;archive/drugs_list.csv&amp;quot;)
-#could keep one in /data as well, but I only use it here, so I don&#39;t see why bother
-rm(label)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;scrape-the-data&#34;&gt;Scrape the data&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- sapply(drugs_list$url, function(x)
-               read_html(x) %&amp;gt;%
-               list())
-
-#Set a timestamp for the data collection
-Timestamp &amp;lt;- Sys.time()
-Datestamp &amp;lt;- Sys.Date()
-
-#could export data here if I needed
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;construct-an-interactions-database-from-data&#34;&gt;Construct an interactions database from &amp;lsquo;data&amp;rsquo;&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##Title
-dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
-
-##Interactions
-alli &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;% 
-                    html_nodes(css = &amp;quot;.interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-
-#Set ordinal factor for severity
-severity &amp;lt;- c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;)
-severity &amp;lt;- factor(severity, levels=c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;), ordered=TRUE)
-
-#All Severity
-severityi &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]]) &amp;gt; 1) {
-  sections[[x1]] %&amp;gt;% 
-    html_children() %&amp;gt;% 
-    html_attr(&amp;quot;class&amp;quot;) %&amp;gt;% 
-    str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;) %&amp;gt;% 
-    max()
-  } else {
-  sections[[x1]] %&amp;gt;% 
-     html_children() %&amp;gt;% 
-     html_attr(&amp;quot;class&amp;quot;) %&amp;gt;%
-     str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;)
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#All Evidence
-evidencei &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]] %&amp;gt;% 
-    html_nodes(&amp;quot;dd~ dd&amp;quot;)) &amp;gt; 0) {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(&amp;quot;dd~ dd&amp;quot;) %&amp;gt;%
-    html_text() %&amp;gt;%
-    min()
-  } else {
-  as.character(&amp;quot;NotSet&amp;quot;)
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#Combine multiple divs under one interaction
-infoi &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]]) &amp;gt; 1) {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
-    html_text() %&amp;gt;% 
-    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
-    str_trim() %&amp;gt;% 
-    paste(sep=&amp;quot;&amp;quot;, collapse=&amp;quot;&amp;quot;)
-  } else {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
-    html_text() %&amp;gt;% 
-    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
-    str_trim()
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#Bind columns
-dataframe &amp;lt;- cbind(dataframe, 
-                           data_frame(alli), 
-                           data_frame(severityi),
-                           data_frame(evidencei),
-                           data_frame(infoi))
-
-#Rename columns
-dataframe &amp;lt;-  dataframe %&amp;gt;%
-  rename(Interactions = &#39;alli&#39;,
-         Severity = &#39;severityi&#39;, 
-         Evidence = &#39;evidencei&#39;,
-         &#39;Interactions Info&#39; = &#39;infoi&#39;)
-
-##Totals
-dataframe$&#39;Interaction Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(alli[[x]]))
-                })
-dataframe$&#39;Severity Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$Severity[[x]]))
-                })
-dataframe$&#39;Evidence Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$Evidence[[x]]))
-                })
-dataframe$&#39;Interactions Info Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$&#39;Interactions Info&#39;[[x]]))
-                })
-#not sure yet if I still require the totals - used later in data completion
-rm(alli)
-rm(severityi)
-rm(evidencei)
-rm(infoi)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;check-data-completion&#34;&gt;Check data completion&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dataframe$&#39;Complete Data&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &amp;amp;
-                        dataframe$`Interaction Total`[[x]] == dataframe$`Interactions Info Total`[[x]]  &amp;amp;
-                        dataframe$`Interaction Total`[[x]] == dataframe$`Evidence Total`[[x]])
-                    {TRUE} else {FALSE}
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Everything there?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(unlist(dataframe$&#39;Complete Data&#39;)) == nrow(dataframe)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Export dataframe&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, eval=FALSE&#34;&gt;#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
-#Datestamp == drugs_listDatestamp
-dataframeName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;dataframe.Rda&amp;quot;)
-
-#label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-#  str_c(&amp;quot;dataframe.csv&amp;quot;)
-#write_csv(dataframe, label)
-#doesn&#39;t quite like the lists.
-
-save(dataframe, file=dataframeName)
-rm(label, dataframeName)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make a databse for JSON Format&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Create a new database
-master &amp;lt;- dataframe %&amp;gt;%
-  select(&#39;Title&#39;, &#39;Interactions&#39;, &#39;Severity&#39;, &#39;Evidence&#39;, &#39;Interactions Info&#39;) %&amp;gt;%
-  rename(name = &#39;Title&#39;,
-         imports = &#39;Interactions&#39;)
-master$title &amp;lt;- master$name
-
-#Added an unlabled column
-master$importstitle &amp;lt;- master$imports
-
-#master
-master$name &amp;lt;- as.character(master$name)
-master$name &amp;lt;- trimws(master$name, &amp;quot;both&amp;quot;)
-
-master$title &amp;lt;- as.character(master$title)
-master$title &amp;lt;- trimws(master$title, &amp;quot;both&amp;quot;)
-
-##remove odd characters in $name
-faultycharacters &amp;lt;- str_detect(master$name, &amp;quot;\\(&amp;quot;) | str_detect(master$name, string=&amp;quot;\\)&amp;quot;) | grepl(pattern = &amp;quot;/&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;&#39;&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;,&amp;quot;, x = master$name)
-faultyvalues &amp;lt;- master$name[faultycharacters]
-faultyvaluesindex &amp;lt;- which(faultycharacters)
-
-##remove odd characters in $name
-for (i in faultyvaluesindex){
- master$name[i] &amp;lt;- master$name[i] %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
-}
-
-for (i in 1:length(master$imports)){
-example &amp;lt;- list()
-example[[1]] &amp;lt;- master$imports[i] %&amp;gt;%
-  unlist() %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
-master$imports[i] &amp;lt;- example
-}
-
-#Relabel &#39;name&#39;
-master$name &amp;lt;- str_c(&amp;quot;BNF.&amp;quot;, master$name, &amp;quot;.&amp;quot;, master$name) %&amp;gt;%
-  str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
-
-#Relabel &#39;interactions&#39;
-node.parent.child &amp;lt;- function(x) {
-  example &amp;lt;- master[x,] %&amp;gt;%
-    select(&#39;imports&#39;) %&amp;gt;%
-    unlist() %&amp;gt;%
-    as.character() 
-  
-  example &amp;lt;- str_c(&amp;quot;.&amp;quot;, example) %&amp;gt;%
-    str_dup(times=2)
-  
-  example &amp;lt;- str_c(&amp;quot;BNF&amp;quot;, example) %&amp;gt;%
-    str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
-  return(as.vector(example))
-}
-master$imports &amp;lt;- lapply(1:nrow(master), node.parent.child)
-
-#add timestamp
-master$Stamp &amp;lt;- Timestamp
-
-##Need to add new? true/false column
-#master$new &amp;lt;- drugs_list$url
-index &amp;lt;- match(newdrugs, drugs_list$Link)
-master$new &amp;lt;- 1:nrow(master) %in% index
-
-##bnflink url column
-master$bnflink &amp;lt;- drugs_list$url
-
-rm(index, i)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;save-in-archive-and-data&#34;&gt;Save in /archive, and /data&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#latest one in the archive, overwrites previous
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file=&amp;quot;archive/master.json&amp;quot;)
-
-#latest one, date-labelled in archive
-jsonName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.json&amp;quot;)
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file = jsonName)
-
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.Rda&amp;quot;)
-save(master, file=label)
-
-#latest one in archive, overwrites previous
-save(master, file=&amp;quot;archive/master.Rda&amp;quot;)
-
-#latest one in data, overwrites previous
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file=&amp;quot;data/master.json&amp;quot;)
-
-rm(jsonName, label)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There we have it. You now have a database of drug interactions to work with.&lt;/p&gt;
-
-&lt;p&gt;I hope this is of interest to you, and if you do create something with it please let me know, I&amp;rsquo;d be very interested to see it.&lt;/p&gt;
-
-&lt;p&gt;Some final notes - given that we are using NICE content, you should also have a look at the NICE content license before downloading.
-They do ask that you inform them as to your use of data, which is a very simple process.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.nice.org.uk/re-using-our-content/uk-open-content-licence&#34;&gt;
-&lt;img src = &#34;https://fergustaylor.github.io/blogimages/bnfdata.png&#34; style=&#34;width:100%;&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll  create a seperate post for visualising the data, but for now..
-The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34; style=&#34;width:100%; height:500px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;The customisable drug selection version is picuted below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/&#34;&gt;
-&lt;img src = &#34;https://fergustaylor.github.io/blogimages/bnfinteractionscustom.png&#34; style=&#34;width:100%;&gt;
-&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I recently rewrote the code for this project after moving it to its own github repository.
+This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.
+Moving it made it easier to review the code I was using, and update any variations (e.</description>
     </item>
     
     <item>
@@ -441,59 +28,10 @@ The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can tr
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
-      <description>&lt;p&gt;I recently saw the following tweet from &lt;a href=&#34;https://twitter.com/mbostock&#34;&gt;Mike Bostock&lt;/a&gt;, creator of D3.js.&lt;/p&gt;
-
-&lt;style&gt;
-twitterwidget#twitter-widget-0 {
-    margin-right: auto;
-    margin-left: auto;
-}
-&lt;/style&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. &lt;a href=&#34;https://t.co/V4J3vDToZc&#34;&gt;pic.twitter.com/V4J3vDToZc&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mike Bostock (@mbostock) &lt;a href=&#34;https://twitter.com/mbostock/status/999410594674442240?ref_src=twsrc%5Etfw&#34;&gt;May 23, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics. Ideally, any emphasis drawn to the overlapping lines would highlight the drugs which have more interactions with the others.&lt;/p&gt;
-
-&lt;p&gt;It starts off below, with the top 100 drugs and their interactions plotted as lines between points on the edge of the circle.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/multiply.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I added one line of css which creates a colour change where lines overlap each other.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;path {
-  mix-blend-mode: multiply;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The lines darken at points where the lines converge. I&amp;rsquo;m not convinced it works at highlighting particular drugs themselves, given that lots of lines converge at the middle, however it does add a feeling of quantity around some of the names.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/multiply1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve highlighted the &amp;lsquo;severe&amp;rsquo;, BNF-graded interactions.
-These are a particular set of drugs I&amp;rsquo;m interested to know more about, do particular drugs or classes have more numerous severe interactions associated with them?
-But the rest of the interactions, coloured in blue, distracts a little.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/multiply2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets remove everything else.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/multiply3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;It is interesting to see the plot with the &amp;lsquo;mix-blend-mode: multiply&amp;rsquo; option on.
-You can compare it by opening the &amp;lsquo;inspect&amp;rsquo; panel on chrome and unticking the css option in the console, or as an image &lt;a href=&#34;../blogimages/multiplycompared.png&#34;&gt;here.&lt;/a&gt;
-In my mind there is still some of that feeling of quantity given by the visual appearance of the line quantity already, but the colour change does still emphasise that again.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/multiply5.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;The interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-2multiply/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/D3/d3-2multiply/&#34; style=&#34;width:100%; height:500px&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
+ twitterwidget#twitter-widget-0 { margin-right: auto; margin-left: auto; }  CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
+&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  
+I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
     </item>
     
     <item>
@@ -502,38 +40,8 @@ In my mind there is still some of that feeling of quantity given by the visual a
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-selections/</guid>
-      <description>&lt;p&gt;I decided it might be useful to see the interaction information as plain text.
-Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.&lt;/p&gt;
-
-&lt;div style=&#34;width:100%;height:0;padding-bottom:63%;position:relative;&#34;&gt;&lt;iframe src=&#34;https://giphy.com/embed/ensHCeIhJw4OnYQAJj&#34; width=&#34;100%&#34; height=&#34;100%&#34; style=&#34;position:absolute&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;p&gt;I may add more detail later, such as evidence/severity, and colour coding on severe interactions. But for now it&amp;rsquo;s a list-view of all the interactions known.&lt;/p&gt;
-
-&lt;p&gt;You can see the dev version &lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactionsdev/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;../../blogimages/listview.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;Update 10/03/18: Added severity/evidence as custom attributes to each &lt;p&gt; interaction info.
-Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;../../blogimages/severeinteractionlist.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-</description>
+      <description>I decided it might be useful to see the interaction information as plain text. Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.
+ I may add more detail later, such as evidence/severity, and colour coding on severe interactions. But for now it&amp;rsquo;s a list-view of all the interactions known.</description>
     </item>
     
     <item>
@@ -542,32 +50,9 @@ Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
-      <description>&lt;p&gt;Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.&lt;/p&gt;
-
-&lt;p&gt;Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug. Then look across to the class of drugs you&amp;rsquo;d like to introduce, flick between the class and drug and inspect the connections between them.
-You might hover over the drug to highlight links into the class, searching for unconnected drugs. You can inspect the drugs in that class indivually, assessing their interactions with the rest of the page. You can toggle the &amp;lsquo;severe&amp;rsquo; checkbox, and select individual drugs to read their interaction messages in the sidebar.
-By moving the tension bar back and forth you could see how the interactions group together by drug class, or other applied hierachy.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m not necessarily convinced by that yet, but it&amp;rsquo;s been interesting to work on.&lt;/p&gt;
-
-&lt;p&gt;The next stage was always to enable dynamic drug selections, having collected the data for all drugs from the start, (see below).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io//blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been experimenting with a seperate page based on a searchbar and checkboxes, then managed to find a way to use the array generated by the selected boxes to filter the initial input to the d3 cluster.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactions/&#34;&gt;
-&lt;img src=&#34;https://fergustaylor.github.io/blogimages/bnf-interactions.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Lastly, I&amp;rsquo;m developing a version with a hierachy - however I&amp;rsquo;m still experimenting with how best to organise it. It&amp;rsquo;s far from perfect at present.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/d3-dynamicclassed/&#34;&gt;
-&lt;img src=&#34;https://fergustaylor.github.io/blogimages/d3-dynamicclasses.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.
+I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.
+Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug.</description>
     </item>
     
     <item>
@@ -576,22 +61,8 @@ By moving the tension bar back and forth you could see how the interactions grou
       <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
-      <description>&lt;p&gt;So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden).
-I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.&lt;/p&gt;
-
-&lt;p&gt;For now I&amp;rsquo;m going to take a small break to learn some general D3 skills. But my eventual plan
-is to develop the project into a (common) example drugs graph, to which you can add/remove additional drugs, or even whole classes. With the option to build custom graphs from scatch.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;
-    &lt;img src=&#34;https://fergustaylor.github.io//blogimages/giphy.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-    &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;For now you can also search through the entire drugs list, and use the informational side-bar.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/searchbar/&#34;&gt;
-    &lt;img src=&#34;https://fergustaylor.github.io//blogimages/giphy2.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-    &lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden). I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.
+For now I&amp;rsquo;m going to take a small break to learn some general D3 skills.</description>
     </item>
     
     <item>
@@ -600,27 +71,9 @@ is to develop the project into a (common) example drugs graph, to which you can 
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
-      <description>&lt;p&gt;I made a few bits of progress.
-I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;bnf.nice.org.uk/interaction/.&lt;/a&gt;
-This reflects the new data being listed by the BNF.
-It&amp;rsquo;s not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.&lt;/p&gt;
-
-&lt;p&gt;The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar.
-(As well as severity totals as a whole.)&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve also made an on:hover comparison tool, for the drug selected and any other.&lt;/p&gt;
-
-&lt;p&gt;This graph was a significant step in terms of my learning with D3.js, and a good middle point for me to eventually integrate further graph customisations, such as built-from selected-drugs graphs, or a search bar for additional drugs to add on to the baseline (top 100 most commonly prescribed drugs).
-And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
-
-&lt;p&gt;As I learn more, I&amp;rsquo;ll to customise this around features that benefit the interpretation/learning of health professionals, in a way it&amp;rsquo;s not yet currently.&lt;/p&gt;
-
-&lt;p&gt;If you have any feedback on changes that would make this more helpful, please get in contact through &lt;a href=&#34;https://twitter.com/ferguswtaylor&#34;&gt;twitter.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;&lt;img src=&#34;../../blogimages/multiply.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I made a few bits of progress. I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.
+I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from bnf.nice.org.uk/interaction/. This reflects the new data being listed by the BNF. It&amp;rsquo;s not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.
+The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar. (As well as severity totals as a whole.</description>
     </item>
     
     <item>
@@ -629,18 +82,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/all-the-medicine/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by &lt;a href=&#34;https://digital.nhs.uk/prescribing&#34;&gt;NHS digital.&lt;/a&gt; (As part of their CCG Spending data).&lt;/p&gt;
-
-&lt;p&gt;These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.&lt;/p&gt;
-
-&lt;p&gt;E.g Adenosine (Chemical Sub: 0203020C0), i.e BNF &amp;gt; 2. &amp;lsquo;Cardiovascular System&amp;rsquo; &amp;gt; 2.3 &amp;lsquo;Anti-Arrhythmic Drugs&amp;rsquo; &amp;gt; 2.3.2 &amp;lsquo;Drugs for Arrhythmias&amp;rsquo;&lt;/p&gt;
-
-&lt;p&gt;This 3-layer dendrogram is composed of every medicine (3292) listed on this look-up for potential NHS spending.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../../blogimages/bnfsection.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/bnfsection.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/bnf3graphtotal.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by NHS digital. (As part of their CCG Spending data).
+These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.
+E.g Adenosine (Chemical Sub: 0203020C0), i.e BNF &amp;gt; 2. &amp;lsquo;Cardiovascular System&amp;rsquo; &amp;gt; 2.3 &amp;lsquo;Anti-Arrhythmic Drugs&amp;rsquo; &amp;gt; 2.3.2 &amp;lsquo;Drugs for Arrhythmias&amp;rsquo;
+This 3-layer dendrogram is composed of every medicine (3292) listed on this look-up for potential NHS spending.</description>
     </item>
     
     <item>
@@ -649,42 +94,12 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
-      <description>&lt;p&gt;I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock &lt;a href=&#34;https://mbostock.github.io/d3/talk/20111116/bundle.html&#34;&gt;example&lt;/a&gt; of a tensionable hierachical edge bundling diagram.&lt;/p&gt;
+      <description>I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock example of a tensionable hierachical edge bundling diagram.
+See the interactive version here.
 
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-1.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from an article).
 
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/blogimages/d3tension.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;https://fergustaylor.github.io/blogimages/d3tension.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from &lt;a href=&#34;https://nursingnotes.co.uk/the-100-most-common-medications-in-uk-hospitals/&#34;&gt;an article&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/blogimages/tensionablegraph.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;https://fergustaylor.github.io/blogimages/tensionablegraph.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-2.html&#34;&gt;here.&lt;/a&gt;
-Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&amp;rsquo;t grouped by class yet and so increased bundling doesn&amp;rsquo;t reveal anything useful.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Next steps&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;grouping drugs (by class/BNF section)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adding a sidebar to list drug interaction information&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adding a searchbar for searching within all drugs&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;modifying an existing diagram to add new drugs&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been trying to think a bit more about how I&amp;rsquo;d idealise this problem, and I think I&amp;rsquo;d like to focus on this;&lt;/p&gt;
-
-&lt;p&gt;A searchbar (or initial 100 most common drugs, diagram) wherein you can search for a particular drug to amend/build an interactions diagram from.&lt;/p&gt;
-
-&lt;p&gt;You could then see all interactions for this drug in the sidebar, and you could choose to add all of a particular class of drugs to see which of these drugs your choice interacts with.
-(Or alternatively add the rest of your desired drug&amp;rsquo;s class, to consider other alternatives.)&lt;/p&gt;
-
-&lt;p&gt;For example, you&amp;rsquo;re contemplating a patient with an antihpertensive and you&amp;rsquo;d like to now add some diabetes medicine. You could see both drug classes together and where the interactions lie between them. Or you could start with the antihypertensive you want, and then show yourself all the potential diabetes meds to choose from.&lt;/p&gt;
-
-&lt;p&gt;I imagine this idea may change as I try to find the most useful version of this graph.&lt;/p&gt;
-</description>
+See the interactive version here. Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&amp;rsquo;t grouped by class yet and so increased bundling doesn&amp;rsquo;t reveal anything useful.</description>
     </item>
     
     <item>
@@ -693,22 +108,8 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
-      <description>&lt;p&gt;It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been &lt;a href=&#34;https://codepen.io/&#34;&gt;Codepen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;See the dendrograms below. Or interact with them all, &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;here.&lt;/a&gt; By pressing left or right.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;&lt;img src=&#34;../../blogimages/bnfsection1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#2&#34;&gt;&lt;img src=&#34;../../blogimages/bnfsection2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#3&#34;&gt;&lt;img src=&#34;../../blogimages/bnfsection3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#4&#34;&gt;&lt;img src=&#34;../../blogimages/bnfsection4.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I then created a collapsible version of my initial dendrogram, &lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;&lt;img src=&#34;../../blogimages/collapsibletree.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been Codepen.
+See the dendrograms below. Or interact with them all, here. By pressing left or right.</description>
     </item>
     
     <item>
@@ -717,10 +118,9 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
-      <description>&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
-&lt;p&gt;Photos of the BNF drug interactions with varying tension.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-3.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../../blogimages/d3-2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-2.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../../blogimages/d3-1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../../blogimages/d3-1.html&#34;&gt;See the interactive version&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.
+Photos of the BNF drug interactions with varying tension.
+See the interactive version See the interactive version See the interactive version</description>
     </item>
     
     <item>
@@ -729,47 +129,9 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
-      <description>&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
-&lt;p&gt;I built this into the previous code. &lt;a href=&#34;https://github.com/fergustaylor/d3&#34;&gt;(See the full code)&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interactions
-interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string,
-                       function(url, css){
-                          url %&amp;gt;%
-                          html_nodes(css) %&amp;gt;%
-                          html_text()
-                        })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions))
-
-#Rename columns
-example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
-  rename(Class = &amp;#39;class&amp;#39;,
-         &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;,
-         Interactions = &amp;#39;interactions&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../blogimages/interactionsinfo.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Afterwards I then looked up &lt;a href=&#34;https://openprescribing.net/&#34;&gt;openprescribing.net&lt;/a&gt;, which I’ve used &lt;a href=&#34;https://fergustaylor.github.io/categories/openprescribing/&#34;&gt;in previous posts.&lt;/a&gt;. This turned out to be the easiest way to find an index of BNF chapters online which I scraped to create an index table.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;BNFchapters &amp;lt;- readLines(&amp;quot;https://openprescribing.net/bnf/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;/bnf/(.*?)\&amp;quot;&amp;gt;(.*?)&amp;lt;/a&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-BNFchapters &amp;lt;- BNFchapters %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(BNFchapters)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &amp;#39;.&amp;#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-BNFchapters &amp;lt;- BNFchapters %&amp;gt;%
-  dplyr::select(-observation, -String)
-
-BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##      Link                                               Title
-## 2     01/                         1: Gastro-Intestinal System
-## 3   0101/   1.1: Dyspep&amp;amp;amp;Gastro-Oesophageal Reflux Disease
-## 4 010101/                      1.1.1: Antacids and Simeticone
-## 5 010102/ 1.1.2: Compound Alginates&amp;amp;amp;Prop Indigestion Prep
-## 6   0102/   1.2: Antispasmod.&amp;amp;amp;Other Drgs Alt.Gut Motility&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I’ll continue this work using a chemical look-up file from data.gov to add specific BNF codes to each drug listed here, so I can group them by sections.&lt;/p&gt;
-</description>
+      <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
+I built this into the previous code. (See the full code).
+#Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
     </item>
     
     <item>
@@ -778,138 +140,8 @@ BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
-      <description>&lt;p&gt;I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.&lt;/p&gt;
-&lt;p&gt;To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.&lt;/p&gt;
-&lt;p&gt;As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of &lt;a href=&#34;https://d3js.org&#34;&gt;D3&lt;/a&gt; to present it. D3 being one of the standards for web graphics, including many notable newspapers.&lt;/p&gt;
-&lt;p&gt;Luckily all the drug interactions are listed &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;online&lt;/a&gt; through the BNF, so I can import and update all this information easily.&lt;/p&gt;
-&lt;p&gt;For example - Abacavir&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../blogimages/abacavir.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rvest)
-library(magrittr)
-library(stringr)
-library(stringi)
-library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Creating the drugs look-up.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Get a list of links to test
-drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;(.*?)\&amp;quot;&amp;gt;&amp;lt;span&amp;gt;(.*?)&amp;lt;/span&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-#Create a dataframe from it.
-drugs_list &amp;lt;-  drugs_list %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &amp;#39;.&amp;#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-#Remove non-drug links
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-  filter(stri_detect_fixed(drugs_list$Link, &amp;quot;title=&amp;quot;) == FALSE)
-
-#Remove defunct columns
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-    select(-observation) %&amp;gt;%
-    select(-String)
-
-#Remove some leftover tags
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;/sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-
-#Add a string column
-drugs_list &amp;lt;- cbind(drugs_list,
-                    string = str_replace(drugs_list$Link, &amp;quot;.html&amp;quot;, replacement = &amp;quot;&amp;quot;))
-
-#Add CSS tag and URL columns
-drugs_list &amp;lt;- cbind(drugs_list,
-                    url = str_c(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;,
-                                drugs_list$string, &amp;quot;.html&amp;quot;))
-drugs_list &amp;lt;- cbind(drugs_list, css_string = str_c(&amp;quot;#&amp;quot;, drugs_list$string, &amp;quot; .interactant span&amp;quot;))
-
-#Convert to character classes
-drugs_list[] &amp;lt;- lapply(drugs_list, as.character)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##               Link       Title      string
-## 1  abacavir-2.html    Abacavir  abacavir-2
-## 2 abatacept-2.html   Abatacept abatacept-2
-## 3 abciximab-2.html   Abciximab abciximab-2
-## 4 abiraterone.html Abiraterone abiraterone
-## 5  acarbose-2.html    Acarbose  acarbose-2
-##                                                    url
-## 1  https://bnf.nice.org.uk/interaction/abacavir-2.html
-## 2 https://bnf.nice.org.uk/interaction/abatacept-2.html
-## 3 https://bnf.nice.org.uk/interaction/abciximab-2.html
-## 4 https://bnf.nice.org.uk/interaction/abiraterone.html
-## 5  https://bnf.nice.org.uk/interaction/acarbose-2.html
-##                       css_string
-## 1  #abacavir-2 .interactant span
-## 2 #abatacept-2 .interactant span
-## 3 #abciximab-2 .interactant span
-## 4 #abiraterone .interactant span
-## 5  #acarbose-2 .interactant span&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Constructing the interactions database.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Data
-data &amp;lt;- sapply(drugs_list$url, function(x)
-               read_html(x) %&amp;gt;%
-               list())
-
-#Title
-example_dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
-
-#Class
-class &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;%
-                    html_nodes(css = &amp;quot;.unstyled .interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(class))
-
-#Dangerous Interactions
-dangerousi &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;%
-                    html_nodes(css = &amp;quot;.High .interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(dangerousi))
-
-#Interactions
-interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string,
-                       function(url, css){
-                          url %&amp;gt;%
-                          html_nodes(css) %&amp;gt;%
-                          html_text()
-                        })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions))
-
-#Rename columns
-example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
-  rename(Class = &amp;#39;class&amp;#39;,
-         &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;,
-         Interactions = &amp;#39;interactions&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Currently zero (interactions/ dangerous interactions/ class) listing is represented by character(0). And individual drugs and general drug classes are listed together. The latter lists its drug within the ‘Class’ column.&lt;/p&gt;
-&lt;p&gt;E.g&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##         Title               Class
-## 1    Abacavir          Antivirals
-## 2   Abatacept
-## 3   Abciximab
-## 4 Abiraterone Hormone Antagonists
-## 5    Acarbose       Antidiabetics
-##                                                                                    Dangerous Interactions
-## 1                                                                         Orlistat, Ribavirin, Tipranavir
-## 2                                         Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3
-## 4 Carbamazepine, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, St John&amp;#39;s Wort
-## 5
-##                                                                                                                                Interactions
-## 1                                 Fosphenytoin, Methadone, Orlistat, Phenobarbital, Phenytoin, Primidone, Ribavirin, Rifampicin, Tipranavir
-## 2                                                               Adalimumab, Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3
-## 4 Carbamazepine, Dextromethorphan, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, Spironolactone, St John&amp;#39;s Wort
-## 5                                                                                    Colestyramine, Digoxin, Neomycin, Orlistat, Pancreatin&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../blogimages/BNFdataframe.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I’ll add formal BNF classes next and try to apply this data to a D3 model, such as a circular Sankey diagram.&lt;/p&gt;
-</description>
+      <description>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.
+To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</description>
     </item>
     
   </channel>

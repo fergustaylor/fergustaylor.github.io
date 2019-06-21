@@ -23,7 +23,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		
 		
 
-		<meta name="generator" content="Hugo 0.29" />
+		<meta name="generator" content="Hugo 0.54.0" />
 
 		<!--[if lte IE 8]><script src='https://fergustaylor.github.io/js/ie/html5shiv.js'></script><![endif]-->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -112,7 +112,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 <p>If you just want to look at the data itself, you can skip all of the below and just find the latest version in my github repository (either as an .Rda, or .JSON), <a href="https://github.com/fergustaylor/bnf-interactions/tree/master/archive">here.</a></p>
 
-<pre><code class="language-r, warning=FALSE, message=FALSE">library(rvest)
+<pre><code class="language-r,">library(rvest)
 library(magrittr)
 library(stringr)
 library(stringi)
@@ -177,7 +177,7 @@ i.e.</p>
 <p>example &lt;- drugs_list
 then run &ldquo;kept &lt;- ..&rdquo; onwards</p>
 
-<pre><code class="language-r, message=FALSE, warning=FALSE">example &lt;- read_csv(&quot;archive/drugs_list.csv&quot;)
+<pre><code class="language-r,">example &lt;- read_csv(&quot;archive/drugs_list.csv&quot;)
 
 kept &lt;- intersect(drugs_list$Link, example$Link)
 newdrugs &lt;- setdiff(drugs_list$Link, example$Link)
@@ -372,7 +372,7 @@ rm(infoi)
 
 <p>Export dataframe</p>
 
-<pre><code class="language-r, eval=FALSE">#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
+<pre><code class="language-r,">#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
 #Datestamp == drugs_listDatestamp
 dataframeName &lt;- str_c(&quot;archive/&quot;, drugs_listDatestamp, &quot;/&quot;) %&gt;%
   str_c(&quot;dataframe.Rda&quot;)
@@ -519,7 +519,7 @@ The &lsquo;top 100&rsquo; interactive version is given below, you can try the fu
 	</p>
 	
   <b>Last Modified: 
-  <time datetime="2018-11-18 14:03:39 &#43;0000 GMT">Sunday, November 18, 2018</time></b>
+  <time datetime="2018-11-18 14:07:30 &#43;0000 GMT">Sunday, November 18, 2018</time></b>
   <br>
 
   
@@ -566,12 +566,16 @@ The &lsquo;top 100&rsquo; interactive version is given below, you can try the fu
 <script src="https://fergustaylor.github.io/js/main.js"></script>
 
 
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-107299466-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-107299466-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 

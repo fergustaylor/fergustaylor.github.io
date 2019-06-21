@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/post/the-bnf-interactions-project/</loc>
-    <lastmod>2018-11-18T14:03:39+00:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
   </url>
   
   <url>
@@ -178,63 +178,55 @@
   </url>
   
   <url>
-    <loc>https://fergustaylor.github.io/d3interactions/</loc>
-    <lastmod>2018-02-03T23:23:47+00:00</lastmod>
+    <loc>https://fergustaylor.github.io/d3/interactions/</loc>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/openprescribingr/</loc>
-    <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/about/</loc>
-    <lastmod>2018-10-20T20:53:40+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/arran/</loc>
-    <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/blog/</loc>
-    <lastmod>2017-10-07T22:01:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/categories/</loc>
-    <lastmod>2018-03-08T22:00:14+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/categories/arran/</loc>
-    <lastmod>2018-10-20T21:05:04+01:00</lastmod>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/categories/bnf/</loc>
-    <lastmod>2018-11-18T00:55:16+00:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/categories/dev/</loc>
-    <lastmod>2018-10-20T21:05:04+01:00</lastmod>
+    <lastmod>2018-10-14T13:47:18+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/categories/openprescribing/</loc>
-    <lastmod>2018-10-20T20:16:52+01:00</lastmod>
+    <lastmod>2018-10-20T16:55:54+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/d3/</loc>
-    <lastmod>2017-10-31T23:51:32+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/dev/</loc>
-    <lastmod>2018-06-22T16:38:56+01:00</lastmod>
   </url>
   
   <url>
@@ -244,22 +236,21 @@
   
   <url>
     <loc>https://fergustaylor.github.io/post/</loc>
-    <lastmod>2018-10-20T21:05:04+01:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/randomimage/</loc>
-    <lastmod>2017-11-04T00:20:37+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/tags/r/</loc>
-    <lastmod>2018-10-20T20:16:52+01:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/writing/</loc>
-    <lastmod>2018-10-20T20:53:40+01:00</lastmod>
+    <lastmod>2018-06-26T15:28:34+01:00</lastmod>
   </url>
   
   <url>
@@ -270,13 +261,18 @@
   
   <url>
     <loc>https://fergustaylor.github.io/categories/</loc>
-    <lastmod>2018-10-20T21:05:04+01:00</lastmod>
+    <lastmod>2018-10-20T17:29:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://fergustaylor.github.io/d3/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://fergustaylor.github.io/</loc>
-    <lastmod>2018-11-18T14:03:39+00:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -294,7 +290,7 @@
   
   <url>
     <loc>https://fergustaylor.github.io/tags/</loc>
-    <lastmod>2018-10-20T20:16:52+01:00</lastmod>
+    <lastmod>2018-11-18T14:07:30+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,9 +6,9 @@
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 20 Oct 2018 21:05:04 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,422 +17,9 @@
       <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-interactions-project/</guid>
-      <description>
-
-&lt;p&gt;I recently rewrote the code for this project after moving it to its own &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;github repository&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.&lt;/p&gt;
-
-&lt;p&gt;Moving it made it easier to review the code I was using, and update any variations (e.g &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;&amp;lsquo;top 100&amp;rsquo;&lt;/a&gt;, that I&amp;rsquo;ve made).&lt;/p&gt;
-
-&lt;p&gt;The code to download the data is below, and listed as an .Rmd &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If you just want to look at the data itself, you can skip all of the below and just find the latest version in my github repository (either as an .Rda, or .JSON), &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions/tree/master/archive&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, warning=FALSE, message=FALSE&#34;&gt;library(rvest)
-library(magrittr)
-library(stringr)
-library(stringi)
-library(tidyverse)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;create-the-drugs-look-up-drugs-list&#34;&gt;Create the drugs look-up - &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Get a list of links to test
-drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;(.*?)\&amp;quot;&amp;gt;&amp;lt;span&amp;gt;(.*?)&amp;lt;/span&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-#Replace odd characters
-drugs_list$. &amp;lt;- str_replace(drugs_list$., &amp;quot;&amp;amp;#233;&amp;quot;, replacement = &amp;quot;é&amp;quot;)
-
-#Create a dataframe from it.
-drugs_list &amp;lt;-  drugs_list %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &#39;.&#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-#Remove non-drug links
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-  filter(stri_detect_fixed(drugs_list$Link, &amp;quot;title=&amp;quot;) == FALSE)
-
-#Remove defunct columns
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-    select(-observation) %&amp;gt;%
-    select(-String)
-
-#Remove some leftover tags
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;/sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-
-#Add a string column
-drugs_list &amp;lt;- cbind(drugs_list, 
-                    string = str_replace(drugs_list$Link, &amp;quot;.html&amp;quot;, replacement = &amp;quot;&amp;quot;))
-
-#Add CSS tag and URL columns
-drugs_list &amp;lt;- cbind(drugs_list, 
-                    url = str_c(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;, 
-                                drugs_list$string, &amp;quot;.html&amp;quot;))
-drugs_list &amp;lt;- cbind(drugs_list, css_string = str_c(&amp;quot;#&amp;quot;, drugs_list$string, &amp;quot; .interactant span&amp;quot;))
-
-#Convert to character classes
-drugs_list[] &amp;lt;- lapply(drugs_list, as.character)
-
-#Set a timestamp for the data collection
-drugs_listDatestamp &amp;lt;- Sys.Date()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;compare-to-the-last-drugs-list&#34;&gt;Compare to the last &amp;lsquo;drugs_list&amp;rsquo;&lt;/h1&gt;
-
-&lt;p&gt;This requires an original drugs_list for the first attempt.
-To get around this you could take a drugs_list from a fork/clone of this repository.
-Or you could save the drugs list you&amp;rsquo;ve just created.
-i.e.&lt;/p&gt;
-
-&lt;p&gt;example &amp;lt;- drugs_list
-then run &amp;ldquo;kept &amp;lt;- ..&amp;rdquo; onwards&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, message=FALSE, warning=FALSE&#34;&gt;example &amp;lt;- read_csv(&amp;quot;archive/drugs_list.csv&amp;quot;)
-
-kept &amp;lt;- intersect(drugs_list$Link, example$Link)
-newdrugs &amp;lt;- setdiff(drugs_list$Link, example$Link)
-removed &amp;lt;- setdiff(example$Link, drugs_list$Link)
-
-rm(example)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You also need an &amp;lsquo;archive&amp;rsquo; folder in the cd, as well as a &amp;lsquo;data&amp;rsquo;.
-Otherwise you&amp;rsquo;ll get an error message when you run write_csv.&lt;/p&gt;
-
-&lt;h1 id=&#34;export-the-drugs-list-differences&#34;&gt;Export the &amp;lsquo;drugs_list&amp;rsquo; differences&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#create folder for archive date
-dir.create(str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp))
-
-#if there are new drugs, save in a date-labelled folder newdrugs.csv
-if (length(newdrugs) &amp;gt; 0) {
-  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;newdrugs.csv&amp;quot;)
-write_csv(data_frame(newdrugs), path = label)
-#could save .Rda too
-}
-#if there are removed drugs, save in a date-labelled folder removeddrugs.csv
-if (length(removed) &amp;gt; 0) {
-  label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;removeddrugs.csv&amp;quot;)
-write_csv(data_frame(removed), label)
-#could save .Rda too
-}
-
-#export drugs_list
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;drugs_list.csv&amp;quot;)
-write_csv(drugs_list, label)
-
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;drugs_list.Rda&amp;quot;)
-save(drugs_list, file=label)
-
-#Overwrite as the most recent drugs_list 
-write_csv(drugs_list, &amp;quot;archive/drugs_list.csv&amp;quot;)
-#could keep one in /data as well, but I only use it here, so I don&#39;t see why bother
-rm(label)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;scrape-the-data&#34;&gt;Scrape the data&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- sapply(drugs_list$url, function(x)
-               read_html(x) %&amp;gt;%
-               list())
-
-#Set a timestamp for the data collection
-Timestamp &amp;lt;- Sys.time()
-Datestamp &amp;lt;- Sys.Date()
-
-#could export data here if I needed
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;construct-an-interactions-database-from-data&#34;&gt;Construct an interactions database from &amp;lsquo;data&amp;rsquo;&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;##Title
-dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
-
-##Interactions
-alli &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;% 
-                    html_nodes(css = &amp;quot;.interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-
-#Set ordinal factor for severity
-severity &amp;lt;- c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;)
-severity &amp;lt;- factor(severity, levels=c(&amp;quot;NotSet&amp;quot;, &amp;quot;Unknown&amp;quot;, &amp;quot;Mild&amp;quot;, &amp;quot;Moderate&amp;quot;, &amp;quot;Severe&amp;quot;), ordered=TRUE)
-
-#All Severity
-severityi &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]]) &amp;gt; 1) {
-  sections[[x1]] %&amp;gt;% 
-    html_children() %&amp;gt;% 
-    html_attr(&amp;quot;class&amp;quot;) %&amp;gt;% 
-    str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;) %&amp;gt;% 
-    max()
-  } else {
-  sections[[x1]] %&amp;gt;% 
-     html_children() %&amp;gt;% 
-     html_attr(&amp;quot;class&amp;quot;) %&amp;gt;%
-     str_replace_all(&amp;quot;interaction-message  &amp;quot;, &amp;quot;&amp;quot;)
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#All Evidence
-evidencei &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]] %&amp;gt;% 
-    html_nodes(&amp;quot;dd~ dd&amp;quot;)) &amp;gt; 0) {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(&amp;quot;dd~ dd&amp;quot;) %&amp;gt;%
-    html_text() %&amp;gt;%
-    min()
-  } else {
-  as.character(&amp;quot;NotSet&amp;quot;)
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#Combine multiple divs under one interaction
-infoi &amp;lt;- lapply(1:length(data), function(x) {
-sections &amp;lt;- html_nodes(data[[x]], &amp;quot;div.span9.interaction-messages&amp;quot;)
-
-lapply(1:length(sections), function(x1, x){
-#Returns Max value in multiples.
-if (length(sections[[x1]]) &amp;gt; 1) {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
-    html_text() %&amp;gt;% 
-    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
-    str_trim() %&amp;gt;% 
-    paste(sep=&amp;quot;&amp;quot;, collapse=&amp;quot;&amp;quot;)
-  } else {
-  sections[[x1]] %&amp;gt;% 
-    html_nodes(css = &amp;quot;.interaction-message div&amp;quot;) %&amp;gt;% 
-    html_text() %&amp;gt;% 
-    str_replace_all(&amp;quot;\n&amp;quot;, replacement=&amp;quot;&amp;quot;) %&amp;gt;% 
-    str_trim()
-  }
-  }
-) %&amp;gt;%
-unlist()
-})
-
-#Bind columns
-dataframe &amp;lt;- cbind(dataframe, 
-                           data_frame(alli), 
-                           data_frame(severityi),
-                           data_frame(evidencei),
-                           data_frame(infoi))
-
-#Rename columns
-dataframe &amp;lt;-  dataframe %&amp;gt;%
-  rename(Interactions = &#39;alli&#39;,
-         Severity = &#39;severityi&#39;, 
-         Evidence = &#39;evidencei&#39;,
-         &#39;Interactions Info&#39; = &#39;infoi&#39;)
-
-##Totals
-dataframe$&#39;Interaction Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(alli[[x]]))
-                })
-dataframe$&#39;Severity Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$Severity[[x]]))
-                })
-dataframe$&#39;Evidence Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$Evidence[[x]]))
-                })
-dataframe$&#39;Interactions Info Total&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    unlist(length(dataframe$&#39;Interactions Info&#39;[[x]]))
-                })
-#not sure yet if I still require the totals - used later in data completion
-rm(alli)
-rm(severityi)
-rm(evidencei)
-rm(infoi)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;check-data-completion&#34;&gt;Check data completion&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dataframe$&#39;Complete Data&#39; &amp;lt;- lapply(1:nrow(dataframe), function(x){
-                    if (dataframe$`Interaction Total`[[x]] == dataframe$`Severity Total`[[x]] &amp;amp;
-                        dataframe$`Interaction Total`[[x]] == dataframe$`Interactions Info Total`[[x]]  &amp;amp;
-                        dataframe$`Interaction Total`[[x]] == dataframe$`Evidence Total`[[x]])
-                    {TRUE} else {FALSE}
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Everything there?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;sum(unlist(dataframe$&#39;Complete Data&#39;)) == nrow(dataframe)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Export dataframe&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r, eval=FALSE&#34;&gt;#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
-#Datestamp == drugs_listDatestamp
-dataframeName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-  str_c(&amp;quot;dataframe.Rda&amp;quot;)
-
-#label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
-#  str_c(&amp;quot;dataframe.csv&amp;quot;)
-#write_csv(dataframe, label)
-#doesn&#39;t quite like the lists.
-
-save(dataframe, file=dataframeName)
-rm(label, dataframeName)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make a databse for JSON Format&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#Create a new database
-master &amp;lt;- dataframe %&amp;gt;%
-  select(&#39;Title&#39;, &#39;Interactions&#39;, &#39;Severity&#39;, &#39;Evidence&#39;, &#39;Interactions Info&#39;) %&amp;gt;%
-  rename(name = &#39;Title&#39;,
-         imports = &#39;Interactions&#39;)
-master$title &amp;lt;- master$name
-
-#Added an unlabled column
-master$importstitle &amp;lt;- master$imports
-
-#master
-master$name &amp;lt;- as.character(master$name)
-master$name &amp;lt;- trimws(master$name, &amp;quot;both&amp;quot;)
-
-master$title &amp;lt;- as.character(master$title)
-master$title &amp;lt;- trimws(master$title, &amp;quot;both&amp;quot;)
-
-##remove odd characters in $name
-faultycharacters &amp;lt;- str_detect(master$name, &amp;quot;\\(&amp;quot;) | str_detect(master$name, string=&amp;quot;\\)&amp;quot;) | grepl(pattern = &amp;quot;/&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;&#39;&amp;quot;, x = master$name) | grepl(pattern = &amp;quot;,&amp;quot;, x = master$name)
-faultyvalues &amp;lt;- master$name[faultycharacters]
-faultyvaluesindex &amp;lt;- which(faultycharacters)
-
-##remove odd characters in $name
-for (i in faultyvaluesindex){
- master$name[i] &amp;lt;- master$name[i] %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
-}
-
-for (i in 1:length(master$imports)){
-example &amp;lt;- list()
-example[[1]] &amp;lt;- master$imports[i] %&amp;gt;%
-  unlist() %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;/&amp;quot;, replacement = &amp;quot; &amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\(&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  str_replace_all(pattern = &amp;quot;\\)&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;&#39;&amp;quot;, replacement = &amp;quot;&amp;quot;) %&amp;gt;%
-  stri_replace_all_regex(pattern = &amp;quot;,&amp;quot;, replacement = &amp;quot;&amp;quot;)
-master$imports[i] &amp;lt;- example
-}
-
-#Relabel &#39;name&#39;
-master$name &amp;lt;- str_c(&amp;quot;BNF.&amp;quot;, master$name, &amp;quot;.&amp;quot;, master$name) %&amp;gt;%
-  str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
-
-#Relabel &#39;interactions&#39;
-node.parent.child &amp;lt;- function(x) {
-  example &amp;lt;- master[x,] %&amp;gt;%
-    select(&#39;imports&#39;) %&amp;gt;%
-    unlist() %&amp;gt;%
-    as.character() 
-  
-  example &amp;lt;- str_c(&amp;quot;.&amp;quot;, example) %&amp;gt;%
-    str_dup(times=2)
-  
-  example &amp;lt;- str_c(&amp;quot;BNF&amp;quot;, example) %&amp;gt;%
-    str_replace_all(pattern=&amp;quot; &amp;quot;, replacement=&amp;quot;&amp;quot;)
-  return(as.vector(example))
-}
-master$imports &amp;lt;- lapply(1:nrow(master), node.parent.child)
-
-#add timestamp
-master$Stamp &amp;lt;- Timestamp
-
-##Need to add new? true/false column
-#master$new &amp;lt;- drugs_list$url
-index &amp;lt;- match(newdrugs, drugs_list$Link)
-master$new &amp;lt;- 1:nrow(master) %in% index
-
-##bnflink url column
-master$bnflink &amp;lt;- drugs_list$url
-
-rm(index, i)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;save-in-archive-and-data&#34;&gt;Save in /archive, and /data&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#latest one in the archive, overwrites previous
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file=&amp;quot;archive/master.json&amp;quot;)
-
-#latest one, date-labelled in archive
-jsonName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.json&amp;quot;)
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file = jsonName)
-
-label &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/master.Rda&amp;quot;)
-save(master, file=label)
-
-#latest one in archive, overwrites previous
-save(master, file=&amp;quot;archive/master.Rda&amp;quot;)
-
-#latest one in data, overwrites previous
-master %&amp;gt;%
-  jsonlite::toJSON() %&amp;gt;%
-  write(file=&amp;quot;data/master.json&amp;quot;)
-
-rm(jsonName, label)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There we have it. You now have a database of drug interactions to work with.&lt;/p&gt;
-
-&lt;p&gt;I hope this is of interest to you, and if you do create something with it please let me know, I&amp;rsquo;d be very interested to see it.&lt;/p&gt;
-
-&lt;p&gt;Some final notes - given that we are using NICE content, you should also have a look at the NICE content license before downloading.
-They do ask that you inform them as to your use of data, which is a very simple process.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.nice.org.uk/re-using-our-content/uk-open-content-licence&#34;&gt;
-&lt;img src = &#34;https://fergustaylor.github.io/blogimages/bnfdata.png&#34; style=&#34;width:100%;&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll  create a seperate post for visualising the data, but for now..
-The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/bnf-interactions/top100/&#34; style=&#34;width:100%; height:500px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;The customisable drug selection version is picuted below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/bnf-interactions/&#34;&gt;
-&lt;img src = &#34;https://fergustaylor.github.io/blogimages/bnfinteractionscustom.png&#34; style=&#34;width:100%;&gt;
-&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I recently rewrote the code for this project after moving it to its own github repository.
+This started as a project to learn to use d3.js, for which I had to learn to collect the BNF interactions first. But it&amp;rsquo;s useful as a standalone resource you can use to collect your own data - and experiment with visualising it yourself.
+Moving it made it easier to review the code I was using, and update any variations (e.</description>
     </item>
     
     <item>
@@ -441,18 +28,9 @@ The &amp;lsquo;top 100&amp;rsquo; interactive version is given below, you can tr
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been experimenting with it over the weekend to try to store the acedemic projects I&amp;rsquo;ve worked on as a student, (as well as the eventual DOIs, PMID, journal details that come from them), and move away from the osx notes file I&amp;rsquo;ve been keeping so far.
-There were a few teething problems rendering the XML files, but overall I&amp;rsquo;m really impressed.
-My hope would be that this would become something I could refer to and use in an interview setting.&lt;/p&gt;
-
-&lt;p&gt;You can see the results &lt;a href=&#34;https://fergustaylor.github.io/academic/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/academic/&#34;&gt;&lt;img src=&#34;../blogimages/plastics.jpg&#34; class=&#34;image fit&#34;&gt;&lt;a/&gt;&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of Rstudio Preview.
+The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package Radix.
+I&amp;rsquo;ve been experimenting with it over the weekend to try to store the acedemic projects I&amp;rsquo;ve worked on as a student, (as well as the eventual DOIs, PMID, journal details that come from them), and move away from the osx notes file I&amp;rsquo;ve been keeping so far.</description>
     </item>
     
     <item>
@@ -461,88 +39,8 @@ My hope would be that this would become something I could refer to and use in an
       <pubDate>Sun, 10 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/gallery/</guid>
-      <description>
-
-&lt;p&gt;A while ago I was considering how best to demonstrate the graphics I&amp;rsquo;ve been developing while learning to code.
-I thought a particular page could provide a useful snapshot of the work I&amp;rsquo;d been interested in, the topics, the media; that I could then build up into a portfolio.&lt;/p&gt;
-
-&lt;p&gt;Rather than writing a one-off post however, or something that I&amp;rsquo;d have to edit every 6 months, I wanted a system that I could add to, relatively easily over time.
-  I didn&amp;rsquo;t want to add huge numbers of links to an md file, or tags to a html page indefinitely. So I wondered instead if there would be a way to populate a page with any graphics in a given folder. Given that most of the graphics in my posts, I&amp;rsquo;ve saved to a particular &lt;a href=&#34;https://github.com/fergustaylor/fergustaylor.github.io/tree/master/blogimages&#34;&gt;&amp;rsquo;/blogimages/&amp;rsquo;&lt;/a&gt; folder anyway.&lt;/p&gt;
-
-&lt;p&gt;I started off with a list of everything I already had, and roughly organised it into different groups that might require different techniques to publish.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Blog Graphics:
-I have a few images (.png) made for particular posts already, and if I could link them to posts, it might provide an interesting way to interact with the topics covered.
-Also, I had a lot of Gifs.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Blog Iframes:
-The same context as above, but iframes of interesting graphics would require a slightly different approach.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Twitter posts:
-I have a few posts with interesting graphics, concise explanations of context, or cool interactions with people working in that field.
-One of the ways I currently find out about interesting projects, conferences, and R packages is Twitter. So I was keen to incorporate it somehow.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Videos:
-Something I do the least of, but good to show-off where I already have them.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;blog-graphics&#34;&gt;Blog Graphics&lt;/h2&gt;
-
-&lt;p&gt;I wrote an .Rmd file, &lt;a href=&#34;https://github.com/fergustaylor/fergustaylor.github.io/blob/master/_site/static/gallery/Portfolio.Rmd&#34;&gt;&amp;lsquo;Portfolio&amp;rsquo;&lt;/a&gt; with code that collects the names of each file in a folder, and writes a JSON file list of them.
-I ended up sorting the graphics into 2 folders, one of the full-size image, one a low-res version for thumbnails.
-That way, every time I run my code - it updates a JSON list of graphics to include in the website.&lt;/p&gt;
-
-&lt;p&gt;&lt;iframe src=&#34;../../gallery/Portfolio.html&#34;&gt;
-&lt;/iframe&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;I made the gallery post itself as an md file (my website uses Blogdown to convert that into HTML). And I included &lt;a href=&#34;https://fergustaylor.github.io/customjs/portfolio.js&#34;&gt;some javascript,&lt;/a&gt; which reads the json file from earlier, and inserts every image inside.&lt;/p&gt;
-
-
-&lt;div class=&#34;more&#34; data-height=&#34;200&#34;&gt;
-    &lt;iframe src=&#34;../../gallery/js.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;/div&gt;
-
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;blog-iframes&#34;&gt;Blog Iframes&lt;/h2&gt;
-
-&lt;p&gt;I then used the same principle as before with a few minor differences, &lt;a href=&#34;https://fergustaylor.github.io/customjs/portfolio2.js&#34;&gt;here&lt;/a&gt; to include the list of iframes.
-Unfortunately, I have to still make the thumbnails manually.&lt;/p&gt;
-
-&lt;h2 id=&#34;twitter-posts&#34;&gt;Twitter posts&lt;/h2&gt;
-
-&lt;p&gt;The twitter posts were interesting. I started with a list of URLS, and since it&amp;rsquo;s relatively easy to embed them individually I did use a fairly similar appraoch to start off with.
-However, each tweet took up a lot of unnecessary space, and soon created a long page which was arduous to scroll through.
-In addition, in order to include tweets I&amp;rsquo;d then have to add to a long list of URLS. So rather than individually embed them, I thought it&amp;rsquo;d be easier to look at Twitter options.&lt;/p&gt;
-
-&lt;p&gt;Twitter allows you to curate lists using Tweetdeck (as well as their own API), which makes it relatively easy to scroll through my timeline.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/tweetdeck.png&#34; class=&#34;image fit&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;This updates an embedded grid which I linked in the gallery md file.
-This way I can curate the tweets through tweetdeck, and everything else loads up automatically.&lt;/p&gt;
-
-&lt;h2 id=&#34;videos&#34;&gt;Videos&lt;/h2&gt;
-
-&lt;p&gt;Then lastly, since I do it so infrequently, videos were just indivudally embedded using &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/&#34;&gt;hugo shortcodes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;last-thoughts&#34;&gt;Last thoughts&lt;/h2&gt;
-
-&lt;p&gt;I&amp;rsquo;m pretty happy with how this turned out. Rather than sorting through all my work I can just add content to a few different folders, and re-run the .rmd.&lt;/p&gt;
-
-&lt;p&gt;It still requires I make a low-res version for photos manually, or a screenshot for iframes. And I&amp;rsquo;ll need to look at Tweetdeck every now and then.
-But compared to making a portfolio from scratch, I consider this a vast improvement, and something I can add to incrementally over time.&lt;/p&gt;
-
-&lt;p&gt;The gallery page is available &lt;a href=&#34;https://fergustaylor.github.io/gallery/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/gallery/&#34;&gt;
-&lt;img src=&#34;../blogimages/galleryscreenshot.png&#34; class=&#34;image fit&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>A while ago I was considering how best to demonstrate the graphics I&amp;rsquo;ve been developing while learning to code. I thought a particular page could provide a useful snapshot of the work I&amp;rsquo;d been interested in, the topics, the media; that I could then build up into a portfolio.
+Rather than writing a one-off post however, or something that I&amp;rsquo;d have to edit every 6 months, I wanted a system that I could add to, relatively easily over time.</description>
     </item>
     
     <item>
@@ -551,32 +49,9 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve created a tool for searching medical resources, &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+      <description>I&amp;rsquo;ve created a tool for searching medical resources, here.
 
-&lt;p&gt;&lt;div style=&#34;padding:62.5% 0 0 0;position:relative;&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/276458805?loop=1&amp;byline=0&amp;portrait=0&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script src=&#34;https://player.vimeo.com/api/player.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work.
-I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s a bit of overlap between them, and as such, when I&amp;rsquo;m looking up information on something I&amp;rsquo;ll tend to search for the same thing on each site individually, then compare what I could find between them.
-This sort of work, as it turns out is perfect for &lt;a href=&#34;https://cse.google.co.uk/&#34;&gt;Google Custom Search&lt;/a&gt;, which allows me to create search bars on particular sites.
-I&amp;rsquo;ve created a seach bar based on the websites I&amp;rsquo;d check, with &amp;lsquo;refinements&amp;rsquo; used to group individual site results into tabs.
-This means I can submit a particular search request, then flick through the sites individually to see what they cover. An unexpected benefit of this is the specificity of the autosuggest that comes from it.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s hosted without sidebar &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/example.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There&amp;rsquo;s some further room for customisation, for example it has google images options, which I may specify for for Radiopaedia.
-I may end up changing the sites it uses over time, but I think for a particular set of repetitive tasks like researching case portfolios, this will be useful enough over time.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately the ads are a little intrusive, however Google CSE does offer some option to remove them for charitable projects.&lt;/p&gt;
-
-&lt;p&gt;The most difficult part of it ending up being the dynamic iframe to put it in.
-(Given that autosuggest changes the necessary height.)&lt;/p&gt;
-
-&lt;p style=&#34;border-bottom:1px solid #e1e8ed;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve built this under a new repository, &lt;a href=&#34;https://fergustaylor.github.io/Dev/&#34;&gt;&amp;lsquo;Dev&amp;rsquo;&lt;/a&gt; for each of the smaller bits and pieces that don&amp;rsquo;t quite warrant their own.&lt;/p&gt;
-</description>
+A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work. I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.</description>
     </item>
     
     <item>
@@ -585,59 +60,10 @@ I may end up changing the sites it uses over time, but I think for a particular 
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/mix-mode-multiply/</guid>
-      <description>&lt;p&gt;I recently saw the following tweet from &lt;a href=&#34;https://twitter.com/mbostock&#34;&gt;Mike Bostock&lt;/a&gt;, creator of D3.js.&lt;/p&gt;
-
-&lt;style&gt;
-twitterwidget#twitter-widget-0 {
-    margin-right: auto;
-    margin-left: auto;
-}
-&lt;/style&gt;
-
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. &lt;a href=&#34;https://t.co/V4J3vDToZc&#34;&gt;pic.twitter.com/V4J3vDToZc&lt;/a&gt;&lt;/p&gt;&amp;mdash; Mike Bostock (@mbostock) &lt;a href=&#34;https://twitter.com/mbostock/status/999410594674442240?ref_src=twsrc%5Etfw&#34;&gt;May 23, 2018&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics. Ideally, any emphasis drawn to the overlapping lines would highlight the drugs which have more interactions with the others.&lt;/p&gt;
-
-&lt;p&gt;It starts off below, with the top 100 drugs and their interactions plotted as lines between points on the edge of the circle.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/multiply.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I added one line of css which creates a colour change where lines overlap each other.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;path {
-  mix-blend-mode: multiply;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The lines darken at points where the lines converge. I&amp;rsquo;m not convinced it works at highlighting particular drugs themselves, given that lots of lines converge at the middle, however it does add a feeling of quantity around some of the names.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/multiply1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve highlighted the &amp;lsquo;severe&amp;rsquo;, BNF-graded interactions.
-These are a particular set of drugs I&amp;rsquo;m interested to know more about, do particular drugs or classes have more numerous severe interactions associated with them?
-But the rest of the interactions, coloured in blue, distracts a little.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/multiply2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Lets remove everything else.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/multiply3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;It is interesting to see the plot with the &amp;lsquo;mix-blend-mode: multiply&amp;rsquo; option on.
-You can compare it by opening the &amp;lsquo;inspect&amp;rsquo; panel on chrome and unticking the css option in the console, or as an image &lt;a href=&#34;../blogimages/multiplycompared.png&#34;&gt;here.&lt;/a&gt;
-In my mind there is still some of that feeling of quantity given by the visual appearance of the line quantity already, but the colour change does still emphasise that again.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/multiply5.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;The interactive version is given below, you can try the full-sized version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-2multiply/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe id = &#34;frame&#34; src=&#34;https://fergustaylor.github.io/D3/d3-2multiply/&#34; style=&#34;width:100%; height:500px&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>I recently saw the following tweet from Mike Bostock, creator of D3.js.
+ twitterwidget#twitter-widget-0 { margin-right: auto; margin-left: auto; }  CSS mix-blend-mode: multiply is great for improving readability with overdraw (occlusion). Here’s a before/after with hierarchical edge bundling. pic.twitter.com/V4J3vDToZc
+&amp;mdash; Mike Bostock (@mbostock) May 23, 2018  
+I thought I&amp;rsquo;d try it out with my BNF interactions project to see how it might affect the intuitive feel of the graphics.</description>
     </item>
     
     <item>
@@ -646,23 +72,8 @@ In my mind there is still some of that feeling of quantity given by the visual a
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/uk-local-elections-2017/</guid>
-      <description>&lt;p&gt;Following a very interesting post I&amp;rsquo;d found on twitter by &lt;a href=&#34;https://www.cultureofinsight.com/blog/2018/05/02/2018-04-08-multivariate-dot-density-maps-in-r-with-sf-ggplot2/&#34;&gt;Paul Campbell,&lt;/a&gt; I was curious to try to recreate the plots involved myself.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/party_points.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;Plotting a coloured point as a representation of 100 votes in each ward is interesting, it gives a surprising feel for the sense of party proportions in an area.
-It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does give a sense of scale to voting in areas.&lt;/p&gt;
-
-&lt;p&gt;I did wonder if the sense of geographic detail from each plot point, (the location within a ward is randomly generated), was misleading though.
-For example, 100 plots below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/Dev/Local%20Elections/party.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;You can see the variation between each frame, however I was surprised I didn&amp;rsquo;t notice more of a difference.
-Perhaps just due to the scale of the individual points to the electoral ward it retained the same sense of voting proportions, as well as (although to a lesser-extent) geographic spread across parties.&lt;/p&gt;
-
-&lt;p&gt;This was an interesting plot to try out. I&amp;rsquo;ve been enjoying &amp;lsquo;Guardian Visual&amp;rsquo; and other election coverage recently, especially in the run-up to this year&amp;rsquo;s local elections, and it&amp;rsquo;s given me a lot to think about.&lt;/p&gt;
-</description>
+      <description>Following a very interesting post I&amp;rsquo;d found on twitter by Paul Campbell, I was curious to try to recreate the plots involved myself.
+Plotting a coloured point as a representation of 100 votes in each ward is interesting, it gives a surprising feel for the sense of party proportions in an area. It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does give a sense of scale to voting in areas.</description>
     </item>
     
     <item>
@@ -671,119 +82,8 @@ Perhaps just due to the scale of the individual points to the electoral ward it 
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
-      <description>&lt;script&gt;
-function myFunction() {
-var frames = document.getElementsByTagName(&#34;iframe&#34;);
-for (i = 0; i &lt; frames.length; i++) {
-      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +&#39;px&#39;;
-  }
-}
-window.addEventListener(&#34;load&#34;, myFunction);
-window.addEventListener(&#34;resize&#34;, myFunction);
-&lt;/script&gt;
-
-&lt;style&gt;
-iframe {
- width:100%;
-}
-&lt;/style&gt;
-
-&lt;p&gt;Back in February I attended the 19th NHS Hack Day in Cardiff.
-I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.&lt;/p&gt;
-
-&lt;p&gt;I was interested in plotting the catchment areas for each type of clinic.
-Assuming that a call to NHS 111 would require a referal to one type of clinic specialising it the necessary service, could you plot each of these clinics across the UK and demonstrate useful information by plotting the catchment areas around each of that type of clinic?&lt;/p&gt;
-
-&lt;p&gt;It would be colour-coded to the status (green-amber-red) that clinic was currently reporting.
-Once a clinic reached capacity, it stops taking patients, and I wondered if removing it from the map, and looking at the impact on the newly expanded catchment areas around it would demonstrate any useful information over a time-lapse graphic.&lt;/p&gt;
-
-&lt;p&gt;I was looking at voronoi plots initially, which can be useful in concentrated, urban areas.
-Although they have some clear limitations on a wider-scale.
-The plots below neglect local geography such as rivers, irregular coastline, etc. They ignore travel-times as a reflection of road distance/speeds, etc. And they assume a perfect travel as the bird flies.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve plotted voronois for each subtype of clinic that NHS 111 already listed, although I&amp;rsquo;d like to take this project further with a more sophisticated approach in future.
-I&amp;rsquo;ve seen a lot of interesting projects on medical geography recently, in particular around access to services in rural areas around Scotland.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll continue to research the subject.&lt;/p&gt;
-
-&lt;p&gt;A more successful aspect of this project, an interesting snippet that I developed for the iframes in this post is also given below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-function myFunction() {
-var frames = document.getElementsByTagName(&amp;quot;iframe&amp;quot;);
-for (i = 0; i &amp;lt; frames.length; i++) {
-      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +&#39;px&#39;;
-  }
-}
-window.addEventListener(&amp;quot;load&amp;quot;, myFunction);
-window.addEventListener(&amp;quot;resize&amp;quot;, myFunction);
-&amp;lt;/script&amp;gt;
-
-&amp;lt;style&amp;gt;
-iframe {
- width:100%;
-}
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The initial plots themselves.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/DEvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/EDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/GPledUCCwEDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/IUCCASvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/MIUvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/OOHvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/SpecEDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/UUHvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/WICvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;As points&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/DEpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/EDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/GPledUCCwEDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/IUCCASpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/MIUpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/OOHpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/SpecEDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/UUHpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/WICpoints.html&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
+I was interested in plotting the catchment areas for each type of clinic.</description>
     </item>
     
     <item>
@@ -792,88 +92,8 @@ iframe {
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
-      <description>&lt;script&gt;
-function myFunction() {
-var frames = document.getElementsByTagName(&#34;iframe&#34;);
-for (i = 0; i &lt; frames.length; i++) {
-      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +&#39;px&#39;;
-  }
-}
-window.addEventListener(&#34;load&#34;, myFunction);
-window.addEventListener(&#34;resize&#34;, myFunction);
-&lt;/script&gt;
-
-&lt;style&gt;
-iframe {
- width:100%;
-}
-&lt;/style&gt;
-
-&lt;p&gt;I’ve been looking back at &lt;a href=&#34;https://www.htmlwidgets.org/&#34;&gt;HTML widgets&lt;/a&gt; again this week, having learnt a little more recently about the underline technologies, both D3 and R.&lt;/p&gt;
-
-&lt;p&gt;One of these widgets, an R package called &lt;a href=&#34;https://davidgohel.github.io/ggiraph/reference/index.html&#34;&gt;‘ggiraph’&lt;/a&gt;, was something I’d used in an &lt;a href=&#34;....&#34;&gt;earlier post&lt;/a&gt; to add interactive features to static ggplots. (Based on &lt;a href=&#34;https://github.com/fergustaylor/openprescribingR&#34;&gt;openprescribingR data&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;I’d originally just ggiraph as a way to add tooltips, but coming back to it with a new set of experiences allowed me to understand more about how you can use it to apply CSS changes, trigger JS code, and even work server-side as part of a Shiny application.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately it doesn&amp;rsquo;t quite support geom_sf, so my plots aren&amp;rsquo;t exact copies. But it was helpful as a tool to experiment a little more with voronoi plots.
-I got a little creative with it, plotting geom_point_interactive with tooltips over the top of lines for example. Or voronoi polygons to create a catchment area around a point, an idea I got from this excellent &lt;a href=&#34;https://bl.ocks.org/mbostock/8033015&#34;&gt;block&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A few difficulties/limitations I&amp;rsquo;ve noticed;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Geom_line_interactive only allows one tooltip per line (perfect for naming it, but I was hoping to note a range of values as you moved along the axis).
--Geom objects can&amp;rsquo;t work together conventionally, i.e polygon with ID 7 can&amp;rsquo;t trigger CSS changes in point with same ID. Although some creative JS triggers can create the same effect.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;CCGs plotted as geom_polygon_interactive with CCG names as tooltips&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot1.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;CCGs with prescribing centres overlaid as points&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot2.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;CCGs with fill colour scaled according to cost per person on &amp;lsquo;BNF Section 7.4.5&amp;rsquo; Drugs, May 2017&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot5.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;Prescribing centres plotted as points, used to generate voronoi polygons plotted as geom_polygon_interactive, with prescribing centre names as tooltips&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot6.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;Prescribing centres in NHS West Kent CCG plotted as points, used to generate voronoi polygons within the CCG.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot7.5.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot8.5.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot10.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;I did also make a voronoi plot using the centre of each CCG, just to see what it would look like. But It&amp;rsquo;s not an appropriate way to visualise CCG data, bearing in mind the difficulties of using voronoi plots. For example, each of the CCGs around Hull. &lt;a href=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot11compared.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot12.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot12.5.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/openprescribingR/dev/plot12.5.5.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;Now that I’m happier working in D3, I&amp;rsquo;ll consider creating my own widgets at some point.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.htmlwidgets.org/develop_intro.html&#34;&gt;https://www.htmlwidgets.org/develop_intro.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/ggiraph/index.html&#34;&gt;https://cran.r-project.org/web/packages/ggiraph/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  I’ve been looking back at HTML widgets again this week, having learnt a little more recently about the underline technologies, both D3 and R.
+One of these widgets, an R package called ‘ggiraph’, was something I’d used in an earlier post to add interactive features to static ggplots. (Based on openprescribingR data).</description>
     </item>
     
     <item>
@@ -882,38 +102,8 @@ I got a little creative with it, plotting geom_point_interactive with tooltips o
       <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-selections/</guid>
-      <description>&lt;p&gt;I decided it might be useful to see the interaction information as plain text.
-Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.&lt;/p&gt;
-
-&lt;div style=&#34;width:100%;height:0;padding-bottom:63%;position:relative;&#34;&gt;&lt;iframe src=&#34;https://giphy.com/embed/ensHCeIhJw4OnYQAJj&#34; width=&#34;100%&#34; height=&#34;100%&#34; style=&#34;position:absolute&#34; frameBorder=&#34;0&#34; class=&#34;giphy-embed&#34; allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;p&gt;I may add more detail later, such as evidence/severity, and colour coding on severe interactions. But for now it&amp;rsquo;s a list-view of all the interactions known.&lt;/p&gt;
-
-&lt;p&gt;You can see the dev version &lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactionsdev/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;../blogimages/listview.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;Update 10/03/18: Added severity/evidence as custom attributes to each &lt;p&gt; interaction info.
-Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;../blogimages/severeinteractionlist.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-</description>
+      <description>I decided it might be useful to see the interaction information as plain text. Whereas the graph demonstrates the interactions which exist between drugs, as well as conveying the absence of interactions, this can be used as a checklist of warnings in a given drug selection.
+ I may add more detail later, such as evidence/severity, and colour coding on severe interactions. But for now it&amp;rsquo;s a list-view of all the interactions known.</description>
     </item>
     
     <item>
@@ -922,32 +112,9 @@ Then added a checkbox to colour the severe interactions red.&lt;/p&gt;
       <pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/custom-drug-selections/</guid>
-      <description>&lt;p&gt;Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.&lt;/p&gt;
-
-&lt;p&gt;Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug. Then look across to the class of drugs you&amp;rsquo;d like to introduce, flick between the class and drug and inspect the connections between them.
-You might hover over the drug to highlight links into the class, searching for unconnected drugs. You can inspect the drugs in that class indivually, assessing their interactions with the rest of the page. You can toggle the &amp;lsquo;severe&amp;rsquo; checkbox, and select individual drugs to read their interaction messages in the sidebar.
-By moving the tension bar back and forth you could see how the interactions group together by drug class, or other applied hierachy.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m not necessarily convinced by that yet, but it&amp;rsquo;s been interesting to work on.&lt;/p&gt;
-
-&lt;p&gt;The next stage was always to enable dynamic drug selections, having collected the data for all drugs from the start, (see below).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io//blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been experimenting with a seperate page based on a searchbar and checkboxes, then managed to find a way to use the array generated by the selected boxes to filter the initial input to the d3 cluster.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnf-interactions/&#34;&gt;
-&lt;img src=&#34;https://fergustaylor.github.io/blogimages/bnf-interactions.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Lastly, I&amp;rsquo;m developing a version with a hierachy - however I&amp;rsquo;m still experimenting with how best to organise it. It&amp;rsquo;s far from perfect at present.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/d3-dynamicclassed/&#34;&gt;
-&lt;img src=&#34;https://fergustaylor.github.io/blogimages/d3-dynamicclasses.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Since my last post I&amp;rsquo;ve updated my original &amp;ldquo;top 100&amp;rdquo; graph, introducing a checkbox for recoloring the paths in red which represent &amp;lsquo;severe&amp;rsquo; interactions.
+I&amp;rsquo;m fairly happy with the form of my graph now, although I&amp;rsquo;m still considering the ways I could make it visually informative.
+Ideally my intentions were to use hierachical edge bundling as a visual shortcut to allow the viewer to appraise whole drug classes. I.e look at a node on the edge representing a certain drug.</description>
     </item>
     
     <item>
@@ -956,22 +123,8 @@ By moving the tension bar back and forth you could see how the interactions grou
       <pubDate>Sat, 03 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-interactions-with-hierarchical-edge-bundling/</guid>
-      <description>&lt;p&gt;So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden).
-I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.&lt;/p&gt;
-
-&lt;p&gt;For now I&amp;rsquo;m going to take a small break to learn some general D3 skills. But my eventual plan
-is to develop the project into a (common) example drugs graph, to which you can add/remove additional drugs, or even whole classes. With the option to build custom graphs from scatch.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;
-    &lt;img src=&#34;https://fergustaylor.github.io//blogimages/giphy.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-    &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;For now you can also search through the entire drugs list, and use the informational side-bar.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/searchbar/&#34;&gt;
-    &lt;img src=&#34;https://fergustaylor.github.io//blogimages/giphy2.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;
-    &lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>So I&amp;rsquo;ve finally managed to introduce a hierachical edge bundling method based on an arbitrary list of drug classes. (Adjustable via the tension bar I&amp;rsquo;d previously hidden). I think this makes it far more visually informative now, but I&amp;rsquo;m still playing around with a dev version to consider how I can provide more informational cues to the user.
+For now I&amp;rsquo;m going to take a small break to learn some general D3 skills.</description>
     </item>
     
     <item>
@@ -980,27 +133,9 @@ is to develop the project into a (common) example drugs graph, to which you can 
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/bnf-interactions/</guid>
-      <description>&lt;p&gt;I made a few bits of progress.
-I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;bnf.nice.org.uk/interaction/.&lt;/a&gt;
-This reflects the new data being listed by the BNF.
-It&amp;rsquo;s not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.&lt;/p&gt;
-
-&lt;p&gt;The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar.
-(As well as severity totals as a whole.)&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve also made an on:hover comparison tool, for the drug selected and any other.&lt;/p&gt;
-
-&lt;p&gt;This graph was a significant step in terms of my learning with D3.js, and a good middle point for me to eventually integrate further graph customisations, such as built-from selected-drugs graphs, or a search bar for additional drugs to add on to the baseline (top 100 most commonly prescribed drugs).
-And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
-
-&lt;p&gt;As I learn more, I&amp;rsquo;ll to customise this around features that benefit the interpretation/learning of health professionals, in a way it&amp;rsquo;s not yet currently.&lt;/p&gt;
-
-&lt;p&gt;If you have any feedback on changes that would make this more helpful, please get in contact through &lt;a href=&#34;https://twitter.com/ferguswtaylor&#34;&gt;twitter.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/Interactions/&#34;&gt;&lt;img src=&#34;../blogimages/multiply.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I made a few bits of progress. I&amp;rsquo;m a bit lazy to make a &amp;lsquo;how-to&amp;rsquo; tonight.
+I&amp;rsquo;ve linked my graph to the interaction messages, severities, evidence gradings taken from bnf.nice.org.uk/interaction/. This reflects the new data being listed by the BNF. It&amp;rsquo;s not always mentioned, many of the drugs have unlabeled evidence or severity values for the interactions.
+The &amp;lsquo;severe&amp;rsquo; interactions are highlighted on my sidebar. (As well as severity totals as a whole.</description>
     </item>
     
     <item>
@@ -1009,18 +144,10 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
       <pubDate>Sun, 17 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/all-the-medicine/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by &lt;a href=&#34;https://digital.nhs.uk/prescribing&#34;&gt;NHS digital.&lt;/a&gt; (As part of their CCG Spending data).&lt;/p&gt;
-
-&lt;p&gt;These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.&lt;/p&gt;
-
-&lt;p&gt;E.g Adenosine (Chemical Sub: 0203020C0), i.e BNF &amp;gt; 2. &amp;lsquo;Cardiovascular System&amp;rsquo; &amp;gt; 2.3 &amp;lsquo;Anti-Arrhythmic Drugs&amp;rsquo; &amp;gt; 2.3.2 &amp;lsquo;Drugs for Arrhythmias&amp;rsquo;&lt;/p&gt;
-
-&lt;p&gt;This 3-layer dendrogram is composed of every medicine (3292) listed on this look-up for potential NHS spending.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../blogimages/bnfsection.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../blogimages/bnfsection.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/bnf3graphtotal.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve made a dendrogram based off the chemical lists provided by NHS digital. (As part of their CCG Spending data).
+These lists give a name, and lookup code for every medicine licensed in the UK based on BNF Sections.
+E.g Adenosine (Chemical Sub: 0203020C0), i.e BNF &amp;gt; 2. &amp;lsquo;Cardiovascular System&amp;rsquo; &amp;gt; 2.3 &amp;lsquo;Anti-Arrhythmic Drugs&amp;rsquo; &amp;gt; 2.3.2 &amp;lsquo;Drugs for Arrhythmias&amp;rsquo;
+This 3-layer dendrogram is composed of every medicine (3292) listed on this look-up for potential NHS spending.</description>
     </item>
     
     <item>
@@ -1029,42 +156,12 @@ And eventually, a properly-tensionable class hierachy.&lt;/p&gt;
       <pubDate>Fri, 15 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/the-bnf-project/</guid>
-      <description>&lt;p&gt;I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock &lt;a href=&#34;https://mbostock.github.io/d3/talk/20111116/bundle.html&#34;&gt;example&lt;/a&gt; of a tensionable hierachical edge bundling diagram.&lt;/p&gt;
+      <description>I eventually learnt how to convert the BNF interactions into a JSON format compatible for the MBostock example of a tensionable hierachical edge bundling diagram.
+See the interactive version here.
 
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-1.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from an article).
 
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/blogimages/d3tension.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;https://fergustaylor.github.io/blogimages/d3tension.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;First every drug, then I reduced it to the 100 most common medications (arbritrarily taken from &lt;a href=&#34;https://nursingnotes.co.uk/the-100-most-common-medications-in-uk-hospitals/&#34;&gt;an article&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/blogimages/tensionablegraph.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;https://fergustaylor.github.io/blogimages/tensionablegraph.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See the interactive version &lt;a href=&#34;https://fergustaylor.github.io/D3/d3-2.html&#34;&gt;here.&lt;/a&gt;
-Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&amp;rsquo;t grouped by class yet and so increased bundling doesn&amp;rsquo;t reveal anything useful.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Next steps&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;grouping drugs (by class/BNF section)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adding a sidebar to list drug interaction information&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adding a searchbar for searching within all drugs&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;modifying an existing diagram to add new drugs&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been trying to think a bit more about how I&amp;rsquo;d idealise this problem, and I think I&amp;rsquo;d like to focus on this;&lt;/p&gt;
-
-&lt;p&gt;A searchbar (or initial 100 most common drugs, diagram) wherein you can search for a particular drug to amend/build an interactions diagram from.&lt;/p&gt;
-
-&lt;p&gt;You could then see all interactions for this drug in the sidebar, and you could choose to add all of a particular class of drugs to see which of these drugs your choice interacts with.
-(Or alternatively add the rest of your desired drug&amp;rsquo;s class, to consider other alternatives.)&lt;/p&gt;
-
-&lt;p&gt;For example, you&amp;rsquo;re contemplating a patient with an antihpertensive and you&amp;rsquo;d like to now add some diabetes medicine. You could see both drug classes together and where the interactions lie between them. Or you could start with the antihypertensive you want, and then show yourself all the potential diabetes meds to choose from.&lt;/p&gt;
-
-&lt;p&gt;I imagine this idea may change as I try to find the most useful version of this graph.&lt;/p&gt;
-</description>
+See the interactive version here. Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&amp;rsquo;t grouped by class yet and so increased bundling doesn&amp;rsquo;t reveal anything useful.</description>
     </item>
     
     <item>
@@ -1073,22 +170,8 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Thu, 14 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/bnf-sections-visualised/</guid>
-      <description>&lt;p&gt;It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been &lt;a href=&#34;https://codepen.io/&#34;&gt;Codepen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;See the dendrograms below. Or interact with them all, &lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;here.&lt;/a&gt; By pressing left or right.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#1&#34;&gt;&lt;img src=&#34;../blogimages/bnfsection1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#2&#34;&gt;&lt;img src=&#34;../blogimages/bnfsection2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#3&#34;&gt;&lt;img src=&#34;../blogimages/bnfsection3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/bnfsections/#4&#34;&gt;&lt;img src=&#34;../blogimages/bnfsection4.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I then created a collapsible version of my initial dendrogram, &lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/D3/collapsibletree&#34;&gt;&lt;img src=&#34;../blogimages/collapsibletree.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>It’s been a while since my last post, and since then I’ve been tinkering at new D3.js examples, and trying to make sense of the respective JS/CSS/HTML DOM components. I’ve found experimented with a few different new environements, including the Google Chrome developer console, but the most intuitive I’ve found has actually been Codepen.
+See the dendrograms below. Or interact with them all, here. By pressing left or right.</description>
     </item>
     
     <item>
@@ -1097,10 +180,9 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
-      <description>&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
-&lt;p&gt;Photos of the BNF drug interactions with varying tension.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../blogimages/d3-3.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../blogimages/d3-2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../blogimages/d3-2.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;../blogimages/d3-1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;../blogimages/d3-1.html&#34;&gt;See the interactive version&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.
+Photos of the BNF drug interactions with varying tension.
+See the interactive version See the interactive version See the interactive version</description>
     </item>
     
     <item>
@@ -1109,47 +191,9 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
-      <description>&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
-&lt;p&gt;I built this into the previous code. &lt;a href=&#34;https://github.com/fergustaylor/d3&#34;&gt;(See the full code)&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interactions
-interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string,
-                       function(url, css){
-                          url %&amp;gt;%
-                          html_nodes(css) %&amp;gt;%
-                          html_text()
-                        })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions))
-
-#Rename columns
-example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
-  rename(Class = &amp;#39;class&amp;#39;,
-         &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;,
-         Interactions = &amp;#39;interactions&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../blogimages/interactionsinfo.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Afterwards I then looked up &lt;a href=&#34;https://openprescribing.net/&#34;&gt;openprescribing.net&lt;/a&gt;, which I’ve used &lt;a href=&#34;https://fergustaylor.github.io/categories/openprescribing/&#34;&gt;in previous posts.&lt;/a&gt;. This turned out to be the easiest way to find an index of BNF chapters online which I scraped to create an index table.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;BNFchapters &amp;lt;- readLines(&amp;quot;https://openprescribing.net/bnf/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;/bnf/(.*?)\&amp;quot;&amp;gt;(.*?)&amp;lt;/a&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-BNFchapters &amp;lt;- BNFchapters %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(BNFchapters)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &amp;#39;.&amp;#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-BNFchapters &amp;lt;- BNFchapters %&amp;gt;%
-  dplyr::select(-observation, -String)
-
-BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##      Link                                               Title
-## 2     01/                         1: Gastro-Intestinal System
-## 3   0101/   1.1: Dyspep&amp;amp;amp;Gastro-Oesophageal Reflux Disease
-## 4 010101/                      1.1.1: Antacids and Simeticone
-## 5 010102/ 1.1.2: Compound Alginates&amp;amp;amp;Prop Indigestion Prep
-## 6   0102/   1.2: Antispasmod.&amp;amp;amp;Other Drgs Alt.Gut Motility&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I’ll continue this work using a chemical look-up file from data.gov to add specific BNF codes to each drug listed here, so I can group them by sections.&lt;/p&gt;
-</description>
+      <description>I made a few additions to my previous post, after realising I could use the CSS selector to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)
+I built this into the previous code. (See the full code).
+#Interactions interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string, function(url, css){ url %&amp;gt;% html_nodes(css) %&amp;gt;% html_text() }) example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions)) #Rename columns example_dataframe &amp;lt;- example_dataframe %&amp;gt;% rename(Class = &amp;#39;class&amp;#39;, &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;, Interactions = &amp;#39;interactions&amp;#39;) Afterwards I then looked up openprescribing.</description>
     </item>
     
     <item>
@@ -1158,138 +202,8 @@ BNFchapters &amp;lt;- BNFchapters[2:518,]&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 09 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/drug-interactions/</guid>
-      <description>&lt;p&gt;I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.&lt;/p&gt;
-&lt;p&gt;To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.&lt;/p&gt;
-&lt;p&gt;As such - I’ve been trying to learn 2 new skills - webscraping to collect the data (in this first post), and the use of &lt;a href=&#34;https://d3js.org&#34;&gt;D3&lt;/a&gt; to present it. D3 being one of the standards for web graphics, including many notable newspapers.&lt;/p&gt;
-&lt;p&gt;Luckily all the drug interactions are listed &lt;a href=&#34;https://bnf.nice.org.uk/interaction/&#34;&gt;online&lt;/a&gt; through the BNF, so I can import and update all this information easily.&lt;/p&gt;
-&lt;p&gt;For example - Abacavir&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../blogimages/abacavir.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(rvest)
-library(magrittr)
-library(stringr)
-library(stringi)
-library(tidyverse)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Creating the drugs look-up.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Get a list of links to test
-drugs_list &amp;lt;- readLines(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;) %&amp;gt;%
-  str_match_all(&amp;quot;&amp;lt;a href=\&amp;quot;(.*?)\&amp;quot;&amp;gt;&amp;lt;span&amp;gt;(.*?)&amp;lt;/span&amp;gt;&amp;quot;) %&amp;gt;%
-  unlist() %&amp;gt;%
-  data.frame()
-
-#Create a dataframe from it.
-drugs_list &amp;lt;-  drugs_list %&amp;gt;%
-  data.frame(cbind(observation = rep(1:(nrow(drugs_list)/3), each=3))) %&amp;gt;%
-  data.frame(cbind(class = c(&amp;quot;String&amp;quot;, &amp;quot;Link&amp;quot;, &amp;quot;Title&amp;quot;))) %&amp;gt;%
-  rename(value = &amp;#39;.&amp;#39;) %&amp;gt;%
-  spread(key=class, value=value)
-
-#Remove non-drug links
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-  filter(stri_detect_fixed(drugs_list$Link, &amp;quot;title=&amp;quot;) == FALSE)
-
-#Remove defunct columns
-drugs_list &amp;lt;- drugs_list %&amp;gt;%
-    select(-observation) %&amp;gt;%
-    select(-String)
-
-#Remove some leftover tags
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-drugs_list$Title &amp;lt;- str_replace(drugs_list$Title, &amp;quot;&amp;lt;/sub&amp;gt;&amp;quot;, replacement = &amp;quot;&amp;quot;)
-
-#Add a string column
-drugs_list &amp;lt;- cbind(drugs_list,
-                    string = str_replace(drugs_list$Link, &amp;quot;.html&amp;quot;, replacement = &amp;quot;&amp;quot;))
-
-#Add CSS tag and URL columns
-drugs_list &amp;lt;- cbind(drugs_list,
-                    url = str_c(&amp;quot;https://bnf.nice.org.uk/interaction/&amp;quot;,
-                                drugs_list$string, &amp;quot;.html&amp;quot;))
-drugs_list &amp;lt;- cbind(drugs_list, css_string = str_c(&amp;quot;#&amp;quot;, drugs_list$string, &amp;quot; .interactant span&amp;quot;))
-
-#Convert to character classes
-drugs_list[] &amp;lt;- lapply(drugs_list, as.character)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##               Link       Title      string
-## 1  abacavir-2.html    Abacavir  abacavir-2
-## 2 abatacept-2.html   Abatacept abatacept-2
-## 3 abciximab-2.html   Abciximab abciximab-2
-## 4 abiraterone.html Abiraterone abiraterone
-## 5  acarbose-2.html    Acarbose  acarbose-2
-##                                                    url
-## 1  https://bnf.nice.org.uk/interaction/abacavir-2.html
-## 2 https://bnf.nice.org.uk/interaction/abatacept-2.html
-## 3 https://bnf.nice.org.uk/interaction/abciximab-2.html
-## 4 https://bnf.nice.org.uk/interaction/abiraterone.html
-## 5  https://bnf.nice.org.uk/interaction/acarbose-2.html
-##                       css_string
-## 1  #abacavir-2 .interactant span
-## 2 #abatacept-2 .interactant span
-## 3 #abciximab-2 .interactant span
-## 4 #abiraterone .interactant span
-## 5  #acarbose-2 .interactant span&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Constructing the interactions database.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Data
-data &amp;lt;- sapply(drugs_list$url, function(x)
-               read_html(x) %&amp;gt;%
-               list())
-
-#Title
-example_dataframe &amp;lt;- data.frame(Title = drugs_list$Title)
-
-#Class
-class &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;%
-                    html_nodes(css = &amp;quot;.unstyled .interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(class))
-
-#Dangerous Interactions
-dangerousi &amp;lt;- lapply(data,
-                function(url){
-                    url %&amp;gt;%
-                    html_nodes(css = &amp;quot;.High .interactant span&amp;quot;) %&amp;gt;%
-                    html_text()
-                })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(dangerousi))
-
-#Interactions
-interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string,
-                       function(url, css){
-                          url %&amp;gt;%
-                          html_nodes(css) %&amp;gt;%
-                          html_text()
-                        })
-example_dataframe &amp;lt;- cbind(example_dataframe, data_frame(interactions))
-
-#Rename columns
-example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
-  rename(Class = &amp;#39;class&amp;#39;,
-         &amp;#39;Dangerous Interactions&amp;#39; = &amp;#39;dangerousi&amp;#39;,
-         Interactions = &amp;#39;interactions&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Currently zero (interactions/ dangerous interactions/ class) listing is represented by character(0). And individual drugs and general drug classes are listed together. The latter lists its drug within the ‘Class’ column.&lt;/p&gt;
-&lt;p&gt;E.g&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##         Title               Class
-## 1    Abacavir          Antivirals
-## 2   Abatacept
-## 3   Abciximab
-## 4 Abiraterone Hormone Antagonists
-## 5    Acarbose       Antidiabetics
-##                                                                                    Dangerous Interactions
-## 1                                                                         Orlistat, Ribavirin, Tipranavir
-## 2                                         Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3
-## 4 Carbamazepine, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, St John&amp;#39;s Wort
-## 5
-##                                                                                                                                Interactions
-## 1                                 Fosphenytoin, Methadone, Orlistat, Phenobarbital, Phenytoin, Primidone, Ribavirin, Rifampicin, Tipranavir
-## 2                                                               Adalimumab, Certolizumab pegol, Etanercept, Golimumab, Infliximab, Vaccines
-## 3
-## 4 Carbamazepine, Dextromethorphan, Fosphenytoin, Phenobarbital, Phenytoin, Primidone, Rifabutin, Rifampicin, Spironolactone, St John&amp;#39;s Wort
-## 5                                                                                    Colestyramine, Digoxin, Neomycin, Orlistat, Pancreatin&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../blogimages/BNFdataframe.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I’ll add formal BNF classes next and try to apply this data to a D3 model, such as a circular Sankey diagram.&lt;/p&gt;
-</description>
+      <description>I was thinking about drug interactions the other day: the relevant, and/or dangerous interactions that can occure in patients with multiple comorbidities. And I realised then, how few of these interactions I’d learnt by-heart. If I’d wanted to check, I would have looked up a patient’s drugs up in the BNF individually.
+To try to learn them, I want to visualise them - although I’ll likely never learn them all whilst new obscure drugs come out, or drug interactions are discovered over time.</description>
     </item>
     
     <item>
@@ -1298,28 +212,10 @@ example_dataframe &amp;lt;-  example_dataframe %&amp;gt;%
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
-      <description>&lt;p&gt;OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).&lt;/p&gt;
-
-&lt;p&gt;Updated the old &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-plots2/&#34;&gt;openprescribing graphics&lt;/a&gt;, with ggiraph.
-Then added some for my last post as well.&lt;/p&gt;
-
-&lt;p&gt;UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-plots-updated/&#34;&gt;the following post.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post10image.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post10image2.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post10image3.html&#34; width=&#34;100%&#34; height=&#34;650px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post10image4.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post10image5.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
+Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
+UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
+     </description>
     </item>
     
     <item>
@@ -1328,74 +224,11 @@ Then added some for my last post as well.&lt;/p&gt;
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots2/</guid>
-      <description>&lt;p&gt;Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.&lt;/p&gt;
-
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//player.vimeo.com/video/231293393&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
- &lt;/div&gt;
-
-
-&lt;p&gt;See the code used in this example &lt;a href=&#34;fergustaylor.github.io/openprescribingR/dev/examplescript&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See the repository on &lt;a href=&#34;https://github.com/fergustaylor/openprescribingR&#34;&gt;github.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot6.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot7.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;And a couple I made afterwards after exploring geom_line/geom_ribbon properly.&lt;/p&gt;
-
-&lt;p&gt;Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&amp;rsquo;s spending = red).
-The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/openprescribingR/Rplot01.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;I&amp;rsquo;ve also been trying out &lt;a href=&#34;https://davidgohel.github.io/ggiraph/index.html&#34;&gt;ggiraph&lt;/a&gt; recently, which seems promising but I&amp;rsquo;ll need to learn more javascript to take full advantage of it and create fully interactive graphs.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;westkent &amp;lt;- location_function(&amp;quot;99J&amp;quot;, as_sf = TRUE)
-westkent &amp;lt;- westkent %&amp;gt;%
-  mutate(
-    lon = map_dbl(geometry, ~st_centroid(.x)[[1]]),
-    lat = map_dbl(geometry, ~st_centroid(.x)[[2]])
-    )
-westkent$name &amp;lt;- str_replace_all(westkent$name, &amp;quot;&#39;&amp;quot;, &amp;quot; &amp;quot;)
-
-gg_point =  ggplot() +
-  geom_sf(data = westkent[1,]) +
-  geom_point_interactive(data = westkent[2:86,],
-                         aes(x = lon, y = lat, tooltip = name)) +
-  coord_sf(crs= 4326, datum = sf::st_crs(4326))
-ggiraph(code = {print(gg_point)})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/gigraph.html&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
+  See the code used in this example here.
+See the repository on github.
+  And a couple I made afterwards after exploring geom_line/geom_ribbon properly.
+Below is a geom_step of each practice spending in the CCG (median value = blue, the chosen clinic&amp;rsquo;s spending = red). The second is a geom_line version of the same data + dark geom_ribbon for the Q1-Q3, light geom_ribbon for the min-max of values.</description>
     </item>
     
     <item>
@@ -1404,448 +237,7 @@ ggiraph(code = {print(gg_point)})
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</guid>
-      <description>
-
-&lt;p&gt;This package works by interacting with the openprescribing.net api.
-Openprescribing.net continues to collate monthly data from NHS digital,
-which means that you can search the entire dataset without downloading
-each monthly file. It uses limited search arguments to return data.
-(This will be updated as the api changes). As such it&amp;rsquo;s not possible to
-return a desired dataset in some cases by using one function alone in
-this package. However, it is possible to cross-reference functions in
-order to return the dataset you&amp;rsquo;d like.&lt;/p&gt;
-
-&lt;p&gt;For example, I&amp;rsquo;ve added &lt;code&gt;location_function(CCG_Code, as_sf = TRUE)&lt;/code&gt;
-which combines &lt;code&gt;organisation_code()&lt;/code&gt; with &lt;code&gt;CCG_boundaries_or_location&lt;/code&gt;
-to return a CCG boundary and all practice locations in that CGG.&lt;/p&gt;
-
-&lt;h2 id=&#34;ccg-boundaries-or-location&#34;&gt;CCG_boundaries_or_location&lt;/h2&gt;
-
-&lt;p&gt;All organisations matching a code or name&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(organisation_code_or_name= &amp;quot;wish&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   ccg   code     id                                     name setting
-## 1        08L    08L                         NHS LEWISHAM CCG      NA
-## 2 NHT Y05547 Y05547 LEWISHAM AND GREENWICH COMM DERM SERVICE       9
-## 3 09D G81083 G81083                        WISH PARK SURGERY       4
-##               setting_name     type
-## 1                               CCG
-## 2 Community Health Service Practice
-## 3              GP Practice Practice
-
-organisation_codes(organisation_code_or_name= &amp;quot;G81083&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   ccg   code     id              name setting setting_name     type
-## 1 09D G81083 G81083 WISH PARK SURGERY       4  GP Practice Practice
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Boundaries of all CCGs&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CCG_boundaries_or_location(as_sf = TRUE) %&amp;gt;%
-  head(3)
-
-## Simple feature collection with 3 features and 3 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -2.367716 ymin: 50.70601 xmax: 0.9507036 ymax: 54.55835
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-##   ons_code                                        name org_type
-## 1     &amp;lt;NA&amp;gt; NHS HAMBLETON, RICHMONDSHIRE AND WHITBY CCG      CCG
-## 2     &amp;lt;NA&amp;gt;                           NHS MID ESSEX CCG      CCG
-## 3     &amp;lt;NA&amp;gt;                      NHS WEST HAMPSHIRE CCG      CCG
-##                         geometry
-## 1 MULTIPOLYGON(((-0.502740936...
-## 2 MULTIPOLYGON(((0.9500694371...
-## 3 MULTIPOLYGON(((-0.929614449...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Boundaries of an individual CCG&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CCG_boundaries_or_location(CCG_code = &amp;quot;99H&amp;quot;, as_sf = TRUE)
-
-## Simple feature collection with 1 feature and 3 fields
-## geometry type:  POLYGON
-## dimension:      XY
-## bbox:           xmin: -0.4457094 ymin: 51.10515 xmax: -0.1543538 ymax: 51.41195
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-##   ons_code                 name org_type                       geometry
-## 1     &amp;lt;NA&amp;gt; NHS SURREY DOWNS CCG      CCG POLYGON((-0.155107510600155...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Location (approximate) of a practice, or practices in a CCG, by code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CCG_boundaries_or_location(CCG_code = &amp;quot;99H&amp;quot;, practice_code = &amp;quot;P87003&amp;quot;, as_sf = TRUE) %&amp;gt;%
-  head(3)
-
-## Simple feature collection with 1 feature and 2 fields
-## geometry type:  POINT
-## dimension:      XY
-## bbox:           xmin: -2.339619 ymin: 53.48488 xmax: -2.339619 ymax: 53.48488
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-##                            name setting                       geometry
-## 1 4/ST ANDREWS MEDICAL PRACTICE       4 POINT(-2.33961911011315 53....
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Location of all practices in a CCG, by code (+ CCG boundary)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;location_function(CCG_code = &amp;quot;99H&amp;quot;, as_sf = TRUE) %&amp;gt;%
-  head(3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;drug-details&#34;&gt;drug_details&lt;/h2&gt;
-
-&lt;p&gt;All BNF sections, chemicals and presentations matching a name
-(case-insensitive)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;drug_details(name= &amp;quot;lipid&amp;quot;) %&amp;gt;%
-  head(3)
-
-##            id is_generic                           name
-## 1        2.12                    Lipid-Regulating Drugs
-## 2   021200000              Other Lipid-Regulating Preps
-## 3 0212000F0AA       True Colestyramine (Lipid Lowering)
-##                        section        type
-## 1                              BNF section
-## 2 2.12: Lipid-Regulating Drugs    chemical
-## 3                                  product
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All chemicals and presentations matching a code =&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;drug_details(chemical_section_or_presentation_code= &amp;quot;0212000AA&amp;quot;) %&amp;gt;%
-  head(3)
-
-##            id is_generic                 name                      section
-## 1   0212000AA            Rosuvastatin Calcium 2.12: Lipid-Regulating Drugs
-## 2 0212000AABB      False              Crestor                             
-## 3 0212000AAAA       True    Rosuvastatin Calc                             
-##       type
-## 1 chemical
-## 2  product
-## 3  product
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All BNF sections matching a code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;drug_details(BNF_section= &amp;quot;2.4&amp;quot;) %&amp;gt;%
-  head(3)
-
-##            id is_generic
-## 1         2.4           
-## 2 21010900763      False
-## 3 21010900764      False
-##                                                      name           type
-## 1                        Beta-Adrenoceptor Blocking Drugs    BNF section
-## 2 Apollo Pressure-Activated Safety Lancets 2.4mm/21 Gauge product format
-## 3 Apollo Pressure-Activated Safety Lancets 2.4mm/23 Gauge product format
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All BNF sections, chemicals and presentations exactly matching a name or
-code =&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;drug_details(exact_name_or_code = &amp;quot;21010900763&amp;quot;)
-
-##            id is_generic
-## 1 21010900763      False
-##                                                      name           type
-## 1 Apollo Pressure-Activated Safety Lancets 2.4mm/21 Gauge product format
-
-drug_details(name=&amp;quot;lipid&amp;amp;q=drug&amp;quot;) %&amp;gt;%
-  head(3)
-
-##       id is_generic                                    name          type
-## 1   10.1            Drugs Used In Rheumatic Diseases &amp;amp; Gout   BNF section
-## 2 10.1.1              Non-Steroidal Anti-Inflammatory Drugs BNF paragraph
-## 3 10.1.3                Rheumatic Disease Suppressant Drugs BNF paragraph
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;list-size&#34;&gt;list_size&lt;/h2&gt;
-
-&lt;p&gt;Total list size for all CCGs&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_size() %&amp;gt;%
-  head(3)
-
-##         date row_id                row_name total_list_size
-## 1 2012-07-01    00M      NHS SOUTH TEES CCG          289486
-## 2 2012-07-01    07Y        NHS HOUNSLOW CCG          285362
-## 3 2012-07-01    02G NHS WEST LANCASHIRE CCG          111135
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Total list size by practice code, or CCG code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_size(list_size_by_code= &amp;quot;P87003&amp;quot;) %&amp;gt;%
-  head(3)
-
-##         date row_id                      row_name total_list_size
-## 1 2012-07-01 P87003 4/ST ANDREWS MEDICAL PRACTICE            3670
-## 2 2012-08-01 P87003 4/ST ANDREWS MEDICAL PRACTICE            3670
-## 3 2012-09-01 P87003 4/ST ANDREWS MEDICAL PRACTICE            3670
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Total list size by practice code, or CCG code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_size(list_size_by_code= &amp;quot;99H&amp;quot;) %&amp;gt;%
-  head(3)
-
-##         date row_id                 row_name total_list_size
-## 1 2012-07-01 H81011              NORK CLINIC            6879
-## 2 2012-07-01 H81016 FAIRFIELD MEDICAL CENTRE           10671
-## 3 2012-07-01 H81017  ASHLEA MEDICAL PRACTICE           18024
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ASTRO-PU cost and items for practices by practice code, or CCG code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_size(ASTRO_PU_by_code= &amp;quot;P87003&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   astro_pu_cost astro_pu_items       date row_id
-## 1      12955.05       45917.64 2012-07-01 P87003
-## 2      12955.05       45917.64 2012-08-01 P87003
-## 3      12955.05       45917.64 2012-09-01 P87003
-##                        row_name
-## 1 4/ST ANDREWS MEDICAL PRACTICE
-## 2 4/ST ANDREWS MEDICAL PRACTICE
-## 3 4/ST ANDREWS MEDICAL PRACTICE
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ASTRO-PU cost and items for practices by practice code, or CCG code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;list_size(ASTRO_PU_by_code= &amp;quot;99H&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   astro_pu_cost astro_pu_items       date row_id                 row_name
-## 1      25122.58       91162.97 2012-07-01 H81011              NORK CLINIC
-## 2      45485.01      169021.54 2012-07-01 H81016 FAIRFIELD MEDICAL CENTRE
-## 3      68194.28      248983.28 2012-07-01 H81017  ASHLEA MEDICAL PRACTICE
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;organisation-codes&#34;&gt;organisation_codes&lt;/h2&gt;
-
-&lt;p&gt;All organisations matching a code or name&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(organisation_code_or_name= &amp;quot;Beaumont&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   ccg   code     id                            name setting setting_name
-## 1 10Q K84049 K84049              27 BEAUMONT STREET       4  GP Practice
-## 2 10Q K84016 K84016      19 BEAUMONT STREET SURGERY       4  GP Practice
-## 3 04C C82094 C82094 BEAUMONT LODGE MEDICAL PRACTICE       4  GP Practice
-##       type
-## 1 Practice
-## 2 Practice
-## 3 Practice
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All CCGs matching a code or name&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(CCG_code_or_name= &amp;quot;Gloucester&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   code  id                          name type
-## 1  11M 11M       NHS GLOUCESTERSHIRE CCG  CCG
-## 2  12A 12A NHS SOUTH GLOUCESTERSHIRE CCG  CCG
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All practices matching a code or name&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(practice_code_or_name= &amp;quot;Gloucester&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   ccg   code     id                                     name setting
-## 1 11M L84052 L84052            GLOUCESTER CITY HEALTH CENTRE       4
-## 2 07M E83650 E83650                  GLOUCESTER ROAD SURGERY       4
-## 3     Y00224 Y00224 GLOUCESTERSHIRE HEART &amp;amp; DIABETES SERVICE      -1
-##   setting_name     type
-## 1  GP Practice Practice
-## 2  GP Practice Practice
-## 3      Unknown Practice
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All organisations exactly matching a code or name&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(exact_name_or_code= &amp;quot;99H&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   code  id                 name type
-## 1  99H 99H NHS SURREY DOWNS CCG  CCG
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or a variation of the above (with at least 1
-organisation_code_or_name, CCG_code_or_name,
-practice_code_or_name, or exact_name_or_code). N.B For now the use
-of multiple terms in one category requires &amp;ldquo;&amp;amp;q=&amp;rdquo;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;organisation_codes(organisation_code_or_name= &amp;quot;Beaumont&amp;amp;q=Gloucester&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   ccg   code     id                          name setting setting_name
-## 1        11M    11M       NHS GLOUCESTERSHIRE CCG      NA             
-## 2        12A    12A NHS SOUTH GLOUCESTERSHIRE CCG      NA             
-## 3 11M L84052 L84052 GLOUCESTER CITY HEALTH CENTRE       4  GP Practice
-##       type
-## 1      CCG
-## 2      CCG
-## 3 Practice
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;spending-by-ccg&#34;&gt;spending_by_CCG&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;spending_by_CCG(chemical_section_or_presentation_code = &amp;quot;0212000AA&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date items quantity row_id
-## 1     8726.12 2012-06-01   374    12411    00C
-## 2    27737.51 2012-06-01  1376    40698    00D
-## 3      456.76 2012-06-01    28      756    00F
-##                                         row_name
-## 1                             NHS DARLINGTON CCG
-## 2 NHS DURHAM DALES, EASINGTON AND SEDGEFIELD CCG
-## 3                              NHS GATESHEAD CCG
-
-spending_by_CCG(CCG_code = &amp;quot;03V&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date  items quantity row_id      row_name
-## 1    727695.8 2012-06-01 104783  7569723    03V NHS CORBY CCG
-## 2    734693.3 2012-07-01 107555  7630021    03V NHS CORBY CCG
-## 3    774393.8 2012-08-01 112204  8240186    03V NHS CORBY CCG
-
-spending_by_CCG(chemical_section_or_presentation_code = &amp;quot;0212000AA&amp;quot;, CCG_code = &amp;quot;03V&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date items quantity row_id      row_name
-## 1     2725.07 2012-06-01   134     3780    03V NHS CORBY CCG
-## 2     2891.62 2012-07-01   142     4046    03V NHS CORBY CCG
-## 3     2395.14 2012-08-01   116     3299    03V NHS CORBY CCG
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;spending-by-code&#34;&gt;spending_by_code&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;spending_by_code() %&amp;gt;%
-  head(3)
-
-##   actual_cost       date    items   quantity
-## 1   609262986 2012-06-01 78609510 6579046471
-## 2   637876694 2012-07-01 82129721 6840558698
-## 3   645377536 2012-08-01 83505625 6958818448
-
-spending_by_code(BNF_code = &amp;quot;0212&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date   items  quantity
-## 1    23194338 2012-06-01 5159062 179587124
-## 2    24127857 2012-07-01 5354064 184967386
-## 3    21131928 2012-08-01 5576386 192317248
-
-spending_by_code(BNF_code = &amp;quot;0212000AA&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date  items quantity
-## 1     3786943 2012-06-01 162589  5611829
-## 2     3816988 2012-07-01 164926  5644667
-## 3     3894235 2012-08-01 168824  5759503
-
-spending_by_code(BNF_code = &amp;quot;0212000AABB&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date items quantity
-## 1    43547.31 2012-06-01  2071    67743
-## 2    45812.47 2012-07-01  2189    71069
-## 3    46900.04 2012-08-01  2227    72384
-
-spending_by_code(BNF_code = &amp;quot;2.4&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date   items  quantity
-## 1     5490697 2012-06-01 2592902 101530198
-## 2     6007044 2012-07-01 2691100 104589395
-## 3     6316624 2012-08-01 2808641 108976487
-
-spending_by_code(BNF_code = drug_details(BNF_section = &amp;quot;2.4&amp;quot;)$id[1]) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date   items  quantity
-## 1     5490697 2012-06-01 2592902 101530198
-## 2     6007044 2012-07-01 2691100 104589395
-## 3     6316624 2012-08-01 2808641 108976487
-
-id &amp;lt;- drug_details(BNF_section = &amp;quot;2.4&amp;quot;) %&amp;gt;%
-  dplyr::filter(name==&amp;quot;Beta-Adrenoceptor Blocking Drugs&amp;quot;) %&amp;gt;%
-  dplyr::select(id)
-
-spending_by_code(BNF_code = id) %&amp;gt;%
-  head(3)
-
-##   actual_cost       date  items quantity
-## 1     4255009 2012-06-01 321575   327894
-## 2     4600409 2012-07-01 337109   344489
-## 3     3643517 2012-08-01 268566   274154
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;spending-by-practice&#34;&gt;spending_by_practice&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;spending_by_practice(BNF_section_code = &amp;quot;0212&amp;quot;, date_code = &amp;quot;2015-04-01&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost ccg       date items quantity row_id
-## 1     1428.76 00K 2015-04-01   415    18693 A81001
-## 2     7618.02 00K 2015-04-01  2240    91993 A81002
-## 3     1127.80 00K 2015-04-01   587    16935 A81003
-##                     row_name setting
-## 1        THE DENSHAM SURGERY       4
-## 2 QUEENS PARK MEDICAL CENTRE       4
-## 3  VICTORIA MEDICAL PRACTICE       4
-
-spending_by_practice(chemical_code = &amp;quot;0212000AA&amp;quot;, date_code = &amp;quot;2015-04-01&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost ccg       date items quantity row_id
-## 1      256.16 00K 2015-04-01     6      308 A81001
-## 2     1591.17 00K 2015-04-01    62     2436 A81002
-## 3       44.16 00K 2015-04-01     2       56 A81003
-##                     row_name setting
-## 1        THE DENSHAM SURGERY       4
-## 2 QUEENS PARK MEDICAL CENTRE       4
-## 3  VICTORIA MEDICAL PRACTICE       4
-
-spending_by_practice(practice_code = &amp;quot;H81068&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost ccg       date items quantity row_id
-## 1    124036.3 99H 2012-06-01 19639  1163331 H81068
-## 2    124024.1 99H 2012-07-01 20671  1195135 H81068
-## 3    134257.4 99H 2012-08-01 21865  1354045 H81068
-##                     row_name setting
-## 1 BROCKWOOD MEDICAL PRACTICE       4
-## 2 BROCKWOOD MEDICAL PRACTICE       4
-## 3 BROCKWOOD MEDICAL PRACTICE       4
-
-spending_by_practice(CCG_code = &amp;quot;03V&amp;quot;) %&amp;gt;%
-  head(3)
-
-##   actual_cost ccg       date items quantity row_id             row_name
-## 1   469772.91 03V 2012-06-01 65453  4682582 K83002  LAKESIDE HEALTHCARE
-## 2   109605.96 03V 2012-06-01 16681  1261980 K83059 DR KHALID &amp;amp; PARTNERS
-## 3    16817.56 03V 2012-06-01  3399   231437 K83607            DR SUMIRA
-##   setting
-## 1       4
-## 2       4
-## 3       4
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or a variation of the above (with at least 1 practice_code, date_code,
-or CCG_code). N.B A BNF section gives a prefix to the chemical, which
-gives a prefix to the presentation/product format. e.g. &amp;ldquo;0212&amp;rdquo; are
-lipid-regulating drugs, &amp;ldquo;0212000AA&amp;rdquo; is Rosuvastatin Calcium,
-&amp;ldquo;0212000AAAAAAAA&amp;rdquo; is Rosuvastatin Calc_Tab 10mg.&lt;/p&gt;
-</description>
+      <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
@@ -1854,44 +246,12 @@ lipid-regulating drugs, &amp;ldquo;0212000AA&amp;rdquo; is Rosuvastatin Calcium,
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-plots/</guid>
-      <description>&lt;p&gt;Made a new package to return a set of default plots based on my openprescribingR import tool.&lt;/p&gt;
-
-&lt;p&gt;Currently returns a leaflet map showing;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;spending per person&lt;/li&gt;
-&lt;li&gt;total spending&lt;/li&gt;
-&lt;li&gt;total no. of items&lt;/li&gt;
-&lt;li&gt;total quantity of items&lt;/li&gt;
-&lt;li&gt;quantity per item&lt;/li&gt;
-&lt;li&gt;listsizes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;.. for each CCG, for each month this year.&lt;/p&gt;
-
-&lt;p&gt;This can be for any BNF section, chemical, or presentation.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/fergustaylor/openprescribingRplots&#34;&gt;See the repository.&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(devtools)
-devtools::install_github(&amp;quot;fergustaylor/openprescribingRplots&amp;quot;)
-library(openprescribingRplots)
-
-plot2017perperson(&amp;quot;7.4.5&amp;quot;)
-plot2017total(&amp;quot;7.4.5&amp;quot;)
-plot2017items(&amp;quot;7.4.5&amp;quot;)
-plot2017quantity(&amp;quot;7.4.5&amp;quot;)
-plot2017quantityperitems(&amp;quot;7.4.5&amp;quot;)
-plot2017listsize()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;See below for plot2017perperson(&amp;ldquo;7.4.5&amp;rdquo;)&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post7map.html&#34; width=&#34;100%&#34; height=&#34;500px&#34; &gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/blogimages/post7map.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
+Currently returns a leaflet map showing;
+ spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
+This can be for any BNF section, chemical, or presentation.
+See the repository.
+library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribingRplots&amp;quot;) library(openprescribingRplots) plot2017perperson(&amp;quot;7.4.5&amp;quot;) plot2017total(&amp;quot;7.4.5&amp;quot;) plot2017items(&amp;quot;7.4.5&amp;quot;) plot2017quantity(&amp;quot;7.</description>
     </item>
     
     <item>
@@ -1900,40 +260,9 @@ plot2017listsize()
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-update-2/</guid>
-      <description>
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot5.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/blogimages/post6map.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/openprescribingR/dev/clinics.html&#34;&gt;See the code.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot4.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/output.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-</description>
+      <description>  See the map.
+See the code.
+  </description>
     </item>
     
     <item>
@@ -1942,80 +271,9 @@ plot2017listsize()
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr-update/</guid>
-      <description>
-
-&lt;p&gt;I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.&lt;/p&gt;
-
-&lt;h2 id=&#34;new-function&#34;&gt;New Function&lt;/h2&gt;
-
-&lt;h2 id=&#34;7-ccg-boundaries&#34;&gt;7. CCG boundaries&lt;/h2&gt;
-
-&lt;p&gt;Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Boundaries of all CCGs&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;CCG_boundaries_or_location()&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Boundaries of an individual CCG&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Location (approximate) of practices in a CCG, by code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Location (approximate) of a practice in a CCG&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Location (approximate) of a practice in a CCG&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.&lt;/p&gt;
-
-&lt;p&gt;Plots to come..&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE 12:40:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Managed to import/plot using GeoJSON, but since I&amp;rsquo;m not particularly familiar with the format I used the api address..&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;st_read(&amp;quot;https://openprescribing.net/api/1.0/org_location/?org_type=ccg&amp;quot;) %&amp;gt;%
-st_as_sf()&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;To create a simple features collection, which made things much easier.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/blogimages/post5map.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/blogimages/post5map.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot4.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-</description>
+      <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
+New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
+   Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
     </item>
     
     <item>
@@ -2024,273 +282,20 @@ st_as_sf()&lt;/code&gt;&lt;/p&gt;
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/openprescribingr/</guid>
-      <description>
-
-&lt;p&gt;Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio.
-There are 6 functions, divided into data look-up and data-import tools.&lt;/p&gt;
-
-&lt;p&gt;Installation:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;library(devtools)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;devtools::install_github(&amp;quot;fergustaylor/openprescribingR&amp;quot;)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Load:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;library(openprescribingR)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;These functions give details on drugs/organisations/list sizes.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;drug_details()&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;organisation_codes()&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;list_size()&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;These functions allow you to load data.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;spending_by_CCG()&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;spending_by_code()&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;spending_by_practice()&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;CCG Boundraries are unavailable for now&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE 13/08/17:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;CCG Boundaries/Practice locations have been added. Read &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-update/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;spending&#34;&gt;Spending&lt;/h1&gt;
-
-&lt;p&gt;Retrieve total spending and items by CCG or practice on a particular chemical, presentation or BNF section. (Spending is calculated using the actual_cost field in the HSCIC data, items using the total_items field.)&lt;/p&gt;
-
-&lt;h2 id=&#34;1-spending-by-code&#34;&gt;1. Spending by code&lt;/h2&gt;
-
-&lt;p&gt;Queries from August 2010 to date and returns total spending and items by month&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total prescribing spending by month&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_code()&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Total by BNF code by month&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_code(BNF_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;2-spending-by-ccg&#34;&gt;2. Spending by CCG&lt;/h2&gt;
-
-&lt;p&gt;Queries from April 2013 to date and returns spending and items by CCG by month.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Spending by CCG on a chemical&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_CCG(chemical_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Individual CCGs by code (+/- on a chemical)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_CCG(CCG_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&#34;3-spending-by-practice&#34;&gt;3. Spending by practice&lt;/h2&gt;
-
-&lt;p&gt;Queries from August 2010 to date and returns total spending and items by practice by month.
-You must specify either an organisation, or a date.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Spending by all practices on a BNF section&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_practice(BNF_section_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Spending by all practices on a chemical&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_practice(chemical_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Spending by all practices on a presentation&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_practice(presentation_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Spending by an individual practice&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_practice(practice_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Spending by all practices in a CCG&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;spending_by_practice(CCG_code = &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Or a variation of the above (with at least 1 practice_code, date_code, or CCG_code).&lt;/p&gt;
-
-&lt;h1 id=&#34;information&#34;&gt;Information&lt;/h1&gt;
-
-&lt;p&gt;Methods to retrieve information about CCGs, practices, and BNF codes.&lt;/p&gt;
-
-&lt;h2 id=&#34;4-drug-details&#34;&gt;4. Drug Details&lt;/h2&gt;
-
-&lt;p&gt;Search for the official name and code of BNF sections, chemicals and presentations.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;All BNF sections, chemicals and presentations matching a name (case-insensitive)&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;drug_details(name= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All chemicals and presentations matching a code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;drug_details(chemical_or_presentation_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All BNF sections matching a code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;drug_details(BNF_section_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All BNF sections, chemicals and presentations exactly matching a name or code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;drug_details(exact_name_or_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Or a variation of the above (with at least 1 name, chemical_or_presentation_code, BNF_section_code, or exact_name_or_code).
-N.B For now the use of multiple terms in one category requires &amp;ldquo;&amp;amp;q=&amp;ldquo;, e.g
-drug_details(name=&amp;ldquo;lipid&amp;amp;q=drug&amp;rdquo;)&lt;/p&gt;
-
-&lt;h2 id=&#34;5-organisation-codes&#34;&gt;5. Organisation Codes&lt;/h2&gt;
-
-&lt;p&gt;Search for details about a CCG or practice by code or name.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;All organisations matching a code or name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;organisation_codes(organisation_code_or_name= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All CCGs matching a code or name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;organisation_codes(CCG_code_or_name= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All practices matching a code or name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;list_size(ASTRO_PU_by_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;All organisations exactly matching a code or name&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;organisation_codes(exact_name_or_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Or a variation of the above (with at least 1 organisation_code_or_name, CCG_code_or_name, practice_code_or_name, or exact_name_or_code).
-N.B For now the use of multiple terms in one category requires &amp;ldquo;&amp;amp;q=&amp;ldquo;, e.g
-organisation_codes(organisation_code_or_name= &amp;ldquo;Beaumont&amp;amp;q=Gloucester&amp;rdquo;)&lt;/p&gt;
-
-&lt;h2 id=&#34;6-list-size-and-astro-pus-by-ccg-or-practice&#34;&gt;6. List size and ASTRO_PUs by CCG or practice&lt;/h2&gt;
-
-&lt;p&gt;Search for details about a CCG or practice by code or name. Returns values for all months available.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Output&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;Function&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Total list size for all CCGs&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;list_size()&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Total list size for all practices by practice code, or CCG code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;list_size(list_size_by_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;ASTRO-PU cost and items for practices by practice code, or CCG code&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;list_size(ASTRO_PU_by_code= &amp;ldquo;&amp;hellip;&amp;rdquo;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Or a variation of the above.&lt;/p&gt;
-
-&lt;p&gt;THe only thing I haven&amp;rsquo;t sorted is the CCG Boundaries, &amp;ldquo;Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.&amp;rdquo;
-You could still download it onto your desktop directly from the API, but I think that doing this in-studio makes it much easier to update the information.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE 13/08/17:&lt;/strong&gt;&lt;br /&gt;
-CCG Boundaries/Practice locations have been added.
-Read &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-update/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Further explanation on the terms used here - &lt;a href=&#34;https://openprescribing.net/api/&#34;&gt;https://openprescribing.net/api/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Essential reading &lt;a href=&#34;https://openprescribing.net/caution/&#34;&gt;https://openprescribing.net/caution/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://openprescribing.net/&#34;&gt;https://openprescribing.net/&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe width=&#34;100%&#34; height=&#34;550&#34; src=&#34;https://www.youtube.com/embed/U-hvuEfUUOM&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-</description>
+      <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
+Installation:
+library(devtools)
+devtools::install_github(&amp;quot;fergustaylor/openprescribingR&amp;quot;)
+Load:
+library(openprescribingR)
+These functions give details on drugs/organisations/list sizes.
+ drug_details()
+ organisation_codes()
+ list_size()
+  These functions allow you to load data.
+ spending_by_CCG()
+ spending_by_code()
+ spending_by_practice()</description>
     </item>
     
     <item>
@@ -2299,100 +304,10 @@ Read &lt;a href=&#34;https://fergustaylor.github.io/post/openprescribingr-update
       <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/public-health-outcomes-framework/</guid>
-      <description>&lt;p&gt;I initially saw the notice of the August update via twitter
-&lt;a href=&#34;https://twitter.com/PHE_uk&#34;&gt;@PHE_uk&lt;/a&gt;, but I later found the full
-future publication timeline available at
-&lt;a href=&#34;https://www.gov.uk/government/organisations/public-health-england/about/statistics&#34;&gt;gov.uk.&lt;/a&gt;&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/2.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;All their new statistics are summarised in their blog &lt;a href=&#34;https://publichealthmatters.blog.gov.uk/&#34;&gt;Public Health
-Matters&lt;/a&gt;, and the data is available
-online with interactive plots through their &lt;a href=&#34;https://fingertips.phe.org.uk/&#34;&gt;Fingertips
-service.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It summarises 33 different National Public Health Profiles, including
-the most recent version of the Public Health Outcomes Framework.&lt;/p&gt;
-
-&lt;p&gt;While I was prepared to download information I wanted directly through
-the site - I found their fantastic package tool
-&lt;a href=&#34;https://github.com/PublicHealthEngland/fingertipsR&#34;&gt;&amp;lsquo;fingertipsR&amp;rsquo;&lt;/a&gt;
-which allows me to import PH data from all profiles directly into the R
-environment through their API.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#install.packages(&amp;quot;devtools&amp;quot;)
-#devtools::install_github(&amp;quot;PublicHealthEngland/fingertipsR&amp;quot;)
-library(fingertipsR)
-library(tidyverse)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The package is explained here.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;help(&amp;quot;fingertipsR&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I chose to download the most recent PH Outcomes Framework, and then
-inspect the data for Kent (filtering in England and the Subnational
-Parent).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;PHOF &amp;lt;- fingertipsR::fingertips_data(ProfileID = 19)
-
-Kent &amp;lt;- PHOF %&amp;gt;%
-  filter(AreaName==&#39;Kent&#39;|AreaName==&#39;England&#39;|AreaName==&#39;South East region&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Inspecting it, I can see there are 169 seperate Indicator Names.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;unique(Kent$IndicatorName)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I&amp;rsquo;ve chosen to demonstrate the data for &amp;lsquo;0.1i - Healthy life expectancy
-at birth&amp;rsquo;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Kent %&amp;gt;%
-  filter(IndicatorID==&#39;90362&#39;) %&amp;gt;%
-  ggplot(aes(x=Timeperiod)) +
-  geom_col(aes(y=Value, fill=Sex), position = &amp;quot;dodge&amp;quot;) +
-  geom_errorbar(aes(ymin = LowerCIlimit, ymax = UpperCIlimit, fill=Sex), width = 0.5, position = position_dodge(width = 0.9)) +
-  geom_text(aes(label = signif(Value,3), y=Value, fill=Sex), vjust=5, position = position_dodge(width = 0.9), colour=&amp;quot;white&amp;quot;) +
-  labs(y = &amp;quot;Healthy life expectancy at birth&amp;quot;) +
-  theme(legend.title=element_blank()) +
-  theme(axis.title.x=element_blank()) +
-  facet_grid(AreaName ~ .)
-&lt;/code&gt;&lt;/pre&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/Rplot.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Public-Health-Outcomes-Framework/output2.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;This was an interesting way to explore Public Health England Data
-through R. The next steps for me will be to explore new HTML widgets as
-a way to convert R data into interactive plots.&lt;/p&gt;
-</description>
+      <description>I initially saw the notice of the August update via twitter @PHE_uk, but I later found the full future publication timeline available at gov.uk.
+ All their new statistics are summarised in their blog Public Health Matters, and the data is available online with interactive plots through their Fingertips service.
+It summarises 33 different National Public Health Profiles, including the most recent version of the Public Health Outcomes Framework.
+While I was prepared to download information I wanted directly through the site - I found their fantastic package tool &amp;lsquo;fingertipsR&amp;rsquo; which allows me to import PH data from all profiles directly into the R environment through their API.</description>
     </item>
     
     <item>
@@ -2401,51 +316,7 @@ a way to convert R data into interactive plots.&lt;/p&gt;
       <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/arran-continued/</guid>
-      <description>
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/gif4.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland.
-As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.&lt;/p&gt;
-
-&lt;p&gt;In the end it was 166 MB in the end, and I&amp;rsquo;ll never be able to host it on Github.&lt;/p&gt;
-
-&lt;p&gt;But it was very pretty, so I made a GIF of Scotland through the years.&lt;/p&gt;
-
-&lt;p&gt;I experimented with GGanimate, which worked well for making GIFs from ggplot objects, however it was easier to make it using screenshots from the rendered html map in the end.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map_Code.html#map4_arran_vs_scotland&#34;&gt;See the code here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I did do some practice with my SIMD Percentile plots though for Arran alone; first using GGPlot, then overlaying onto GGMaps.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/output2.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/output3.gif&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/GGAnimate.html#creating_animated_maps&#34;&gt;See the code here.&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Made another leaflet map in R to try out some of the chloropleth tutorials and to see if I could easily adapt the code I&amp;rsquo;d been using just for Arran, to show all of Scotland. As it turned out I managed to write the code in 15 minutes. It then crashed immediately, and I had to leave the computer running all night in order to export it as HTML.</description>
     </item>
     
     <item>
@@ -2454,141 +325,10 @@ As it turned out I managed to write the code in 15 minutes. It then crashed imme
       <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/arran/</guid>
-      <description>
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/map2.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/map2.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;This is an early project based on SIMD data that I&amp;rsquo;m using to try and
-learn R. I&amp;rsquo;ve used the package
-&lt;a href=&#34;http://ggplot2.tidyverse.org/reference/ggsf.html&#34;&gt;&amp;lsquo;ggplot2&amp;rsquo;&lt;/a&gt; as part of
-the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn
-through a combination of &lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r&#34;&gt;DataCamp
-courses&lt;/a&gt;,
-&lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;RStudio &amp;lsquo;Cheat Sheets&amp;rsquo;&lt;/a&gt;
-and &lt;a href=&#34;https://twitter.com/hashtag/Rstats?src=hash&#34;&gt;twitter&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I thought Arran would make nice maps.&lt;/p&gt;
-
-&lt;h3 id=&#34;early-progress&#34;&gt;Early progress&lt;/h3&gt;
-
-&lt;p&gt;Initially I used map cordinates given by &lt;a href=&#34;https://www.ordnancesurvey.co.uk/opendatadownload/products.html&#34;&gt;Ordinance
-Survey&lt;/a&gt;
-to find the centre of any KA27 postcode on a map. (KA27 being the prefix
-or &amp;lsquo;postcode area&amp;rsquo; that denotes all Aran Island postcodes).&lt;/p&gt;
-
-&lt;p&gt;I then read the coordinates into sf with st_as_sf(), and plotted over
-a shape file map of Arran; over the SIMD data zones, as well as the
-section of coordinates contained in one data zone.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot11.5.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;With the postcodes sorted, I then wanted to relate some other
-information about these areas. I used
-&lt;a href=&#34;www.gov.scot/Topics/Statistics/SIMD&#34;&gt;SIMD&lt;/a&gt; &amp;lsquo;DataZone boundraries&amp;rsquo; and
-plotted their ERSI Shapefiles using &amp;lsquo;geom_sf.&amp;rsquo; First the data zones
-onto the island. Then I coloured/labelled the individual data zones.
-Having worked that out, I wanted to show some health data about the
-zones. I overlayed &amp;lsquo;percentile&amp;rsquo; data about the areas for 2016.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot13.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;Then after faffing about with individual shape files for every year,
-(The data zone labels changed after 2012), I did the same for all the
-SIMD data periods and used facet_wrap to plot them all together.&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;https://fergustaylor.github.io/Arran/Rplot10.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-
-&lt;p&gt;Combining the postcode and SIMD data, I&amp;rsquo;ve summarised each of the zones
-below.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/Function10.html&#34; width=&#34;100%&#34; height=&#34;650px&#34; &gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Function10.html&#34;&gt;See these plots in a new
-window.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;As shown at the top, I&amp;rsquo;ve since overlaid this data onto interactive maps
-using leaflet.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;SIMD Datazones and Example Markers&lt;/em&gt;&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/map.html&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/map.html&#34;&gt;First Version.&lt;/a&gt;&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Arran/Map5view.html&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map5view.html&#34;&gt;See the map.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The overall aim of this project is to eventually create an easy template
-by which a user with no prior programming knowledge can create
-interactive graphs or static maps by overlaying some form of data
-assigned to a postcode alone.&lt;/p&gt;
-
-&lt;p&gt;The reason I&amp;rsquo;ve chosen postcode is that it&amp;rsquo;s a prevalent measurement
-that can be integrated easily. Since I&amp;rsquo;ve already imported a list of
-Arran Postcodes with coordinates, I can create markers for any given
-address using one. For example, I had a list of each GP clinic on Arran.
-If I put this information onto an excel chart, I can subsect the
-original full postcode list by the clinic list, giving me a new list
-with coordinates I can then plot as markers on a map with labels. This
-means I can plot anything I&amp;rsquo;d like to see the geographical spread of and
-using this method is the same amount of effort plotting the data for 10
-markers as it would be for 100.&lt;/p&gt;
-
-&lt;p&gt;I can then overlay onto the map+markers any information I want. In my
-first 2 maps I&amp;rsquo;ve shown SIMD DataZones (the units Scotland is subdivided
-into for measurement purposes), but I could create overlays dividing up
-the map by closest clinic for example (in 10/15/20 mile increments), or
-distance to the ferry for hospital transport.&lt;/p&gt;
-
-&lt;p&gt;If I used OS postcode tiles I could even overlay some information (a
-continuous/ variable matched to a colour palate) assigned to that
-postcode. (Like the percentile data, but showing many smaller areas over
-Arran).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Map_Code.html#example_markers&#34;&gt;See the clinic plot
-example.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/Code.html&#34;&gt;See the full project
-code.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/Arran/front_page_graphics.html&#34;&gt;See the code specific to these
-graphics.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io&#34;&gt;Other projects I&amp;rsquo;m working on.&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>See the map.
+Introduction This is an early project based on SIMD data that I&amp;rsquo;m using to try and learn R. I&amp;rsquo;ve used the package &amp;lsquo;ggplot2&amp;rsquo; as part of the Tidyverse to practice a set of skills I&amp;rsquo;m attempting to learn through a combination of DataCamp courses, RStudio &amp;lsquo;Cheat Sheets&amp;rsquo; and twitter.
+I thought Arran would make nice maps.
+Early progress Initially I used map cordinates given by Ordinance Survey to find the centre of any KA27 postcode on a map.</description>
     </item>
     
   </channel>

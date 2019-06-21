@@ -6,25 +6,18 @@
     <description>Recent content in Tags on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 20 Oct 2018 20:16:52 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 18 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
       <link>https://fergustaylor.github.io/tags/r/</link>
-      <pubDate>Sat, 20 Oct 2018 20:16:52 +0100</pubDate>
+      <pubDate>Sun, 18 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/tags/r/</guid>
-      <description>
-
-&lt;h4 id=&#34;blogroll&#34;&gt;Blogroll&lt;/h4&gt;
-
-&lt;p&gt;A number of articles based around R, for the R Bloggers aggregate. &lt;br&gt;
-&lt;a href=&#34;https://feeds.feedburner.com/RBloggers&#34;&gt;&lt;img src=&#34;../../images/rss.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.r-bloggers.com&#34;&gt;R Bloggers&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Blogroll A number of articles based around R, for the R Bloggers aggregate.  R Bloggers</description>
     </item>
     
   </channel>

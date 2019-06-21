@@ -29,7 +29,7 @@
 
 &lt;p&gt;If you just want to look at the data itself, you can skip all of the below and just find the latest version in my github repository (either as an .Rda, or .JSON), &lt;a href=&#34;https://github.com/fergustaylor/bnf-interactions/tree/master/archive&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r, warning=FALSE, message=FALSE&#34;&gt;library(rvest)
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;library(rvest)
 library(magrittr)
 library(stringr)
 library(stringi)
@@ -94,7 +94,7 @@ i.e.&lt;/p&gt;
 &lt;p&gt;example &amp;lt;- drugs_list
 then run &amp;ldquo;kept &amp;lt;- ..&amp;rdquo; onwards&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r, message=FALSE, warning=FALSE&#34;&gt;example &amp;lt;- read_csv(&amp;quot;archive/drugs_list.csv&amp;quot;)
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;example &amp;lt;- read_csv(&amp;quot;archive/drugs_list.csv&amp;quot;)
 
 kept &amp;lt;- intersect(drugs_list$Link, example$Link)
 newdrugs &amp;lt;- setdiff(drugs_list$Link, example$Link)
@@ -289,7 +289,7 @@ rm(infoi)
 
 &lt;p&gt;Export dataframe&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-r, eval=FALSE&#34;&gt;#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
+&lt;pre&gt;&lt;code class=&#34;language-r,&#34;&gt;#going to save under drugs_listDatestamp folder, in-case slightly older than Datestamp
 #Datestamp == drugs_listDatestamp
 dataframeName &amp;lt;- str_c(&amp;quot;archive/&amp;quot;, drugs_listDatestamp, &amp;quot;/&amp;quot;) %&amp;gt;%
   str_c(&amp;quot;dataframe.Rda&amp;quot;)
@@ -1197,7 +1197,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-visualised/</guid>
-      <description>&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;I finally made some sankey diagrams using an R import for the D3 graph. I’ll write the methodology up in a separate post once I can create something a bit more visualy informative.&lt;/p&gt;
 &lt;p&gt;Photos of the BNF drug interactions with varying tension.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./blogimages/d3-3.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-3.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;./blogimages/d3-2.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-2.html&#34;&gt;See the interactive version&lt;/a&gt; &lt;img src=&#34;./blogimages/d3-1.png&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt; &lt;a href=&#34;./blogimages/d3-1.html&#34;&gt;See the interactive version&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -1209,7 +1212,10 @@ Whilst the adjacency relationships (drug-drug interaction) work, the drugs aren&
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/interactions-continued/</guid>
-      <description>&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
+      <description>
+
+
+&lt;p&gt;I made a few additions to my previous &lt;a href=&#34;https://fergustaylor.github.io/post/drug-interactions/&#34;&gt;post&lt;/a&gt;, after realising I could use the &lt;a href=&#34;https://cran.r-project.org/web/packages/rvest/vignettes/selectorgadget.html&#34;&gt;CSS selector&lt;/a&gt; to list the interaction information. (I.e if you combine drugs, will it increase the blood concentration of the other? Or reduce it? Or risk a given side-effect, etc..)&lt;/p&gt;
 &lt;p&gt;I built this into the previous code. &lt;a href=&#34;https://github.com/fergustaylor/d3&#34;&gt;(See the full code)&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Interactions
 interactions &amp;lt;- mapply(url = data, css = drugs_list$css_string,
@@ -1431,8 +1437,8 @@ Then added some for my last post as well.&lt;/p&gt;
       <description>&lt;p&gt;Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.&lt;/p&gt;
 
 
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//player.vimeo.com/video/231293393&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/231293393&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
 
@@ -2014,7 +2020,7 @@ plot2017listsize()
 
 &lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/openprescribingR/dev/clinics.html&#34;&gt;See the code.&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure &gt;
     
         &lt;img src=&#34;https://fergustaylor.github.io/blogimages/Rplot4.png&#34;          width=&#34;100%&#34; height=&#34;100%&#34; /&gt;
@@ -2022,7 +2028,7 @@ plot2017listsize()
     
 &lt;/figure&gt;
 
-&lt;/p&gt;
+
 
 
 &lt;figure &gt;
@@ -2868,10 +2874,10 @@ An exceptional read.&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/d3interactions/</link>
+      <link>https://fergustaylor.github.io/d3/interactions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/d3interactions/</guid>
+      <guid>https://fergustaylor.github.io/d3/interactions/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/D3/Interactions&#39;&#34; /&gt;
 &lt;/html&gt;

@@ -8,7 +8,7 @@
     <language>en-uk</language>
     <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/categories/academic/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/academic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,18 +17,9 @@
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of &lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/preview/&#34;&gt;Rstudio Preview.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package &lt;a href=&#34;https://rstudio.github.io/radix/&#34;&gt;Radix.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve been experimenting with it over the weekend to try to store the acedemic projects I&amp;rsquo;ve worked on as a student, (as well as the eventual DOIs, PMID, journal details that come from them), and move away from the osx notes file I&amp;rsquo;ve been keeping so far.
-There were a few teething problems rendering the XML files, but overall I&amp;rsquo;m really impressed.
-My hope would be that this would become something I could refer to and use in an interview setting.&lt;/p&gt;
-
-&lt;p&gt;You can see the results &lt;a href=&#34;https://fergustaylor.github.io/academic/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://fergustaylor.github.io/academic/&#34;&gt;&lt;img src=&#34;../../blogimages/plastics.jpg&#34; class=&#34;image fit&#34;&gt;&lt;a/&gt;&lt;/p&gt;
-</description>
+      <description>I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of Rstudio Preview.
+The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.. But first, one of the articles was about the package Radix.
+I&amp;rsquo;ve been experimenting with it over the weekend to try to store the acedemic projects I&amp;rsquo;ve worked on as a student, (as well as the eventual DOIs, PMID, journal details that come from them), and move away from the osx notes file I&amp;rsquo;ve been keeping so far.</description>
     </item>
     
   </channel>

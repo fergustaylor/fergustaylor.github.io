@@ -8,7 +8,7 @@
     <language>en-uk</language>
     <lastBuildDate>Thu, 12 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fergustaylor.github.io/categories/nhs-hackday/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/nhs-hackday/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,119 +17,8 @@
       <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/nhs-hackday/</guid>
-      <description>&lt;script&gt;
-function myFunction() {
-var frames = document.getElementsByTagName(&#34;iframe&#34;);
-for (i = 0; i &lt; frames.length; i++) {
-      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +&#39;px&#39;;
-  }
-}
-window.addEventListener(&#34;load&#34;, myFunction);
-window.addEventListener(&#34;resize&#34;, myFunction);
-&lt;/script&gt;
-
-&lt;style&gt;
-iframe {
- width:100%;
-}
-&lt;/style&gt;
-
-&lt;p&gt;Back in February I attended the 19th NHS Hack Day in Cardiff.
-I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.&lt;/p&gt;
-
-&lt;p&gt;I was interested in plotting the catchment areas for each type of clinic.
-Assuming that a call to NHS 111 would require a referal to one type of clinic specialising it the necessary service, could you plot each of these clinics across the UK and demonstrate useful information by plotting the catchment areas around each of that type of clinic?&lt;/p&gt;
-
-&lt;p&gt;It would be colour-coded to the status (green-amber-red) that clinic was currently reporting.
-Once a clinic reached capacity, it stops taking patients, and I wondered if removing it from the map, and looking at the impact on the newly expanded catchment areas around it would demonstrate any useful information over a time-lapse graphic.&lt;/p&gt;
-
-&lt;p&gt;I was looking at voronoi plots initially, which can be useful in concentrated, urban areas.
-Although they have some clear limitations on a wider-scale.
-The plots below neglect local geography such as rivers, irregular coastline, etc. They ignore travel-times as a reflection of road distance/speeds, etc. And they assume a perfect travel as the bird flies.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve plotted voronois for each subtype of clinic that NHS 111 already listed, although I&amp;rsquo;d like to take this project further with a more sophisticated approach in future.
-I&amp;rsquo;ve seen a lot of interesting projects on medical geography recently, in particular around access to services in rural areas around Scotland.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll continue to research the subject.&lt;/p&gt;
-
-&lt;p&gt;A more successful aspect of this project, an interesting snippet that I developed for the iframes in this post is also given below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
-function myFunction() {
-var frames = document.getElementsByTagName(&amp;quot;iframe&amp;quot;);
-for (i = 0; i &amp;lt; frames.length; i++) {
-      frames[i].style.height=frames[i].contentDocument.body.scrollHeight +&#39;px&#39;;
-  }
-}
-window.addEventListener(&amp;quot;load&amp;quot;, myFunction);
-window.addEventListener(&amp;quot;resize&amp;quot;, myFunction);
-&amp;lt;/script&amp;gt;
-
-&amp;lt;style&amp;gt;
-iframe {
- width:100%;
-}
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The initial plots themselves.&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/DEvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/EDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/GPledUCCwEDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/IUCCASvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/MIUvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/OOHvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/SpecEDvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/UUHvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/WICvoronoi.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;As points&lt;/p&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/DEpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/EDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/GPledUCCwEDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/IUCCASpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/MIUpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/OOHpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/SpecEDpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/UUHpoints.html&#34;&gt;
-&lt;/iframe&gt;
-
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/WICpoints.html&#34;&gt;
-&lt;/iframe&gt;
-</description>
+      <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  Back in February I attended the 19th NHS Hack Day in Cardiff. I had a great experience listening to the pitches, meeting new people involved in healthcare IT, and I joined onto a group looking at self-reported availabilty and capacity statuses for clinics taking NHS 111 referrals.
+I was interested in plotting the catchment areas for each type of clinic.</description>
     </item>
     
   </channel>
