@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>D3s on Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/d3/</link>
+    <link>/d3/</link>
     <description>Recent content in D3s on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     
-	<atom:link href="https://fergustaylor.github.io/d3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/d3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://fergustaylor.github.io/d3/interactions/</link>
+      <link>/d3/interactions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/d3/interactions/</guid>
+      <guid>/d3/interactions/</guid>
       <description> </description>
     </item>
     

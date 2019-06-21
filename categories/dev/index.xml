@@ -2,32 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>https://fergustaylor.github.io/categories/dev/</link>
+    <link>/categories/dev/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sun, 14 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fergustaylor.github.io/categories/dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rstudio Preview - Radix</title>
-      <link>https://fergustaylor.github.io/post/rstudio-preview-radix/</link>
+      <link>/post/rstudio-preview-radix/</link>
       <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/rstudio-preview-radix/</guid>
+      <guid>/post/rstudio-preview-radix/</guid>
       <description>Edit 21/06/2019: Radix has since been renamed Distill and I&amp;rsquo;ve rewritten academic to use the new package.
 I&amp;rsquo;ve recently read a number of different articles using features from the most recent version of Rstudio Preview.
 The benefit of following lots of different Rstats-related people on Twitter means that I a see lot of interesting articles, and there a lot of new features that I&amp;rsquo;m interested in; Python, d3.js, and SQL integration.</description>
     </item>
     
     <item>
+      <title>50 Drugs</title>
+      <link>/post/50-drugs/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/50-drugs/</guid>
+      <description>Earlier this September I started my final year of Medicine at the University of Glasgow. Not wanting to be too out-of-date before returing to the wards, I looked back over a course resource summarising the 50 most commmonly used drugs on the ward.
+This is an interesting project created by SSC students at my University. &amp;hellip;, with &amp;hellip;. Unfortunately, the resource itself isn&amp;rsquo;t prepared in an ideal way to revise from.</description>
+    </item>
+    
+    <item>
+      <title>Audit</title>
+      <link>/post/audit/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/audit/</guid>
+      <description>In my medical degree I was recently on placement at the Queen Elizabeth University Hospital, Accident and Emergency department. While there, I assisted with an audit into early pregnancy presentations to the department over a monthly period.
+The point of this was to consider the presentation of patients to the department, and whether or not discharge criteria could be considered at triage in the form of a pro-forma, as is already the case in other Glasgow A and E departments.</description>
+    </item>
+    
+    <item>
+      <title>New Plots</title>
+      <link>/post/new-plots/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/new-plots/</guid>
+      <description>Over the last couple of months I&amp;rsquo;ve been working a lot on a couple of different projects that have used interesting combinations of ggplot.
+I&amp;rsquo;ll write some of these up properly when I get the chance, but for now, some interesting examples.</description>
+    </item>
+    
+    <item>
       <title>Google Custom Search</title>
-      <link>https://fergustaylor.github.io/post/google-custom-search/</link>
+      <link>/post/google-custom-search/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
+      <guid>/post/google-custom-search/</guid>
       <description>I&amp;rsquo;ve created a tool for searching medical resources, here.
 
 A while ago I was wondering about creating a tool to help me pool together the different resources I use for both revision, and case portfolios for my University work. I tend to do a lot of background research using a small pool of websites that are well-regarded for the fundamentals. SIGN/NICE guidelines, Clinical Knowledge Summaries, the BNF for example.</description>
@@ -35,10 +65,10 @@ A while ago I was wondering about creating a tool to help me pool together the d
     
     <item>
       <title>UK Local Elections 2017</title>
-      <link>https://fergustaylor.github.io/post/uk-local-elections-2017/</link>
+      <link>/post/uk-local-elections-2017/</link>
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fergustaylor.github.io/post/uk-local-elections-2017/</guid>
+      <guid>/post/uk-local-elections-2017/</guid>
       <description>Following a very interesting post I&amp;rsquo;d found on twitter by Paul Campbell, I was curious to try to recreate the plots involved myself.
 Plotting a coloured point as a representation of 100 votes in each ward is interesting, it gives a surprising feel for the sense of party proportions in an area. It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does give a sense of scale to voting in areas.</description>
     </item>
