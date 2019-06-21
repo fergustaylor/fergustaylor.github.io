@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fergus Taylor</title>
-    <link>/categories/openprescribing/</link>
+    <link>https://fergustaylor.github.io/categories/openprescribing/</link>
     <description>Recent content on Fergus Taylor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fergustaylor.github.io/categories/openprescribing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenprescribingR Plots Updated</title>
-      <link>/post/openprescribingr-plots-updated/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</link>
       <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots-updated/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots-updated/</guid>
       <description>function myFunction() { var frames = document.getElementsByTagName(&#34;iframe&#34;); for (i = 0; i  iframe { width:100%; }  I’ve been looking back at HTML widgets again this week, having learnt a little more recently about the underline technologies, both D3 and R.
 One of these widgets, an R package called ‘ggiraph’, was something I’d used in an earlier post to add interactive features to static ggplots. (Based on openprescribingR data).</description>
     </item>
     
     <item>
       <title>openprescribingR Plots3</title>
-      <link>/post/openprescribingr-plots3/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots3/</link>
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots3/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots3/</guid>
       <description>OpenprescribingR allows you to explore spending and list size data on over 200 different clinical commissioning groups, 9790 prescribing centres, and 23 BNF sections (as well as every invidual drug or presentation).
 Updated the old openprescribing graphics, with ggiraph. Then added some for my last post as well.
 UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
@@ -35,10 +35,10 @@ UPDATE 29/03/18: I&amp;rsquo;ve updated the graphics in the following post.
     
     <item>
       <title>openprescribingR Plots2</title>
-      <link>/post/openprescribingr-plots2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots2/</link>
       <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots2/</guid>
       <description>Experimenting with timelapse drawing in &amp;lsquo;Procreate&amp;rsquo; the ios app; made the following for openprescribingR.
   See the code used in this example here.
 See the repository on github.
@@ -48,19 +48,19 @@ Below is a geom_step of each practice spending in the CCG (median value = blue, 
     
     <item>
       <title>More examples for openprescribingR</title>
-      <link>/post/more-examples-for-openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</link>
       <pubDate>Mon, 25 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/more-examples-for-openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/more-examples-for-openprescribingr/</guid>
       <description>This package works by interacting with the openprescribing.net api. Openprescribing.net continues to collate monthly data from NHS digital, which means that you can search the entire dataset without downloading each monthly file. It uses limited search arguments to return data. (This will be updated as the api changes). As such it&amp;rsquo;s not possible to return a desired dataset in some cases by using one function alone in this package. However, it is possible to cross-reference functions in order to return the dataset you&amp;rsquo;d like.</description>
     </item>
     
     <item>
       <title>openprescribingR Plots</title>
-      <link>/post/openprescribingr-plots/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-plots/</link>
       <pubDate>Fri, 22 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-plots/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-plots/</guid>
       <description>Made a new package to return a set of default plots based on my openprescribingR import tool.
 Currently returns a leaflet map showing;
  spending per person total spending total no. of items total quantity of items quantity per item listsizes  .. for each CCG, for each month this year.
@@ -71,10 +71,10 @@ library(devtools) devtools::install_github(&amp;quot;fergustaylor/openprescribin
     
     <item>
       <title>openprescribingR UPDATE 2</title>
-      <link>/post/openprescribingr-update-2/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update-2/</link>
       <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update-2/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update-2/</guid>
       <description>  See the map.
 See the code.
   </description>
@@ -82,10 +82,10 @@ See the code.
     
     <item>
       <title>openprescribingR UPDATE</title>
-      <link>/post/openprescribingr-update/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr-update/</link>
       <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr-update/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr-update/</guid>
       <description>I wanted to plot some of this new openprescribing data geographically today after playing around with the new functions, however I soon realised I needed locations, and so I converted the &amp;lsquo;CCG boundaries&amp;rsquo; section of the api.
 New Function 7. CCG boundaries Search for the boundaries of a CCG, or location of a practice, by code. Returns GeoJSON.
    Output Function     Boundaries of all CCGs CCG_boundaries_or_location()   Boundaries of an individual CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of practices in a CCG, by code CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(CCG_code = &amp;ldquo;99H&amp;rdquo;, practice_code = &amp;ldquo;P87003&amp;rdquo;)   Location (approximate) of a practice in a CCG CCG_boundaries_or_location(practice_code = &amp;ldquo;P87003&amp;rdquo;)    Personally I find it very difficult to read JSON files, so you can tidy it up afterwards using JSONlite or tidyjson but I&amp;rsquo;ll leave that to you.</description>
@@ -93,10 +93,10 @@ New Function 7. CCG boundaries Search for the boundaries of a CCG, or location o
     
     <item>
       <title>openprescribingR</title>
-      <link>/post/openprescribingr/</link>
+      <link>https://fergustaylor.github.io/post/openprescribingr/</link>
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/openprescribingr/</guid>
+      <guid>https://fergustaylor.github.io/post/openprescribingr/</guid>
       <description>Using the (beta) RESTful API and a few lines of R, I made a set of functions to download and import OpenPrescribing data directly into RStudio. There are 6 functions, divided into data look-up and data-import tools.
 Installation:
 library(devtools)
