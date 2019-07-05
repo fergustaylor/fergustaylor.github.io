@@ -1,9 +1,0 @@
-{{ if .Get 0 }}
-<div class="more" data-height="{{ .Get 0 }}">
-    {{ .Inner | markdownify}}
-</div>
-{{ else }}
-<div class="more">
-    {{ .Inner | markdownify}}
-</div>
-{{ end }}

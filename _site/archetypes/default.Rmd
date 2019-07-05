@@ -1,7 +1,0 @@
----
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
-date: {{ .Date }}
-header_image: "/blogimages/example.png"
-description: ""
-draft: true
----
