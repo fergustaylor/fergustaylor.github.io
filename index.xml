@@ -653,7 +653,7 @@ But compared to making a portfolio from scratch, I consider this a vast improvem
       <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://fergustaylor.github.io/post/google-custom-search/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve created a tool for searching medical resources, &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ve created a tool for searching medical resources, &lt;a href=&#34;https://fergustaylor.github.io/dev/Search/&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;div style=&#34;padding:62.5% 0 0 0;position:relative;&#34;&gt;&lt;iframe src=&#34;https://player.vimeo.com/video/276458805?loop=1&amp;byline=0&amp;portrait=0&#34; style=&#34;position:absolute;top:0;left:0;width:100%;height:100%;&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;script src=&#34;https://player.vimeo.com/api/player.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
@@ -665,7 +665,7 @@ This sort of work, as it turns out is perfect for &lt;a href=&#34;https://cse.go
 I&amp;rsquo;ve created a seach bar based on the websites I&amp;rsquo;d check, with &amp;lsquo;refinements&amp;rsquo; used to group individual site results into tabs.
 This means I can submit a particular search request, then flick through the sites individually to see what they cover. An unexpected benefit of this is the specificity of the autosuggest that comes from it.&lt;/p&gt;
 
-&lt;p&gt;It&amp;rsquo;s hosted without sidebar &lt;a href=&#34;https://fergustaylor.github.io/Dev/Search/example.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s hosted without sidebar &lt;a href=&#34;https://fergustaylor.github.io/dev/Search/example.html&#34;&gt;here.&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;There&amp;rsquo;s some further room for customisation, for example it has google images options, which I may specify for for Radiopaedia.
 I may end up changing the sites it uses over time, but I think for a particular set of repetitive tasks like researching case portfolios, this will be useful enough over time.&lt;/p&gt;
@@ -677,7 +677,7 @@ I may end up changing the sites it uses over time, but I think for a particular 
 
 &lt;p style=&#34;border-bottom:1px solid #e1e8ed;&#34;&gt;&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve built this under a new repository, &lt;a href=&#34;https://fergustaylor.github.io/Dev/&#34;&gt;&amp;lsquo;Dev&amp;rsquo;&lt;/a&gt; for each of the smaller bits and pieces that don&amp;rsquo;t quite warrant their own.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve built this under a new repository, &lt;a href=&#34;https://fergustaylor.github.io/dev/&#34;&gt;&amp;lsquo;dev&amp;rsquo;&lt;/a&gt; for each of the smaller bits and pieces that don&amp;rsquo;t quite warrant their own.&lt;/p&gt;
 </description>
     </item>
     
@@ -758,7 +758,7 @@ It doesn&amp;rsquo;t give a sense of voter turnout vs population, but it does gi
 &lt;p&gt;I did wonder if the sense of geographic detail from each plot point, (the location within a ward is randomly generated), was misleading though.
 For example, 100 plots below.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/Dev/Local%20Elections/party.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://fergustaylor.github.io/dev/Local%20Elections/party.gif&#34; alt=&#34;&#34; style=&#34;width:100%;height:auto;&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;You can see the variation between each frame, however I was surprised I didn&amp;rsquo;t notice more of a difference.
 Perhaps just due to the scale of the individual points to the electoral ward it retained the same sense of voting proportions, as well as (although to a lesser-extent) geographic spread across parties.&lt;/p&gt;
@@ -830,60 +830,60 @@ iframe {
 
 &lt;p&gt;The initial plots themselves.&lt;/p&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/DEvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/DEvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/EDvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/EDvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/GPledUCCwEDvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/GPledUCCwEDvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/IUCCASvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/IUCCASvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/MIUvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/MIUvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/OOHvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/OOHvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/SpecEDvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/SpecEDvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/UUHvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/UUHvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/voronoi/WICvoronoi.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/voronoi/WICvoronoi.html&#34;&gt;
 &lt;/iframe&gt;
 
 &lt;p&gt;As points&lt;/p&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/DEpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/DEpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/EDpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/EDpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/GPledUCCwEDpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/GPledUCCwEDpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/IUCCASpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/IUCCASpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/MIUpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/MIUpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/OOHpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/OOHpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/SpecEDpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/SpecEDpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/UUHpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/UUHpoints.html&#34;&gt;
 &lt;/iframe&gt;
 
-&lt;iframe src=&#34;https://fergustaylor.github.io/Dev/Hackday/points/WICpoints.html&#34;&gt;
+&lt;iframe src=&#34;https://fergustaylor.github.io/dev/Hackday/points/WICpoints.html&#34;&gt;
 &lt;/iframe&gt;
 </description>
     </item>
@@ -2942,18 +2942,6 @@ An exceptional read.&lt;/p&gt;
       <guid>https://fergustaylor.github.io/d3/</guid>
       <description>&lt;!DOCTYPE HTML&gt;
 &lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/D3&#39;&#34; /&gt;
-&lt;/html&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://fergustaylor.github.io/dev/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fergustaylor.github.io/dev/</guid>
-      <description>&lt;!DOCTYPE HTML&gt;
-&lt;meta http-equiv=&#34;refresh&#34; content=&#34;0; URL=&#39;https://fergustaylor.github.io/Dev&#39;&#34; /&gt;
 &lt;/html&gt;
 </description>
     </item>
